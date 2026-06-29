@@ -395,6 +395,160 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .footer-links a:hover{color:rgba(250,248,245,.8)}
 .footer-copy{width:100%;text-align:center;font-size:.62rem;color:rgba(250,248,245,.18);margin-top:.9rem}
 
+/* ============================================================
+   BANNIÈRE COOKIES — RGPD / CNIL 2026
+   ============================================================ */
+
+/* Overlay (fond semi-transparent) */
+#cookie-overlay{
+  position:fixed;inset:0;z-index:9000;
+  background:rgba(28,24,21,.55);
+  backdrop-filter:blur(3px);
+  opacity:0;pointer-events:none;
+  transition:opacity .35s;
+}
+#cookie-overlay.visible{opacity:1;pointer-events:all}
+
+/* Bandeau principal */
+#cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:9001;
+  background:var(--white);
+  border-top:3px solid transparent;
+  border-image:var(--grad) 1;
+  box-shadow:0 -8px 40px rgba(28,24,21,.14);
+  padding:1.8rem clamp(1.25rem,5vw,4rem);
+  transform:translateY(100%);
+  transition:transform .45s cubic-bezier(.22,1,.36,1);
+}
+#cookie-banner.visible{transform:translateY(0)}
+
+/* Layout interne */
+.cb-layout{
+  max-width:1160px;margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:1.5rem 3rem;
+  align-items:start;
+}
+.cb-title-row{
+  display:flex;align-items:center;gap:.65rem;margin-bottom:.55rem;
+}
+.cb-title-row svg{width:20px;height:20px;stroke:var(--or2);flex-shrink:0}
+.cb-title-row strong{
+  font-size:.85rem;font-weight:800;letter-spacing:.04em;color:var(--ink);
+}
+.cb-text{
+  font-size:.75rem;color:var(--ink2);line-height:1.75;max-width:680px;
+}
+.cb-text a{color:var(--or2);text-decoration:underline;font-weight:600}
+.cb-text a:hover{color:var(--or3)}
+
+/* Panneau de personnalisation (accordéon) */
+.cb-details{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease;
+  margin-top:0;
+}
+.cb-details.open{
+  max-height:500px;
+  margin-top:1rem;
+}
+.cb-cat{
+  display:flex;align-items:flex-start;gap:.8rem;
+  padding:.75rem 0;
+  border-bottom:1px solid var(--bd);
+}
+.cb-cat:last-child{border-bottom:none}
+.cb-cat-info{flex:1}
+.cb-cat-name{font-size:.75rem;font-weight:700;color:var(--ink);margin-bottom:.18rem}
+.cb-cat-desc{font-size:.68rem;color:var(--muted);line-height:1.55}
+
+/* Toggle switch */
+.cb-toggle{position:relative;flex-shrink:0;margin-top:.1rem}
+.cb-toggle input{position:absolute;opacity:0;width:0;height:0}
+.cb-toggle-track{
+  display:block;width:40px;height:22px;border-radius:11px;
+  background:var(--bg3);border:1.5px solid var(--bd);
+  cursor:pointer;transition:background .22s,border-color .22s;
+  position:relative;
+}
+.cb-toggle input:checked + .cb-toggle-track{
+  background:var(--grad);border-color:transparent;
+}
+.cb-toggle-track::after{
+  content:'';position:absolute;top:2px;left:2px;
+  width:14px;height:14px;border-radius:50%;
+  background:#fff;box-shadow:0 1px 4px rgba(28,24,21,.2);
+  transition:transform .22s;
+}
+.cb-toggle input:checked + .cb-toggle-track::after{
+  transform:translateX(18px);
+}
+.cb-toggle input:disabled + .cb-toggle-track{
+  opacity:.55;cursor:default;
+}
+.cb-toggle input:focus-visible + .cb-toggle-track{
+  outline:2px solid var(--or2);outline-offset:2px;
+}
+
+/* Boutons d'action */
+.cb-actions{
+  display:flex;flex-direction:column;gap:.6rem;
+  align-items:stretch;min-width:200px;
+}
+.cb-btn-accept{
+  background:var(--grad);color:#fff;
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.8rem 1.4rem;border-radius:100px;border:none;cursor:pointer;
+  box-shadow:0 4px 16px rgba(232,98,42,.22);
+  transition:all .22s;white-space:nowrap;
+}
+.cb-btn-accept:hover{box-shadow:0 8px 24px rgba(232,98,42,.33);transform:translateY(-2px)}
+.cb-btn-refuse{
+  background:transparent;color:var(--ink2);
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.75rem 1.4rem;border-radius:100px;
+  border:1.5px solid var(--bd);cursor:pointer;
+  transition:all .22s;white-space:nowrap;
+}
+.cb-btn-refuse:hover{border-color:var(--ink2);background:var(--bg2)}
+.cb-btn-custom{
+  background:transparent;color:var(--or2);
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:.6rem;border:none;cursor:pointer;
+  text-decoration:underline;text-underline-offset:3px;
+  transition:color .2s;
+}
+.cb-btn-custom:hover{color:var(--or3)}
+.cb-btn-save{
+  display:none;background:var(--grad);color:#fff;
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.8rem 1.4rem;border-radius:100px;border:none;cursor:pointer;
+  box-shadow:0 4px 16px rgba(232,98,42,.22);
+  transition:all .22s;
+}
+.cb-btn-save.show{display:block}
+.cb-btn-save:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,98,42,.33)}
+
+/* Lien "gérer mes cookies" dans le footer */
+#open-cookie-prefs{
+  color:rgba(250,248,245,.32);font-size:.68rem;font-weight:600;
+  cursor:pointer;text-decoration:underline;text-underline-offset:3px;
+  transition:color .2s;background:none;border:none;font-family:'Montserrat',sans-serif;
+}
+#open-cookie-prefs:hover{color:rgba(250,248,245,.8)}
+
+/* Responsive */
+@media(max-width:700px){
+  .cb-layout{grid-template-columns:1fr;gap:1.2rem}
+  .cb-actions{flex-direction:row;flex-wrap:wrap;justify-content:center}
+  .cb-btn-accept,.cb-btn-refuse{flex:1;min-width:140px}
+}
+
 /* Scroll offset for sticky nav */
 #competences,#pedagogie,#profil,#avis,#faq{
   scroll-margin-top:80px;
@@ -626,7 +780,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
     <div class="about-text r d1">
       <p class="eyebrow">Qui suis-je</p>
       <h2>Formateur Microsoft<br/><em>certifié.</em> Par passion.</h2>
-      <p>CEO de <strong>Solpedinn</strong>, je consacre mon activité à la formation Microsoft depuis 2022. J'interviens pour la <strong>CCI Campus Alsace</strong>, le <strong>Groupe STUDI</strong>, <strong>Morpheus Formation</strong>, <strong>Adeos</strong> et <strong>Adterra</strong> — en présentiel, à distance et en vidéo.</p>
+      <p>CEO de <strong>XcelUrself</strong>, je consacre mon activité à la formation Microsoft depuis 2022. J'interviens pour de nombreux <strong>organismes</strong>, en présentiel, en distanciel et en E-learning.</p>
       <p>Certifié <strong>MOS PowerPoint</strong> et reconnu en tant que <strong>formateur Microsoft confirmé</strong>, je maîtrise Excel, Power BI, Power Query, Power Pivot, Word et PowerPoint à un niveau d'expertise entièrement au service de mes apprenants.</p>
     </div>
   </div>
@@ -766,17 +920,98 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
       <a href="https://www.linkedin.com/in/joffreygros/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://youtube.com/@xcelurself" target="_blank" rel="noopener">YouTube</a>
       <a href="#faq">FAQ</a>
+      <a href="#mentions-legales">Mentions légales</a>
+      <a href="#cgv">CGV</a>
+      <a href="#confidentialite">Confidentialité</a>
+      <button id="open-cookie-prefs" aria-label="Gérer mes préférences cookies">🍪 Cookies</button>
     </div>
   </div>
+
+  <div id="mentions-legales" style="max-width:900px;margin:2.5rem auto 0;padding:0 1.25rem;font-size:.7rem;line-height:1.8;color:rgba(250,248,245,.45)">
+    <h3 style="color:rgba(250,248,245,.7);font-size:.85rem;margin-bottom:.6rem">Mentions légales</h3>
+    <p><strong>Éditeur du site :</strong> Joffrey GROS, Micro Entreprise, immatriculée sous le n° SIRET 83914848300010, dont le siège social est situé à Soultz Haut-Rhin. Responsable de la publication : Joffrey GROS. Contact : mr.grosj@gmail.com — 06 19 65 69 86.</p>
+     <p><strong>Propriété intellectuelle :</strong> L'ensemble des contenus de ce site (textes, vidéos, visuels, marque "XcelUrself") est protégé par le droit d'auteur. Toute reproduction sans autorisation est interdite.</p>
+  </div>
+
+  <div id="cgv" style="max-width:900px;margin:1.5rem auto 0;padding:0 1.25rem;font-size:.7rem;line-height:1.8;color:rgba(250,248,245,.45)">
+    <h3 style="color:rgba(250,248,245,.7);font-size:.85rem;margin-bottom:.6rem">Conditions Générales de Vente (résumé)</h3>
+    <p>Les formations vendues sur ce site sont proposées via la plateforme tierce Tuto.com, qui assure la transaction, la facturation et l'accès au contenu. Les CGV applicables à l'achat sont celles de Tuto.com, consultables sur leur site. <strong>Droit de rétractation :</strong> conformément à l'article L221-28 13° du Code de la consommation, le droit de rétractation ne peut être exercé pour les contenus numériques fournis sur support immatériel dont l'exécution a commencé après accord préalable exprès du consommateur et renoncement express à son droit de rétractation. <strong>Accès :</strong> l'accès aux formations est consenti à vie, sous réserve du maintien en activité du formateur et de la plateforme hôte.</p>
+  </div>
+
+  <div id="confidentialite" style="max-width:900px;margin:1.5rem auto 0;padding:0 1.25rem;font-size:.7rem;line-height:1.8;color:rgba(250,248,245,.45)">
+    <h3 style="color:rgba(250,248,245,.7);font-size:.85rem;margin-bottom:.6rem">Politique de confidentialité &amp; cookies (RGPD)</h3>
+    <p>Ce site collecte des données à caractère personnel (nom, email) uniquement via les liens vers des plateformes tierces (Tuto.com, LinkedIn, YouTube) pour la gestion des achats et la prise de contact. Aucune donnée n'est directement collectée par ce site hors mesure d'audience anonymisée. Conformément au RGPD et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'opposition et d'effacement de vos données, exerçable auprès de mr.grosj@gmail.com. <strong>Cookies :</strong> ce site peut utiliser des cookies techniques nécessaires à son fonctionnement et, le cas échéant, des cookies de mesure d'audience. Vous pouvez configurer votre navigateur pour refuser les cookies.</p>
+    <p><strong>Médiation de la consommation :</strong> conformément à l'article L. 616-1 du Code de la consommation, en cas de litige non résolu directement, le consommateur peut recourir gratuitement à un médiateur de la consommation. Coordonnées du médiateur compétent disponibles sur demande.</p>
+  </div>
+
   <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur Microsoft Certifié &amp; Confirmé · Tous droits réservés</p>
 </footer>
+
+<!-- ============================================================
+     BANNIÈRE COOKIES — RGPD / CNIL 2026
+     Conforme : consentement préalable, refus aussi simple qu'accepter,
+     granularité par finalité, pas de case pré-cochée, droit de retrait.
+     ============================================================ -->
+<div id="cookie-overlay" role="presentation" aria-hidden="true"></div>
+
+<div id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cb-label" aria-describedby="cb-desc">
+  <div class="cb-layout">
+    <div>
+      <div class="cb-title-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></svg>
+        <strong id="cb-label">Ce site utilise des cookies</strong>
+      </div>
+      <p class="cb-text" id="cb-desc">
+        Nous utilisons des cookies pour assurer le bon fonctionnement du site. Avec votre accord, nous utilisons également des cookies de <strong>mesure d'audience anonymisée</strong>. Vous pouvez accepter, refuser ou personnaliser vos choix à tout moment. Vos données ne sont jamais vendues. Pour en savoir plus, consultez notre <a href="#confidentialite">politique de confidentialité</a>.
+      </p>
+      <div class="cb-details" id="cb-details" aria-hidden="true">
+        <div class="cb-cat">
+          <div class="cb-cat-info">
+            <p class="cb-cat-name">🔒 Cookies strictement nécessaires</p>
+            <p class="cb-cat-desc">Indispensables au fonctionnement du site (navigation, sécurité). Ils ne peuvent pas être désactivés conformément à la réglementation CNIL.</p>
+          </div>
+          <label class="cb-toggle" aria-label="Cookies nécessaires — toujours actifs">
+            <input type="checkbox" id="ck-necessary" checked disabled>
+            <span class="cb-toggle-track"></span>
+          </label>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-info">
+            <p class="cb-cat-name">📊 Mesure d'audience (analytics)</p>
+            <p class="cb-cat-desc">Permettent de mesurer l'audience du site de façon anonymisée (pages vues, durée de visite). Aucun suivi publicitaire. Données non transmises à des tiers.</p>
+          </div>
+          <label class="cb-toggle" aria-label="Autoriser les cookies d'audience">
+            <input type="checkbox" id="ck-analytics">
+            <span class="cb-toggle-track"></span>
+          </label>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-info">
+            <p class="cb-cat-name">🎯 Cookies de personnalisation</p>
+            <p class="cb-cat-desc">Permettent de mémoriser vos préférences (langue, affichage) pour améliorer votre expérience lors de vos prochaines visites.</p>
+          </div>
+          <label class="cb-toggle" aria-label="Autoriser les cookies de personnalisation">
+            <input type="checkbox" id="ck-prefs">
+            <span class="cb-toggle-track"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="cb-actions">
+      <button class="cb-btn-accept" id="cb-accept-all">Tout accepter</button>
+      <button class="cb-btn-refuse"  id="cb-refuse-all">Tout refuser</button>
+      <button class="cb-btn-custom"  id="cb-toggle-custom" aria-expanded="false" aria-controls="cb-details">Personnaliser</button>
+      <button class="cb-btn-save"    id="cb-save-custom">Enregistrer mes choix</button>
+    </div>
+  </div>
+</div>
 
 <script>
 // Hamburger
 const ham=document.getElementById('ham'),drawer=document.getElementById('drawer');
-function closeD(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+function closeD(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');if(!document.getElementById('cookie-banner').classList.contains('visible'))document.body.style.overflow='';}
 ham.addEventListener('click',()=>{const o=drawer.classList.contains('open');o?closeD():(ham.classList.add('open'),drawer.classList.add('open'),ham.setAttribute('aria-expanded','true'),document.body.style.overflow='hidden');});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeD();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.getElementById('cookie-banner').classList.contains('visible'))closeD();});
 
 // Tabs
 function switchTab(id, btn){
@@ -790,6 +1025,102 @@ function switchTab(id, btn){
 document.querySelectorAll('.fiq').forEach(q=>{
   q.addEventListener('click',()=>{const fi=q.parentElement,open=fi.classList.contains('open');document.querySelectorAll('.fi').forEach(f=>f.classList.remove('open'));if(!open)fi.classList.add('open');});
 });
+
+// ============================================================
+// BANNIÈRE COOKIES — RGPD / CNIL 2026
+// ============================================================
+var COOKIE_KEY = 'xcelurself_cookie_consent';
+var CONSENT_VERSION = '1';
+
+var ckBanner      = document.getElementById('cookie-banner');
+var ckOverlay     = document.getElementById('cookie-overlay');
+var ckDetails     = document.getElementById('cb-details');
+var ckBtnAccept   = document.getElementById('cb-accept-all');
+var ckBtnRefuse   = document.getElementById('cb-refuse-all');
+var ckBtnCustom   = document.getElementById('cb-toggle-custom');
+var ckBtnSave     = document.getElementById('cb-save-custom');
+var ckBtnReopen   = document.getElementById('open-cookie-prefs');
+var ckAnalytics   = document.getElementById('ck-analytics');
+var ckPrefs       = document.getElementById('ck-prefs');
+
+function ckSave(data) {
+  data.version = CONSENT_VERSION;
+  data.date = new Date().toISOString();
+  try { localStorage.setItem(COOKIE_KEY, JSON.stringify(data)); } catch(e) {}
+}
+
+function ckLoad() {
+  try {
+    var raw = localStorage.getItem(COOKIE_KEY);
+    if (!raw) return null;
+    var d = JSON.parse(raw);
+    return (d && d.version === CONSENT_VERSION) ? d : null;
+  } catch(e) { return null; }
+}
+
+function ckShow() {
+  ckBanner.style.display = 'block';
+  ckOverlay.style.display = 'block';
+  ckBanner.getBoundingClientRect(); // reflow
+  ckBanner.classList.add('visible');
+  ckOverlay.classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+
+function ckHide() {
+  ckBanner.classList.remove('visible');
+  ckOverlay.classList.remove('visible');
+  document.body.style.overflow = '';
+  setTimeout(function() {
+    ckBanner.style.display = 'none';
+    ckOverlay.style.display = 'none';
+  }, 500);
+}
+
+// Toujours effacer l'ancien consentement sans version (tests précédents)
+try { localStorage.removeItem(COOKIE_KEY); } catch(e) {}
+
+// Masquer par défaut
+ckBanner.style.display = 'none';
+ckOverlay.style.display = 'none';
+ckBtnSave.style.display = 'none';
+
+// Afficher la bannière immédiatement (pas de localStorage valide)
+setTimeout(ckShow, 600);
+
+ckBtnAccept.addEventListener('click', function() {
+  ckSave({ necessary: true, analytics: true, prefs: true });
+  ckHide();
+});
+
+ckBtnRefuse.addEventListener('click', function() {
+  ckSave({ necessary: true, analytics: false, prefs: false });
+  ckHide();
+});
+
+ckBtnCustom.addEventListener('click', function() {
+  var isOpen = ckDetails.classList.contains('open');
+  ckDetails.classList.toggle('open', !isOpen);
+  ckBtnCustom.textContent = isOpen ? 'Personnaliser' : 'Fermer les options';
+  ckBtnSave.style.display = isOpen ? 'none' : 'block';
+});
+
+ckBtnSave.addEventListener('click', function() {
+  ckSave({
+    necessary: true,
+    analytics: ckAnalytics ? ckAnalytics.checked : false,
+    prefs:     ckPrefs     ? ckPrefs.checked     : false
+  });
+  ckHide();
+});
+
+ckBtnReopen.addEventListener('click', function() {
+  var cur = ckLoad();
+  if (cur && ckAnalytics) ckAnalytics.checked = !!cur.analytics;
+  if (cur && ckPrefs)     ckPrefs.checked     = !!cur.prefs;
+  ckShow();
+});
+// ============================================================
 
 // Scroll reveal
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');});},{threshold:.1});
