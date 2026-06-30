@@ -542,6 +542,34 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 }
 #open-cookie-prefs:hover{color:rgba(250,248,245,.8)}
 
+/* FORMATIONS */
+.formations{padding:5.5rem 1.25rem;background:var(--bg2)}
+.formations-inner{max-width:1280px;margin:0 auto}
+.formations-head{text-align:center;max-width:680px;margin:0 auto 3rem}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.fcat{grid-column:1/-1;display:flex;align-items:center;gap:.8rem;margin:2.2rem 0 .2rem}
+.fcat:first-child{margin-top:0}
+.fcat h4{font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--or2);white-space:nowrap}
+.fcat .fcat-line{flex:1;height:1px;background:var(--bd)}
+.fcat .fcat-count{font-size:.65rem;color:var(--muted);font-weight:600;white-space:nowrap}
+.fcard{background:var(--white);border:1px solid var(--bd);border-radius:18px;padding:1.6rem;display:flex;flex-direction:column;gap:.7rem;transition:transform .25s,box-shadow .25s;position:relative}
+.fcard:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(28,24,21,.1)}
+.fcard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem}
+.fcard-soft{font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.28rem .65rem;border-radius:100px;background:var(--bg3);color:var(--ink2)}
+.fcard-soft.deb{background:#e8f5ec;color:#2f7a45}
+.fcard-soft.int{background:#fff3e0;color:#a05a00}
+.fcard-soft.avc{background:#fde9e9;color:#b8362f}
+.fcard-free{font-size:.62rem;font-weight:800;letter-spacing:.06em;color:#2f7a45;text-transform:uppercase}
+.fcard h3{font-size:.92rem;font-weight:700;line-height:1.4;color:var(--ink);min-height:2.6em}
+.fcard-desc{font-size:.74rem;color:var(--muted);line-height:1.6;flex:1}
+.fcard-bottom{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin-top:.4rem;padding-top:.9rem;border-top:1px solid var(--bd)}
+.fcard-price{display:flex;flex-direction:column;line-height:1.2}
+.fcard-price strong{font-size:1.05rem;font-weight:800;color:var(--ink)}
+.fcard-price span{font-size:.68rem;color:var(--muted);text-decoration:line-through}
+.fcard-cta{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;color:#fff;background:var(--grad);padding:.6rem 1.1rem;border-radius:100px;white-space:nowrap;transition:all .2s}
+.fcard-cta:hover{box-shadow:0 6px 18px rgba(232,98,42,.3);transform:translateY(-1px)}
+.formations-more{text-align:center;margin-top:2.8rem}
+
 /* Responsive */
 @media(max-width:700px){
   .cb-layout{grid-template-columns:1fr;gap:1.2rem}
@@ -550,7 +578,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 }
 
 /* Scroll offset for sticky nav */
-#competences,#pedagogie,#profil,#avis,#faq{
+#competences,#formations,#pedagogie,#profil,#avis,#faq{
   scroll-margin-top:80px;
 }
 
@@ -601,7 +629,11 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
   .tab-btn{font-size:.62rem;padding:.45rem .9rem}
   .testi-avg{text-align:left}
   .tgrid{grid-template-columns:1fr}
-  .formations{padding:4.5rem 1.25rem}
+@media(max-width:640px){
+  .fgrid{grid-template-columns:1fr}
+}
+
+
   .form-head{flex-direction:column;align-items:flex-start;gap:.7rem}
   .cards{grid-template-columns:1fr}
   .card-bundle{grid-column:span 1;padding:1.6rem}
@@ -632,12 +664,165 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
   .drawer a{font-size:1.4rem;padding:.5rem 0}
   .drawer .d-cta{font-size:.72rem;padding:.7rem 1.8rem}
 }
+
+/* ============================================================
+   WIDGET CHAT FAQ — XcelUrself
+   ============================================================ */
+
+/* ---------- Bulle flottante ---------- */
+#xu-chat-toggle{
+  position:fixed;bottom:24px;right:24px;z-index:8500;
+  width:60px;height:60px;border-radius:50%;
+  background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));
+  border:none;cursor:pointer;
+  box-shadow:0 8px 28px rgba(232,98,42,.38);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .25s, box-shadow .25s;
+}
+#xu-chat-toggle:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 34px rgba(232,98,42,.48)}
+#xu-chat-toggle svg{width:26px;height:26px;stroke:#fff;transition:opacity .15s, transform .15s}
+#xu-chat-toggle .xu-icon-close{position:absolute;opacity:0;transform:rotate(-90deg) scale(.6)}
+#xu-chat-toggle.open .xu-icon-chat{opacity:0;transform:rotate(90deg) scale(.6)}
+#xu-chat-toggle.open .xu-icon-close{opacity:1;transform:rotate(0) scale(1)}
+#xu-chat-badge{
+  position:absolute;top:-2px;right:-2px;
+  width:18px;height:18px;border-radius:50%;
+  background:#2f7a45;border:2px solid #fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.55rem;font-weight:800;color:#fff;font-family:'Montserrat',sans-serif;
+}
+#xu-chat-badge.hide{display:none}
+
+/* ---------- Fenêtre de chat ---------- */
+#xu-chat-window{
+  position:fixed;bottom:96px;right:24px;z-index:8500;
+  width:360px;max-width:calc(100vw - 32px);
+  height:520px;max-height:calc(100vh - 140px);
+  background:#fff;border-radius:20px;
+  box-shadow:0 24px 64px rgba(28,24,21,.22);
+  display:flex;flex-direction:column;overflow:hidden;
+  opacity:0;transform:translateY(16px) scale(.97);
+  pointer-events:none;
+  transition:opacity .22s ease, transform .22s ease;
+  font-family:'Montserrat',sans-serif;
+}
+#xu-chat-window.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
+
+/* En-tête */
+#xu-chat-header{
+  background:var(--ink, #1c1815);color:#fff;
+  padding:1rem 1.1rem;display:flex;align-items:center;gap:.7rem;flex-shrink:0;
+}
+#xu-chat-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-family:'Cormorant Garamond',serif;font-weight:700;color:#fff;font-size:1.1rem;
+}
+#xu-chat-header-text{flex:1;line-height:1.3}
+#xu-chat-header-text strong{display:block;font-size:.82rem;font-weight:700}
+#xu-chat-header-text span{display:block;font-size:.68rem;color:rgba(255,255,255,.55)}
+#xu-chat-header-text span::before{
+  content:'';display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:#4ade80;margin-right:5px;vertical-align:middle;
+}
+
+/* Zone messages */
+#xu-chat-messages{
+  flex:1;overflow-y:auto;padding:1rem;
+  display:flex;flex-direction:column;gap:.65rem;
+  background:#faf8f5;
+}
+#xu-chat-messages::-webkit-scrollbar{width:5px}
+#xu-chat-messages::-webkit-scrollbar-thumb{background:#e3ddd5;border-radius:10px}
+
+.xu-msg{max-width:84%;font-size:.78rem;line-height:1.55;padding:.65rem .85rem;border-radius:14px;animation:xuFadeIn .25s ease}
+@keyframes xuFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.xu-msg.bot{align-self:flex-start;background:#fff;border:1px solid #ece6dd;color:#1c1815;border-bottom-left-radius:4px}
+.xu-msg.user{align-self:flex-end;background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));color:#fff;border-bottom-right-radius:4px}
+.xu-msg a{color:inherit;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+.xu-msg.bot a{color:#e8622a}
+
+/* Indicateur de saisie */
+.xu-typing{align-self:flex-start;background:#fff;border:1px solid #ece6dd;border-radius:14px;border-bottom-left-radius:4px;padding:.7rem .9rem;display:flex;gap:4px}
+.xu-typing span{width:6px;height:6px;border-radius:50%;background:#c9c0b3;animation:xuBounce 1.2s infinite}
+.xu-typing span:nth-child(2){animation-delay:.15s}
+.xu-typing span:nth-child(3){animation-delay:.3s}
+@keyframes xuBounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+
+/* Suggestions rapides (chips) */
+#xu-chat-suggestions{
+  padding:.7rem 1rem;display:flex;flex-wrap:wrap;gap:.4rem;
+  border-top:1px solid #ece6dd;background:#fff;flex-shrink:0;
+}
+.xu-chip{
+  font-size:.68rem;font-weight:600;color:#1c1815;
+  background:#f3eee6;border:1px solid #ece6dd;border-radius:100px;
+  padding:.4rem .75rem;cursor:pointer;white-space:nowrap;
+  transition:background .15s, border-color .15s;
+}
+.xu-chip:hover{background:#fde9da;border-color:#f2c49a}
+
+/* Pied de note — devient le seul point de contact direct */
+#xu-chat-footnote{
+  font-size:.72rem;color:#a39b8c;text-align:center;padding:.85rem 1rem;background:#fff;flex-shrink:0;border-top:1px solid #ece6dd;
+}
+#xu-chat-footnote a{
+  display:inline-flex;align-items:center;gap:.35rem;
+  color:#fff;font-weight:700;font-size:.72rem;
+  background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));
+  padding:.55rem 1.1rem;border-radius:100px;
+  text-decoration:none;transition:transform .15s, box-shadow .15s;
+}
+#xu-chat-footnote a:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(232,98,42,.32)}
+
+@media(max-width:480px){
+  #xu-chat-window{
+    right:16px;left:16px;width:auto;bottom:88px;height:calc(100vh - 170px);
+  }
+  #xu-chat-toggle{right:18px;bottom:18px}
+}
+
 </style>
 </head>
 <body>
 
+
+
+<!-- Bulle flottante -->
+<button id="xu-chat-toggle" aria-label="Ouvrir le chat d'aide" aria-expanded="false">
+  <svg class="xu-icon-chat" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  <svg class="xu-icon-close" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  <span id="xu-chat-badge">1</span>
+</button>
+
+<!-- Fenêtre de chat -->
+<div id="xu-chat-window" role="dialog" aria-label="Assistant XcelUrself" aria-hidden="true">
+  <div id="xu-chat-header">
+    <div id="xu-chat-avatar">X</div>
+    <div id="xu-chat-header-text">
+      <strong>Assistant XcelUrself</strong>
+      <span>Répond instantanément</span>
+    </div>
+  </div>
+
+  <div id="xu-chat-messages"></div>
+
+  <div id="xu-chat-suggestions">
+    <button class="xu-chip" data-q="niveau">Quel niveau requis ?</button>
+    <button class="xu-chip" data-q="duree">Combien de temps ?</button>
+    <button class="xu-chip" data-q="garantie">Et si ça ne me convient pas ?</button>
+    <button class="xu-chip" data-q="contenu">Que contient une formation ?</button>
+  </div>
+
+  <p id="xu-chat-footnote">Réponses automatiques · <a href="#" id="xu-footnote-mail">Envoyez-moi un email</a></p>
+</div>
+
+
+
 <div class="drawer" id="drawer" aria-modal="true" role="dialog" aria-label="Navigation">
   <a href="#competences" onclick="closeD()">Expertise</a>
+  <a href="#formations" onclick="closeD()">Formations</a>
   <a href="#pedagogie" onclick="closeD()">Pédagogie</a>
   <a href="#profil" onclick="closeD()">Mon profil</a>
   <a href="#avis" onclick="closeD()">Témoignages</a>
@@ -667,6 +852,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
     <div class="nav-logo">Xcel<span>Urself</span></div>
     <ul class="nav-links">
       <li><a href="#competences">Expertise</a></li>
+      <li><a href="#formations">Formations</a></li>
       <li><a href="#pedagogie">Pédagogie</a></li>
       <li><a href="#profil">Mon profil</a></li>
       <li><a href="#avis">Témoignages</a></li>
@@ -697,14 +883,13 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
       </p>
       <div class="hero-btns r d3">
         <a class="btn btn-primary" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Voir les formations <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        <span class="btn btn-outline" style="cursor:default;opacity:.6;pointer-events:none">Pack complet — bientôt disponible</span>
+        <a class="btn btn-outline" href="#formations">Voir le catalogue complet <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div class="stats r d4">
         <div class="stat"><span class="stat-n">15+</span><span class="stat-l">Formations publiées</span></div>
- <div class="stat"><span class="stat-n">+2K</span><span class="stat-l">professionnels formés</span></div>
         <div class="stat"><span class="stat-n">4,7★</span><span class="stat-l">Note moyenne</span></div>
         <div class="stat"><span class="stat-n">MOS</span><span class="stat-l">PowerPoint certifié</span></div>
-       
+        <div class="stat"><span class="stat-n">100%</span><span class="stat-l">Pratique terrain</span></div>
       </div>
     </div>
     <div class="hero-right r d2">
@@ -771,6 +956,260 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
         <div class="peda-step"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Applicable dès le lendemain</strong> — zéro temps perdu</span></div>
         <div class="peda-step"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Accès à vie</strong> — revenez quand vous en avez besoin</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATIONS -->
+<section id="formations" class="formations">
+  <div class="formations-inner">
+    <div class="formations-head r">
+      <p class="eyebrow" style="justify-content:center">Le catalogue complet</p>
+      <h2>18 formations vidéo,<br/><em>un seul objectif :</em> votre autonomie.</h2>
+      <p style="color:var(--muted);font-size:.85rem;margin-top:.8rem">Chaque formation est vendue et hébergée sur Tuto.com — paiement sécurisé, accès immédiat et à vie.</p>
+    </div>
+
+    <div class="fgrid">
+
+      <!-- EXCEL -->
+      <div class="fcat r"><h4>Excel</h4><span class="fcat-line"></span><span class="fcat-count">10 formations</span></div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Excel — Créer des graphiques modernes et design</h3>
+        <p class="fcard-desc">Transformez un tableau de données mensuelles en un graphique double courbe à l'esthétique professionnelle, avec mise en lumière des valeurs clés.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>12,50 €</strong><span>25 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/tuto-graphiques-modernes-design,217081.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft avc">Avancé</span></div>
+        <h3>Excel — Maîtriser les fonctions date/heure</h3>
+        <p class="fcard-desc">Approfondissez le calcul et la manipulation des dates et heures dans Excel pour fiabiliser vos formules.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>10,99 €</strong></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/maitriser-fonction-date-heure-cours,177181.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft avc">Avancé</span></div>
+        <h3>Excel — Les tableaux croisés dynamiques (T.C.D.)</h3>
+        <p class="fcard-desc">Une approche simple et progressive pour gagner en productivité avec l'un des outils les plus puissants d'Excel.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>14,99 €</strong></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/tuto-tableaux-croises-dynmaiques-tcd,177111.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft avc">Avancé</span></div>
+        <h3>Excel — Les fonctions de recherche dans Excel</h3>
+        <p class="fcard-desc">RechercheV, RechercheH, et découverte de RechercheX (Excel 365), avec QCM final pour valider vos acquis.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>8 €</strong><span>15,99 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/fonction-recherche-cours,177041.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Les fonctions conditionnelles dans Excel</h3>
+        <p class="fcard-desc">Maîtrisez SI, SI imbriqués et les fonctions logiques pour automatiser vos prises de décision dans vos tableaux.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>12,50 €</strong><span>24,99 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/fonctions-conditionnelles-cours,176951.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Maîtriser les graphiques dans Excel</h3>
+        <p class="fcard-desc">Représentez vos données efficacement avec les bons types de graphiques pour des analyses lisibles et percutantes.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>1,50 €</strong><span>2,99 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/maitriser-les-graphiques-cours,176921.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Comment réaliser une facture à l'aide d'Excel ?</h3>
+        <p class="fcard-desc">Créez de A à Z un modèle de facture professionnel et fonctionnel, prêt à être réutilisé au quotidien.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>2,99 €</strong></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/comment-realiser-facture-excel-cours,176911.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Comment trier et/ou filtrer des données dans un tableau Excel</h3>
+        <p class="fcard-desc">Réorganisez vos données rapidement grâce au tri simple, au tri avancé et aux filtres, avec exercices et corrections.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>1,50 €</strong><span>2,99 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/trier-filtrer-tableau-cours,176901.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Comprendre et appliquer la mise en forme conditionnelle dans Excel</h3>
+        <p class="fcard-desc">Mettez en évidence vos données automatiquement selon des critères précis : couleurs, icônes, barres de données.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>1,50 €</strong><span>2,99 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/mise-en-forme-conditionnelle-cours,176891.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Acquérir les formules de base d'Excel</h3>
+        <p class="fcard-desc">Les fondamentaux indispensables pour démarrer sereinement sur Excel : formules essentielles et bonnes pratiques.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>5 €</strong><span>9,99 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/formules-de-base-cours,176871.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft avc">Avancé</span></div>
+        <h3>Microsoft Excel — Gagner en productivité (niveau avancé)</h3>
+        <p class="fcard-desc">La formation la plus complète du catalogue : raccourcis, astuces et méthodes pour exploiter Excel à son plein potentiel.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>55 €</strong><span>109,99 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/gagner-productivite-cours,175591.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Excel — Maîtriser les fondamentaux du logiciel de Microsoft</h3>
+        <p class="fcard-desc">Validez les compétences fondamentales d'Excel au quotidien avec une méthode interactive et progressive, pas à pas.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>22,50 €</strong><span>44,99 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/cours-maitriser-fondamentaux-excel,175391.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Analyser des données avec Microsoft Excel</h3>
+        <p class="fcard-desc">Exploitez vos données pour en tirer des analyses pertinentes et exploitables dans votre activité professionnelle.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>7,50 €</strong><span>14,99 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/cours-analyser-donnees,175271.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-free">Gratuit</span></div>
+        <h3>Excel — Créer un lien hypertexte avec une fonction</h3>
+        <p class="fcard-desc">Naviguez facilement dans vos fichiers Excel grâce à une fonction unique, avec en bonus la création d'un bouton cliquable.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>Gratuit</strong></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/tuto-gratuit-creer-lien-hypertexte-fonction,183391.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <!-- POWER QUERY -->
+      <div class="fcat r"><h4>Power Query</h4><span class="fcat-line"></span><span class="fcat-count">3 formations</span></div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Combiner des fichiers (en-têtes différents) avec Power Query</h3>
+        <p class="fcard-desc">Standardisez et fusionnez automatiquement plusieurs fichiers Excel aux en-têtes variés grâce à une table de correspondance.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>15 €</strong></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/combiner-fichier-entetes-differentes,216561.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Combiner plusieurs fichiers Excel avec Power Query — Méthode pro</h3>
+        <p class="fcard-desc">La méthode robuste utilisée en entreprise pour agréger automatiquement des classeurs Excel indépendants, sans retoucher la requête chaque mois.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>14,50 €</strong><span>29 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/combiner-plusieurs-fichiers-excel-power-query,216421.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>De plusieurs feuilles à une seule table : Power Query expliqué simplement</h3>
+        <p class="fcard-desc">Combinez automatiquement plusieurs feuilles Excel en une seule table structurée, même avec des colonnes différentes d'une feuille à l'autre.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>5 €</strong><span>10 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/excel/power-query-plusieurs-feuilles-1-table,216401.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <!-- POWERPOINT -->
+      <div class="fcat r"><h4>PowerPoint</h4><span class="fcat-line"></span><span class="fcat-count">3 formations</span></div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>PowerPoint — Réaliser des présentations de qualité</h3>
+        <p class="fcard-desc">Créez et personnalisez votre propre thème, maîtrisez les animations et donnez à vos présentations un rendu professionnel.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>45 €</strong><span>89,99 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/powerpoint/realiser-presentation-qualite-cours,179251.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Microsoft PowerPoint — Créer des templates de diapositives à l'aide du masque</h3>
+        <p class="fcard-desc">Acquérez les fondamentaux pour réaliser des modèles de diapositives entièrement éditables et réutilisables.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>6 €</strong><span>11,99 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/powerpoint/creer-template-masque-cours,177601.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Microsoft PowerPoint — Réaliser des présentations professionnelles</h3>
+        <p class="fcard-desc">Les fondamentaux pour construire des présentations claires, structurées et au rendu professionnel, étape par étape.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>11 €</strong><span>21,99 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/powerpoint/realiser-presentations-professionnelles-cours,177361.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <!-- WORD -->
+      <div class="fcat r"><h4>Word</h4><span class="fcat-line"></span><span class="fcat-count">1 formation</span></div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Maîtriser les fondamentaux du logiciel Microsoft Word</h3>
+        <p class="fcard-desc">De l'environnement de travail à la mise en page complète, une formation complète pour devenir autonome sur Word.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>69,99 €</strong></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/word/cours-fondamentaux-word,176341.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <!-- POWER BI -->
+      <div class="fcat r"><h4>Power BI</h4><span class="fcat-line"></span><span class="fcat-count">1 formation</span></div>
+
+      <div class="fcard r">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Réalisez votre premier tableau de bord Power BI pas à pas</h3>
+        <p class="fcard-desc">Construisez un tableau de bord professionnel et interactif dans Power BI à partir de plusieurs fichiers Excel.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>19,50 €</strong><span>39 €</span></div>
+          <a class="fcard-cta" href="https://fr.tuto.com/power-bi/realiser-premier-tableau,216471.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="formations-more r">
+      <a class="btn btn-primary" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Voir le catalogue complet sur Tuto.com <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
   </div>
 </section>
@@ -881,7 +1320,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
     <h2 class="r d1">Votre prochain niveau<br/>commence <em>ici.</em></h2>
     <p class="r d2">Accès immédiat · Vidéos HD · Fichiers exercices inclus · Accès à vie</p>
     <div class="cta-btns r d3">
-      <span class="btn btn-white" style="cursor:default;opacity:.55;pointer-events:none">Pack complet — bientôt disponible</span>
+      <a class="btn btn-white" href="#formations">Voir le catalogue <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       <a class="btn btn-ghost-white" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv/" target="_blank" rel="noopener">Voir toutes les formations <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
     <p class="guarantee r d4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Paiement sécurisé · Accès illimité à vie</p>
@@ -905,7 +1344,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
     <p class="eyebrow r">Questions fréquentes</p>
     <h2 class="r">Tout ce que vous<br/><em>voulez savoir.</em></h2>
     <div class="fi"><div class="fiq">Faut-il des bases pour commencer ?<span class="plus">+</span></div><div class="fia">Non. Chaque formation indique son niveau. Les parcours débutants partent de zéro, sans jargon. Chaque outil est abordé de façon progressive et accessible.</div></div>
-    <div class="fi"><div class="fiq">Comment accède-t-on aux formations en ligne ?<span class="plus">+</span></div><div class="fia">Tout se passe sur Tuto.com. Après votre achat, vous recevez un accès par email et démarrez immédiatement depuis n'importe quel appareil.</div></div>
+    <div class="fi"><div class="fiq">Comment accède-t-on aux formations ?<span class="plus">+</span></div><div class="fia">Tout se passe sur Tuto.com. Après votre achat, vous recevez un accès par email et démarrez immédiatement depuis n'importe quel appareil.</div></div>
     <div class="fi"><div class="fiq">Les formations sont-elles accessibles à vie ?<span class="plus">+</span></div><div class="fia">Oui. Une fois achetée, votre formation est accessible à vie. Revenez quand vous voulez, même des années plus tard. Mises à jour incluses.</div></div>
     <div class="fi"><div class="fiq">Y a-t-il des fichiers exercices ?<span class="plus">+</span></div><div class="fia">Oui. Chaque formation inclut les fichiers sources pour pratiquer en parallèle. Apprendre en faisant est au cœur de la méthode XcelUrself.</div></div>
     
@@ -1028,8 +1467,6 @@ document.querySelectorAll('.fiq').forEach(q=>{
 });
 
 // ============================================================
-// BANNIÈRE COOKIES — RGPD / CNIL 2026
-// ============================================================
 var COOKIE_KEY = 'xcelurself_cookie_consent';
 var CONSENT_VERSION = '1';
 
@@ -1121,6 +1558,201 @@ ckBtnReopen.addEventListener('click', function() {
   if (cur && ckPrefs)     ckPrefs.checked     = !!cur.prefs;
   ckShow();
 });
+// ============================================================
+
+
+// ============================================================
+// WIDGET CHAT FAQ — XcelUrself
+// ============================================================
+(function(){
+
+  // ============================================================
+  // BASE DE CONNAISSANCES — à adapter à votre catalogue
+  // Chaque entrée : mots-clés à détecter + réponse (HTML autorisé)
+  // ============================================================
+  var KB = [
+    {
+      id: 'niveau',
+      keywords: ['niveau', 'debutant', 'débutant', 'avance', 'avancé', 'intermediaire', 'intermédiaire', 'prerequis', 'prérequis', 'pour qui'],
+      answer: "Mes formations couvrent <strong>tous les niveaux</strong> : débutant, intermédiaire et avancé. Chaque fiche de cours indique clairement le niveau requis et les prérequis logiciels. La plupart des formations <strong>fondamentaux</strong> ne demandent aucune base — vous pouvez démarrer de zéro."
+    },
+    {
+      id: 'duree',
+      keywords: ['duree', 'durée', 'combien de temps', 'longue', 'longueur', 'heures', 'minutes', 'rythme'],
+      answer: "La durée varie selon la formation : de quelques minutes pour les tutos ciblés à plusieurs heures pour les formations complètes (ex. Excel productivité : plus de 12h de contenu). Vous apprenez <strong>à votre rythme</strong>, sans limite de temps — l'accès est à vie."
+    },
+    {
+      id: 'garantie',
+      keywords: ['garantie', 'remboursement', 'rembourser', 'annuler', 'pas satisfait', 'deçu', 'déçu', 'convient pas', 'risque'],
+      answer: "Les formations sont vendues via <strong>Tuto.com</strong>, qui gère la transaction de façon sécurisée. En cas de question sur un achat, leur support est disponible par email ou téléphone. Je reste aussi disponible en message privé si une formation ne répond pas à vos attentes."
+    },
+    {
+      id: 'contenu',
+      keywords: ['contenu', 'contient', 'inclus', 'comprend', 'qu\'est-ce que', 'quoi dans', 'fichier', 'exercice', 'video', 'vidéo'],
+      answer: "Chaque formation inclut des <strong>vidéos HD</strong> pas-à-pas, des <strong>fichiers d'exercices</strong> téléchargeables, et souvent des cas pratiques issus de situations professionnelles réelles. Certaines proposent aussi un QCM final pour valider vos acquis."
+    },
+    {
+      id: 'prix',
+      keywords: ['prix', 'tarif', 'coute', 'coûte', 'combien ça coute', 'combien ca coute', 'cher', 'promo', 'reduction', 'réduction'],
+      answer: "Les prix varient de <strong>gratuit</strong> à environ 70€ selon la formation, avec des promotions régulières (jusqu'à -50%). Le catalogue complet avec les prix à jour est juste au-dessus, dans la section <a href=\"#formations\">Formations</a>."
+    },
+    {
+      id: 'logiciel',
+      keywords: ['excel', 'powerpoint', 'word', 'power bi', 'power query', 'logiciel', 'application'],
+      answer: "J'enseigne <strong>Excel</strong> (formules, TCD, Power Query), <strong>PowerPoint</strong>, <strong>Word</strong> et <strong>Power BI</strong>. Toutes les formations sont classées par logiciel dans la section <a href=\"#formations\">Formations</a> du site."
+    },
+    {
+      id: 'acces',
+      keywords: ['acces', 'accès', 'a vie', 'à vie', 'expire', 'expiration', 'combien de temps acces', 'recevoir'],
+      answer: "L'accès est <strong>à vie</strong> dès l'achat — pas d'abonnement, pas d'expiration. Vous recevez vos identifiants par email immédiatement après le paiement et pouvez démarrer depuis n'importe quel appareil."
+    },
+    {
+      id: 'certif',
+      keywords: ['certificat', 'certification', 'attestation', 'diplome', 'diplôme', 'mos'],
+      answer: "Je suis <strong>formateur certifié MOS PowerPoint</strong>. Les formations elles-mêmes ne délivrent pas de certificat officiel à l'issue, mais certaines incluent un QCM de validation des acquis."
+    },
+    {
+      id: 'contact',
+      keywords: ['contact', 'joindre', 'parler', 'echanger', 'échanger', 'question precise', 'question précise', 'humain'],
+      answer: "Pour un échange direct avec moi, le plus simple est de me contacter sur <a href=\"https://www.linkedin.com/in/joffreygros/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>. Je réponds personnellement à chaque message."
+    }
+  ];
+
+  // ---------- Email de contact (à modifier ici si besoin) ----------
+  var CONTACT_EMAIL = "mr.grosj@gmail.com";
+
+  function buildMailto(userText) {
+    var subject = "Question depuis le site XcelUrself";
+    var body = "Bonjour Joffrey,\n\n" + (userText ? "Voici ma question : " + userText : "J'ai une question sur vos formations.") + "\n\nMerci d'avance.";
+    return "mailto:" + CONTACT_EMAIL
+      + "?subject=" + encodeURIComponent(subject)
+      + "&body=" + encodeURIComponent(body);
+  }
+
+  function buildFallback(userText) {
+    return "Je n'ai pas la réponse exacte à cette question. Vous pouvez "
+      + "<a href=\"" + buildMailto(userText) + "\">m'envoyer un email directement</a>, "
+      + "me contacter sur <a href=\"https://www.linkedin.com/in/joffreygros/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>, "
+      + "ou consulter la <a href=\"#faq\">FAQ complète</a> un peu plus bas sur cette page.";
+  }
+
+  var GREETING = "Bonjour 👋 Je suis l'assistant XcelUrself. Posez-moi une question sur le contenu, le niveau, la durée ou les modalités d'une formation — je réponds tout de suite.";
+
+  function normalize(str) {
+    return str.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // strip accents
+      .replace(/[^\w\s]/g, ' ');
+  }
+
+  function findAnswer(userText) {
+    var norm = normalize(userText);
+    var bestMatch = null;
+    var bestScore = 0;
+    KB.forEach(function(entry) {
+      var score = 0;
+      entry.keywords.forEach(function(kw) {
+        if (norm.indexOf(normalize(kw)) !== -1) score++;
+      });
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = entry;
+      }
+    });
+    return bestMatch ? bestMatch.answer : buildFallback(userText);
+  }
+
+  // ---------- DOM refs ----------
+  var toggle = document.getElementById('xu-chat-toggle');
+  var win = document.getElementById('xu-chat-window');
+  var messages = document.getElementById('xu-chat-messages');
+  var badge = document.getElementById('xu-chat-badge');
+  var chips = document.querySelectorAll('.xu-chip');
+  var isOpen = false;
+  var greeted = false;
+
+  // Synchronise le lien email du pied de page avec CONTACT_EMAIL
+  var footnoteMail = document.getElementById('xu-footnote-mail');
+  if (footnoteMail) footnoteMail.href = buildMailto('');
+
+  function addMessage(text, who) {
+    var div = document.createElement('div');
+    div.className = 'xu-msg ' + who;
+    div.innerHTML = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function showTyping() {
+    var div = document.createElement('div');
+    div.className = 'xu-typing';
+    div.id = 'xu-typing-indicator';
+    div.innerHTML = '<span></span><span></span><span></span>';
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function hideTyping() {
+    var el = document.getElementById('xu-typing-indicator');
+    if (el) el.remove();
+  }
+
+  function openChat() {
+    isOpen = true;
+    win.classList.add('open');
+    win.setAttribute('aria-hidden', 'false');
+    toggle.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    badge.classList.add('hide');
+    if (!greeted) {
+      greeted = true;
+      setTimeout(function() { addMessage(GREETING, 'bot'); }, 300);
+    }
+  }
+
+  function closeChat() {
+    isOpen = false;
+    win.classList.remove('open');
+    win.setAttribute('aria-hidden', 'true');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', function() {
+    isOpen ? closeChat() : openChat();
+  });
+
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      var key = chip.getAttribute('data-q');
+      var entry = KB.filter(function(k) { return k.id === key; })[0];
+      if (entry) {
+        addMessage(chip.textContent, 'user');
+        showTyping();
+        setTimeout(function() {
+          hideTyping();
+          addMessage(entry.answer, 'bot');
+        }, 450);
+      }
+    });
+  });
+
+  // Fermer en cliquant en dehors (desktop uniquement)
+  document.addEventListener('click', function(e) {
+    if (isOpen && window.innerWidth > 480 &&
+        !win.contains(e.target) && !toggle.contains(e.target)) {
+      closeChat();
+    }
+  });
+
+  // Auto-ouverture discrète après 18s si jamais ouvert (engagement passif)
+  setTimeout(function() {
+    if (!greeted) {
+      badge.textContent = '1';
+      badge.classList.remove('hide');
+    }
+  }, 18000);
+
+})();
 // ============================================================
 
 // Scroll reveal
