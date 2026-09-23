@@ -1,0 +1,2368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Joffrey Gros · XcelUrself — Formations Excel, Power Query, Power BI &amp; PowerPoint</title>
+<meta name="description" content="23 formations vidéo Excel, Power Query, Power BI, Word et PowerPoint par Joffrey Gros, formateur Microsoft certifié MOS. Cas pratiques réels, fichiers sources, accès à vie sur Tuto.com."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="XcelUrself — Formations Microsoft par Joffrey Gros"/>
+<meta property="og:description" content="23 formations vidéo Excel, Power Query, Power BI, Word et PowerPoint. Débutant lundi, efficace vendredi."/>
+<meta property="og:url" content="https://xcelurself.github.io/xcelurself/"/>
+<link rel="canonical" href="https://xcelurself.github.io/xcelurself/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:    #faf8f5;
+  --bg2:   #f3f0eb;
+  --bg3:   #ede9e2;
+  --ink:   #1c1815;
+  --ink2:  #4a4238;
+  --muted: #8a7f74;
+  --white: #ffffff;
+  --or1:   #e8622a;
+  --or2:   #d44d6e;
+  --or3:   #b83868;
+  --grad:  linear-gradient(120deg,#e8622a 0%,#d44d6e 55%,#b83868 100%);
+  --gradr: linear-gradient(120deg,#b83868 0%,#d44d6e 55%,#e8622a 100%);
+  --bd:    rgba(28,24,21,.1);
+  --bda:   rgba(232,98,42,.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Montserrat',sans-serif;
+  font-size:15px;line-height:1.7;overflow-x:hidden;font-weight:400;
+}
+img{display:block;max-width:100%;height:auto}
+a{text-decoration:none}
+ul{list-style:none}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 50% 40% at 5% 0%,rgba(232,98,42,.06) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 30% at 95% 100%,rgba(184,56,104,.05) 0%,transparent 60%);
+}
+section,nav,footer,.ticker,.trust,.channels{position:relative;z-index:1}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,5vw,4rem)}
+
+/* TYPOGRAPHY */
+.eyebrow{
+  font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--or2);display:flex;align-items:center;gap:.7rem;margin-bottom:.9rem;
+}
+.eyebrow::before{content:'';width:1.8rem;height:1.5px;background:var(--grad);flex-shrink:0}
+.grad-text{
+  background:var(--grad);-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+  border-radius:100px;padding:.85rem 1.8rem;transition:all .22s;cursor:pointer;
+}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 18px rgba(232,98,42,.2)}
+.btn-primary:hover{background:var(--gradr);box-shadow:0 8px 26px rgba(232,98,42,.3);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--or2);border:1.5px solid var(--bda)}
+.btn-outline:hover{background:var(--or2);color:#fff;transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--or3);font-weight:700}
+.btn-white:hover{background:var(--bg);transform:translateY(-2px)}
+.btn-ghost-white{border:1.5px solid rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.08)}
+.btn-ghost-white:hover{background:rgba(255,255,255,.18)}
+
+/* TICKER */
+.ticker{background:var(--or3);overflow:hidden;padding:.5rem 0}
+.ticker-inner{display:inline-flex;gap:2.5rem;animation:tick 32s linear infinite;white-space:nowrap}
+.ticker-inner span{font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.ticker-inner .hi{color:rgba(255,255,255,.9)}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:650;
+  background:rgba(250,248,245,.96);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--bd);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  max-width:1160px;margin:0 auto;padding:.8rem clamp(1.25rem,5vw,4rem);
+}
+.nav-logo{font-size:1.4rem;font-weight:800;letter-spacing:.02em;color:var(--ink);flex-shrink:0}
+.nav-logo span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:1.8rem}
+.nav-links a{font-size:.75rem;font-weight:600;letter-spacing:.04em;color:var(--ink2);transition:color .2s}
+.nav-links a:hover{color:var(--or2)}
+.nav-cta{
+  background:var(--grad);color:#fff;font-weight:700;
+  font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.55rem 1.3rem;border-radius:100px;transition:all .2s;flex-shrink:0;
+  box-shadow:0 3px 12px rgba(232,98,42,.2);
+}
+.nav-cta:hover{box-shadow:0 6px 20px rgba(232,98,42,.3);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:34px;height:34px;background:none;border:none;cursor:pointer;padding:4px;flex-shrink:0;position:relative;z-index:700}
+.hamburger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .2s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.drawer{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:600;
+  background:rgba(250,248,245,.98);
+  backdrop-filter:blur(12px);
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding:0 2rem 3rem;
+  padding-top:calc(56px + .5rem);
+  gap:0;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .3s;
+  overflow-y:auto;
+}
+.drawer.open{opacity:1;pointer-events:all}
+
+.drawer a{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,7vw,2.4rem);
+  font-weight:700;
+  color:var(--ink);
+  transition:color .2s;
+  width:100%;
+  text-align:center;
+  padding:.6rem 0;
+  border-bottom:1px solid rgba(28,24,21,.07);
+}
+.drawer a:last-of-type{border-bottom:none}
+.drawer a:hover{color:var(--or2)}
+.drawer .d-cta{
+  background:var(--grad);color:#fff;
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.9rem 2.5rem;border-radius:100px;
+  margin-top:1.5rem;border:none;width:auto;
+}
+
+/* HERO */
+.hero{
+  min-height:90vh;display:grid;grid-template-columns:1fr 380px;
+  gap:3.5rem;align-items:center;
+  padding:4.5rem clamp(1.25rem,5vw,4rem) 4rem;
+  max-width:1160px;margin:0 auto;
+}
+.slogan-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:linear-gradient(120deg,rgba(232,98,42,.1),rgba(184,56,104,.08));
+  border:1px solid var(--bda);border-radius:100px;
+  padding:.45rem 1rem;margin-bottom:1.4rem;
+  font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--or2);
+}
+.hero-h1{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(2.4rem,5vw,5rem);
+  font-weight:900;line-height:.96;letter-spacing:-.03em;margin-bottom:1.6rem;
+}
+.hero-h1 .l1{color:var(--ink);display:block}
+.hero-h1 .l2{font-style:italic;display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-h1 .l3{display:block;color:transparent;-webkit-text-stroke:2.5px var(--or2);font-style:normal}
+.hero-desc{font-size:.9rem;color:var(--ink2);line-height:1.8;max-width:460px;margin-bottom:2rem;font-weight:400}
+.hero-desc strong{color:var(--ink);font-weight:700}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center;margin-bottom:2.2rem}
+.stats{display:flex;gap:1.8rem;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat-n{font-size:1.7rem;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-l{font-size:.62rem;color:var(--muted);letter-spacing:.05em;margin-top:.15rem}
+
+/* Hero right */
+.hero-right{display:flex;flex-direction:column;gap:.9rem}
+.photo-wrap{
+  position:relative;border-radius:16px;overflow:hidden;
+  aspect-ratio:1/1;background:transparent;
+  display:flex;align-items:center;justify-content:center;
+}
+.photo-wrap img{width:100%;height:100%;object-fit:contain}
+
+.photo-badge svg{width:12px;height:12px;stroke:#fff}
+.price-card{background:var(--ink);color:#fff;border-radius:10px;padding:1.4rem 1.5rem}
+.pc-label{font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem}
+.pc-label svg{width:13px;height:13px;stroke:var(--or1)}
+.pc-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;margin-bottom:.7rem}
+.pc-price{font-size:2.4rem;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.2rem}
+.pc-sub{font-size:.62rem;color:rgba(255,255,255,.35);margin-bottom:.9rem}
+.pc-btn{
+  display:flex;align-items:center;justify-content:center;gap:.4rem;width:100%;
+  background:var(--grad);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.75rem;border-radius:100px;transition:all .2s;
+  box-shadow:0 4px 14px rgba(232,98,42,.25);
+}
+.pc-btn:hover{box-shadow:0 8px 22px rgba(232,98,42,.35);transform:scale(1.01)}
+.pc-btn svg{width:14px;height:14px;stroke:#fff}
+
+/* TRUST BAR */
+.trust{background:var(--white);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:1.1rem 0;overflow:hidden;position:relative}
+.trust-inner{display:flex;align-items:center;gap:0;white-space:nowrap;overflow:hidden}
+.trust-label{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap;padding:0 2rem;flex-shrink:0;border-right:1px solid var(--bd)}
+.trust-track{display:inline-flex;gap:3rem;animation:trustscroll 28s linear infinite;white-space:nowrap;padding-left:3rem}
+.trust-logo{font-size:.72rem;font-weight:700;color:rgba(28,24,21,.38);flex-shrink:0}
+@keyframes trustscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SKILLS */
+.skills-sec{background:var(--bg2);padding:6rem clamp(1.25rem,5vw,4rem)}
+.sec-head{max-width:1160px;margin:0 auto 3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.sec-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.8vw,3.2rem);font-weight:700;line-height:1.05}
+.sec-head h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec-head p{font-size:.87rem;color:var(--ink2);line-height:1.85}
+.sec-head p strong{color:var(--ink);font-weight:700}
+.skills{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bda);border-radius:8px;overflow:hidden}
+.skill{background:var(--white);padding:1.5rem 1.3rem;transition:background .2s}
+.skill:hover{background:linear-gradient(135deg,rgba(232,98,42,.04),rgba(184,56,104,.03))}
+.sk-ico{margin-bottom:.75rem}
+.sk-ico svg{width:26px;height:26px;stroke:var(--or2);stroke-width:1.6}
+.sk-name{font-size:.8rem;font-weight:700;margin-bottom:.35rem;color:var(--ink)}
+.sk-desc{font-size:.7rem;color:var(--muted);line-height:1.6}
+.sk-dots{display:flex;gap:.28rem;margin-top:.6rem}
+.sk-dot{width:5px;height:5px;border-radius:50%;background:var(--bda)}
+.sk-dot.on{background:var(--or2)}
+
+/* PÉDAGOGIE */
+.peda{background:var(--white);padding:6rem clamp(1.25rem,5vw,4rem)}
+.peda-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.peda-quote{
+  background:var(--grad);color:#fff;
+  border-radius:10px;padding:2.5rem;
+  position:relative;overflow:hidden;
+}
+.peda-quote::before{
+  content:'"';font-family:'Cormorant Garamond',serif;
+  font-size:10rem;line-height:.8;
+  position:absolute;top:-.5rem;left:1rem;
+  color:rgba(255,255,255,.12);pointer-events:none;
+}
+.peda-quote blockquote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.5rem,2.5vw,2rem);
+  font-style:italic;font-weight:700;line-height:1.3;
+  position:relative;z-index:1;margin-bottom:1rem;
+}
+.peda-quote cite{font-size:.72rem;opacity:.7;font-style:normal;letter-spacing:.06em}
+.peda-right h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;line-height:1.05;margin-bottom:1.3rem}
+.peda-right h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.peda-right p{font-size:.87rem;color:var(--ink2);line-height:1.85;margin-bottom:.9rem}
+.peda-right p strong{color:var(--ink);font-weight:700}
+.peda-steps{display:flex;flex-direction:column;gap:.7rem;margin-top:1.5rem}
+.peda-step{display:flex;align-items:flex-start;gap:.8rem;font-size:.83rem;color:var(--ink2)}
+.peda-step svg{flex-shrink:0;width:18px;height:18px;stroke:var(--or2);margin-top:.1rem}
+
+/* ABOUT */
+.about{background:var(--bg3);padding:6rem clamp(1.25rem,5vw,4rem)}
+.about-inner{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2rem}
+
+.about-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;line-height:1.05;margin-bottom:1.2rem}
+.about-text h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.about-text p{font-size:.87rem;color:var(--ink2);line-height:1.85;margin-bottom:.85rem}
+.about-text p strong{color:var(--ink);font-weight:700}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.3rem}
+.tag{background:linear-gradient(120deg,rgba(232,98,42,.08),rgba(184,56,104,.06));border:1px solid var(--bda);font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .75rem;border-radius:100px;color:var(--or2)}
+.tag.fill{background:var(--grad);color:#fff;border:none}
+
+/* TESTIMONIALS */
+.testi{background:var(--bg2);padding:6rem clamp(1.25rem,5vw,4rem)}
+.testi-inner{max-width:1160px;margin:0 auto}
+.testi-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.8rem;flex-wrap:wrap;gap:1rem}
+.testi-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.05}
+.testi-head h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.testi-avg{text-align:right}
+.avg-n{font-size:2.8rem;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.avg-stars{color:var(--or1);font-size:.95rem;letter-spacing:.05em}
+.avg-sub{font-size:.65rem;color:var(--muted)}
+
+/* Two tabs: pro + online */
+.testi-tabs{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.tab-btn{
+  font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:.5rem 1.2rem;border-radius:100px;cursor:pointer;
+  border:1.5px solid var(--bda);background:transparent;color:var(--muted);
+  transition:all .2s;
+}
+.tab-btn.active{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(232,98,42,.2)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.tc{
+  background:var(--white);border:1.5px solid var(--bd);border-radius:8px;padding:1.6rem;
+  position:relative;overflow:hidden;transition:border-color .2s,transform .2s;
+}
+.tc:hover{border-color:var(--or2);transform:translateY(-3px)}
+.tc.feat{background:var(--grad);color:#fff;border:none}
+.tc::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:5.5rem;line-height:1;position:absolute;top:-.5rem;right:.8rem;color:rgba(0,0,0,.04);pointer-events:none}
+.tc.feat::before{color:rgba(255,255,255,.1)}
+.tc-stars{font-size:.82rem;letter-spacing:.08em;margin-bottom:.7rem;color:var(--or1)}
+.tc.feat .tc-stars{color:rgba(255,210,160,.9)}
+.tc-text{font-size:.82rem;font-style:italic;line-height:1.75;margin-bottom:.9rem;color:var(--ink2)}
+.tc.feat .tc-text{color:rgba(255,255,255,.88)}
+.tc-author{font-size:.75rem;font-weight:700;color:var(--ink)}
+.tc-role{font-size:.65rem;color:var(--muted)}
+.tc.feat .tc-author{color:#fff}
+.tc.feat .tc-role{color:rgba(255,255,255,.55)}
+
+.card-bundle{
+  grid-column:span 3;background:var(--ink);color:#fff;
+  border-radius:10px;padding:2rem 2.3rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;
+  position:relative;overflow:hidden;
+}
+.card-bundle::before{
+  content:'BEST SELLER';position:absolute;top:1rem;right:-2.5rem;
+  background:var(--grad);color:#fff;font-size:.55rem;font-weight:700;letter-spacing:.12em;
+  padding:.28rem 3rem;transform:rotate(40deg);
+}
+.cb-tag{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem}
+.cb-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;margin-bottom:.45rem}
+.cb-desc{font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:.9rem}
+.cb-meta{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem}
+.cb-meta span{background:rgba(232,98,42,.15);border:1px solid rgba(232,98,42,.2);font-size:.6rem;font-weight:600;padding:.25rem .6rem;border-radius:100px;color:rgba(255,200,160,.85);display:flex;align-items:center;gap:.3rem}
+.cb-meta span svg{width:11px;height:11px;stroke:currentColor}
+.cb-price{font-size:2.8rem;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.2rem}
+.cb-note{font-size:.62rem;color:rgba(255,255,255,.3);margin-bottom:1rem}
+.cb-btn{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:var(--grad);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.8rem 1.8rem;border-radius:100px;transition:all .2s;
+  box-shadow:0 4px 18px rgba(232,98,42,.3);
+}
+.cb-btn:hover{box-shadow:0 8px 26px rgba(232,98,42,.4);transform:translateY(-2px)}
+.cb-btn svg{width:14px;height:14px;stroke:#fff}
+.cb-includes li{font-size:.78rem;color:rgba(255,255,255,.7);padding:.38rem 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:.55rem;line-height:1.35}
+.cb-includes li svg{flex-shrink:0;width:13px;height:13px;stroke:var(--or1)}
+.cb-includes li:last-child{border:none}
+.card{background:var(--bg);border:1.5px solid var(--bd);border-radius:8px;padding:1.6rem;display:flex;flex-direction:column;transition:border-color .2s,transform .25s,box-shadow .25s}
+.card:hover{border-color:var(--or2);transform:translateY(-3px);box-shadow:0 14px 36px rgba(232,98,42,.07)}
+.card-tag{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;line-height:1.2;margin-bottom:.45rem}
+.card-desc{font-size:.78rem;color:var(--muted);line-height:1.7;flex:1;margin-bottom:.9rem}
+.card-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.9rem}
+.card-meta span{background:linear-gradient(120deg,rgba(232,98,42,.07),rgba(184,56,104,.05));border:1px solid var(--bda);font-size:.58rem;font-weight:600;padding:.22rem .55rem;border-radius:100px;color:var(--or2);display:flex;align-items:center;gap:.3rem}
+.card-meta span svg{width:10px;height:10px;stroke:currentColor}
+.card-price{font-size:1.7rem;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.8rem}
+.card-btn{display:flex;align-items:center;justify-content:center;gap:.4rem;border:1.5px solid var(--bda);color:var(--or2);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem;border-radius:100px;transition:all .2s}
+.card-btn:hover{background:var(--grad);color:#fff;border-color:transparent}
+.card-btn svg{width:13px;height:13px;stroke:currentColor}
+
+/* CTA */
+.cta-final{background:var(--ink);color:#fff;padding:8rem clamp(1.25rem,5vw,4rem);text-align:center;position:relative;overflow:hidden}
+.cta-final::before{content:'XCELURSELF';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:clamp(6rem,16vw,18rem);font-weight:800;letter-spacing:.1em;color:rgba(255,255,255,.025);pointer-events:none;white-space:nowrap}
+.cta-inner{max-width:660px;margin:0 auto;position:relative;z-index:1}
+.cta-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:700;line-height:.98;margin-bottom:1.2rem}
+.cta-inner h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta-inner p{font-size:.87rem;color:rgba(255,255,255,.55);line-height:1.8;max-width:440px;margin:0 auto 2.2rem}
+.cta-btns{display:flex;justify-content:center;gap:.9rem;flex-wrap:wrap}
+.guarantee{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1.6rem;font-size:.68rem;color:rgba(255,255,255,.3);font-weight:600}
+.guarantee svg{width:13px;height:13px;stroke:rgba(255,255,255,.3)}
+
+/* CHANNELS */
+.channels{background:linear-gradient(120deg,rgba(232,98,42,.06),rgba(184,56,104,.06));border-top:1px solid var(--bda);border-bottom:1px solid var(--bda);padding:2.5rem clamp(1.25rem,5vw,4rem)}
+.channels-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:1.8rem;flex-wrap:wrap}
+.ch-label{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--or2);white-space:nowrap}
+.ch-list{display:flex;gap:.7rem;flex-wrap:wrap}
+.ch-chip{display:flex;align-items:center;gap:.45rem;background:var(--white);border:1.5px solid var(--bda);border-radius:100px;padding:.45rem 1rem;font-size:.7rem;font-weight:700;letter-spacing:.04em;color:var(--ink);transition:all .2s}
+.ch-chip:hover{border-color:var(--or2);transform:translateY(-1px)}
+.ch-chip svg{width:14px;height:14px;stroke:var(--or2);flex-shrink:0}
+
+/* FAQ */
+.faq{background:var(--bg2);padding:6rem clamp(1.25rem,5vw,4rem)}
+.faq-inner{max-width:720px;margin:0 auto}
+.faq-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;line-height:1.1;margin-bottom:2.5rem}
+.faq-inner h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.fi{border-top:1px solid var(--bd)}
+.fiq{font-size:.85rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 0;user-select:none}
+.fiq .plus{font-size:1.3rem;color:var(--or2);transition:transform .25s;flex-shrink:0}
+.fi.open .fiq .plus{transform:rotate(45deg)}
+.fia{font-size:.82rem;color:var(--ink2);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s}
+.fi.open .fia{max-height:400px;padding-bottom:1.1rem}
+
+/* FOOTER */
+footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem}
+.footer-logo{font-size:1.3rem;font-weight:800;color:var(--bg)}
+.footer-logo span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:.68rem;font-weight:600;color:rgba(250,248,245,.32);transition:color .2s}
+.footer-links a:hover{color:rgba(250,248,245,.8)}
+.footer-copy{width:100%;text-align:center;font-size:.62rem;color:rgba(250,248,245,.18);margin-top:.9rem}
+
+/* ============================================================
+   BANNIÈRE COOKIES — RGPD / CNIL 2026
+   ============================================================ */
+
+/* Overlay (fond semi-transparent) */
+/* FORMATIONS */
+.formations{padding:5.5rem 1.25rem;background:var(--bg2)}
+.formations-inner{max-width:1280px;margin:0 auto}
+.formations-head{text-align:center;max-width:680px;margin:0 auto 3rem}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.fcat{grid-column:1/-1;display:flex;align-items:center;gap:.8rem;margin:2.2rem 0 .2rem}
+.fcat:first-child{margin-top:0}
+.fcat h4{font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--or2);white-space:nowrap}
+.fcat .fcat-line{flex:1;height:1px;background:var(--bd)}
+.fcat .fcat-count{font-size:.65rem;color:var(--muted);font-weight:600;white-space:nowrap}
+.fcard{background:var(--white);border:1px solid var(--bd);border-radius:18px;padding:1.6rem;display:flex;flex-direction:column;gap:.7rem;transition:transform .25s,box-shadow .25s;position:relative}
+.fcard:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(28,24,21,.1)}
+.fcard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem}
+.fcard-soft{font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.28rem .65rem;border-radius:100px;background:var(--bg3);color:var(--ink2)}
+.fcard-soft.deb{background:#e8f5ec;color:#2f7a45}
+.fcard-soft.int{background:#fff3e0;color:#a05a00}
+.fcard-soft.avc{background:#fde9e9;color:#b8362f}
+.fcard-free{font-size:.62rem;font-weight:800;letter-spacing:.06em;color:#2f7a45;text-transform:uppercase}
+.fcard h3{font-size:.92rem;font-weight:700;line-height:1.4;color:var(--ink);min-height:2.6em}
+.fcard-desc{font-size:.74rem;color:var(--muted);line-height:1.6;flex:1}
+.fcard-bottom{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin-top:.4rem;padding-top:.9rem;border-top:1px solid var(--bd)}
+.fcard-price{display:flex;flex-direction:column;line-height:1.2}
+.fcard-price strong{font-size:1.05rem;font-weight:800;color:var(--ink)}
+.fcard-price span{font-size:.68rem;color:var(--muted);text-decoration:line-through}
+.fcard-cta{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;color:#fff;background:var(--grad);padding:.6rem 1.1rem;border-radius:100px;white-space:nowrap;transition:all .2s}
+.fcard-new{border-color:rgba(212,77,110,.45);box-shadow:0 10px 30px rgba(212,77,110,.12)}
+.fcard-badge{font-size:.6rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--grad);padding:.28rem .65rem;border-radius:100px}
+.fcard-price em{font-style:normal;font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--or3)}
+.fcard-cta:hover{box-shadow:0 6px 18px rgba(232,98,42,.3);transform:translateY(-1px)}
+.formations-more{text-align:center;margin-top:2.8rem}
+
+/* Responsive */
+@media(max-width:700px){
+  .cb-layout{grid-template-columns:1fr;gap:1.2rem}
+  .cb-actions{flex-direction:row;flex-wrap:wrap;justify-content:center}
+  .cb-btn-accept,.cb-btn-refuse{flex:1;min-width:140px}
+}
+
+
+/* === Ajouts 2026-09 : repères cartes, parcours, filtres, fiche mémo, entreprises === */
+.fcard-meta{display:flex;gap:.8rem;font-size:.68rem;font-weight:600;color:var(--ink2);margin-top:-.2rem}
+.fcard-rate{color:var(--or3)}
+.fcard-best{font-size:.6rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:#fff4d6;border:1px solid #f0d9a0;padding:.24rem .6rem;border-radius:100px}
+.fcard[hidden],.fcat[hidden]{display:none}
+.paths{margin:0 auto 2.5rem}
+.paths-title{text-align:center;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin-bottom:1.2rem}
+.paths-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.path{background:var(--white);border:1px solid var(--bd);border-radius:18px;padding:1.6rem;display:flex;flex-direction:column;gap:.6rem}
+.path-tag{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--or2)}
+.path h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;line-height:1.1}
+.path-desc{font-size:.78rem;color:var(--ink2)}
+.path ol{list-style:none;counter-reset:st;display:flex;flex-direction:column;gap:.45rem;margin:.3rem 0}
+.path li{counter-increment:st;display:flex;align-items:center;gap:.6rem;font-size:.8rem}
+.path li::before{content:counter(st);flex:0 0 1.5rem;height:1.5rem;border-radius:50%;background:var(--bg2);color:var(--or3);font-weight:800;font-size:.7rem;display:flex;align-items:center;justify-content:center}
+.path li a{color:var(--ink);font-weight:600;flex:1;text-decoration:underline;text-decoration-color:var(--bda);text-underline-offset:3px}
+.path li a:hover{color:var(--or3)}
+.path li span{font-size:.68rem;color:var(--ink2);white-space:nowrap}
+.path-total{margin-top:auto;padding-top:.8rem;border-top:1px solid var(--bd);font-size:.72rem;font-weight:700;color:var(--ink2)}
+.free-strip{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;background:var(--white);border:1.5px dashed rgba(47,122,69,.45);border-radius:18px;padding:1.4rem 1.8rem;margin:0 auto 2.5rem}
+.free-k{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#2f7a45}
+.free-t{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;line-height:1.15}
+.free-d{font-size:.78rem;color:var(--ink2)}
+.ffilters{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:0 auto 2rem}
+.ffilter{font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;padding:.6rem 1.1rem;min-height:40px;border-radius:100px;border:1.5px solid var(--bd);background:var(--white);color:var(--ink2);cursor:pointer;transition:all .2s}
+.ffilter:hover{border-color:var(--or2);color:var(--or3)}
+.ffilter.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.lead{background:var(--bg);padding:6rem clamp(1.25rem,5vw,4rem)}
+.lead-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:4rem;align-items:center}
+.lead-visual{position:relative;height:340px}
+.lead-page{position:absolute;width:230px;height:320px;border-radius:6px;background:#fff;border:1px solid var(--bd);box-shadow:0 18px 40px rgba(28,24,21,.12)}
+.lp3{left:60px;top:18px;transform:rotate(7deg)}.lp2{left:30px;top:10px;transform:rotate(3deg)}
+.lp1{left:0;top:0;padding:1.4rem 1.2rem;display:flex;flex-direction:column;gap:.55rem}
+.lp-k{font-size:.55rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--or3)}
+.lp-t{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;line-height:1.1;margin-bottom:.4rem}
+.lp-l{height:6px;border-radius:3px;background:var(--bg3)}.lp-l.s{width:65%}
+.lp-code{font-family:ui-monospace,Menlo,monospace;font-size:.55rem;background:var(--bg2);border-radius:4px;padding:.45rem .5rem;color:var(--or3)}
+.lead-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.4vw,2.8rem);font-weight:700;line-height:1.05;margin-bottom:1rem}
+.lead-text h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.lead-text>p{color:var(--ink2);font-size:.9rem;margin-bottom:1rem}
+.lead-list{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.6rem}
+.lead-list li{font-size:.85rem;padding-left:1.5rem;position:relative}
+.lead-list li::before{content:'✓';position:absolute;left:0;color:var(--or2);font-weight:800}
+.lead-note{font-size:.7rem;color:var(--ink2);margin-top:.8rem}
+.team{background:var(--bg);padding:6rem clamp(1.25rem,5vw,4rem)}
+.team-inner{max-width:1160px;margin:0 auto}
+.team-head{max-width:680px;margin-bottom:2.8rem}
+.team-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.8vw,3.2rem);font-weight:700;line-height:1.05;margin-bottom:1rem}
+.team-head h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.team-head p{color:var(--ink2)}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:2.4rem}
+.team-card{background:var(--white);border:1px solid var(--bd);border-radius:18px;padding:1.8rem}
+.team-n{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--or2);line-height:1;margin-bottom:.8rem}
+.team-card h3{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.team-card p:last-child{font-size:.82rem;color:var(--ink2);line-height:1.65}
+.team-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
+.team-note{font-size:.72rem;color:var(--ink2)}
+.tc-note{font-size:.68rem;color:var(--ink2);margin-top:.6rem;line-height:1.5}
+.tc-note a{color:var(--or3);font-weight:700;text-decoration:underline}
+@media(max-width:800px){
+  .lead-inner{grid-template-columns:1fr;gap:2.5rem}
+  .lead-visual{height:300px;max-width:300px;margin:0 auto;width:100%}
+  .lead-page{width:200px;height:280px}
+  .free-strip{padding:1.3rem}
+}
+
+/* Scroll offset for sticky nav */
+#entreprises,#fiche-memo,#competences,#formations,#pedagogie,#profil,#avis,#faq{
+  scroll-margin-top:80px;
+}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.r.v{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.08s}.d2{transition-delay:.15s}.d3{transition-delay:.22s}.d4{transition-delay:.3s}
+
+/* ── RESPONSIVE TABLET ≤1024px ── */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr 320px;gap:2.5rem;padding:3.5rem clamp(1.25rem,4vw,3rem) 3rem}
+  .sec-head{gap:2.5rem}
+  .skills{grid-template-columns:repeat(2,1fr)}
+  .peda-inner{gap:3rem}
+  .about-inner{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:1fr 1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .card-bundle{grid-column:span 2;grid-template-columns:1fr}
+  .nav-links{gap:1.2rem}
+  .nav-links a{font-size:.7rem}
+}
+
+/* ── RESPONSIVE MOBILE ≤768px ── */
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .drawer{display:flex}
+  .hero{grid-template-columns:1fr;gap:2rem;padding:2.5rem 1.25rem 3rem;min-height:auto}
+  .hero-right{order:-1}
+  .photo-wrap{max-height:240px}
+  .hero-h1{font-size:clamp(2.6rem,8.5vw,3.5rem)}
+  .hero-h1 .l3{-webkit-text-stroke:1.5px var(--or2)}
+  .hero-btns{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center;width:100%}
+  .stats{gap:1.1rem}
+  .stat-n{font-size:1.5rem}
+  .trust-inner{flex-direction:row}
+  .skills-sec{padding:4.5rem 1.25rem}
+  .sec-head{grid-template-columns:1fr;gap:1.5rem;margin-bottom:2rem}
+  .skills{grid-template-columns:1fr 1fr}
+  .peda{padding:4.5rem 1.25rem}
+  .peda-inner{grid-template-columns:1fr;gap:2.5rem}
+  .about{padding:4.5rem 1.25rem}
+  .about-inner{max-width:100%}
+  .testi{padding:4.5rem 1.25rem}
+  .testi-head{flex-direction:column;align-items:flex-start;gap:.8rem}
+  .testi-tabs{gap:.4rem}
+  .tab-btn{font-size:.62rem;padding:.45rem .9rem}
+  .testi-avg{text-align:left}
+  .tgrid{grid-template-columns:1fr}
+@media(max-width:640px){
+  .fgrid{grid-template-columns:1fr}
+}
+
+
+  .form-head{flex-direction:column;align-items:flex-start;gap:.7rem}
+  .cards{grid-template-columns:1fr}
+  .card-bundle{grid-column:span 1;padding:1.6rem}
+  .cb-price{font-size:2.2rem}
+  .price-card{padding:1.1rem 1.2rem}
+  .cta-final{padding:5.5rem 1.25rem}
+  .cta-btns{flex-direction:column;align-items:stretch}
+  .cta-btns .btn{justify-content:center}
+  .channels{padding:2rem 1.25rem}
+  .channels-inner{flex-direction:column;align-items:flex-start;gap:.9rem}
+  .faq{padding:4.5rem 1.25rem}
+  .fiq{font-size:.8rem}
+  footer{padding:2rem 1.25rem}
+  .footer-inner{flex-direction:column;align-items:center;text-align:center}
+  .footer-links{justify-content:center}
+}
+
+/* ── SMALL ≤400px ── */
+@media(max-width:400px){
+  .hero-h1{font-size:2.4rem}
+  .skills{grid-template-columns:1fr}
+  .stat-n{font-size:1.3rem}
+  .stats{gap:.8rem}
+  .nav-inner{padding:.9rem 1.25rem}
+  .nav-logo{font-size:1.2rem}
+}
+@media(max-width:360px){
+  .drawer a{font-size:1.4rem;padding:.5rem 0}
+  .drawer .d-cta{font-size:.72rem;padding:.7rem 1.8rem}
+}
+
+/* ============================================================
+   WIDGET CHAT FAQ — XcelUrself
+   ============================================================ */
+
+/* ---------- Bulle flottante ---------- */
+#xu-chat-toggle{
+  position:fixed;bottom:24px;right:24px;z-index:8500;
+  width:60px;height:60px;border-radius:50%;
+  background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));
+  border:none;cursor:pointer;
+  box-shadow:0 8px 28px rgba(232,98,42,.38);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .25s, box-shadow .25s;
+}
+#xu-chat-toggle:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 34px rgba(232,98,42,.48)}
+#xu-chat-toggle svg{width:26px;height:26px;stroke:#fff;transition:opacity .15s, transform .15s}
+#xu-chat-toggle .xu-icon-close{position:absolute;opacity:0;transform:rotate(-90deg) scale(.6)}
+#xu-chat-toggle.open .xu-icon-chat{opacity:0;transform:rotate(90deg) scale(.6)}
+#xu-chat-toggle.open .xu-icon-close{opacity:1;transform:rotate(0) scale(1)}
+#xu-chat-badge{
+  position:absolute;top:-2px;right:-2px;
+  width:18px;height:18px;border-radius:50%;
+  background:#2f7a45;border:2px solid #fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.55rem;font-weight:800;color:#fff;font-family:'Montserrat',sans-serif;
+}
+#xu-chat-badge.hide{display:none}
+
+/* ---------- Fenêtre de chat ---------- */
+#xu-chat-window{
+  position:fixed;bottom:96px;right:24px;z-index:8500;
+  width:360px;max-width:calc(100vw - 32px);
+  height:520px;max-height:calc(100vh - 140px);
+  background:#fff;border-radius:20px;
+  box-shadow:0 24px 64px rgba(28,24,21,.22);
+  display:flex;flex-direction:column;overflow:hidden;
+  opacity:0;transform:translateY(16px) scale(.97);
+  pointer-events:none;
+  transition:opacity .22s ease, transform .22s ease;
+  font-family:'Montserrat',sans-serif;
+}
+#xu-chat-window.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
+
+/* En-tête */
+#xu-chat-header{
+  background:var(--ink, #1c1815);color:#fff;
+  padding:1rem 1.1rem;display:flex;align-items:center;gap:.7rem;flex-shrink:0;
+}
+#xu-chat-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-family:'Cormorant Garamond',serif;font-weight:700;color:#fff;font-size:1.1rem;
+}
+#xu-chat-header-text{flex:1;line-height:1.3}
+#xu-chat-header-text strong{display:block;font-size:.82rem;font-weight:700}
+#xu-chat-header-text span{display:block;font-size:.68rem;color:rgba(255,255,255,.55)}
+#xu-chat-header-text span::before{
+  content:'';display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:#4ade80;margin-right:5px;vertical-align:middle;
+}
+
+/* Zone messages */
+#xu-chat-messages{
+  flex:1;overflow-y:auto;padding:1rem;
+  display:flex;flex-direction:column;gap:.65rem;
+  background:#faf8f5;
+}
+#xu-chat-messages::-webkit-scrollbar{width:5px}
+#xu-chat-messages::-webkit-scrollbar-thumb{background:#e3ddd5;border-radius:10px}
+
+.xu-msg{max-width:84%;font-size:.78rem;line-height:1.55;padding:.65rem .85rem;border-radius:14px;animation:xuFadeIn .25s ease}
+@keyframes xuFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.xu-msg.bot{align-self:flex-start;background:#fff;border:1px solid #ece6dd;color:#1c1815;border-bottom-left-radius:4px}
+.xu-msg.user{align-self:flex-end;background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));color:#fff;border-bottom-right-radius:4px}
+.xu-msg a{color:inherit;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+.xu-msg.bot a{color:#e8622a}
+
+/* Indicateur de saisie */
+.xu-typing{align-self:flex-start;background:#fff;border:1px solid #ece6dd;border-radius:14px;border-bottom-left-radius:4px;padding:.7rem .9rem;display:flex;gap:4px}
+.xu-typing span{width:6px;height:6px;border-radius:50%;background:#c9c0b3;animation:xuBounce 1.2s infinite}
+.xu-typing span:nth-child(2){animation-delay:.15s}
+.xu-typing span:nth-child(3){animation-delay:.3s}
+@keyframes xuBounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+
+/* Suggestions rapides (chips) */
+#xu-chat-suggestions{
+  padding:.7rem 1rem;display:flex;flex-wrap:wrap;gap:.4rem;
+  border-top:1px solid #ece6dd;background:#fff;flex-shrink:0;
+}
+.xu-chip{
+  font-size:.68rem;font-weight:600;color:#1c1815;
+  background:#f3eee6;border:1px solid #ece6dd;border-radius:100px;
+  padding:.4rem .75rem;cursor:pointer;white-space:nowrap;
+  transition:background .15s, border-color .15s;
+}
+.xu-chip:hover{background:#fde9da;border-color:#f2c49a}
+
+/* Pied de note — devient le seul point de contact direct */
+#xu-chat-footnote{
+  font-size:.72rem;color:#a39b8c;text-align:center;padding:.85rem 1rem;background:#fff;flex-shrink:0;border-top:1px solid #ece6dd;
+}
+#xu-chat-footnote a{
+  display:inline-flex;align-items:center;gap:.35rem;
+  color:#fff;font-weight:700;font-size:.72rem;
+  background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));
+  padding:.55rem 1.1rem;border-radius:100px;
+  text-decoration:none;transition:transform .15s, box-shadow .15s;
+}
+#xu-chat-footnote a:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(232,98,42,.32)}
+
+@media(max-width:480px){
+  #xu-chat-window{
+    right:16px;left:16px;width:auto;bottom:88px;height:calc(100vh - 170px);
+  }
+  #xu-chat-toggle{right:18px;bottom:18px}
+}
+
+</style>
+<!-- Mesure d'audience Umami : sans cookie, aucune bannière requise.
+     Remplacez VOTRE-ID-UMAMI par l'identifiant du site (Umami > Settings > Websites). -->
+<script>
+(function(){var id='VOTRE-ID-UMAMI';if(id.indexOf('VOTRE')===0)return;
+var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umami.is/script.js';sc.setAttribute('data-website-id',id);document.head.appendChild(sc);})();
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "#joffrey",
+   "name": "Joffrey Gros",
+   "jobTitle": "Formateur Microsoft certifié MOS",
+   "url": "https://xcelurself.github.io/xcelurself/",
+   "sameAs": [
+    "https://www.linkedin.com/in/joffreygros/",
+    "https://youtube.com/@xcelurself",
+    "https://fr.tuto.com/formateur/xcelurself.htm"
+   ]
+  },
+  {
+   "@type": "ItemList",
+   "name": "Formations vidéo XcelUrself",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "item": {
+      "@type": "Course",
+      "name": "Excel — Créer des graphiques modernes et design",
+      "description": "Transformez un tableau de données mensuelles en un graphique double courbe à l'esthétique professionnelle, avec mise en lumière des valeurs clés.",
+      "url": "https://fr.tuto.com/excel/tuto-graphiques-modernes-design,217081.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "25",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/tuto-graphiques-modernes-design,217081.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT1H16M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "item": {
+      "@type": "Course",
+      "name": "Excel — Maîtriser les fonctions date/heure",
+      "description": "Approfondissez le calcul et la manipulation des dates et heures dans Excel pour fiabiliser vos formules.",
+      "url": "https://fr.tuto.com/excel/maitriser-fonction-date-heure-cours,177181.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "10.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/maitriser-fonction-date-heure-cours,177181.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT1H3M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "item": {
+      "@type": "Course",
+      "name": "Excel — Les tableaux croisés dynamiques (T.C.D.)",
+      "description": "Une approche simple et progressive pour gagner en productivité avec l'un des outils les plus puissants d'Excel.",
+      "url": "https://fr.tuto.com/excel/tuto-tableaux-croises-dynmaiques-tcd,177111.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "14.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/tuto-tableaux-croises-dynmaiques-tcd,177111.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT1H24M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "item": {
+      "@type": "Course",
+      "name": "Excel — Les fonctions de recherche dans Excel",
+      "description": "RechercheV, RechercheH, et découverte de RechercheX (Excel 365), avec QCM final pour valider vos acquis.",
+      "url": "https://fr.tuto.com/excel/fonction-recherche-cours,177041.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "15.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/fonction-recherche-cours,177041.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT1H31M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 5,
+     "item": {
+      "@type": "Course",
+      "name": "Les fonctions conditionnelles dans Excel",
+      "description": "Maîtrisez SI, SI imbriqués et les fonctions logiques pour automatiser vos prises de décision dans vos tableaux.",
+      "url": "https://fr.tuto.com/excel/fonctions-conditionnelles-cours,176951.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "24.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/fonctions-conditionnelles-cours,176951.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT2H19M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 6,
+     "item": {
+      "@type": "Course",
+      "name": "Créer son premier graphique dans Excel : insérer, ajuster, combiner",
+      "description": "Insérez, ajustez et combinez vos premiers graphiques pour rendre vos données lisibles en un coup d'œil.",
+      "url": "https://fr.tuto.com/excel/maitriser-les-graphiques-cours,176921.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "2.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/maitriser-les-graphiques-cours,176921.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT32M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 7,
+     "item": {
+      "@type": "Course",
+      "name": "Comment réaliser une facture à l'aide d'Excel ?",
+      "description": "Créez de A à Z un modèle de facture professionnel et fonctionnel, prêt à être réutilisé au quotidien.",
+      "url": "https://fr.tuto.com/excel/comment-realiser-facture-excel-cours,176911.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "2.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/comment-realiser-facture-excel-cours,176911.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT15M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 8,
+     "item": {
+      "@type": "Course",
+      "name": "Comment trier et/ou filtrer des données dans un tableau Excel",
+      "description": "Réorganisez vos données rapidement grâce au tri simple, au tri avancé et aux filtres, avec exercices et corrections.",
+      "url": "https://fr.tuto.com/excel/trier-filtrer-tableau-cours,176901.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "2.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/trier-filtrer-tableau-cours,176901.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT28M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 9,
+     "item": {
+      "@type": "Course",
+      "name": "Comprendre et appliquer la mise en forme conditionnelle dans Excel",
+      "description": "Mettez en évidence vos données automatiquement selon des critères précis : couleurs, icônes, barres de données.",
+      "url": "https://fr.tuto.com/excel/mise-en-forme-conditionnelle-cours,176891.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "2.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/mise-en-forme-conditionnelle-cours,176891.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT35M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 10,
+     "item": {
+      "@type": "Course",
+      "name": "Acquérir les formules de base d'Excel",
+      "description": "Les fondamentaux indispensables pour démarrer sereinement sur Excel : formules essentielles et bonnes pratiques.",
+      "url": "https://fr.tuto.com/excel/formules-de-base-cours,176871.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "9.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/formules-de-base-cours,176871.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT1H4M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 11,
+     "item": {
+      "@type": "Course",
+      "name": "Microsoft Excel — Gagner en productivité (niveau avancé)",
+      "description": "La formation la plus complète du catalogue : raccourcis, astuces et méthodes pour exploiter Excel à son plein potentiel.",
+      "url": "https://fr.tuto.com/excel/gagner-productivite-cours,175591.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "109.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/gagner-productivite-cours,175591.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT12H10M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 12,
+     "item": {
+      "@type": "Course",
+      "name": "Excel — Maîtriser les fondamentaux du logiciel de Microsoft",
+      "description": "Validez les compétences fondamentales d'Excel au quotidien avec une méthode interactive et progressive, pas à pas.",
+      "url": "https://fr.tuto.com/excel/cours-maitriser-fondamentaux-excel,175391.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "44.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/cours-maitriser-fondamentaux-excel,175391.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT4H46M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 13,
+     "item": {
+      "@type": "Course",
+      "name": "Analyser des données avec Microsoft Excel",
+      "description": "Exploitez vos données pour en tirer des analyses pertinentes et exploitables dans votre activité professionnelle.",
+      "url": "https://fr.tuto.com/excel/cours-analyser-donnees,175271.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "14.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/cours-analyser-donnees,175271.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT41M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 14,
+     "item": {
+      "@type": "Course",
+      "name": "Excel — Créer un lien hypertexte avec une fonction",
+      "description": "Naviguez facilement dans vos fichiers Excel grâce à une fonction unique, avec en bonus la création d'un bouton cliquable.",
+      "url": "https://fr.tuto.com/excel/tuto-gratuit-creer-lien-hypertexte-fonction,183391.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "0",
+       "priceCurrency": "EUR",
+       "category": "Free",
+       "url": "https://fr.tuto.com/excel/tuto-gratuit-creer-lien-hypertexte-fonction,183391.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT6M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 15,
+     "item": {
+      "@type": "Course",
+      "name": "Relevé bancaire avec Power Query : nettoyage et ligne Total automatiques",
+      "description": "Nettoyez l'export de votre banque en un clic et ajoutez une ligne Total qui se recalcule seule, quel que soit le nombre de lignes. Vos premières instructions en langage M, sans savoir coder.",
+      "url": "https://fr.tuto.com/excel/power-query-releve-bancaire-nettoyage-ligne-total,221421.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "19",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/power-query-releve-bancaire-nettoyage-ligne-total,221421.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT52M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 16,
+     "item": {
+      "@type": "Course",
+      "name": "Combiner des fichiers (en-têtes différents) avec Power Query",
+      "description": "Standardisez et fusionnez automatiquement plusieurs fichiers Excel aux en-têtes variés grâce à une table de correspondance.",
+      "url": "https://fr.tuto.com/excel/combiner-fichier-entetes-differentes,216561.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "15",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/combiner-fichier-entetes-differentes,216561.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT27M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 17,
+     "item": {
+      "@type": "Course",
+      "name": "Combiner plusieurs fichiers Excel avec Power Query — Méthode pro",
+      "description": "La méthode robuste utilisée en entreprise pour agréger automatiquement des classeurs Excel indépendants, sans retoucher la requête chaque mois.",
+      "url": "https://fr.tuto.com/excel/combiner-plusieurs-fichiers-excel-power-query,216421.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "29",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/combiner-plusieurs-fichiers-excel-power-query,216421.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT20M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 18,
+     "item": {
+      "@type": "Course",
+      "name": "De plusieurs feuilles à une seule table : Power Query expliqué simplement",
+      "description": "Combinez automatiquement plusieurs feuilles Excel en une seule table structurée, même avec des colonnes différentes d'une feuille à l'autre.",
+      "url": "https://fr.tuto.com/excel/power-query-plusieurs-feuilles-1-table,216401.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "10",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/excel/power-query-plusieurs-feuilles-1-table,216401.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT20M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 19,
+     "item": {
+      "@type": "Course",
+      "name": "PowerPoint — Réaliser des présentations de qualité",
+      "description": "Créez et personnalisez votre propre thème, maîtrisez les animations et donnez à vos présentations un rendu professionnel.",
+      "url": "https://fr.tuto.com/powerpoint/realiser-presentation-qualite-cours,179251.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "89.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/powerpoint/realiser-presentation-qualite-cours,179251.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT8H45M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 20,
+     "item": {
+      "@type": "Course",
+      "name": "Microsoft PowerPoint — Créer des templates de diapositives à l'aide du masque",
+      "description": "Acquérez les fondamentaux pour réaliser des modèles de diapositives entièrement éditables et réutilisables.",
+      "url": "https://fr.tuto.com/powerpoint/creer-template-masque-cours,177601.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "11.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/powerpoint/creer-template-masque-cours,177601.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT37M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 21,
+     "item": {
+      "@type": "Course",
+      "name": "Microsoft PowerPoint — Réaliser des présentations professionnelles",
+      "description": "Les fondamentaux pour construire des présentations claires, structurées et au rendu professionnel, étape par étape.",
+      "url": "https://fr.tuto.com/powerpoint/realiser-presentations-professionnelles-cours,177361.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "21.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/powerpoint/realiser-presentations-professionnelles-cours,177361.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT2H5M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 22,
+     "item": {
+      "@type": "Course",
+      "name": "Maîtriser les fondamentaux du logiciel Microsoft Word",
+      "description": "De l'environnement de travail à la mise en page complète, une formation complète pour devenir autonome sur Word.",
+      "url": "https://fr.tuto.com/word/cours-fondamentaux-word,176341.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "69.99",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/word/cours-fondamentaux-word,176341.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT7H36M"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 23,
+     "item": {
+      "@type": "Course",
+      "name": "Réalisez votre premier tableau de bord Power BI pas à pas",
+      "description": "Construisez un tableau de bord professionnel et interactif dans Power BI à partir de plusieurs fichiers Excel.",
+      "url": "https://fr.tuto.com/power-bi/realiser-premier-tableau,216471.html",
+      "inLanguage": "fr",
+      "provider": {
+       "@type": "Person",
+       "name": "Joffrey Gros",
+       "url": "https://xcelurself.github.io/xcelurself/"
+      },
+      "offers": {
+       "@type": "Offer",
+       "price": "39",
+       "priceCurrency": "EUR",
+       "category": "Paid",
+       "url": "https://fr.tuto.com/power-bi/realiser-premier-tableau,216471.html"
+      },
+      "hasCourseInstance": {
+       "@type": "CourseInstance",
+       "courseMode": "online",
+       "courseWorkload": "PT1H7M"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+
+
+<!-- Bulle flottante -->
+<button id="xu-chat-toggle" aria-label="Ouvrir le chat d'aide" aria-expanded="false">
+  <svg class="xu-icon-chat" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  <svg class="xu-icon-close" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  <span id="xu-chat-badge">1</span>
+</button>
+
+<!-- Fenêtre de chat -->
+<div id="xu-chat-window" role="dialog" aria-label="Assistant XcelUrself" aria-hidden="true">
+  <div id="xu-chat-header">
+    <div id="xu-chat-avatar">X</div>
+    <div id="xu-chat-header-text">
+      <strong>Assistant XcelUrself</strong>
+      <span>Répond instantanément</span>
+    </div>
+  </div>
+
+  <div id="xu-chat-messages"></div>
+
+  <div id="xu-chat-suggestions">
+    <button class="xu-chip" data-q="niveau">Quel niveau requis ?</button>
+    <button class="xu-chip" data-q="duree">Combien de temps ?</button>
+    <button class="xu-chip" data-q="garantie">Et si ça ne me convient pas ?</button>
+    <button class="xu-chip" data-q="contenu">Que contient une formation ?</button>
+  </div>
+
+  <p id="xu-chat-footnote">Réponses automatiques · <a href="#" id="xu-footnote-mail">Envoyez-moi un email</a></p>
+</div>
+
+
+
+<div class="drawer" id="drawer" aria-modal="true" role="dialog" aria-label="Navigation">
+  <a href="#competences" onclick="closeD()">Expertise</a>
+  <a href="#formations" onclick="closeD()">Formations</a>
+  <a href="#pedagogie" onclick="closeD()">Pédagogie</a>
+  <a href="#profil" onclick="closeD()">Mon profil</a>
+  <a href="#avis" onclick="closeD()">Témoignages</a>
+  <a href="#entreprises" onclick="closeD()">Entreprises</a>
+  <a href="#faq" onclick="closeD()">FAQ</a>
+      <a data-umami-event="Clic Tuto.com" class="d-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener" onclick="closeD()">Voir les formations</a>
+</div>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="hi">Formateur Microsoft Certifié &amp; Confirmé</span>
+    <span>·</span><span>MOS PowerPoint</span>
+    <span>·</span><span>Excel · Power BI · Power Query · Power Pivot · Word</span>
+    <span>·</span><span class="hi">Débutant lundi. Efficace vendredi. ✦</span>
+    <span>·</span><span>23 formations vidéo · Accès à vie</span>
+    <span>·</span><span>4,7 / 5 sur Tuto.com</span><span>·</span>
+    <span class="hi">Formateur Microsoft Certifié &amp; Confirmé</span>
+    <span>·</span><span>MOS PowerPoint</span>
+    <span>·</span><span>Excel · Power BI · Power Query · Power Pivot · Word</span>
+    <span>·</span><span class="hi">Débutant lundi. Efficace vendredi. ✦</span>
+    <span>·</span><span>23 formations vidéo · Accès à vie</span>
+    <span>·</span><span>4,7 / 5 sur Tuto.com</span><span>·</span>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Xcel<span>Urself</span></div>
+    <ul class="nav-links">
+      <li><a href="#competences">Expertise</a></li>
+      <li><a href="#formations">Formations</a></li>
+      <li><a href="#pedagogie">Pédagogie</a></li>
+      <li><a href="#profil">Mon profil</a></li>
+      <li><a href="#avis">Témoignages</a></li>
+      <li><a href="#entreprises">Entreprises</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a data-umami-event="Clic Tuto.com" class="nav-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Accéder aux formations</a>
+    <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section>
+  <div class="hero">
+    <div class="hero-left">
+      <p class="eyebrow r">Formateur Microsoft · Certifié &amp; Confirmé</p>
+      <div class="slogan-badge r d1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/></svg> Débutant lundi. Efficace vendredi. <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/></svg></div>
+      <h1 class="hero-h1 r d2">
+        <span class="l1">Maîtrisez</span>
+        <span class="l2">Microsoft.</span>
+        <span class="l3">Vraiment.</span>
+      </h1>
+      <p class="hero-desc r d2">
+        Je suis <strong>Joffrey Gros</strong>, formateur Microsoft <strong>certifié et confirmé</strong>,
+        spécialiste Excel, Power BI, Word et PowerPoint.
+        Mes formations vidéo vous rendent <strong>opérationnel immédiatement</strong> — pas dans 6 mois.
+      </p>
+      <div class="hero-btns r d3">
+        <a data-umami-event="Clic Tuto.com" class="btn btn-primary" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Voir les formations <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a class="btn btn-outline" href="#formations">Voir le catalogue complet <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="stats r d4">
+        <div class="stat"><span class="stat-n">23</span><span class="stat-l">Formations publiées</span></div>
+        <div class="stat"><span class="stat-n">4,7★</span><span class="stat-l">Note sur Tuto.com</span></div>
+        <div class="stat"><span class="stat-n">MOS</span><span class="stat-l">PowerPoint certifié</span></div>
+        <div class="stat"><span class="stat-n">399</span><span class="stat-l">Apprenants en ligne</span></div>
+      </div>
+    </div>
+    <div class="hero-right r d2">
+      <div class="photo-wrap">
+        <img src="joffrey-gros.webp" alt="Joffrey Gros, formateur Microsoft certifié" width="600" height="600" fetchpriority="high" decoding="async"/>
+      </div>
+      <div class="price-card">
+        <p class="pc-label" style="font-size:.65rem;color:rgba(255,255,255,.5);letter-spacing:.12em"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Nouveauté</p>
+        <p class="pc-title">Relevé bancaire automatisé avec Power Query</p>
+        <p class="pc-price">19 €</p>
+        <p class="pc-sub">Prix de lancement au lieu de 29 € · 52 min · 10 leçons · accès à vie</p>
+        <a data-umami-event="Clic Tuto.com" class="pc-btn" href="https://fr.tuto.com/excel/power-query-releve-bancaire-nettoyage-ligne-total,221421.html?cc=eugRnv" target="_blank" rel="noopener">Découvrir la nouveauté <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="trust-inner">
+    <span class="trust-label">Ils m'ont fait confiance</span>
+    <div class="trust-track"><span class="trust-logo">Leyton</span> <span style="color:var(--bda);font-size:.8rem">·</span> <span class="trust-logo">Luxembourg Stock Exchange</span> <span style="color:var(--bda);font-size:.8rem">·</span> <span class="trust-logo">Groupe STUDI</span> <span style="color:var(--bda);font-size:.8rem">·</span> <span class="trust-logo">Alpro-Danone</span> <span style="color:var(--bda);font-size:.8rem">·</span> <span class="trust-logo">Deutsche Bank</span> <span style="color:var(--bda);font-size:.8rem">·</span> <span class="trust-logo">La Croix-Rouge</span> <span style="color:var(--bda);font-size:.8rem">·</span> <span class="trust-logo">Leyton</span> <span style="color:var(--bda);font-size:.8rem">·</span> <span class="trust-logo">Luxembourg Stock Exchange</span> <span style="color:var(--bda);font-size:.8rem">·</span> <span class="trust-logo">Groupe STUDI</span> <span style="color:var(--bda);font-size:.8rem">·</span> <span class="trust-logo">Alpro-Danone</span> <span style="color:var(--bda);font-size:.8rem">·</span> <span class="trust-logo">Deutsche Bank</span> <span style="color:var(--bda);font-size:.8rem">·</span> <span class="trust-logo">La Croix-Rouge</span> <span style="color:var(--bda);font-size:.8rem">·</span></div>
+  </div>
+</div>
+</div>
+
+<!-- COMPÉTENCES -->
+<section id="competences" class="skills-sec">
+  <div class="sec-head r">
+    <div>
+      <p class="eyebrow">Expertise Microsoft</p>
+      <h2>Maîtrise complète<br/>de la suite <em>Microsoft.</em></h2>
+    </div>
+    <div>
+      <p>Formateur Microsoft <strong>certifié et confirmé</strong>, je maîtrise chaque outil de la suite Office en profondeur. Certifié <strong>MOS PowerPoint</strong>, j'interviens pour des entreprises, organismes de formation et particuliers avec une approche 100% terrain.</p>
+    </div>
+  </div>
+  <div class="skills">
+    <div class="skill"><div class="sk-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m8 8 8 8M16 8l-8 8"/></svg></div><div class="sk-name">Excel — Tous niveaux</div><div class="sk-desc">Formules avancées, TCD, fonctions dynamiques. Du débutant à l'expert.</div><div class="sk-dots"><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div></div></div>
+    <div class="skill"><div class="sk-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M13 2v7h7"/><path d="m10 13 2 2 4-4"/></svg></div><div class="sk-name">Power Query</div><div class="sk-desc">Automatisation no-code, connexion multi-sources, transformation de données.</div><div class="sk-dots"><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div></div></div>
+    <div class="skill"><div class="sk-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div><div class="sk-name">Power Pivot &amp; DAX</div><div class="sk-desc">Modèles relationnels, formules DAX, analyses multidimensionnelles.</div><div class="sk-dots"><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div></div></div>
+    <div class="skill"><div class="sk-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h4v18H3zM9 8h4v13H9zM15 5h4v16h-4z"/></svg></div><div class="sk-name">Power BI</div><div class="sk-desc">Dashboards interactifs, rapports automatisés. Débutant → professionnel.</div><div class="sk-dots"><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div></div></div>
+    <div class="skill"><div class="sk-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="9" cy="10" r="2.5"/><path d="M12 10h4M12 13h4"/></svg></div><div class="sk-name">PowerPoint — MOS</div><div class="sk-desc">Certifié MOS. Présentations percutantes, animations maîtrisées.</div><div class="sk-dots"><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div></div></div>
+    <div class="skill"><div class="sk-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m8 13 2 4 2-4 2 4 2-4"/></svg></div><div class="sk-name">Word — Tous niveaux</div><div class="sk-desc">Styles, modèles, publipostage, tables des matières automatiques.</div><div class="sk-dots"><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div></div></div>
+    <div class="skill"><div class="sk-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><div class="sk-name">Pédagogie active</div><div class="sk-desc">Intelligences multiples, formation sur mesure, cas pratiques terrain.</div><div class="sk-dots"><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div></div></div>
+    <div class="skill"><div class="sk-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div><div class="sk-name">Certifications</div><div class="sk-desc">Formateur Microsoft confirmé, MOS PowerPoint. Reconnu par l'industrie.</div><div class="sk-dots"><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div></div></div>
+  </div>
+</section>
+
+<!-- PÉDAGOGIE -->
+<section id="pedagogie" class="peda">
+  <div class="peda-inner wrap">
+    <div class="peda-quote r">
+      <blockquote>"Débutant lundi.<br/>Efficace vendredi."</blockquote>
+      <cite>— La philosophie XcelUrself</cite>
+    </div>
+    <div class="peda-right r d1">
+      <p class="eyebrow">Ma ligne de conduite</p>
+      <h2>Une pédagogie<br/>centrée sur <em>l'action.</em></h2>
+      <p>Pas de théorie creuse. Chaque leçon est construite autour d'un <strong>cas pratique réel</strong>, issu du terrain professionnel. Vous apprenez en faisant, vous retenez en pratiquant.</p>
+      <p>Ma conviction : une formation réussie vous rend <strong>autonome</strong>, pas dépendant du formateur. Dès la première session, vous repartez avec des compétences applicables immédiatement.</p>
+      <div class="peda-steps">
+        <div class="peda-step"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Cas pratiques réels</strong> — issus de situations professionnelles concrètes</span></div>
+        <div class="peda-step"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Progression logique</strong> — du débutant au niveau avancé sans friction</span></div>
+        <div class="peda-step"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Applicable dès le lendemain</strong> — zéro temps perdu</span></div>
+        <div class="peda-step"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Accès à vie</strong> — revenez quand vous en avez besoin</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATIONS -->
+<section id="formations" class="formations">
+  <div class="formations-inner">
+    <div class="formations-head r">
+      <p class="eyebrow" style="justify-content:center">Le catalogue complet</p>
+      <h2>23 formations vidéo,<br/><em>un seul objectif :</em> votre autonomie.</h2>
+      <p style="color:var(--muted);font-size:.85rem;margin-top:.8rem">Chaque formation est vendue et hébergée sur Tuto.com — paiement sécurisé, accès immédiat et à vie.</p>
+    </div>
+
+    <div class="paths r">
+      <p class="paths-title">Par où commencer ? Suivez un parcours</p>
+      <div class="paths-grid">
+        <div class="path">
+          <p class="path-tag">Parcours 1 · Débutant</p>
+          <h3>Débuter sur Excel</h3>
+          <p class="path-desc">Des fondamentaux aux fonctions qui font gagner des heures chaque semaine.</p>
+          <ol>
+            <li><a href="https://fr.tuto.com/excel/cours-maitriser-fondamentaux-excel,175391.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Maîtriser les fondamentaux">Maîtriser les fondamentaux</a><span>4 h 46</span></li>
+            <li><a href="https://fr.tuto.com/excel/formules-de-base-cours,176871.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Les formules de base">Les formules de base</a><span>1 h 04</span></li>
+            <li><a href="https://fr.tuto.com/excel/fonctions-conditionnelles-cours,176951.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Les fonctions conditionnelles">Les fonctions conditionnelles</a><span>2 h 19</span></li>
+            <li><a href="https://fr.tuto.com/excel/fonction-recherche-cours,177041.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Les fonctions de recherche">Les fonctions de recherche</a><span>1 h 31</span></li>
+          </ol>
+          <p class="path-total">4 cours · environ 9 h 40</p>
+        </div>
+        <div class="path">
+          <p class="path-tag">Parcours 2 · Intermédiaire</p>
+          <h3>Automatiser avec Power Query</h3>
+          <p class="path-desc">Fini les copier-coller : vos fichiers se nettoient et se combinent en un clic.</p>
+          <ol>
+            <li><a href="https://fr.tuto.com/excel/power-query-plusieurs-feuilles-1-table,216401.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Plusieurs feuilles, une seule table">Plusieurs feuilles, une seule table</a><span>20 min</span></li>
+            <li><a href="https://fr.tuto.com/excel/combiner-plusieurs-fichiers-excel-power-query,216421.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Combiner plusieurs fichiers">Combiner plusieurs fichiers</a><span>20 min</span></li>
+            <li><a href="https://fr.tuto.com/excel/combiner-fichier-entetes-differentes,216561.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Combiner des en-têtes différents">Combiner des en-têtes différents</a><span>27 min</span></li>
+            <li><a href="https://fr.tuto.com/excel/power-query-releve-bancaire-nettoyage-ligne-total,221421.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Relevé bancaire et ligne Total">Relevé bancaire et ligne Total</a><span>52 min</span></li>
+          </ol>
+          <p class="path-total">4 cours · environ 2 h</p>
+        </div>
+        <div class="path">
+          <p class="path-tag">Parcours 3 · Intermédiaire</p>
+          <h3>Analyser et piloter avec Power BI</h3>
+          <p class="path-desc">De l'analyse dans Excel à votre premier tableau de bord interactif.</p>
+          <ol>
+            <li><a href="https://fr.tuto.com/excel/cours-analyser-donnees,175271.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Analyser des données">Analyser des données</a><span>41 min</span></li>
+            <li><a href="https://fr.tuto.com/excel/tuto-tableaux-croises-dynmaiques-tcd,177111.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Les tableaux croisés dynamiques">Les tableaux croisés dynamiques</a><span>1 h 24</span></li>
+            <li><a href="https://fr.tuto.com/power-bi/realiser-premier-tableau,216471.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Premier tableau de bord Power BI">Premier tableau de bord Power BI</a><span>1 h 07</span></li>
+          </ol>
+          <p class="path-total">3 cours · environ 3 h 10</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="free-strip r">
+      <div>
+        <p class="free-k">Gratuit · 6 min</p>
+        <p class="free-t">Testez ma pédagogie gratuitement avant d'acheter</p>
+        <p class="free-d">Créer un lien hypertexte avec une fonction Excel, avec un bouton cliquable en bonus.</p>
+      </div>
+      <a class="btn btn-primary" href="https://fr.tuto.com/excel/tuto-gratuit-creer-lien-hypertexte-fonction,183391.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic tuto gratuit">Regarder le tuto gratuit</a>
+    </div>
+
+    <div class="ffilters r" role="group" aria-label="Filtrer les formations par logiciel">
+      <button type="button" class="ffilter active" data-f="all" aria-pressed="true">Toutes (23)</button>
+      <button type="button" class="ffilter" data-f="excel" aria-pressed="false">Excel (14)</button>
+      <button type="button" class="ffilter" data-f="pq" aria-pressed="false">Power Query (4)</button>
+      <button type="button" class="ffilter" data-f="ppt" aria-pressed="false">PowerPoint (3)</button>
+      <button type="button" class="ffilter" data-f="pbi" aria-pressed="false">Power BI (1)</button>
+      <button type="button" class="ffilter" data-f="word" aria-pressed="false">Word (1)</button>
+    </div>
+
+    <div class="fgrid">
+
+      <!-- EXCEL -->
+      <div class="fcat r" data-cat="excel"><h4>Excel</h4><span class="fcat-line"></span><span class="fcat-count">14 formations</span></div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Excel — Créer des graphiques modernes et design</h3>
+        <p class="fcard-meta"><span>1 h 16</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Transformez un tableau de données mensuelles en un graphique double courbe à l'esthétique professionnelle, avec mise en lumière des valeurs clés.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>25 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Excel — Créer des graphiques modernes et design" href="https://fr.tuto.com/excel/tuto-graphiques-modernes-design,217081.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft avc">Avancé</span></div>
+        <h3>Excel — Maîtriser les fonctions date/heure</h3>
+        <p class="fcard-meta"><span>1 h 03</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Approfondissez le calcul et la manipulation des dates et heures dans Excel pour fiabiliser vos formules.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>10,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Excel — Maîtriser les fonctions date/heure" href="https://fr.tuto.com/excel/maitriser-fonction-date-heure-cours,177181.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft avc">Avancé</span></div>
+        <h3>Excel — Les tableaux croisés dynamiques (T.C.D.)</h3>
+        <p class="fcard-meta"><span>1 h 24</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Une approche simple et progressive pour gagner en productivité avec l'un des outils les plus puissants d'Excel.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>14,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Excel — Les tableaux croisés dynamiques (T.C.D.)" href="https://fr.tuto.com/excel/tuto-tableaux-croises-dynmaiques-tcd,177111.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft avc">Avancé</span><span class="fcard-best">Best-seller</span></div>
+        <h3>Excel — Les fonctions de recherche dans Excel</h3>
+        <p class="fcard-meta"><span>1 h 31</span><span class="fcard-rate">★ 4,5/5</span></p>
+        <p class="fcard-desc">RechercheV, RechercheH, et découverte de RechercheX (Excel 365), avec QCM final pour valider vos acquis.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>15,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Excel — Les fonctions de recherche dans Excel" href="https://fr.tuto.com/excel/fonction-recherche-cours,177041.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span><span class="fcard-best">Best-seller</span></div>
+        <h3>Les fonctions conditionnelles dans Excel</h3>
+        <p class="fcard-meta"><span>2 h 19</span><span class="fcard-rate">★ 4/5</span></p>
+        <p class="fcard-desc">Maîtrisez SI, SI imbriqués et les fonctions logiques pour automatiser vos prises de décision dans vos tableaux.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>24,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Les fonctions conditionnelles dans Excel" href="https://fr.tuto.com/excel/fonctions-conditionnelles-cours,176951.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Créer son premier graphique dans Excel : insérer, ajuster, combiner</h3>
+        <p class="fcard-meta"><span>32 min</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Insérez, ajustez et combinez vos premiers graphiques pour rendre vos données lisibles en un coup d'œil.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>2,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Créer son premier graphique dans Excel : insérer, ajuster, combiner" href="https://fr.tuto.com/excel/maitriser-les-graphiques-cours,176921.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Comment réaliser une facture à l'aide d'Excel ?</h3>
+        <p class="fcard-meta"><span>15 min</span><span class="fcard-rate">★ 4,5/5</span></p>
+        <p class="fcard-desc">Créez de A à Z un modèle de facture professionnel et fonctionnel, prêt à être réutilisé au quotidien.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>2,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Comment réaliser une facture à l'aide d'Excel ?" href="https://fr.tuto.com/excel/comment-realiser-facture-excel-cours,176911.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Comment trier et/ou filtrer des données dans un tableau Excel</h3>
+        <p class="fcard-meta"><span>28 min</span><span class="fcard-rate">★ 4/5</span></p>
+        <p class="fcard-desc">Réorganisez vos données rapidement grâce au tri simple, au tri avancé et aux filtres, avec exercices et corrections.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>2,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Comment trier et/ou filtrer des données dans un tableau Excel" href="https://fr.tuto.com/excel/trier-filtrer-tableau-cours,176901.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Comprendre et appliquer la mise en forme conditionnelle dans Excel</h3>
+        <p class="fcard-meta"><span>35 min</span></p>
+        <p class="fcard-desc">Mettez en évidence vos données automatiquement selon des critères précis : couleurs, icônes, barres de données.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>2,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Comprendre et appliquer la mise en forme conditionnelle dans Excel" href="https://fr.tuto.com/excel/mise-en-forme-conditionnelle-cours,176891.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span><span class="fcard-best">Best-seller</span></div>
+        <h3>Acquérir les formules de base d'Excel</h3>
+        <p class="fcard-meta"><span>1 h 04</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Les fondamentaux indispensables pour démarrer sereinement sur Excel : formules essentielles et bonnes pratiques.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>9,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Acquérir les formules de base d'Excel" href="https://fr.tuto.com/excel/formules-de-base-cours,176871.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft avc">Avancé</span></div>
+        <h3>Microsoft Excel — Gagner en productivité (niveau avancé)</h3>
+        <p class="fcard-meta"><span>12 h 10</span></p>
+        <p class="fcard-desc">La formation la plus complète du catalogue : raccourcis, astuces et méthodes pour exploiter Excel à son plein potentiel.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>109,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Microsoft Excel — Gagner en productivité (niveau avancé)" href="https://fr.tuto.com/excel/gagner-productivite-cours,175591.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Excel — Maîtriser les fondamentaux du logiciel de Microsoft</h3>
+        <p class="fcard-meta"><span>4 h 46</span></p>
+        <p class="fcard-desc">Validez les compétences fondamentales d'Excel au quotidien avec une méthode interactive et progressive, pas à pas.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>44,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Excel — Maîtriser les fondamentaux du logiciel de Microsoft" href="https://fr.tuto.com/excel/cours-maitriser-fondamentaux-excel,175391.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Analyser des données avec Microsoft Excel</h3>
+        <p class="fcard-meta"><span>41 min</span></p>
+        <p class="fcard-desc">Exploitez vos données pour en tirer des analyses pertinentes et exploitables dans votre activité professionnelle.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>14,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Analyser des données avec Microsoft Excel" href="https://fr.tuto.com/excel/cours-analyser-donnees,175271.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-free">Gratuit</span></div>
+        <h3>Excel — Créer un lien hypertexte avec une fonction</h3>
+        <p class="fcard-meta"><span>6 min</span><span class="fcard-rate">★ 4,9/5</span></p>
+        <p class="fcard-desc">Naviguez facilement dans vos fichiers Excel grâce à une fonction unique, avec en bonus la création d'un bouton cliquable.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>Gratuit</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Excel — Créer un lien hypertexte avec une fonction" href="https://fr.tuto.com/excel/tuto-gratuit-creer-lien-hypertexte-fonction,183391.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <!-- POWER QUERY -->
+      <div class="fcat r" data-cat="pq"><h4>Power Query</h4><span class="fcat-line"></span><span class="fcat-count">4 formations</span></div>
+
+      <div class="fcard fcard-new r" data-cat="pq">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span><span class="fcard-badge">Nouveau</span></div>
+        <h3>Relevé bancaire avec Power Query : nettoyage et ligne Total automatiques</h3>
+        <p class="fcard-meta"><span>52 min</span></p>
+        <p class="fcard-desc">Nettoyez l'export de votre banque en un clic et ajoutez une ligne Total qui se recalcule seule, quel que soit le nombre de lignes. Vos premières instructions en langage M, sans savoir coder.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><em>Prix de lancement</em><strong>19 €</strong><span>29 €</span></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Relevé bancaire avec Power Query : nettoyage et ligne Total automatiques" href="https://fr.tuto.com/excel/power-query-releve-bancaire-nettoyage-ligne-total,221421.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="pq">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Combiner des fichiers (en-têtes différents) avec Power Query</h3>
+        <p class="fcard-meta"><span>27 min</span><span class="fcard-rate">★ 4/5</span></p>
+        <p class="fcard-desc">Standardisez et fusionnez automatiquement plusieurs fichiers Excel aux en-têtes variés grâce à une table de correspondance.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>15 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Combiner des fichiers (en-têtes différents) avec Power Query" href="https://fr.tuto.com/excel/combiner-fichier-entetes-differentes,216561.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="pq">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Combiner plusieurs fichiers Excel avec Power Query — Méthode pro</h3>
+        <p class="fcard-meta"><span>20 min</span></p>
+        <p class="fcard-desc">La méthode robuste utilisée en entreprise pour agréger automatiquement des classeurs Excel indépendants, sans retoucher la requête chaque mois.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>29 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Combiner plusieurs fichiers Excel avec Power Query — Méthode pro" href="https://fr.tuto.com/excel/combiner-plusieurs-fichiers-excel-power-query,216421.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="pq">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>De plusieurs feuilles à une seule table : Power Query expliqué simplement</h3>
+        <p class="fcard-meta"><span>20 min</span></p>
+        <p class="fcard-desc">Combinez automatiquement plusieurs feuilles Excel en une seule table structurée, même avec des colonnes différentes d'une feuille à l'autre.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>10 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="De plusieurs feuilles à une seule table : Power Query expliqué simplement" href="https://fr.tuto.com/excel/power-query-plusieurs-feuilles-1-table,216401.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <!-- POWERPOINT -->
+      <div class="fcat r" data-cat="ppt"><h4>PowerPoint</h4><span class="fcat-line"></span><span class="fcat-count">3 formations</span></div>
+
+      <div class="fcard r" data-cat="ppt">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>PowerPoint — Réaliser des présentations de qualité</h3>
+        <p class="fcard-meta"><span>8 h 45</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Créez et personnalisez votre propre thème, maîtrisez les animations et donnez à vos présentations un rendu professionnel.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>89,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="PowerPoint — Réaliser des présentations de qualité" href="https://fr.tuto.com/powerpoint/realiser-presentation-qualite-cours,179251.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="ppt">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Microsoft PowerPoint — Créer des templates de diapositives à l'aide du masque</h3>
+        <p class="fcard-meta"><span>37 min</span></p>
+        <p class="fcard-desc">Acquérez les fondamentaux pour réaliser des modèles de diapositives entièrement éditables et réutilisables.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>11,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Microsoft PowerPoint — Créer des templates de diapositives à l'aide du masque" href="https://fr.tuto.com/powerpoint/creer-template-masque-cours,177601.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="ppt">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Microsoft PowerPoint — Réaliser des présentations professionnelles</h3>
+        <p class="fcard-meta"><span>2 h 05</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Les fondamentaux pour construire des présentations claires, structurées et au rendu professionnel, étape par étape.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>21,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Microsoft PowerPoint — Réaliser des présentations professionnelles" href="https://fr.tuto.com/powerpoint/realiser-presentations-professionnelles-cours,177361.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <!-- WORD -->
+      <div class="fcat r" data-cat="word"><h4>Word</h4><span class="fcat-line"></span><span class="fcat-count">1 formation</span></div>
+
+      <div class="fcard r" data-cat="word">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Maîtriser les fondamentaux du logiciel Microsoft Word</h3>
+        <p class="fcard-meta"><span>7 h 36</span></p>
+        <p class="fcard-desc">De l'environnement de travail à la mise en page complète, une formation complète pour devenir autonome sur Word.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>69,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Maîtriser les fondamentaux du logiciel Microsoft Word" href="https://fr.tuto.com/word/cours-fondamentaux-word,176341.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <!-- POWER BI -->
+      <div class="fcat r" data-cat="pbi"><h4>Power BI</h4><span class="fcat-line"></span><span class="fcat-count">1 formation</span></div>
+
+      <div class="fcard r" data-cat="pbi">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Réalisez votre premier tableau de bord Power BI pas à pas</h3>
+        <p class="fcard-meta"><span>1 h 07</span></p>
+        <p class="fcard-desc">Construisez un tableau de bord professionnel et interactif dans Power BI à partir de plusieurs fichiers Excel.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>39 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Réalisez votre premier tableau de bord Power BI pas à pas" href="https://fr.tuto.com/power-bi/realiser-premier-tableau,216471.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="formations-more r">
+      <a data-umami-event="Clic Tuto.com" class="btn btn-primary" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Voir le catalogue complet sur Tuto.com <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- FICHE MÉMO (aimant à prospects) — Formulaire Tally : https://tally.so/r/NpkDJW -->
+<section id="fiche-memo" class="lead" data-tally="NpkDJW">
+  <div class="lead-inner r">
+    <div class="lead-visual" aria-hidden="true">
+      <div class="lead-page lp3"></div><div class="lead-page lp2"></div>
+      <div class="lead-page lp1"><span class="lp-k">Fiche mémo</span><span class="lp-t">Relevé bancaire automatisé avec Power Query</span><span class="lp-l"></span><span class="lp-l s"></span><span class="lp-l"></span><span class="lp-code">List.Sum(#"Table départ"[Débit])</span><span class="lp-l s"></span></div>
+    </div>
+    <div class="lead-text">
+      <p class="eyebrow">Ressource gratuite</p>
+      <h2>Recevez la fiche mémo <em>Power Query</em> en PDF.</h2>
+      <p>7 pages illustrées pour nettoyer un relevé bancaire et ajouter une ligne Total automatique : les étapes, les schémas et la requête M complète, commentée.</p>
+      <ul class="lead-list">
+        <li>Les pièges à éviter (types, casse, nom de feuille)</li>
+        <li>Le code M complet, prêt à adapter à votre banque</li>
+        <li>Mes nouveaux tutos et promos, une à deux fois par mois</li>
+      </ul>
+      <a class="btn btn-primary" id="lead-btn" href="#fiche-memo" target="_blank" rel="noopener" data-umami-event="Clic fiche mémo">Recevoir la fiche gratuitement <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <p class="lead-note">Désinscription en un clic. Votre e-mail n'est jamais revendu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="profil" class="about">
+  <div class="about-inner">
+    <div class="about-text r d1">
+      <p class="eyebrow">Qui suis-je</p>
+      <h2>Formateur Microsoft<br/><em>certifié.</em> Par passion.</h2>
+      <p>CEO de <strong>XcelUrself</strong>, je consacre mon activité à la formation Microsoft depuis 2022. J'interviens pour de nombreux <strong>organismes</strong>, en présentiel, en distanciel et en E-learning.</p>
+      <p>Certifié <strong>MOS PowerPoint</strong> et reconnu en tant que <strong>formateur Microsoft confirmé</strong>, je maîtrise Excel, Power BI, Power Query, Power Pivot, Word et PowerPoint à un niveau d'expertise entièrement au service de mes apprenants.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section id="avis" class="testi">
+  <div class="testi-inner">
+    <div class="testi-head r">
+      <div>
+        <p class="eyebrow">Ce qu'ils disent</p>
+        <h2>Avis <em>clients.</em></h2>
+      </div>
+      <div class="testi-avg">
+        <div class="avg-n">4,9</div>
+        <div class="avg-stars">★★★★★</div>
+        <div class="avg-sub">+2 000 professionnels formés</div>
+      </div>
+    </div>
+    <div class="testi-tabs r">
+      <button class="tab-btn active" onclick="switchTab('pro',this)">Formations professionnelles</button>
+      <button class="tab-btn" onclick="switchTab('online',this)">Formations vidéo en ligne</button>
+    </div>
+
+    <!-- TAB PRO -->
+    <div class="tab-content active" id="tab-pro">
+      <div class="tgrid">
+        <div class="tc feat r">
+          <div class="tc-stars">★★★★★</div>
+          <p class="tc-text">"Je suis très satisfaite de la formation Excel. Le format permet de monter rapidement en compétences et de mettre en pratique au quotidien. Joffrey est un excellent formateur, très pédagogue. Je recommande à 100%."</p>
+          <p class="tc-author">Delphine Salaun</p>
+          <p class="tc-role">Contrôleuse de gestion · Atout Groupe</p>
+        </div>
+        <div class="tc r d1">
+          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <p class="tc-text">"Explications très claires, très pédagogue, s'adapte très bien au niveau du formé. Extrêmement disponible et flexible. Je le recommande vivement !"</p>
+          <p class="tc-author">Cécile Naudot</p>
+          <p class="tc-role">Responsable RH · Valobat</p>
+        </div>
+        <div class="tc r d2">
+          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <p class="tc-text">"Formation sur mesure, quoi de mieux pour progresser à son rythme ? La méthode de Joffrey est parfaite. Je ne choisirai que Solpedinn pour mes prochaines formations."</p>
+          <p class="tc-author">Nathalie Rance</p>
+          <p class="tc-role">Contrôleuse de gestion · La Poste Groupe</p>
+          <p class="tc-note">Formation suivie via <a href="https://www.solpedinn.com/" target="_blank" rel="noopener">Solpedinn</a>, organisme partenaire certifié Qualiopi, spécialisé Excel et Power BI.</p>
+        </div>
+        <div class="tc r">
+          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <p class="tc-text">"Super parcours de formation, technique et flexible, piloté de main de maître. J'ai apprécié la possibilité d'aborder les cas concrets de mon travail et de trouver les solutions en direct."</p>
+          <p class="tc-author">Rémy Houttemane</p>
+          <p class="tc-role">Responsable Contrôle de Gestion · Damartex Healthcare</p>
+        </div>
+        <div class="tc r d1">
+          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <p class="tc-text">"Très à l'écoute, formation adaptée et personnalisée à mes besoins et mon secteur d'activité. Ce que j'ai appris me sert déjà au quotidien. Au plaisir de retravailler ensemble."</p>
+          <p class="tc-author">Yolène Legris</p>
+          <p class="tc-role">Responsable Administrative &amp; Financière · Voco Paris</p>
+        </div>
+        <div class="tc r d2">
+          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <p class="tc-text">"Ça fait déjà 2 fois que je travaille avec Joffrey. Sa compétence, ses exercices adaptés à mes demandes, sa bonne humeur et surtout sa patience et sa pédagogie parfaite. Je reprendrai des cours."</p>
+          <p class="tc-author">Nathalie Rance</p>
+          <p class="tc-role">La Poste Groupe</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB ONLINE -->
+    <div class="tab-content" id="tab-online">
+      <div class="tgrid">
+        <div class="tc feat r">
+          <div class="tc-stars">★★★★★</div>
+          <p class="tc-text">"Formidable, instructif, pédagogique, simple à comprendre et pratiquer, clair. Je pourrais décrire encore des qualités à cette formation et au formateur. Je conseille fortement ce tutoriel complet sans hésiter. Le mot de la fin : Qualité. Bravo."</p>
+          <p class="tc-author">Allal Elmourabit</p>
+          <p class="tc-role">Apprenant · Formation vidéo en ligne</p>
+        </div>
+        <div class="tc r d1">
+          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <p class="tc-text">"Beaucoup de réponses à mes questions. Va falloir que je m'habitue. Merci encore. Excellent tutoriel."</p>
+          <p class="tc-author">Patrick Daniel</p>
+          <p class="tc-role">Apprenant · Formation vidéo en ligne</p>
+        </div>
+        <div class="tc r d2">
+          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <p class="tc-text">"Tuto clair, net et précis. Super bien fait."</p>
+          <p class="tc-author">Nathalie Le Grand</p>
+          <p class="tc-role">Apprenante · Formation vidéo en ligne</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMER VOTRE ÉQUIPE -->
+<section id="entreprises" class="team">
+  <div class="team-inner">
+    <div class="team-head r">
+      <p class="eyebrow">Entreprises &amp; organismes de formation</p>
+      <h2>Former votre <em>équipe.</em></h2>
+      <p>Des sessions construites à partir de <strong>vos propres fichiers</strong> et de vos cas métier, pour que vos équipes appliquent dès le lendemain ce qu'elles ont appris.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card r"><p class="team-n">01</p><h3>Sur mesure</h3><p>Un programme calé sur le niveau réel de chacun et sur vos objectifs : reporting, contrôle de gestion, RH, automatisation.</p></div>
+      <div class="team-card r d1"><p class="team-n">02</p><h3>Présentiel ou distanciel</h3><p>En individuel ou en groupe, dans vos locaux ou à distance, en intra-entreprise.</p></div>
+      <div class="team-card r d2"><p class="team-n">03</p><h3>Financement possible</h3><p>J'interviens aussi via des organismes de formation partenaires certifiés Qualiopi : selon l'organisme et votre situation, la formation peut être prise en charge par votre OPCO ou le CPF.</p></div>
+    </div>
+    <div class="team-cta r">
+      <a class="btn btn-primary" href="mailto:mr.grosj@gmail.com?subject=Formation%20pour%20mon%20%C3%A9quipe&body=Bonjour%20Joffrey%2C%0A%0AEntreprise%20%3A%20%0ANombre%20de%20personnes%20%3A%20%0ALogiciel(s)%20%3A%20%0ANiveau%20actuel%20%3A%20%0AObjectif%20%3A%20%0APr%C3%A9sentiel%20ou%20distanciel%20%3A%20%0AP%C3%A9riode%20souhait%C3%A9e%20%3A%20%0A%0AMerci%20!" data-umami-event="Demande formation équipe">Demander un programme <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/joffreygros/" target="_blank" rel="noopener" data-umami-event="Clic LinkedIn (entreprises)">Échanger sur LinkedIn</a>
+      <p class="team-note">Réponse sous 48 h ouvrées · Devis gratuit</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-inner">
+    <p class="eyebrow r" style="justify-content:center;color:rgba(255,200,160,.7)">Commencez maintenant</p>
+    <h2 class="r d1">Votre prochain niveau<br/>commence <em>ici.</em></h2>
+    <p class="r d2">Accès immédiat · Vidéos HD · Fichiers exercices inclus · Accès à vie</p>
+    <div class="cta-btns r d3">
+      <a class="btn btn-white" href="#formations">Voir le catalogue <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a data-umami-event="Clic Tuto.com" class="btn btn-ghost-white" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Voir toutes les formations <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+    <p class="guarantee r d4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Paiement sécurisé · Accès illimité à vie</p>
+  </div>
+</section>
+
+<!-- CANAUX -->
+<div class="channels">
+  <div class="channels-inner">
+    <span class="ch-label">Retrouvez-moi sur</span>
+    <div class="ch-list">
+      <a class="ch-chip" href="https://www.linkedin.com/in/joffreygros/" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn — Joffrey GROS</a>
+      <a class="ch-chip" href="https://youtube.com/@xcelurself" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg> YouTube — @xcelurself</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="faq-inner">
+    <p class="eyebrow r">Questions fréquentes</p>
+    <h2 class="r">Tout ce que vous<br/><em>voulez savoir.</em></h2>
+    <div class="fi"><div class="fiq">Faut-il des bases pour commencer ?<span class="plus">+</span></div><div class="fia">Non. Chaque formation indique son niveau. Les parcours débutants partent de zéro, sans jargon. Chaque outil est abordé de façon progressive et accessible.</div></div>
+    <div class="fi"><div class="fiq">Comment accède-t-on aux formations ?<span class="plus">+</span></div><div class="fia">Tout se passe sur Tuto.com. Après votre achat, vous recevez un accès par email et démarrez immédiatement depuis n'importe quel appareil.</div></div>
+    <div class="fi"><div class="fiq">Les formations sont-elles accessibles à vie ?<span class="plus">+</span></div><div class="fia">Oui. Une fois achetée, votre formation est accessible à vie. Revenez quand vous voulez, même des années plus tard. Mises à jour incluses.</div></div>
+    <div class="fi"><div class="fiq">Y a-t-il des fichiers exercices ?<span class="plus">+</span></div><div class="fia">Oui. Chaque formation inclut les fichiers sources pour pratiquer en parallèle. Apprendre en faisant est au cœur de la méthode XcelUrself.</div></div>
+    
+    <div class="fi"><div class="fiq">Est-il possible d'avoir une formation individuelle personnalisée ?<span class="plus">+</span></div><div class="fia">Oui. Joffrey propose des sessions individuelles sur mesure. Contactez via <a href="https://www.linkedin.com/in/joffreygros/" target="_blank" rel="noopener" style="color:var(--or2);font-weight:700;text-decoration:underline">LinkedIn</a>.</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Xcel<span>Urself</span></div>
+    <div class="footer-links">
+      <a data-umami-event="Clic Tuto.com" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Mes Tutos</a>
+      <a href="https://www.linkedin.com/in/joffreygros/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://youtube.com/@xcelurself" target="_blank" rel="noopener">YouTube</a>
+      <a href="#faq">FAQ</a>
+      <a href="#mentions-legales">Mentions légales</a>
+      <a href="#cgv">CGV</a>
+      <a href="#confidentialite">Confidentialité</a>
+    </div>
+  </div>
+
+  <div id="mentions-legales" style="max-width:900px;margin:2.5rem auto 0;padding:0 1.25rem;font-size:.7rem;line-height:1.8;color:rgba(250,248,245,.45)">
+    <h3 style="color:rgba(250,248,245,.7);font-size:.85rem;margin-bottom:.6rem">Mentions légales</h3>
+    <p><strong>Éditeur du site :</strong> Joffrey GROS, Micro Entreprise, immatriculée sous le n° SIRET 83914848300010, dont le siège social est situé à Soultz Haut-Rhin. Responsable de la publication : Joffrey GROS. Contact : mr.grosj@gmail.com — 06 19 65 69 86.</p>
+     <p><strong>Propriété intellectuelle :</strong> L'ensemble des contenus de ce site (textes, vidéos, visuels, marque "XcelUrself") est protégé par le droit d'auteur. Toute reproduction sans autorisation est interdite.</p>
+  </div>
+
+  <div id="cgv" style="max-width:900px;margin:1.5rem auto 0;padding:0 1.25rem;font-size:.7rem;line-height:1.8;color:rgba(250,248,245,.45)">
+    <h3 style="color:rgba(250,248,245,.7);font-size:.85rem;margin-bottom:.6rem">Conditions Générales de Vente (résumé)</h3>
+    <p>Les formations vendues sur ce site sont proposées via la plateforme tierce Tuto.com, qui assure la transaction, la facturation et l'accès au contenu. Les CGV applicables à l'achat sont celles de Tuto.com, consultables sur leur site. <strong>Droit de rétractation :</strong> conformément à l'article L221-28 13° du Code de la consommation, le droit de rétractation ne peut être exercé pour les contenus numériques fournis sur support immatériel dont l'exécution a commencé après accord préalable exprès du consommateur et renoncement express à son droit de rétractation. <strong>Accès :</strong> l'accès aux formations est consenti à vie, sous réserve du maintien en activité du formateur et de la plateforme hôte.</p>
+  </div>
+
+  <div id="confidentialite" style="max-width:900px;margin:1.5rem auto 0;padding:0 1.25rem;font-size:.7rem;line-height:1.8;color:rgba(250,248,245,.45)">
+    <h3 style="color:rgba(250,248,245,.7);font-size:.85rem;margin-bottom:.6rem">Politique de confidentialité &amp; cookies (RGPD)</h3>
+    <p><strong>Données collectées :</strong> ce site ne dépose aucun cookie. La mesure d'audience est assurée par Umami, un outil sans cookie qui ne collecte aucune donnée personnelle (statistiques agrégées et anonymes). Si vous demandez la fiche mémo, votre adresse e-mail est recueillie via le formulaire Tally et utilisée uniquement pour vous envoyer la fiche et mes actualités (nouveaux tutos, promotions) ; vous pouvez vous désinscrire à tout moment. Les achats sont gérés par Tuto.com, selon sa propre politique de confidentialité. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'opposition et d'effacement de vos données, exerçable auprès de mr.grosj@gmail.com.</p>
+    <p><strong>Médiation de la consommation :</strong> conformément à l'article L. 616-1 du Code de la consommation, en cas de litige non résolu directement, le consommateur peut recourir gratuitement à un médiateur de la consommation. Coordonnées du médiateur compétent disponibles sur demande.</p>
+  </div>
+
+  <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur Microsoft Certifié &amp; Confirmé · Tous droits réservés</p>
+</footer>
+
+<script>
+// Hamburger
+const ham=document.getElementById('ham'),drawer=document.getElementById('drawer');
+function closeD(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+ham.addEventListener('click',()=>{const o=drawer.classList.contains('open');o?closeD():(ham.classList.add('open'),drawer.classList.add('open'),ham.setAttribute('aria-expanded','true'),document.body.style.overflow='hidden');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeD();});
+
+// Filtres du catalogue
+(function(){
+  var btns=document.querySelectorAll('.ffilter');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var f=b.getAttribute('data-f');
+    btns.forEach(function(x){x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',x===b?'true':'false');});
+    document.querySelectorAll('.fgrid [data-cat]').forEach(function(el){el.hidden=!(f==='all'||el.getAttribute('data-cat')===f);});
+    if(window.umami)umami.track('Filtre catalogue',{logiciel:f});
+  });});
+})();
+// Fiche mémo : masquée tant que l'identifiant Tally n'est pas renseigné
+(function(){var sec=document.getElementById('fiche-memo');if(!sec)return;var id=sec.getAttribute('data-tally');if(id.indexOf('VOTRE')===0){sec.style.display='none';return;}document.getElementById('lead-btn').href='https://tally.so/r/'+id;})();
+
+// Tabs
+function switchTab(id, btn){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// FAQ
+document.querySelectorAll('.fiq').forEach(q=>{
+  q.addEventListener('click',()=>{const fi=q.parentElement,open=fi.classList.contains('open');document.querySelectorAll('.fi').forEach(f=>f.classList.remove('open'));if(!open)fi.classList.add('open');});
+});
+
+// ============================================================
+// WIDGET CHAT FAQ — XcelUrself
+// ============================================================
+(function(){
+
+  // ============================================================
+  // BASE DE CONNAISSANCES — à adapter à votre catalogue
+  // Chaque entrée : mots-clés à détecter + réponse (HTML autorisé)
+  // ============================================================
+  var KB = [
+    {
+      id: 'niveau',
+      keywords: ['niveau', 'debutant', 'débutant', 'avance', 'avancé', 'intermediaire', 'intermédiaire', 'prerequis', 'prérequis', 'pour qui'],
+      answer: "Mes formations couvrent <strong>tous les niveaux</strong> : débutant, intermédiaire et avancé. Chaque fiche de cours indique clairement le niveau requis et les prérequis logiciels. La plupart des formations <strong>fondamentaux</strong> ne demandent aucune base — vous pouvez démarrer de zéro."
+    },
+    {
+      id: 'duree',
+      keywords: ['duree', 'durée', 'combien de temps', 'longue', 'longueur', 'heures', 'minutes', 'rythme'],
+      answer: "La durée varie selon la formation : de quelques minutes pour les tutos ciblés à plusieurs heures pour les formations complètes (ex. Excel productivité : plus de 12h de contenu). Vous apprenez <strong>à votre rythme</strong>, sans limite de temps — l'accès est à vie."
+    },
+    {
+      id: 'garantie',
+      keywords: ['garantie', 'remboursement', 'rembourser', 'annuler', 'pas satisfait', 'deçu', 'déçu', 'convient pas', 'risque'],
+      answer: "Les formations sont vendues via <strong>Tuto.com</strong>, qui gère la transaction de façon sécurisée. En cas de question sur un achat, leur support est disponible par email ou téléphone. Je reste aussi disponible en message privé si une formation ne répond pas à vos attentes."
+    },
+    {
+      id: 'contenu',
+      keywords: ['contenu', 'contient', 'inclus', 'comprend', 'qu\'est-ce que', 'quoi dans', 'fichier', 'exercice', 'video', 'vidéo'],
+      answer: "Chaque formation inclut des <strong>vidéos HD</strong> pas-à-pas, des <strong>fichiers d'exercices</strong> téléchargeables, et souvent des cas pratiques issus de situations professionnelles réelles. Certaines proposent aussi un QCM final pour valider vos acquis."
+    },
+    {
+      id: 'prix',
+      keywords: ['prix', 'tarif', 'coute', 'coûte', 'combien ça coute', 'combien ca coute', 'cher', 'promo', 'reduction', 'réduction'],
+      answer: "Les prix varient de <strong>gratuit</strong> à un peu plus de 100 € selon la formation, avec des promotions régulières (jusqu'à -50%). Le catalogue complet avec les prix à jour est juste au-dessus, dans la section <a href=\"#formations\">Formations</a>."
+    },
+    {
+      id: 'logiciel',
+      keywords: ['excel', 'powerpoint', 'word', 'power bi', 'power query', 'logiciel', 'application'],
+      answer: "J'enseigne <strong>Excel</strong> (formules, TCD, Power Query), <strong>PowerPoint</strong>, <strong>Word</strong> et <strong>Power BI</strong>. Toutes les formations sont classées par logiciel dans la section <a href=\"#formations\">Formations</a> du site."
+    },
+    {
+      id: 'acces',
+      keywords: ['acces', 'accès', 'a vie', 'à vie', 'expire', 'expiration', 'combien de temps acces', 'recevoir'],
+      answer: "L'accès est <strong>à vie</strong> dès l'achat — pas d'abonnement, pas d'expiration. Vous recevez vos identifiants par email immédiatement après le paiement et pouvez démarrer depuis n'importe quel appareil."
+    },
+    {
+      id: 'certif',
+      keywords: ['certificat', 'certification', 'attestation', 'diplome', 'diplôme', 'mos'],
+      answer: "Je suis <strong>formateur certifié MOS PowerPoint</strong>. Les formations elles-mêmes ne délivrent pas de certificat officiel à l'issue, mais certaines incluent un QCM de validation des acquis."
+    },
+    {
+      id: 'contact',
+      keywords: ['contact', 'joindre', 'parler', 'echanger', 'échanger', 'question precise', 'question précise', 'humain'],
+      answer: "Pour un échange direct avec moi, le plus simple est de me contacter sur <a href=\"https://www.linkedin.com/in/joffreygros/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>. Je réponds personnellement à chaque message."
+    }
+  ];
+
+  // ---------- Email de contact (à modifier ici si besoin) ----------
+  var CONTACT_EMAIL = "mr.grosj@gmail.com";
+
+  function buildMailto(userText) {
+    var subject = "Question depuis le site XcelUrself";
+    var body = "Bonjour Joffrey,\n\n" + (userText ? "Voici ma question : " + userText : "J'ai une question sur vos formations.") + "\n\nMerci d'avance.";
+    return "mailto:" + CONTACT_EMAIL
+      + "?subject=" + encodeURIComponent(subject)
+      + "&body=" + encodeURIComponent(body);
+  }
+
+  function buildFallback(userText) {
+    return "Je n'ai pas la réponse exacte à cette question. Vous pouvez "
+      + "<a href=\"" + buildMailto(userText) + "\">m'envoyer un email directement</a>, "
+      + "me contacter sur <a href=\"https://www.linkedin.com/in/joffreygros/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>, "
+      + "ou consulter la <a href=\"#faq\">FAQ complète</a> un peu plus bas sur cette page.";
+  }
+
+  var GREETING = "Bonjour 👋 Je suis l'assistant XcelUrself. Posez-moi une question sur le contenu, le niveau, la durée ou les modalités d'une formation — je réponds tout de suite.";
+
+  function normalize(str) {
+    return str.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // strip accents
+      .replace(/[^\w\s]/g, ' ');
+  }
+
+  function findAnswer(userText) {
+    var norm = normalize(userText);
+    var bestMatch = null;
+    var bestScore = 0;
+    KB.forEach(function(entry) {
+      var score = 0;
+      entry.keywords.forEach(function(kw) {
+        if (norm.indexOf(normalize(kw)) !== -1) score++;
+      });
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = entry;
+      }
+    });
+    return bestMatch ? bestMatch.answer : buildFallback(userText);
+  }
+
+  // ---------- DOM refs ----------
+  var toggle = document.getElementById('xu-chat-toggle');
+  var win = document.getElementById('xu-chat-window');
+  var messages = document.getElementById('xu-chat-messages');
+  var badge = document.getElementById('xu-chat-badge');
+  var chips = document.querySelectorAll('.xu-chip');
+  var isOpen = false;
+  var greeted = false;
+
+  // Synchronise le lien email du pied de page avec CONTACT_EMAIL
+  var footnoteMail = document.getElementById('xu-footnote-mail');
+  if (footnoteMail) footnoteMail.href = buildMailto('');
+
+  function addMessage(text, who) {
+    var div = document.createElement('div');
+    div.className = 'xu-msg ' + who;
+    div.innerHTML = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function showTyping() {
+    var div = document.createElement('div');
+    div.className = 'xu-typing';
+    div.id = 'xu-typing-indicator';
+    div.innerHTML = '<span></span><span></span><span></span>';
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function hideTyping() {
+    var el = document.getElementById('xu-typing-indicator');
+    if (el) el.remove();
+  }
+
+  function openChat() {
+    isOpen = true;
+    win.classList.add('open');
+    win.setAttribute('aria-hidden', 'false');
+    toggle.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    badge.classList.add('hide');
+    if (!greeted) {
+      greeted = true;
+      setTimeout(function() { addMessage(GREETING, 'bot'); }, 300);
+    }
+  }
+
+  function closeChat() {
+    isOpen = false;
+    win.classList.remove('open');
+    win.setAttribute('aria-hidden', 'true');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', function() {
+    isOpen ? closeChat() : openChat();
+  });
+
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      var key = chip.getAttribute('data-q');
+      var entry = KB.filter(function(k) { return k.id === key; })[0];
+      if (entry) {
+        addMessage(chip.textContent, 'user');
+        showTyping();
+        setTimeout(function() {
+          hideTyping();
+          addMessage(entry.answer, 'bot');
+        }, 450);
+      }
+    });
+  });
+
+  // Fermer en cliquant en dehors (desktop uniquement)
+  document.addEventListener('click', function(e) {
+    if (isOpen && window.innerWidth > 480 &&
+        !win.contains(e.target) && !toggle.contains(e.target)) {
+      closeChat();
+    }
+  });
+
+  // Auto-ouverture discrète après 18s si jamais ouvert (engagement passif)
+  setTimeout(function() {
+    if (!greeted) {
+      badge.textContent = '1';
+      badge.classList.remove('hide');
+    }
+  }, 18000);
+
+})();
+// ============================================================
+
+// Scroll reveal
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');});},{threshold:.1});
+document.querySelectorAll('.r').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
