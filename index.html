@@ -1329,7 +1329,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
       "provider": {"@id": "https://xcelurself.github.io/xcelurself/#joffrey-gros"},
       "offers": {
        "@type": "Offer",
-       "price": "15",
+       "price": "29.90",
        "priceCurrency": "EUR",
        "category": "Paid",
        "url": "https://fr.tuto.com/excel/power-query-chemin-acces-dynamique,221601.html"
@@ -1704,8 +1704,8 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
       <div class="price-card">
         <p class="pc-label" style="font-size:.65rem;color:rgba(255,255,255,.5);letter-spacing:.12em"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Nouveauté</p>
         <p class="pc-title">Chemin d'accès dynamique dans Power Query</p>
-        <p class="pc-price">15 €</p>
-        <p class="pc-sub">Vente flash −50 % (au lieu de 29,90 €) · 1 h 16 · accès à vie</p>
+        <p class="pc-price">29,90 €</p>
+        <p class="pc-sub">1 h 16 · accès à vie</p>
         <a data-umami-event="Clic Tuto.com" class="pc-btn" href="https://fr.tuto.com/excel/power-query-chemin-acces-dynamique,221601.html?cc=eugRnv" target="_blank" rel="noopener">Découvrir la nouveauté <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
     </div>
@@ -2021,7 +2021,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
         <p class="fcard-meta"><span>1 h 16</span></p>
         <p class="fcard-desc">Votre requête casse dès qu'un fichier change de nom, de dossier ou de mois ? Réglez le chemin dans une cellule Excel, actualisez, c'est fait.</p>
         <div class="fcard-bottom">
-          <div class="fcard-price"><strong>15 €</strong><span>29,90 €</span><em>Vente flash −50 %</em></div>
+          <div class="fcard-price"><strong>29,90 €</strong></div>
           <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Chemin d'accès dynamique dans Power Query : changez de fichiers sans rouvrir l'éditeur" href="https://fr.tuto.com/excel/power-query-chemin-acces-dynamique,221601.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
         </div>
       </div>
@@ -2636,6 +2636,8 @@ document.querySelectorAll('.fiq').forEach(q=>{
 // Scroll reveal
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');});},{threshold:.1});
 document.querySelectorAll('.r').forEach(el=>io.observe(el));
+// Filet de sécurité : tout s'affiche après 2,5 s, même si l'observateur échoue
+setTimeout(()=>document.querySelectorAll('.r:not(.v)').forEach(el=>el.classList.add('v')),2500);
 </script>
 </body>
 </html>
