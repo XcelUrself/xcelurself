@@ -928,6 +928,9 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .fall-in{margin-top:2rem}
 .formations-head h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.05;margin-bottom:1rem}
 .formations-head h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.tc-text.clamp{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.tc-more{background:none;border:0;font:inherit;font-size:.78rem;font-weight:700;color:var(--or2);cursor:pointer;padding:0;margin:-.3rem 0 .8rem;text-align:left;text-decoration:underline;text-underline-offset:3px}
+.tc.feat .tc-more{color:#fff}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise.
      Site Umami : XcelUrself (xcelurself.github.io). -->
@@ -2323,6 +2326,13 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
           <p class="tc-role">Bras droit des dirigeants · Formation Power Query</p>
         </div>
         <div class="tc r d2">
+          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <p class="tc-text">"Ça faisait un moment que je voulais m'initier à Power Query. Mais dans les bonnes conditions. J'ai choisi Joffrey, et grâce à Solpedinn, dont les formations sont éligibles CPF, j'ai pu financer une première session avec mon Jedi préféré. Patience, précision, maîtrise du sujet et des applications professionnelles, explications connectées à la réalité pratique du terrain, écoute : le top pour une immersion efficiente. Je ronronnais sur mes acquis Excel depuis quelques temps, ça a boosté ma confiance en moi et ma motivation à aller encore plus loin."</p>
+          <p class="tc-author">Cathy Lagneau</p>
+          <p class="tc-role">La fée de la logique qui optimise ton back office</p>
+          <p class="tc-note">Formation suivie via <a href="https://www.solpedinn.com/" target="_blank" rel="noopener">Solpedinn</a>, organisme partenaire certifié Qualiopi, spécialisé Excel et Power BI.</p>
+        </div>
+        <div class="tc r d2">
           <div class="tc-stars">★★★★★</div>
           <p class="tc-text">"Je suis très satisfaite de la formation Excel. Le format permet de monter rapidement en compétences et de mettre en pratique au quotidien. Joffrey est un excellent formateur, très pédagogue. Je recommande à 100%."</p>
           <p class="tc-author">Delphine Salaun</p>
@@ -2733,6 +2743,15 @@ const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersect
 document.querySelectorAll('.r').forEach(el=>io.observe(el));
 // Filet de sécurité : tout s'affiche après 2,5 s, même si l'observateur échoue
 setTimeout(()=>document.querySelectorAll('.r:not(.v)').forEach(el=>el.classList.add('v')),2500);
+</script>
+<script>
+document.querySelectorAll('.tc-text').forEach(function(p){
+  if(p.textContent.length<260)return;
+  p.classList.add('clamp');
+  var b=document.createElement('button');b.type='button';b.className='tc-more';b.textContent='Lire la suite';b.setAttribute('aria-expanded','false');
+  b.addEventListener('click',function(){var o=p.classList.toggle('clamp');b.textContent=o?'Lire la suite':'Réduire';b.setAttribute('aria-expanded',o?'false':'true');});
+  p.insertAdjacentElement('afterend',b);
+});
 </script>
 </body>
 </html>
