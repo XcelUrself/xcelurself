@@ -876,57 +876,41 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .pc-new-p{font-weight:800;color:#f5a07a;flex-shrink:0}
 .pc-new:hover .pc-new-t{color:#fff;text-decoration:underline}
 
-/* BOUTIQUE ETSY */
-.shop{padding:6rem clamp(1.25rem,5vw,4rem);background:var(--bg)}
-.shop-head{max-width:46rem;margin-bottom:2rem}
-.shop-head h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.08;margin-bottom:1rem}
-.shop-head h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.shop-head p{color:var(--ink2)}
-.shop-nav{display:flex;flex-wrap:wrap;gap:.6rem;margin:0 0 3rem}
-.shop-nav a{font-size:.74rem;font-weight:700;color:var(--ink2);background:var(--white);border:1px solid var(--bd);border-radius:100px;padding:.5rem 1.05rem;transition:.2s}
-.shop-nav a:hover{border-color:var(--or2);color:var(--or2)}
-.shop-band{margin-top:4.5rem;scroll-margin-top:5rem}
-.shop-band:first-of-type{margin-top:0}
-.shop-band h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(1.7rem,3.2vw,2.3rem);line-height:1.15;margin-bottom:.4rem}
-.shop-band>p.sub{color:var(--ink2);max-width:40rem;margin-bottom:1.8rem}
-.shop-feat{display:grid;grid-template-columns:1.1fr .9fr;gap:0;background:var(--white);border:1px solid var(--bd);border-radius:26px;overflow:hidden;box-shadow:0 18px 44px rgba(28,24,21,.09);margin-bottom:1.6rem}
-.shop-feat img{width:100%;height:100%;object-fit:cover}
-.shop-feat-b{padding:2rem 2.2rem;display:flex;flex-direction:column;gap:.7rem}
-.shop-tag{align-self:flex-start;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--grad);border-radius:100px;padding:.28rem .8rem}
-.shop-feat-b h4,.shop-card h4{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.65rem;line-height:1.15}
-.shop-feat-b ul{display:grid;gap:.3rem;font-size:.85rem;color:var(--ink2)}
-.shop-feat-b li::before,.shop-card li::before{content:'✓';color:var(--or2);font-weight:800;margin-right:.5rem}
-.shop-price{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin-top:.3rem}
-.shop-price b{font-family:'Cormorant Garamond',serif;font-size:2.5rem;line-height:1;color:var(--ink)}
-.shop-price s{color:var(--muted);font-size:1rem}
-.shop-price span{font-size:.72rem;color:var(--muted)}
-.shop-note{font-size:.72rem;color:var(--muted)}
-.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:1.2rem}
-.shop-grid.five{grid-template-columns:repeat(3,1fr)}
-@media(min-width:1100px){.shop-grid.five{grid-template-columns:repeat(5,1fr)}.shop-grid.five .shop-card h4{font-size:1.15rem}}
-@media(max-width:560px){.shop-grid.five{grid-template-columns:1fr}}
-.shop-card{background:var(--white);border:1px solid var(--bd);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
-.shop-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(28,24,21,.12)}
-.shop-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.shop-card-b{padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
-.shop-card h4{font-size:1.3rem}
-.shop-card p{font-size:.8rem;color:var(--ink2);line-height:1.55}
-.shop-card .shop-price b{font-size:1.9rem}
-.shop-card .btn{margin-top:auto;justify-content:center;font-size:.8rem;padding:.7rem 1rem}
-.shop-tile{aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:center;padding:1.4rem;background:linear-gradient(135deg,#2a2420,#4a4238);color:#fff}
-.shop-tile small{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
-.shop-tile b{font-family:'Cormorant Garamond',serif;font-size:1.9rem;line-height:1.1;margin-top:.4rem}
-.shop-tile b em{font-style:italic;color:#f4a27c}
-.shop-two{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.4rem;align-items:center}
-.shop-art{display:block;border-radius:26px;overflow:hidden;box-shadow:0 22px 50px rgba(28,24,21,.16);transform:rotate(-1.4deg);transition:transform .35s}
-.shop-art:hover{transform:rotate(0)}
-.shop-art img{width:100%}
-.shop-offers{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.3rem 0}
-.shop-offers .shop-card-b{padding:1rem 1.1rem}
-.shop-pts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.1rem}
-.shop-pts span{font-size:.72rem;font-weight:700;color:var(--ink2);background:var(--white);border:1px solid var(--bd);border-radius:100px;padding:.45rem .95rem}
-.shop-pts span b{color:var(--or2)}
-@media(max-width:860px){.shop-feat,.shop-two,.shop-offers{grid-template-columns:1fr}.shop-feat-b{padding:1.5rem}.shop-art{transform:none;max-width:420px}}
+/* MES CRÉATIONS (maquette simplifiée) */
+.mc{padding:6rem clamp(1.25rem,5vw,4rem);background:var(--bg)}
+.mc-in{max-width:1160px;margin:0 auto}
+.mc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2.2rem}
+.mc-head h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.05}
+.mc-head h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mc-head p{color:var(--ink2);max-width:22rem;font-size:.9rem}
+.mc-grid{display:grid;grid-template-columns:1.15fr 1fr;grid-template-rows:1fr 1fr;gap:1.2rem}
+.mc-card{position:relative;display:flex;background:var(--white);border:1px solid var(--bd);border-radius:24px;overflow:hidden;color:var(--ink);transition:transform .3s,box-shadow .3s}
+.mc-card:hover{transform:translateY(-4px);box-shadow:0 22px 48px rgba(28,24,21,.13)}
+.mc-card img{object-fit:cover;width:100%;height:100%}
+.mc-big{grid-row:1/3;flex-direction:column}
+.mc-big .mc-img{flex:1;min-height:260px;background:var(--bg2)}
+.mc-small .mc-img{flex:0 0 42%;background:var(--bg2)}
+.mc-body{padding:1.5rem 1.7rem 1.6rem;display:flex;flex-direction:column;gap:.45rem;justify-content:center}
+.mc-kicker{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--or2)}
+.mc-body h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.75rem;line-height:1.1}
+.mc-big .mc-body h3{font-size:2.2rem}
+.mc-body p{font-size:.86rem;color:var(--ink2);line-height:1.5}
+.mc-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:.5rem}
+.mc-price{font-size:.8rem;color:var(--muted)}
+.mc-price b{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--ink);margin-right:.15rem}
+.mc-go{width:2.6rem;height:2.6rem;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;transition:transform .3s}
+.mc-card:hover .mc-go{transform:translateX(4px)}
+.mc-promo{position:absolute;top:1rem;left:1rem;z-index:2;font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--grad);border-radius:100px;padding:.3rem .8rem}
+.mc-more{margin-top:1.6rem;text-align:center}
+.mc-more summary{display:inline-block;cursor:pointer;list-style:none;font-size:.8rem;font-weight:700;color:var(--ink2);border-bottom:1.5px solid var(--bda);padding-bottom:.15rem}
+.mc-more summary::-webkit-details-marker{display:none}
+.mc-more summary:hover{color:var(--or2)}
+.mc-list{max-width:34rem;margin:1.2rem auto 0;text-align:left;background:var(--white);border:1px solid var(--bd);border-radius:18px;overflow:hidden}
+.mc-list a{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 1.3rem;color:var(--ink);font-size:.88rem;border-bottom:1px solid var(--bd)}
+.mc-list a:last-child{border:0}
+.mc-list a:hover{background:var(--bg2)}
+.mc-list span{color:var(--muted);white-space:nowrap}
+@media(max-width:860px){.mc-grid{grid-template-columns:1fr;grid-template-rows:none}.mc-big{grid-row:auto}.mc-small{flex-direction:column}.mc-small .mc-img{flex:none;aspect-ratio:16/10}.mc-big .mc-img{aspect-ratio:4/3;flex:none}.mc-head{align-items:flex-start}}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise.
      Site Umami : XcelUrself (xcelurself.github.io). -->
@@ -2217,90 +2201,40 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 </section>
 
 <!-- FICHE MÉMO (aimant à prospects) — Formulaire Tally : https://tally.so/r/NpkDJW -->
-<section id="boutique" class="shop">
-  <div class="carnets-inner">
-    <div class="shop-head r">
-      <p class="eyebrow">Mes créations · 100 % Excel <span class="carnets-new">Nouveau</span></p>
-      <h2>Des classeurs Excel qui <em>travaillent pour toi.</em></h2>
-      <p>Rien que de l'Excel, conçu et testé par un formateur Microsoft : des exemples remplis pour comprendre, une version vierge pour démarrer, et aucune macro à activer. Téléchargement immédiat. Prix hors TVA éventuelle, ajoutée à la commande.</p>
+<section id="boutique" class="mc">
+  <div class="mc-in">
+    <div class="mc-head r">
+      <h2>Mes créations,<br/><em>100 % Excel.</em></h2>
+      <p>Des classeurs prêts à l'emploi, avec des exemples pour comprendre et une version vierge pour démarrer.</p>
     </div>
-    <div class="shop-nav r" role="navigation" aria-label="Catégories de mes créations">
-      <a href="#photographes">Photographes de mariage</a><a href="#independants">Micro-entrepreneurs</a><a href="#carnets">Apprendre Excel en jouant</a>
+    <div class="mc-grid">
+      <a class="mc-card mc-big r" href="https://www.etsy.com/fr/listing/4609638583/pack-excel-photographe-de-mariage-crm" target="_blank" rel="noopener" data-umami-event="Creations pack photographe">
+        <span class="mc-promo">−20 % jusqu'au 2 déc.</span>
+        <div class="mc-img"><img src="modele-pack.webp" width="1200" height="900" loading="lazy" alt="Pack de 5 classeurs Excel pour photographe de mariage"/></div>
+        <div class="mc-body"><span class="mc-kicker">Photographes de mariage</span><h3>Gère toute ton activité, de la demande au bilan</h3><p>5 classeurs reliés : CRM, forfaits, compta, jour J, bilan.</p>
+          <div class="mc-foot"><span class="mc-price"><b>39,20 €</b> HT</span><span class="mc-go" aria-hidden="true">→</span></div></div>
+      </a>
+      <a class="mc-card mc-small r d1" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro" target="_blank" rel="noopener" data-umami-event="Creations echeancier">
+        <div class="mc-img"><img src="modele-echeancier.webp" width="960" height="720" loading="lazy" alt="Échéancier Urssaf : combien mettre de côté ?"/></div>
+        <div class="mc-body"><span class="mc-kicker">Micro-entrepreneurs</span><h3>Combien mettre de côté pour l'Urssaf ?</h3>
+          <div class="mc-foot"><span class="mc-price"><b>10 €</b> HT</span><span class="mc-go" aria-hidden="true">→</span></div></div>
+      </a>
+      <a class="mc-card mc-small r d2" href="carnets.html" data-umami-event="Creations carnets">
+        <div class="mc-img"><img src="carnet-decouverte.webp" width="596" height="686" loading="lazy" alt="Carnet d'exercices Excel qui se corrige tout seul"/></div>
+        <div class="mc-body"><span class="mc-kicker">Apprendre Excel</span><h3>Des exercices qui se corrigent tout seuls</h3>
+          <div class="mc-foot"><span class="mc-price">Essai <b>gratuit</b></span><span class="mc-go" aria-hidden="true">→</span></div></div>
+      </a>
     </div>
-
-    <div class="shop-band" id="photographes">
-      <h3 class="r">Pour les photographes de mariage</h3>
-      <p class="sub r">Cinq classeurs reliés pour gérer toute l'activité, de la première demande au bilan de l'année. Chacun existe en version EXEMPLES et VIERGE, avec un guide PDF.</p>
-      <div class="shop-feat r">
-        <img src="modele-pack.webp" width="1200" height="900" loading="lazy" alt="Pack Excel photographe de mariage : CRM, devis, compta, planning Jour J et bilan annuel"/>
-        <div class="shop-feat-b">
-          <span class="shop-tag">Pack complet · −20 % jusqu'au 2 décembre</span>
-          <h4>Pack Excel photographe de mariage</h4>
-          <ul><li>CRM des demandes, devis et réservations</li><li>Calculateur de forfaits</li><li>Compta micro-entreprise, Urssaf et TVA</li><li>Planning du Jour J</li><li>Bilan annuel</li></ul>
-          <div class="shop-price"><b>39,20 €</b><s>49 €</s><span>HT · 5 classeurs</span></div>
-          <div class="cbtns"><a class="btn btn-primary" href="https://www.etsy.com/fr/listing/4609638583/pack-excel-photographe-de-mariage-crm" target="_blank" rel="noopener" data-umami-event="Boutique pack photographe">Découvrir le pack</a></div>
-          <p class="shop-note">Les cinq classeurs séparément reviennent plus cher : le pack est le meilleur prix.</p>
-        </div>
+    <details class="mc-more r" id="photographes">
+      <summary>Les classeurs photographe à l'unité</summary>
+      <div class="mc-list">
+        <a href="https://www.etsy.com/fr/listing/4609640455/crm-excel-photographe-de-mariage-suivi" target="_blank" rel="noopener">CRM réservations <span>19 € HT</span></a>
+        <a href="https://www.etsy.com/fr/listing/4609641287/calculateur-de-forfaits-photographe" target="_blank" rel="noopener">Calculateur de forfaits <span>12 € HT</span></a>
+        <a href="https://www.etsy.com/fr/listing/4609642089/compta-micro-entreprise-photographe" target="_blank" rel="noopener">Compta micro-entreprise <span>22 € HT</span></a>
+        <a href="https://www.etsy.com/fr/listing/4609663418/jour-j-photographe-de-mariage-planning" target="_blank" rel="noopener">Jour J <span>12 € HT</span></a>
+        <a href="https://www.etsy.com/fr/listing/4609664036/bilan-annuel-photographe-de-mariage" target="_blank" rel="noopener">Bilan annuel <span>14 € HT</span></a>
       </div>
-      <div class="shop-grid five"><article class="shop-card r">
-        <img src="modele-crm.webp" width="720" height="540" loading="lazy" alt="Classeur Excel CRM de réservations pour photographe de mariage"/>
-        <div class="shop-card-b"><h4>CRM réservations</h4><p>Suivi des demandes, devis, relances et réservations de tes couples.</p>
-          <div class="shop-price"><b>19 €</b><span>HT</span></div>
-          <a class="btn btn-outline" href="https://www.etsy.com/fr/listing/4609640455/crm-excel-photographe-de-mariage-suivi" target="_blank" rel="noopener" data-umami-event="Boutique CRM">Découvrir</a></div>
-      </article><article class="shop-card r">
-        <img src="modele-calculateur.webp" width="720" height="540" loading="lazy" alt="Classeur Excel calculateur de forfaits photographe"/>
-        <div class="shop-card-b"><h4>Calculateur de forfaits</h4><p>Fixe tes prix mariage selon tes heures de travail et tes frais.</p>
-          <div class="shop-price"><b>12 €</b><span>HT</span></div>
-          <a class="btn btn-outline" href="https://www.etsy.com/fr/listing/4609641287/calculateur-de-forfaits-photographe" target="_blank" rel="noopener" data-umami-event="Boutique calculateur">Découvrir</a></div>
-      </article><article class="shop-card r">
-        <img src="modele-compta.webp" width="720" height="540" loading="lazy" alt="Classeur Excel de comptabilité micro-entreprise photographe"/>
-        <div class="shop-card-b"><h4>Compta micro-entreprise</h4><p>Factures, recettes, déclarations Urssaf, TVA et seuils 2026.</p>
-          <div class="shop-price"><b>22 €</b><span>HT</span></div>
-          <a class="btn btn-outline" href="https://www.etsy.com/fr/listing/4609642089/compta-micro-entreprise-photographe" target="_blank" rel="noopener" data-umami-event="Boutique compta">Découvrir</a></div>
-      </article><article class="shop-card r">
-        <img src="modele-jourj.webp" width="720" height="540" loading="lazy" alt="Classeur Excel de planning du jour J pour photographe de mariage"/>
-        <div class="shop-card-b"><h4>Jour J</h4><p>Planning, photos à faire, groupes, contacts et matériel le jour du mariage.</p>
-          <div class="shop-price"><b>12 €</b><span>HT</span></div>
-          <a class="btn btn-outline" href="https://www.etsy.com/fr/listing/4609663418/jour-j-photographe-de-mariage-planning" target="_blank" rel="noopener" data-umami-event="Boutique jour J">Découvrir</a></div>
-      </article><article class="shop-card r">
-        <img src="modele-bilan.webp" width="720" height="540" loading="lazy" alt="Tableau de bord Excel de bilan annuel pour photographe de mariage"/>
-        <div class="shop-card-b"><h4>Bilan annuel</h4><p>Objectifs, rentabilité, sources de clients et charges de ton année.</p>
-          <div class="shop-price"><b>14 €</b><span>HT</span></div>
-          <a class="btn btn-outline" href="https://www.etsy.com/fr/listing/4609664036/bilan-annuel-photographe-de-mariage" target="_blank" rel="noopener" data-umami-event="Boutique bilan">Découvrir</a></div>
-      </article></div>
-    </div>
-
-    <div class="shop-band" id="independants">
-      <h3 class="r">Pour les micro-entrepreneurs</h3>
-      <p class="sub r">Savoir combien mettre de côté, c'est dormir tranquille.</p>
-      <div class="shop-grid">
-        <article class="shop-card r">
-          <img src="modele-echeancier.webp" width="960" height="720" loading="lazy" alt="Échéancier Urssaf sous Excel : tableau de bord « Combien mettre de côté ? » avec prochaine échéance, période en cours et plafonds"/>
-          <div class="shop-card-b"><h4>Échéancier Urssaf</h4><p>Tableau Excel auto-entrepreneur 2026 : provision Urssaf, combien mettre de côté.</p>
-            <div class="shop-price"><b>10 €</b><span>HT</span></div>
-            <a class="btn btn-outline" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro" target="_blank" rel="noopener" data-umami-event="Boutique echeancier">Découvrir</a></div>
-        </article>
-      </div>
-    </div>
-
-    <div class="shop-band" id="carnets">
-      <h3 class="r">Apprendre Excel en jouant</h3>
-      <div class="shop-two">
-        <a class="shop-art r" href="carnets.html" aria-label="Découvrir les carnets"><img src="carnet-decouverte.webp" width="596" height="686" loading="lazy" alt="Aperçu du carnet : un tableau, la formule SOMME et le score 6 sur 6 avec le message Juste"/></a>
-        <div class="r d1">
-          <p class="sub" style="margin-bottom:0">Dans la brasserie « Le Zinc de Léon », Camille te confie de vrais problèmes : factures, tarifs, remises, TVA. Tu réponds avec des formules, et le carnet te dit tout de suite si c'est juste.</p>
-          <div class="shop-pts"><span><b>✓</b> Correction instantanée</span><span><b>💡</b> Indices à la demande</span><span><b>▦</b> Tableaux structurés</span></div>
-          <div class="shop-offers">
-            <article class="shop-card"><div class="shop-card-b"><span class="shop-tag">Gratuit</span><h4>Carnet découverte</h4><p>Le Défi 1 pour tester, avec son corrigé.</p>
-              <a class="btn btn-primary" href="carnets.html#gratuit" data-umami-event="Boutique carnet gratuit">Essayer gratuitement</a></div></article>
-            <article class="shop-card"><div class="shop-card-b"><span class="shop-tag">5 défis</span><h4>Carnet complet</h4><p>28 contrôles, bilan et grade de Commis à Chef de cuisine.</p>
-              <div class="shop-price"><b>9,90 €</b><span>HT</span></div>
-              <a class="btn btn-outline" href="https://www.etsy.com/fr/listing/4600146678/carnet-excel-auto-correcteur-5-defis" target="_blank" rel="noopener" data-umami-event="Boutique carnet complet">Découvrir</a></div></article>
-          </div>
-          <a class="btn btn-outline" href="carnets.html" data-umami-event="Boutique carnets detail">Découvrir les carnets en détail</a>
-        </div>
-      </div>
-    </div>
+    </details>
   </div>
 </section>
 
