@@ -911,6 +911,23 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .mc-list a:hover{background:var(--bg2)}
 .mc-list span{color:var(--muted);white-space:nowrap}
 @media(max-width:860px){.mc-grid{grid-template-columns:1fr;grid-template-rows:none}.mc-big{grid-row:auto}.mc-small{flex-direction:column}.mc-small .mc-img{flex:none;aspect-ratio:16/10}.mc-big .mc-img{aspect-ratio:4/3;flex:none}.mc-head{align-items:flex-start}}
+.mc-at{display:grid;gap:.15rem;margin:.35rem 0 .2rem;font-size:.78rem;color:var(--ink2)}
+.mc-at li::before{content:'✓';color:var(--or2);font-weight:800;margin-right:.5rem}
+.mc-why{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.2rem;padding:1.6rem 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.mc-why b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.3rem;line-height:1.2;margin-bottom:.25rem}
+.mc-why span{font-size:.8rem;color:var(--ink2);line-height:1.5;display:block}
+@media(max-width:860px){.mc-why{grid-template-columns:1fr}}
+/* FORMATIONS simplifiées */
+.fall{margin-top:2.4rem}
+.fall>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.6rem;font-size:.85rem;font-weight:700;color:var(--ink2);background:var(--white);border:1px solid var(--bd);border-radius:100px;padding:.9rem 1.6rem;width:fit-content;margin:0 auto;transition:.2s}
+.fall>summary::-webkit-details-marker{display:none}
+.fall>summary:hover{border-color:var(--or2);color:var(--or2)}
+.fall>summary::after{content:'+';font-size:1.1rem;color:var(--or2)}
+.fall[open]>summary::after{content:'−'}
+.fall[open] .r{opacity:1;transform:none}
+.fall-in{margin-top:2rem}
+.formations-head h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.05;margin-bottom:1rem}
+.formations-head h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise.
      Site Umami : XcelUrself (xcelurself.github.io). -->
@@ -1815,23 +1832,15 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 <!-- FORMATIONS -->
 <section id="formations" class="formations">
   <div class="formations-inner">
-    <!-- Promo coupon 3AY97T : se masque tout seul après le 31/10/2026 -->
-    <a class="promo-ban" id="promoBan" href="https://fr.tuto.com/excel/power-query-releve-bancaire-nettoyage-ligne-total,221421.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic bandeau promo">
-      <span class="pb-tag">−25 %</span>
-      <span class="pb-txt">Formation <strong>Relevé bancaire avec Power Query</strong> avec le code <code>3AY97T</code>, jusqu'au 31 octobre</span>
-      <span class="pb-go">J'en profite →</span>
-    </a>
-    <script>try{if(new Date()>new Date('2026-11-01T00:00:00+01:00'))document.getElementById('promoBan').remove()}catch(e){}</script>
     <div class="formations-head r">
-      <p class="eyebrow" style="justify-content:center">Le catalogue complet</p>
-      <h2>25 formations vidéo,<br/><em>un seul objectif :</em> ton autonomie.</h2>
+      <p class="eyebrow" style="justify-content:center">Formations vidéo</p>
+      <h2>Apprends à ton rythme,<br/><em>à vie.</em></h2>
       <div class="proof-row">
         <span><strong>4,7/5</strong> sur Tuto.com</span>
         <span><strong>466</strong> cours vendus</span>
         <span><strong>400</strong> apprenants</span>
-        <span>Fichiers sources &amp; QCM inclus</span>
       </div>
-      <p style="color:var(--muted);font-size:.85rem;margin-top:.8rem">Chaque formation est vendue et hébergée sur Tuto.com : paiement sécurisé, accès immédiat et à vie. Abonné Tuto.com ? Mes formations sont aussi incluses dans l'abonnement.</p>
+      <p style="color:var(--muted);font-size:.85rem;margin-top:.8rem">Fichiers sources et QCM inclus. Paiement sécurisé et accès immédiat sur Tuto.com.</p>
     </div>
 
     <div class="paths r">
@@ -1891,6 +1900,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
       <a class="btn btn-primary" href="https://fr.tuto.com/excel/tuto-gratuit-creer-lien-hypertexte-fonction,183391.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic tuto gratuit">Regarder le tuto gratuit</a>
     </div>
 
+    <details class="fall"><summary>Voir les 25 formations</summary><div class="fall-in">
     <div class="ffilters r" role="group" aria-label="Filtrer les formations par logiciel">
       <button type="button" class="ffilter active" data-f="all" aria-pressed="true">Toutes (25)</button>
       <button type="button" class="ffilter" data-f="excel" aria-pressed="false">Excel (14)</button>
@@ -2194,6 +2204,8 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 
     </div>
 
+    </div></details>
+
     <div class="formations-more r">
       <a data-umami-event="Clic Tuto.com" class="btn btn-primary" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Voir le catalogue complet sur Tuto.com <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
@@ -2211,19 +2223,24 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
       <a class="mc-card mc-big r" href="https://www.etsy.com/fr/listing/4609638583/pack-excel-photographe-de-mariage-crm" target="_blank" rel="noopener" data-umami-event="Creations pack photographe">
         <span class="mc-promo">−20 % jusqu'au 2 déc.</span>
         <div class="mc-img"><img src="modele-pack.webp" width="1200" height="900" loading="lazy" alt="Pack de 5 classeurs Excel pour photographe de mariage"/></div>
-        <div class="mc-body"><span class="mc-kicker">Photographes de mariage</span><h3>Gère toute ton activité, de la demande au bilan</h3><p>5 classeurs reliés : CRM, forfaits, compta, jour J, bilan.</p>
+        <div class="mc-body"><span class="mc-kicker">Photographes de mariage</span><h3>Gère toute ton activité, de la demande au bilan</h3><p>5 classeurs complémentaires pour tout piloter.</p><ul class="mc-at"><li>Exemples remplis + version vierge</li><li>Un guide PDF par classeur</li><li>Seuils et règles 2026 intégrés</li></ul>
           <div class="mc-foot"><span class="mc-price"><b>39,20 €</b> HT</span><span class="mc-go" aria-hidden="true">→</span></div></div>
       </a>
       <a class="mc-card mc-small r d1" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro" target="_blank" rel="noopener" data-umami-event="Creations echeancier">
         <div class="mc-img"><img src="modele-echeancier.webp" width="960" height="720" loading="lazy" alt="Échéancier Urssaf : combien mettre de côté ?"/></div>
-        <div class="mc-body"><span class="mc-kicker">Micro-entrepreneurs</span><h3>Combien mettre de côté pour l'Urssaf ?</h3>
+        <div class="mc-body"><span class="mc-kicker">Micro-entrepreneurs</span><h3>Combien mettre de côté pour l'Urssaf ?</h3><ul class="mc-at"><li>Calculé par Power Query</li><li>Taux Urssaf lus à la source</li><li>Le reste à provisionner, en clair</li></ul>
           <div class="mc-foot"><span class="mc-price"><b>10 €</b> HT</span><span class="mc-go" aria-hidden="true">→</span></div></div>
       </a>
       <a class="mc-card mc-small r d2" href="carnets.html" data-umami-event="Creations carnets">
         <div class="mc-img"><img src="carnet-decouverte.webp" width="596" height="686" loading="lazy" alt="Carnet d'exercices Excel qui se corrige tout seul"/></div>
-        <div class="mc-body"><span class="mc-kicker">Apprendre Excel</span><h3>Des exercices qui se corrigent tout seuls</h3>
+        <div class="mc-body"><span class="mc-kicker">Apprendre Excel</span><h3>Des exercices qui se corrigent tout seuls</h3><ul class="mc-at"><li>28 contrôles automatiques</li><li>Indices à la demande</li><li>Aucune macro</li></ul>
           <div class="mc-foot"><span class="mc-price">Essai <b>gratuit</b></span><span class="mc-go" aria-hidden="true">→</span></div></div>
       </a>
+    </div>
+    <div class="mc-why r">
+      <div><b>Un métier, un besoin</b><span>Chaque classeur est pensé pour une activité précise, pas pour « tout le monde ».</span></div>
+      <div><b>Conçus par un formateur</b><span>Microsoft certifié, 466 cours vendus, 4,7/5 sur Tuto.com.</span></div>
+      <div><b>Prêts à l'emploi</b><span>Des exemples pour comprendre, du vierge pour démarrer.</span></div>
     </div>
     <details class="mc-more r" id="photographes">
       <summary>Les classeurs photographe à l'unité</summary>
