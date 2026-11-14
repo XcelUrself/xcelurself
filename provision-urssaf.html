@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Comment calculer sa provision Urssaf en micro-entreprise · XcelUrself</title>
+<meta name="description" content="Comment savoir combien mettre de côté pour l'Urssaf quand on est micro-entrepreneur : la formule, un exemple chiffré, les erreurs à éviter et un tableau Excel pour le faire chaque mois."/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<link rel="canonical" href="https://xcelurself.github.io/xcelurself/provision-urssaf.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Comment calculer sa provision Urssaf en micro-entreprise"/>
+<meta property="og:description" content="La formule, un exemple chiffré et la méthode pour lisser ses cotisations toute l'année."/>
+<meta property="og:url" content="https://xcelurself.github.io/xcelurself/provision-urssaf.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="XcelUrself"/>
+<meta property="og:image" content="https://xcelurself.github.io/xcelurself/og-xcelurself.png"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Comment calculer sa provision Urssaf en micro-entreprise","author":{"@type":"Person","name":"Joffrey Gros"},"datePublished":"2026-11-14","dateModified":"2026-11-14","inLanguage":"fr","mainEntityOfPage":"https://xcelurself.github.io/xcelurself/provision-urssaf.html"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#faf8f5;--bg2:#f3f0eb;--bg3:#ede9e2;
+  --ink:#1c1815;--ink2:#4a4238;--muted:#8a7f74;
+  --or1:#e8622a;--or2:#d44d6e;--or3:#b83868;
+  --grad:linear-gradient(120deg,#e8622a 0%,#d44d6e 55%,#b83868 100%);
+  --gradr:linear-gradient(120deg,#b83868 0%,#d44d6e 55%,#e8622a 100%);
+  --bd:rgba(28,24,21,.1);--bda:rgba(232,98,42,.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;font-weight:400}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 50% 40% at 5% 0%,rgba(232,98,42,.06) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 95% 100%,rgba(184,56,104,.05) 0%,transparent 60%)}
+a{text-decoration:none}
+ul{list-style:none}
+nav,main,footer{position:relative;z-index:1}
+
+/* NAV (identique à la page d'accueil) */
+nav{position:sticky;top:0;z-index:650;background:rgba(250,248,245,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:1160px;margin:0 auto;padding:.8rem clamp(1.25rem,5vw,4rem)}
+.nav-logo{font-size:1.4rem;font-weight:800;letter-spacing:.02em;color:var(--ink);flex-shrink:0}
+.nav-logo span,.footer-logo span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:1.8rem}
+.nav-links a{font-size:.75rem;font-weight:600;letter-spacing:.04em;color:var(--ink2);transition:color .2s}
+.nav-links a:hover{color:var(--or2)}
+.nav-cta{background:var(--grad);color:#fff;font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.3rem;border-radius:100px;transition:all .2s;flex-shrink:0;box-shadow:0 3px 12px rgba(232,98,42,.2)}
+.nav-cta:hover{box-shadow:0 6px 20px rgba(232,98,42,.3);transform:translateY(-1px)}
+
+/* ARTICLE */
+.wrap{max-width:760px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) clamp(1.25rem,5vw,2rem) 4.5rem}
+.back{font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--or2)}
+.back:hover{text-decoration:underline;text-underline-offset:3px}
+.eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--or2);display:flex;align-items:center;gap:.7rem;margin:2rem 0 1rem}
+.eyebrow::before{content:'';width:1.8rem;height:1.5px;background:var(--grad);flex-shrink:0}
+h1{font-family:'Montserrat',sans-serif;font-size:clamp(2.1rem,6.4vw,3.6rem);font-weight:900;line-height:.98;letter-spacing:-.03em;margin-bottom:1.6rem}
+h1 .l1{display:block;color:var(--ink)}
+h1 .l2{display:block;font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding-right:.1em}
+h1 .l3{display:block;color:transparent;-webkit-text-stroke:2px var(--or2)}
+.lead{font-size:1rem;line-height:1.85;color:var(--ink2);max-width:640px}
+.meta{margin-top:1.2rem;font-size:.7rem;font-weight:600;letter-spacing:.04em;color:var(--muted)}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:700;line-height:1.08;margin:3rem 0 .9rem;color:var(--ink)}
+h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding-right:.08em}
+p{color:var(--ink2);margin-bottom:1rem;line-height:1.85}
+p strong,li strong{color:var(--ink);font-weight:700}
+a.in{color:var(--or2);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.formule{margin:1.6rem 0;padding:1.3rem 1.5rem;background:linear-gradient(120deg,rgba(232,98,42,.08),rgba(184,56,104,.06));border:1px solid var(--bda);border-left:4px solid var(--or2);border-radius:0 14px 14px 0;font-weight:700;font-size:1.02rem;color:var(--ink);line-height:1.6}
+.tablewrap{overflow-x:auto;margin:1.4rem 0 .8rem;border:1px solid var(--bd);border-radius:14px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--bd);color:var(--ink2)}
+th{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--or2);background:var(--bg2)}
+td.n,th.n{text-align:right;white-space:nowrap}
+td.n{font-weight:700;color:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+tfoot td{font-weight:800;color:var(--ink);background:var(--bg2);border-bottom:0;border-top:1px solid var(--bd)}
+tfoot td.n{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;border-top:0}
+.note{font-size:.78rem;color:var(--muted);line-height:1.75;margin-top:.6rem}
+.note a{color:var(--or2);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+ul.err{margin:1rem 0 1.2rem;display:grid;gap:.7rem}
+ul.err li{position:relative;padding:1rem 1.2rem 1rem 3.1rem;background:#fff;border:1px solid var(--bd);border-radius:14px;color:var(--ink2);line-height:1.7;counter-increment:e}
+ul.err{counter-reset:e}
+ul.err li::before{content:counter(e);position:absolute;left:1.1rem;top:.95rem;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--grad);color:#fff;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.box{margin:2.4rem 0 1.5rem;padding:clamp(1.6rem,4vw,2.4rem);background:var(--ink);border-radius:22px;position:relative;overflow:hidden}
+.box::before{content:'';position:absolute;top:-40%;right:-10%;width:60%;height:140%;background:radial-gradient(ellipse,rgba(232,98,42,.28),transparent 65%);pointer-events:none}
+.box>*{position:relative}
+.box .eyebrow{margin-top:0;color:#f6a07a}
+.box h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3.6vw,2.3rem);font-weight:700;line-height:1.05;color:var(--bg);margin-bottom:.8rem}
+.box p{color:rgba(250,248,245,.72);font-size:.9rem;max-width:520px}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;padding:.9rem 1.8rem;transition:all .22s;cursor:pointer;background:var(--grad);color:#fff;box-shadow:0 4px 18px rgba(232,98,42,.3)}
+.btn:hover{background:var(--gradr);box-shadow:0 8px 26px rgba(232,98,42,.4);transform:translateY(-2px)}
+.legal{font-size:.74rem;line-height:1.8;color:var(--muted);margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--bd)}
+
+/* FOOTER (identique à la page d'accueil) */
+footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem}
+.footer-logo{font-size:1.3rem;font-weight:800;color:var(--bg)}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:.68rem;font-weight:600;color:rgba(250,248,245,.32);transition:color .2s}
+.footer-links a:hover{color:rgba(250,248,245,.8)}
+.footer-copy{width:100%;text-align:center;font-size:.62rem;color:rgba(250,248,245,.18);margin-top:.9rem}
+
+@media(max-width:800px){.nav-links{display:none}.footer-inner{flex-direction:column;align-items:center;text-align:center}.footer-links{justify-content:center}}
+@media(max-width:480px){h1 .l3{-webkit-text-stroke:1.5px var(--or2)}.nav-cta{padding:.5rem 1rem}th,td{padding:.7rem .7rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+<!-- Mesure d'audience Umami : sans cookie, aucune bannière requise (même site que la page d'accueil). -->
+<script>
+(function(){var id='60f60fb4-a75b-4e22-bbfb-832064c7c8a5';
+var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umami.is/script.js';sc.setAttribute('data-website-id',id);document.head.appendChild(sc);})();
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Xcel<span>Urself</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#competences">Expertise</a></li>
+      <li><a href="index.html#formations">Formations</a></li>
+      <li><a href="index.html#boutique">Mes créations</a></li>
+      <li><a href="index.html#profil">Mon profil</a></li>
+      <li><a href="index.html#avis">Témoignages</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a data-umami-event="Clic Tuto.com" class="nav-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Accéder aux formations</a>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+<a class="back" href="index.html">← Retour à XcelUrself</a>
+<p class="eyebrow">Micro-entrepreneur · Urssaf</p>
+<h1>
+  <span class="l1">Combien mettre</span>
+  <span class="l2">de côté pour</span>
+  <span class="l3">l'Urssaf ?</span>
+</h1>
+<p class="lead">En micro-entreprise, les cotisations tombent à intervalles réguliers alors que les recettes, elles, arrivent quand elles veulent. Résultat : beaucoup de freelances découvrent le montant à payer au dernier moment. Voici comment le savoir à l'avance, mois après mois.</p>
+<p class="meta">Par Joffrey Gros · Mis à jour le 14 novembre 2026 · 4 min de lecture</p>
+
+<h2>1. La <em>formule</em></h2>
+<p>Les cotisations d'un micro-entrepreneur se calculent sur le chiffre d'affaires <strong>encaissé</strong>, pas sur le bénéfice. Ce qui compte, c'est donc ce qui est réellement rentré sur ton compte pendant la période.</p>
+<div class="formule">Provision = recettes encaissées × taux de cotisations de ton activité</div>
+<p>Le taux dépend de la nature de ton activité : vente de marchandises, prestations de services commerciales ou artisanales (BIC), ou prestations libérales (BNC). Il est fixé par l'Urssaf et peut changer d'une année à l'autre, y compris en cours d'année.</p>
+
+<h2>2. Les taux : <em>où les trouver</em></h2>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Activité</th><th class="n">Taux 2026</th></tr></thead>
+  <tbody>
+    <tr><td>Vente de marchandises</td><td class="n">12,3 %</td></tr>
+    <tr><td>Prestations de services (BIC)</td><td class="n">21,2 %</td></tr>
+    <tr><td>Professions libérales non réglementées (BNC) : formateur, consultant, graphiste…</td><td class="n">25,6 %</td></tr>
+    <tr><td>Professions libérales réglementées relevant de la Cipav</td><td class="n">23,2 %</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Taux globaux de cotisations sociales en vigueur depuis le 1er janvier 2026 (sources : Entreprendre Service Public, Légifrance, Urssaf). Le taux des libéraux non réglementés a augmenté par étapes depuis juillet 2024 : vérifie-le chaque année sur <a href="https://www.autoentrepreneur.urssaf.fr" rel="noopener" target="_blank">autoentrepreneur.urssaf.fr</a>, car il est fixé par décret. S'ajoutent à ces taux la contribution à la formation professionnelle (0,2 % pour un libéral), et l'impôt si tu as choisi le versement libératoire.</p>
+
+<h2>3. Un exemple <em>chiffré</em></h2>
+<p>Imaginons un formateur ou un consultant en profession libérale non réglementée (taux de 25,6 %) qui encaisse ceci sur un trimestre :</p>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Mois</th><th class="n">Encaissé</th><th class="n">À mettre de côté</th></tr></thead>
+  <tbody>
+    <tr><td>Janvier</td><td class="n">1 000 €</td><td class="n">256 €</td></tr>
+    <tr><td>Février</td><td class="n">3 500 €</td><td class="n">896 €</td></tr>
+    <tr><td>Mars</td><td class="n">1 500 €</td><td class="n">384 €</td></tr>
+  </tbody>
+  <tfoot><tr><td>Trimestre</td><td class="n">6 000 €</td><td class="n">1 536 €</td></tr></tfoot>
+</table>
+</div>
+<p>Sur 1 000 € encaissés, 256 € partent à l'Urssaf (hors contribution à la formation professionnelle) : le réflexe est de les mettre de côté <em>le jour même</em>, avant de considérer le reste comme disponible.</p>
+
+<h2>4. Les trois erreurs de <em>trésorerie</em> les plus courantes</h2>
+<ul class="err">
+  <li><strong>Dépenser tout ce qui rentre.</strong> Un virement reçu n'est pas un revenu disponible.</li>
+  <li><strong>Oublier la provision.</strong> Sans ligne dédiée, l'argent de l'Urssaf se mélange au reste.</li>
+  <li><strong>Découvrir ses cotisations au dernier moment.</strong> Un trimestre à gros encaissements peut donner un paiement qui surprend.</li>
+</ul>
+
+<h2>5. <em>Lisser</em> sur l'année</h2>
+<p>Les recettes sont irrégulières, les cotisations suivent. Une astuce simple : calculer ta provision moyenne mensuelle sur l'année et mettre ce montant de côté chaque mois, quel que soit l'encaissement réel. Les bons mois compensent les mauvais, et le jour de la déclaration, le compte est déjà plein.</p>
+
+<h2>6. Le faire dans Excel, <em>sans refaire les calculs</em></h2>
+<div class="box">
+  <p class="eyebrow">Modèle Excel</p>
+  <h3>L'échéancier Urssaf XcelUrself</h3>
+  <p>Un classeur Excel, sans macro, où tu saisis tes recettes : le montant à mettre de côté se calcule tout seul, mois après mois, avec le suivi de ton plafond de chiffre d'affaires.</p>
+  <a class="btn" href="index.html#boutique" data-umami-event="Article provision Urssaf">Voir le modèle Excel →</a>
+</div>
+
+<p class="legal">Article rédigé par Joffrey Gros, formateur Excel et micro-entrepreneur. Informations générales, non constitutives d'un conseil comptable ou juridique : vérifie toujours les taux en vigueur auprès de l'Urssaf. Taux contrôlés le 14 novembre 2026 sur Entreprendre Service Public, Légifrance (article D613-4 du Code de la sécurité sociale) et autoentrepreneur.urssaf.fr.</p>
+</div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Xcel<span>Urself</span></div>
+    <div class="footer-links">
+      <a data-umami-event="Clic Tuto.com" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Mes Tutos</a>
+      <a href="https://youtube.com/@xcelurself" target="_blank" rel="noopener">YouTube</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#mentions-legales">Mentions légales</a>
+      <a href="index.html#cgv">CGV</a>
+      <a href="index.html#confidentialite">Confidentialité</a>
+    </div>
+    <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur Microsoft Certifié &amp; Confirmé · Tous droits réservés</p>
+  </div>
+</footer>
+
+</body>
+</html>
