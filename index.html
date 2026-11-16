@@ -204,7 +204,7 @@ nav{
 
 /* HERO */
 .hero{
-  min-height:90vh;display:grid;grid-template-columns:1fr 380px;
+  min-height:90vh;display:grid;grid-template-columns:1fr 450px;
   gap:3.5rem;align-items:center;
   padding:4.5rem clamp(1.25rem,5vw,4rem) 4rem;
   max-width:1160px;margin:0 auto;
@@ -1012,6 +1012,53 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 @media(max-width:800px){.proof-quotes{grid-template-columns:1fr}}
 #xu-chat-toggle{transition:transform .3s,opacity .3s}
 #xu-chat-toggle.xu-away{transform:translateX(90px);opacity:0;pointer-events:none}
+.ba-arrow{font-size:.74rem;font-weight:600;color:var(--ink2)}
+.ba-arrow b{color:var(--or1);font-size:1.1rem;margin-right:.3rem}
+.st{font-family:Arial,Helvetica,sans-serif;font-size:.56rem;color:#333;padding:.55rem .65rem;background:#fff}
+.st-top{display:flex;justify-content:space-between;gap:.5rem;border-bottom:2px solid #0f6b57;padding-bottom:.3rem;margin-bottom:.35rem}
+.st-top b{color:#0f6b57;font-size:.95rem;letter-spacing:.01em}
+.st-top span{font-size:.5rem;text-align:right;line-height:1.3}
+.st-title{font-weight:700;font-size:.58rem;margin-bottom:.3rem}
+.st table{width:100%;border-collapse:collapse}
+.st td{padding:.14rem .22rem;border-bottom:1px solid #ddd;vertical-align:top}
+.st small{display:block;color:#666;font-size:.48rem}
+.st tr.h td{background:#0f6b57;color:#fff;font-weight:700}
+.st tr.b td{background:#eee;font-weight:700}
+.st td.n{text-align:right;white-space:nowrap}
+.xl{background:#fff;font-family:Aptos,Calibri,'Segoe UI',Arial,sans-serif;font-size:.62rem;color:#2b2724}
+.xl table{width:100%;border-collapse:collapse;table-layout:fixed}
+.xl th{background:#e9e6e1;color:#555;font-weight:600;border:1px solid #d2cdc6;padding:.12rem .2rem;text-align:center}
+.xl td{border:1px solid #e3dfd9;padding:.18rem .35rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xl td.n{text-align:right;font-variant-numeric:tabular-nums}
+.xl tr.hd td{background:#2b2724;color:#fff;font-weight:700}
+.xl tr.more td{color:#655d55;font-style:italic;text-align:center}
+.xl tr.tot td{font-weight:800;border-top:2px solid #2b2724;background:rgba(254,58,126,.12)}
+@media(max-width:900px){.hero{grid-template-columns:1fr!important}}
+.trust-track{align-items:center}
+.trust-logo{position:relative;display:inline-flex;align-items:center;opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+.trust-track.v .trust-logo{opacity:1;transform:none}
+.trust-track.v .trust-logo:nth-child(2){transition-delay:.08s}.trust-track.v .trust-logo:nth-child(3){transition-delay:.16s}
+.trust-track.v .trust-logo:nth-child(4){transition-delay:.24s}.trust-track.v .trust-logo:nth-child(5){transition-delay:.32s}.trust-track.v .trust-logo:nth-child(6){transition-delay:.4s}
+.trust-logo img{display:block;height:28px;width:auto;max-width:130px;filter:grayscale(1);opacity:.65;transition:filter .25s,opacity .25s}
+.trust-logo:hover img{filter:none;opacity:1}
+.trust-logo .tl-name{font-size:.8rem;font-weight:700;color:var(--ink2);transition:color .2s}
+.trust-logo:hover .tl-name{color:var(--ink)}
+.trust-logo.has .tl-name{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(prefers-reduced-motion:reduce){.trust-logo{opacity:1;transform:none;transition:none}}
+.guides{margin:2.6rem 0 0}
+.guides-head{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem 2rem;flex-wrap:wrap;margin-bottom:.4rem}
+.guides-head h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;line-height:1.1}
+.guides-head p{font-size:.8rem;color:var(--ink2)}
+.guides-list{display:grid;grid-template-columns:1fr 1fr;gap:0 3rem}
+.guide{display:grid;grid-template-columns:1fr auto;grid-template-areas:"k go" "t t" "d d";gap:.15rem 1rem;padding:1.1rem 0;border-top:1px solid var(--bd);color:var(--ink)}
+.g-k{grid-area:k;font-size:.74rem;font-weight:700;color:var(--or2)}
+.g-t{grid-area:t;font-size:1.02rem;font-weight:700;line-height:1.3}
+.g-d{grid-area:d;font-size:.82rem;color:var(--ink2);line-height:1.55}
+.g-go{grid-area:go;font-size:.74rem;font-weight:700;color:var(--ink2)}
+.g-go::after{content:" →"}
+.guide:hover .g-t{text-decoration:underline;text-decoration-color:var(--or1);text-decoration-thickness:2px;text-underline-offset:4px}
+.guide:hover .g-go{color:var(--or2)}
+@media(max-width:800px){.guides-list{grid-template-columns:1fr}}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise.
      Site Umami : XcelUrself (xcelurself.github.io). -->
@@ -1819,32 +1866,44 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
       </div>
     </div>
     <div class="hero-right r d2">
-      <!-- TODO : remplacer ce schéma par une vraie capture d'écran d'Excel (avant / après) -->
-      <div class="ba" role="img" aria-label="Avant : export bancaire brut. Après : tableau propre avec ligne Total.">
+      <!-- Illustration fidèle au relevé fictif du cours (pas une capture) : avant = relevé PDF, après = tableau Excel obtenu avec Power Query -->
+      <div class="ba" role="img" aria-label="Avant : un relevé bancaire PDF avec lignes parasites. Après : un tableau Excel propre avec une ligne Total, obtenu en un clic avec Power Query.">
         <div class="ba-box">
-          <div class="ba-k">Avant : l'export de la banque</div>
-          <table class="before">
-            <tr><td colspan="3">RELEVÉ OCTOBRE · PAGE 1/2</td></tr>
-            <tr><td>03/10/2026</td><td>PRLV EDF 8841</td><td class="n bad">62,40-</td></tr>
-            <tr><td>05/10/2026</td><td>CB LIBRAIRIE</td><td class="n bad">18,90-</td></tr>
-            <tr><td colspan="3">&nbsp;</td></tr>
-            <tr><td colspan="3">RELEVÉ OCTOBRE · PAGE 2/2</td></tr>
-            <tr><td>12/10/2026</td><td>VIR SALAIRE</td><td class="n bad">1 850,00+</td></tr>
-          </table>
+          <div class="ba-k">Avant : le relevé PDF de la banque</div>
+          <div class="st">
+            <div class="st-top"><b>BANQUE DU VAL</b><span>Relevé n° 9 / 2026<br/>Page 1 / 2</span></div>
+            <div class="st-title">RELEVÉ DE COMPTE — COMPTE COURANT PROFESSIONNEL</div>
+            <table>
+              <tr class="h"><td>Date</td><td>Valeur</td><td>Libellé des opérations</td><td class="n">Débit EUR</td><td class="n">Crédit EUR</td></tr>
+              <tr class="b"><td colspan="3">Ancien solde créditeur au 31.08.2026</td><td></td><td class="n">8 412,37</td></tr>
+              <tr><td>01.09</td><td>02.09</td><td>CARTE X9021 01/09 PARKING GARE</td><td class="n">6,24</td><td></td></tr>
+              <tr><td>01.09</td><td>01.09</td><td>LOYER BUREAUX PRLV SEPA SCI LES TILLEULS<small>ECH/010926 MDT/LOY-0042</small></td><td class="n">850,00</td><td></td></tr>
+              <tr><td>04.09</td><td>05.09</td><td>REMISE CARTE 04/09 TPE 4471<small>8 FACTURETTES</small></td><td></td><td class="n">411,02</td></tr>
+              <tr><td>08.09</td><td>08.09</td><td>PRLV SEPA URSSAF<small>COTISATIONS 09/2026 SIRET 000 000 000 00011</small></td><td class="n">1 834,72</td><td></td></tr>
+              <tr class="b"><td colspan="3">À reporter</td><td class="n">4 199,05</td><td class="n">3 531,02</td></tr>
+            </table>
+          </div>
         </div>
-        <div class="ba-arrow" aria-hidden="true">↓</div>
+        <div class="ba-arrow" aria-hidden="true"><b>↓</b> un clic sur « Actualiser »</div>
         <div class="ba-box after">
-          <div class="ba-k">Après : un clic sur Actualiser</div>
-          <table class="after">
-            <tr><th>Date</th><th>Libellé</th><th class="n">Montant</th></tr>
-            <tr><td>03/10/2026</td><td>Prélèvement EDF</td><td class="n">-62,40</td></tr>
-            <tr><td>05/10/2026</td><td>CB Librairie</td><td class="n">-18,90</td></tr>
-            <tr><td>12/10/2026</td><td>Virement salaire</td><td class="n">1 850,00</td></tr>
-            <tr class="tot"><td>Total</td><td></td><td class="n">1 768,70</td></tr>
-          </table>
+          <div class="ba-k">Après : le tableau Excel, prêt à analyser</div>
+          <div class="xl">
+            <table>
+              <colgroup><col style="width:7%"/><col style="width:19%"/><col style="width:40%"/><col style="width:17%"/><col style="width:17%"/></colgroup>
+              <tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr>
+              <tr class="hd"><th>1</th><td>Date</td><td>Libellé</td><td class="n">Débit</td><td class="n">Crédit</td></tr>
+              <tr><th>2</th><td>01/09/2026</td><td>CARTE X9021 01/09 PARKING GARE</td><td class="n">6,24</td><td class="n"></td></tr>
+              <tr><th>3</th><td>01/09/2026</td><td>LOYER BUREAUX PRLV SEPA SCI LES TILLEULS</td><td class="n">850,00</td><td class="n"></td></tr>
+              <tr><th>4</th><td>04/09/2026</td><td>REMISE CARTE 04/09 TPE 4471</td><td class="n"></td><td class="n">411,02</td></tr>
+              <tr><th>5</th><td>08/09/2026</td><td>PRLV SEPA URSSAF</td><td class="n">1 834,72</td><td class="n"></td></tr>
+              <tr><th>6</th><td>12/09/2026</td><td>REMISE CHEQUES N 8878593</td><td class="n"></td><td class="n">1 200,00</td></tr>
+              <tr class="more"><th>…</th><td colspan="4">15 autres opérations</td></tr>
+              <tr class="tot"><th>22</th><td>Total</td><td></td><td class="n">4 199,05</td><td class="n">3 531,02</td></tr>
+            </table>
+          </div>
         </div>
       </div>
-      <p class="proof-note">Données d'exemple. Cas traité dans mon cours <a href="https://fr.tuto.com/excel/power-query-releve-bancaire-nettoyage-ligne-total,221421.html?cc=eugRnv" target="_blank" rel="noopener" style="text-decoration:underline">Relevé bancaire avec Power Query</a>.</p>
+      <p class="proof-note">Relevé fictif, 20 opérations. Cas traité dans mon cours <a href="https://fr.tuto.com/excel/power-query-releve-bancaire-nettoyage-ligne-total,221421.html?cc=eugRnv" target="_blank" rel="noopener" style="text-decoration:underline">Relevé bancaire avec Power Query</a>.</p>
     </div>
   </div>
 </section>
@@ -1898,7 +1957,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 <div class="trust">
   <div class="trust-inner">
     <span class="trust-label">Ils m'ont fait confiance</span>
-    <div class="trust-track"><span class="trust-logo">Leyton</span><span class="trust-logo">Luxembourg Stock Exchange</span><span class="trust-logo">Groupe STUDI</span><span class="trust-logo">Alpro-Danone</span><span class="trust-logo">Deutsche Bank</span><span class="trust-logo">La Croix-Rouge</span></div>
+    <div class="trust-track r"><span class="trust-logo"><img src="logos/leyton.svg" alt="" height="28" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"/><span class="tl-name">Leyton</span></span><span class="trust-logo"><img src="logos/luxembourg-stock-exchange.svg" alt="" height="28" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"/><span class="tl-name">Luxembourg Stock Exchange</span></span><span class="trust-logo"><img src="logos/groupe-studi.svg" alt="" height="28" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"/><span class="tl-name">Groupe STUDI</span></span><span class="trust-logo"><img src="logos/alpro-danone.svg" alt="" height="28" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"/><span class="tl-name">Alpro-Danone</span></span><span class="trust-logo"><img src="logos/deutsche-bank.svg" alt="" height="28" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"/><span class="tl-name">Deutsche Bank</span></span><span class="trust-logo"><img src="logos/croix-rouge.svg" alt="" height="28" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"/><span class="tl-name">La Croix-Rouge</span></span></div>
   </div>
   <p class="trust-note">Formations en groupe ou en individuel, pour une montée en compétences directement applicable. Réalisées en direct ou via des organismes de formation partenaires (dont Solpedinn).</p>
 </div>
@@ -2350,12 +2409,14 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
           <div class="mc-foot"><span class="mc-price">Essai <b>gratuit</b></span><span class="mc-go" aria-hidden="true">→</span></div></div>
       </a>
     </div>
-    <div class="r" style="margin:1.4rem 0 0;text-align:center;font-size:.82rem;font-weight:600;color:var(--ink2);line-height:1.9">
-      <div style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.2rem">Guides gratuits micro-entrepreneur</div>
-      <a href="provision-urssaf.html" data-umami-event="Lien article provision Urssaf" style="color:var(--or2);font-weight:700;text-decoration:underline;text-underline-offset:3px">Comment calculer sa provision Urssaf →</a><br>
-      <a href="plafond-micro-entreprise.html" data-umami-event="Lien article plafond" style="color:var(--or2);font-weight:700;text-decoration:underline;text-underline-offset:3px">Plafond de chiffre d'affaires 2026 : les seuils →</a><br>
-      <a href="franchise-tva-micro-entreprise.html" data-umami-event="Lien article franchise TVA" style="color:var(--or2);font-weight:700;text-decoration:underline;text-underline-offset:3px">Franchise de TVA : à partir de quand facturer ? →</a><br>
-      <a href="declaration-urssaf-mensuelle-trimestrielle.html" data-umami-event="Lien article déclaration" style="color:var(--or2);font-weight:700;text-decoration:underline;text-underline-offset:3px">Déclaration Urssaf : mensuelle ou trimestrielle ? →</a>
+    <div class="guides r">
+      <div class="guides-head"><h3>Guides gratuits pour micro-entrepreneurs</h3><p>Quatre lectures de 4 minutes, mises à jour en novembre 2026.</p></div>
+      <div class="guides-list">
+        <a class="guide" href="provision-urssaf.html" data-umami-event="Lien article provision Urssaf"><span class="g-k">Urssaf</span><span class="g-t">Combien mettre de côté pour l'Urssaf ?</span><span class="g-d">La formule, un exemple chiffré, les erreurs à éviter et un tableau Excel.</span><span class="g-go">Lire le guide</span></a>
+        <a class="guide" href="plafond-micro-entreprise.html" data-umami-event="Lien article plafond"><span class="g-k">Plafonds</span><span class="g-t">Plafond de chiffre d'affaires 2026 : les seuils</span><span class="g-d">Vente, services, activité mixte, et ce qui se passe en cas de dépassement.</span><span class="g-go">Lire le guide</span></a>
+        <a class="guide" href="franchise-tva-micro-entreprise.html" data-umami-event="Lien article franchise TVA"><span class="g-k">TVA</span><span class="g-t">Franchise de TVA : à partir de quand facturer ?</span><span class="g-d">Seuils de base et majorés, dépassement, exemple d'une profession libérale.</span><span class="g-go">Lire le guide</span></a>
+        <a class="guide" href="declaration-urssaf-mensuelle-trimestrielle.html" data-umami-event="Lien article déclaration"><span class="g-k">Déclaration</span><span class="g-t">Déclaration Urssaf : mensuelle ou trimestrielle ?</span><span class="g-d">Dates limites, déclaration à zéro, pénalité et changement de rythme.</span><span class="g-go">Lire le guide</span></a>
+      </div>
     </div>
     <details class="mc-more r" id="photographes">
       <summary>Les classeurs photographe à l'unité</summary>

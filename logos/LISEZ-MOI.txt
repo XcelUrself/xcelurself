@@ -1,0 +1,16 @@
+Logos des organisations citées dans "Ils m'ont fait confiance" (index.html)
+
+Dépose ici un fichier par organisation, avec EXACTEMENT ces noms :
+  leyton.svg
+  luxembourg-stock-exchange.svg
+  groupe-studi.svg
+  alpro-danone.svg
+  deutsche-bank.svg
+  croix-rouge.svg
+Format : SVG (idéal) ou PNG, fond transparent, hauteur d'environ 56 px.
+Tant qu'un fichier est absent, la page affiche le nom de l'organisation en texte.
+Les logos s'affichent en gris et prennent leurs couleurs au survol.
+
+Avant de les publier : vérifie que chaque organisation t'autorise à utiliser son logo
+(marque déposée). Utilise les fichiers fournis par l'organisation ou sa charte graphique officielle.
+Pour utiliser un .png, remplace ".svg" par ".png" dans index.html (src="logos/...").
