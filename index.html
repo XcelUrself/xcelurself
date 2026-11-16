@@ -83,13 +83,13 @@
   --bg3:   #ECE4DA;
   --ink:   #2b2724;
   --ink2:  #404040;
-  --muted: #7d746b;
+  --muted: #655d55;
   --white: #FDFBF8;
   --or1:   #FE3A7E;
-  --or2:   #FE3A7E;
-  --or3:   #D92A66;
+  --or2:   #C8205E;
+  --or3:   #B01C53;
   --grad:  #FE3A7E;
-  --gradr: #D92A66;
+  --gradr: #B01C53;
   --sage:  #65BAA9;
   --bd:    rgba(43,39,36,.1);
   --bda:   rgba(254,58,126,.2);
@@ -214,7 +214,7 @@ nav{
   font-size:clamp(2.2rem,4.6vw,4.4rem);
   font-weight:900;line-height:1;letter-spacing:-.03em;margin-bottom:1.4rem;color:var(--ink);
 }
-.hero-h1 em{font-style:normal;color:var(--or1)}
+.hero-h1 em{font-style:normal;color:var(--or2)}
 .hero-desc{font-size:.95rem;color:var(--ink2);line-height:1.8;max-width:500px;margin-bottom:1.8rem;font-weight:400}
 .hero-desc strong{color:var(--ink);font-weight:700}
 .hero-btns{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;margin-bottom:2.2rem}
@@ -234,7 +234,7 @@ nav{
 .proof-head{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:700;line-height:1.1;margin-bottom:.4rem}
 .proof-sub{font-size:.82rem;color:var(--ink2);margin-bottom:1.4rem}
 .ba{display:grid;grid-template-columns:1fr;gap:.35rem}
-.ba-arrow{color:var(--or1);font-size:1.3rem;font-weight:800;text-align:center;line-height:1}
+.ba-arrow{color:var(--or2);font-size:1.3rem;font-weight:800;text-align:center;line-height:1}
 .ba-box{border:1px solid var(--bd);border-radius:6px;overflow:hidden;background:#fff}
 .ba-k{font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .7rem;background:var(--bg2);color:var(--ink2)}
 .ba-box.after .ba-k{background:var(--or1);color:#fff}
@@ -264,7 +264,7 @@ nav{
 .door-k{font-size:.72rem;font-weight:700;color:var(--or3)}
 .door h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;line-height:1.1}
 .door p{font-size:.82rem;color:var(--ink2);line-height:1.6;flex:1}
-.door-go{font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--or1);margin-top:.4rem}
+.door-go{font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--or2);margin-top:.4rem}
 .door.main{background:var(--ink);color:#fff;border-color:var(--ink)}
 .door.main h3,.door.main p{color:#fff}
 .door.main p{opacity:.8}
@@ -376,7 +376,7 @@ nav{
 .testi-head h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .testi-avg{text-align:right}
 .avg-n{font-size:2.8rem;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.avg-stars{color:var(--or1);font-size:.95rem;letter-spacing:.05em}
+.avg-stars{color:var(--or2);font-size:.95rem;letter-spacing:.05em}
 .avg-sub{font-size:.65rem;color:var(--muted)}
 
 /* Two tabs: pro + online */
@@ -401,7 +401,7 @@ nav{
 .tc.feat{background:var(--grad);color:#fff;border:none}
 .tc::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:5.5rem;line-height:1;position:absolute;top:-.5rem;right:.8rem;color:rgba(0,0,0,.04);pointer-events:none}
 .tc.feat::before{color:rgba(255,255,255,.1)}
-.tc-stars{font-size:.82rem;letter-spacing:.08em;margin-bottom:.7rem;color:var(--or1)}
+.tc-stars{font-size:.82rem;letter-spacing:.08em;margin-bottom:.7rem;color:var(--or2)}
 .tc.feat .tc-stars{color:rgba(255,210,160,.9)}
 .tc-text{font-size:.82rem;font-style:italic;line-height:1.75;margin-bottom:.9rem;color:var(--ink2)}
 .tc.feat .tc-text{color:rgba(255,255,255,.88)}
@@ -970,7 +970,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .tc.feat .tc-more{color:#fff}
 /* ===== Signature : rose #FE3A7E en touche, plus de dégradés ===== */
 .stat-n,.avg-n,.card-price,.cb-price,.pc-price{background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--ink)!important}
-.nav-logo span,.footer-logo span{background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--or1)!important}
+.nav-logo span,.footer-logo span{background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--or2)!important}
 .tc.feat{background:var(--ink)!important}
 .peda-quote{background:var(--ink)!important}
 .fcard-cta,.mc-go,.tab-btn.active,.card-btn:hover{background:var(--ink)!important;box-shadow:none!important}
@@ -993,6 +993,18 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .trust-label{padding:0 1.5rem 0 0!important}
 .trust-track{padding-left:1.5rem!important}
 @media(max-width:560px){.stats{grid-template-columns:repeat(2,auto)}.hero-btns{gap:.8rem}}
+/* ===== Accessibilité : contrastes AA, focus visible ===== */
+.hero-h1 em{color:var(--or1)}
+.nav-logo span,.footer-logo span{color:var(--or1)!important}
+.btn-primary,.nav-cta,.drawer .d-cta,.nav-links a.nav-hl small,.ba-box.after .ba-k,.fcard-badge,.mc-promo,.pc-new-tag,.carnets-new,.pb-tag,.mbar-main,.tag.fill,.cstep i{color:#1a1714!important}
+.btn-primary:hover,.nav-cta:hover{background:#1a1714!important;color:#fff!important}
+.proof-free .free-k,.free-k{color:#1f7a64}
+.eyebrow{color:var(--ink2)}
+.eyebrow::before{background:var(--or1)}
+.xu-msg.user{color:#1a1714!important}
+:focus-visible{outline:3px solid #1a1714;outline-offset:3px;border-radius:4px}
+.door.main:focus-visible,.cta-final :focus-visible,footer :focus-visible,.price-card :focus-visible{outline-color:#fff}
+.door.main .door-go{color:#ffb3cc}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise.
      Site Umami : XcelUrself (xcelurself.github.io). -->
@@ -2410,13 +2422,13 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
           <p class="tc-role">Microsoft MVP · Formateur Excel certifié Expert · Morpheus Formation</p>
         </div>
         <div class="tc r d1">
-          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <div class="tc-stars" style="color:var(--or2)">★★★★★</div>
           <p class="tc-text">"J'ai effectué une formation Power Query avec Joffrey. C'était vraiment une montée en compétences très fluide pour moi. Joffrey s'est adapté à mon besoin au fil des séances, ce qui m'a permis d'appliquer la formation à des situations réelles. Il a su également s'adapter à mon planning professionnel qui n'est pas toujours évident. Je recommande fortement Joffrey pour son implication, sa patience et ses conseils. Merci ! Niveau Power Query débloqué ;)"</p>
           <p class="tc-author">Johanna Larboni</p>
           <p class="tc-role">Bras droit des dirigeants · Formation Power Query</p>
         </div>
         <div class="tc r d2">
-          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <div class="tc-stars" style="color:var(--or2)">★★★★★</div>
           <p class="tc-text">"Ça faisait un moment que je voulais m'initier à Power Query. Mais dans les bonnes conditions. J'ai choisi Joffrey, et grâce à Solpedinn, dont les formations sont éligibles CPF, j'ai pu financer une première session avec mon Jedi préféré. Patience, précision, maîtrise du sujet et des applications professionnelles, explications connectées à la réalité pratique du terrain, écoute : le top pour une immersion efficiente. Je ronronnais sur mes acquis Excel depuis quelques temps, ça a boosté ma confiance en moi et ma motivation à aller encore plus loin."</p>
           <p class="tc-author">Cathy Lagneau</p>
           <p class="tc-role">La fée de la logique qui optimise ton back office</p>
@@ -2429,32 +2441,32 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
           <p class="tc-role">Contrôleuse de gestion · Atout Groupe</p>
         </div>
         <div class="tc r d1">
-          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <div class="tc-stars" style="color:var(--or2)">★★★★★</div>
           <p class="tc-text">"Explications très claires, très pédagogue, s'adapte très bien au niveau du formé. Extrêmement disponible et flexible. Je le recommande vivement !"</p>
           <p class="tc-author">Cécile Naudot</p>
           <p class="tc-role">Responsable RH · Valobat</p>
         </div>
         <div class="tc r d2">
-          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <div class="tc-stars" style="color:var(--or2)">★★★★★</div>
           <p class="tc-text">"Formation sur mesure, quoi de mieux pour progresser à son rythme ? La méthode de Joffrey est parfaite. Je ne choisirai que Solpedinn pour mes prochaines formations."</p>
           <p class="tc-author">Nathalie Rance</p>
           <p class="tc-role">Contrôleuse de gestion · La Poste Groupe</p>
           <p class="tc-note">Formation suivie via <a href="https://www.solpedinn.com/" target="_blank" rel="noopener">Solpedinn</a>, organisme partenaire certifié Qualiopi, spécialisé Excel et Power BI.</p>
         </div>
         <div class="tc r">
-          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <div class="tc-stars" style="color:var(--or2)">★★★★★</div>
           <p class="tc-text">"Super parcours de formation, technique et flexible, piloté de main de maître. J'ai apprécié la possibilité d'aborder les cas concrets de mon travail et de trouver les solutions en direct."</p>
           <p class="tc-author">Rémy Houttemane</p>
           <p class="tc-role">Responsable Contrôle de Gestion · Damartex Healthcare</p>
         </div>
         <div class="tc r d1">
-          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <div class="tc-stars" style="color:var(--or2)">★★★★★</div>
           <p class="tc-text">"Très à l'écoute, formation adaptée et personnalisée à mes besoins et mon secteur d'activité. Ce que j'ai appris me sert déjà au quotidien. Au plaisir de retravailler ensemble."</p>
           <p class="tc-author">Yolène Legris</p>
           <p class="tc-role">Responsable Administrative &amp; Financière · Voco Paris</p>
         </div>
         <div class="tc r d2">
-          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <div class="tc-stars" style="color:var(--or2)">★★★★★</div>
           <p class="tc-text">"Ça fait déjà 2 fois que je travaille avec Joffrey. Sa compétence, ses exercices adaptés à mes demandes, sa bonne humeur et surtout sa patience et sa pédagogie parfaite. Je reprendrai des cours."</p>
           <p class="tc-author">Nathalie Rance</p>
           <p class="tc-role">La Poste Groupe</p>
@@ -2472,13 +2484,13 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
           <p class="tc-role">Apprenant · Formation vidéo en ligne</p>
         </div>
         <div class="tc r d1">
-          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <div class="tc-stars" style="color:var(--or2)">★★★★★</div>
           <p class="tc-text">"Beaucoup de réponses à mes questions. Va falloir que je m'habitue. Merci encore. Excellent tutoriel."</p>
           <p class="tc-author">Patrick Daniel</p>
           <p class="tc-role">Apprenant · Formation vidéo en ligne</p>
         </div>
         <div class="tc r d2">
-          <div class="tc-stars" style="color:var(--or1)">★★★★★</div>
+          <div class="tc-stars" style="color:var(--or2)">★★★★★</div>
           <p class="tc-text">"Tuto clair, net et précis. Super bien fait."</p>
           <p class="tc-author">Nathalie Le Grand</p>
           <p class="tc-role">Apprenante · Formation vidéo en ligne</p>
