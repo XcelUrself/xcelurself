@@ -22,18 +22,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  --bg:#faf8f5;--bg2:#f3f0eb;--bg3:#ede9e2;
-  --ink:#1c1815;--ink2:#4a4238;--muted:#8a7f74;
-  --or1:#e8622a;--or2:#d44d6e;--or3:#b83868;
-  --grad:linear-gradient(120deg,#e8622a 0%,#d44d6e 55%,#b83868 100%);
-  --gradr:linear-gradient(120deg,#b83868 0%,#d44d6e 55%,#e8622a 100%);
-  --bd:rgba(28,24,21,.1);--bda:rgba(232,98,42,.18);
+  --bg:#FAF6F1;--bg2:#F3EDE5;--bg3:#ECE4DA;
+  --ink:#2b2724;--ink2:#404040;--muted:#655d55;
+  --or1:#FE3A7E;--or2:#C8205E;--or3:#B01C53;
+  --grad:#FE3A7E;
+  --gradr:#B01C53;
+  --bd:rgba(28,24,21,.1);--bda:rgba(254,58,126,.18);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;font-weight:400}
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:radial-gradient(ellipse 50% 40% at 5% 0%,rgba(232,98,42,.06) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 95% 100%,rgba(184,56,104,.05) 0%,transparent 60%)}
+  background:none}
 a{text-decoration:none}
 ul{list-style:none}
 nav,main,footer{position:relative;z-index:1}
@@ -46,8 +46,8 @@ nav{position:sticky;top:0;z-index:650;background:rgba(250,248,245,.96);backdrop-
 .nav-links{display:flex;gap:1.8rem}
 .nav-links a{font-size:.75rem;font-weight:600;letter-spacing:.04em;color:var(--ink2);transition:color .2s}
 .nav-links a:hover{color:var(--or2)}
-.nav-cta{background:var(--grad);color:#fff;font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.3rem;border-radius:100px;transition:all .2s;flex-shrink:0;box-shadow:0 3px 12px rgba(232,98,42,.2)}
-.nav-cta:hover{box-shadow:0 6px 20px rgba(232,98,42,.3);transform:translateY(-1px)}
+.nav-cta{background:var(--grad);color:#fff;font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.3rem;border-radius:100px;transition:all .2s;flex-shrink:0;box-shadow:0 3px 12px rgba(254,58,126,.2)}
+.nav-cta:hover{box-shadow:0 6px 20px rgba(254,58,126,.3);transform:translateY(-1px)}
 
 /* ARTICLE */
 .wrap{max-width:760px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) clamp(1.25rem,5vw,2rem) 4.5rem}
@@ -58,7 +58,7 @@ nav{position:sticky;top:0;z-index:650;background:rgba(250,248,245,.96);backdrop-
 h1{font-family:'Montserrat',sans-serif;font-size:clamp(2.1rem,6.4vw,3.6rem);font-weight:900;line-height:.98;letter-spacing:-.03em;margin-bottom:1.6rem}
 h1 .l1{display:block;color:var(--ink)}
 h1 .l2{display:block;font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding-right:.1em}
-h1 .l3{display:block;color:transparent;-webkit-text-stroke:2px var(--or2)}
+h1 .l3{display:block;color:var(--or1)}
 .lead{font-size:1rem;line-height:1.85;color:var(--ink2);max-width:640px}
 .meta{margin-top:1.2rem;font-size:.7rem;font-weight:600;letter-spacing:.04em;color:var(--muted)}
 h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:700;line-height:1.08;margin:3rem 0 .9rem;color:var(--ink)}
@@ -66,7 +66,7 @@ h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-web
 p{color:var(--ink2);margin-bottom:1rem;line-height:1.85}
 p strong,li strong{color:var(--ink);font-weight:700}
 a.in{color:var(--or2);font-weight:600;text-decoration:underline;text-underline-offset:3px}
-.formule{margin:1.6rem 0;padding:1.3rem 1.5rem;background:linear-gradient(120deg,rgba(232,98,42,.08),rgba(184,56,104,.06));border:1px solid var(--bda);border-left:4px solid var(--or2);border-radius:0 14px 14px 0;font-weight:700;font-size:1.02rem;color:var(--ink);line-height:1.6}
+.formule{margin:1.6rem 0;padding:1.3rem 1.5rem;background:rgba(254,58,126,.08);border:1px solid var(--bda);border-left:4px solid var(--or2);border-radius:0 14px 14px 0;font-weight:700;font-size:1.02rem;color:var(--ink);line-height:1.6}
 .tablewrap{overflow-x:auto;margin:1.4rem 0 .8rem;border:1px solid var(--bd);border-radius:14px;background:#fff}
 table{width:100%;border-collapse:collapse;font-size:.88rem}
 th,td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--bd);color:var(--ink2)}
@@ -83,13 +83,13 @@ ul.err li{position:relative;padding:1rem 1.2rem 1rem 3.1rem;background:#fff;bord
 ul.err{counter-reset:e}
 ul.err li::before{content:counter(e);position:absolute;left:1.1rem;top:.95rem;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--grad);color:#fff;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center}
 .box{margin:2.4rem 0 1.5rem;padding:clamp(1.6rem,4vw,2.4rem);background:var(--ink);border-radius:22px;position:relative;overflow:hidden}
-.box::before{content:'';position:absolute;top:-40%;right:-10%;width:60%;height:140%;background:radial-gradient(ellipse,rgba(232,98,42,.28),transparent 65%);pointer-events:none}
+.box::before{content:'';position:absolute;top:-40%;right:-10%;width:60%;height:140%;background:none;pointer-events:none}
 .box>*{position:relative}
 .box .eyebrow{margin-top:0;color:#f6a07a}
 .box h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3.6vw,2.3rem);font-weight:700;line-height:1.05;color:var(--bg);margin-bottom:.8rem}
 .box p{color:rgba(250,248,245,.72);font-size:.9rem;max-width:520px}
-.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;padding:.9rem 1.8rem;transition:all .22s;cursor:pointer;background:var(--grad);color:#fff;box-shadow:0 4px 18px rgba(232,98,42,.3)}
-.btn:hover{background:var(--gradr);box-shadow:0 8px 26px rgba(232,98,42,.4);transform:translateY(-2px)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;padding:.9rem 1.8rem;transition:all .22s;cursor:pointer;background:var(--grad);color:#fff;box-shadow:0 4px 18px rgba(254,58,126,.3)}
+.btn:hover{background:var(--gradr);box-shadow:0 8px 26px rgba(254,58,126,.4);transform:translateY(-2px)}
 .legal{font-size:.74rem;line-height:1.8;color:var(--muted);margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--bd)}
 
 /* FOOTER (identique à la page d'accueil) */
@@ -102,8 +102,20 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .footer-copy{width:100%;text-align:center;font-size:.62rem;color:rgba(250,248,245,.18);margin-top:.9rem}
 
 @media(max-width:800px){.nav-links{display:none}.footer-inner{flex-direction:column;align-items:center;text-align:center}.footer-links{justify-content:center}}
-@media(max-width:480px){h1 .l3{-webkit-text-stroke:1.5px var(--or2)}.nav-cta{padding:.5rem 1rem}th,td{padding:.7rem .7rem}}
+@media(max-width:480px){h1 .l3{-webkit-text-stroke:0}.nav-cta{padding:.5rem 1rem}th,td{padding:.7rem .7rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* ===== Palette signature + accessibilité (alignée sur l'accueil) ===== */
+.btn-primary,.nav-cta,.drawer .d-cta,.mbar-main,.tag.fill,.cstep i{color:#1a1714!important}
+.btn-primary:hover,.nav-cta:hover{background:#1a1714!important;color:#fff!important}
+.xu-msg.user{color:#1a1714!important}
+.nav-logo span,.footer-logo span{background:none!important;-webkit-text-fill-color:currentColor!important;color:#FE3A7E!important}
+:focus-visible{outline:3px solid #1a1714;outline-offset:3px;border-radius:4px}
+footer :focus-visible,.cta-final :focus-visible{outline-color:#fff}
+
+.carnets-new,.nav-links a.nav-hl,.nav-links a.nav-hl:hover{color:#1a1714!important}
+.btn,.btn:hover{color:#1a1714!important}
+.btn:hover{background:#1a1714!important;color:#fff!important}
+tfoot td,tfoot .n{color:#1a1714}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise (même site que la page d'accueil). -->
 <script>
@@ -188,7 +200,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
       <a href="index.html#cgv">CGV</a>
       <a href="index.html#confidentialite">Confidentialité</a>
     </div>
-    <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur Microsoft Certifié &amp; Confirmé · Tous droits réservés</p>
+    <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur sur les outils Microsoft · Non affilié à Microsoft · Tous droits réservés</p>
   </div>
 </footer>
 

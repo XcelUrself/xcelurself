@@ -23,20 +23,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  --bg:    #faf8f5;
-  --bg2:   #f3f0eb;
-  --bg3:   #ede9e2;
-  --ink:   #1c1815;
-  --ink2:  #4a4238;
-  --muted: #8a7f74;
-  --white: #ffffff;
-  --or1:   #e8622a;
-  --or2:   #d44d6e;
-  --or3:   #b83868;
-  --grad:  linear-gradient(120deg,#e8622a 0%,#d44d6e 55%,#b83868 100%);
-  --gradr: linear-gradient(120deg,#b83868 0%,#d44d6e 55%,#e8622a 100%);
+  --bg:    #FAF6F1;
+  --bg2:   #F3EDE5;
+  --bg3:   #ECE4DA;
+  --ink:   #2b2724;
+  --ink2:  #404040;
+  --muted: #655d55;
+  --white: #FDFBF8;
+  --or1:   #FE3A7E;
+  --or2:   #C8205E;
+  --or3:   #B01C53;
+  --grad:  #FE3A7E;
+  --gradr: #B01C53;
   --bd:    rgba(28,24,21,.1);
-  --bda:   rgba(232,98,42,.18);
+  --bda:   rgba(254,58,126,.18);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -51,8 +51,7 @@ ul{list-style:none}
 body::before{
   content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
   background:
-    radial-gradient(ellipse 50% 40% at 5% 0%,rgba(232,98,42,.06) 0%,transparent 60%),
-    radial-gradient(ellipse 40% 30% at 95% 100%,rgba(184,56,104,.05) 0%,transparent 60%);
+    none;
 }
 section,nav,footer,.ticker,.trust,.channels{position:relative;z-index:1}
 .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,5vw,4rem)}
@@ -75,8 +74,8 @@ section,nav,footer,.ticker,.trust,.channels{position:relative;z-index:1}
   font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
   border-radius:100px;padding:.85rem 1.8rem;transition:all .22s;cursor:pointer;
 }
-.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 18px rgba(232,98,42,.2)}
-.btn-primary:hover{background:var(--gradr);box-shadow:0 8px 26px rgba(232,98,42,.3);transform:translateY(-2px)}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 18px rgba(254,58,126,.2)}
+.btn-primary:hover{background:var(--gradr);box-shadow:0 8px 26px rgba(254,58,126,.3);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:var(--or2);border:1.5px solid var(--bda)}
 .btn-outline:hover{background:var(--or2);color:#fff;transform:translateY(-2px)}
 .btn-white{background:#fff;color:var(--or3);font-weight:700}
@@ -110,9 +109,9 @@ nav{
   background:var(--grad);color:#fff;font-weight:700;
   font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
   padding:.55rem 1.3rem;border-radius:100px;transition:all .2s;flex-shrink:0;
-  box-shadow:0 3px 12px rgba(232,98,42,.2);
+  box-shadow:0 3px 12px rgba(254,58,126,.2);
 }
-.nav-cta:hover{box-shadow:0 6px 20px rgba(232,98,42,.3);transform:translateY(-1px)}
+.nav-cta:hover{box-shadow:0 6px 20px rgba(254,58,126,.3);transform:translateY(-1px)}
 .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:34px;height:34px;background:none;border:none;cursor:pointer;padding:4px;flex-shrink:0;position:relative;z-index:700}
 .hamburger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .2s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -168,7 +167,7 @@ nav{
 }
 .slogan-badge{
   display:inline-flex;align-items:center;gap:.5rem;
-  background:linear-gradient(120deg,rgba(232,98,42,.1),rgba(184,56,104,.08));
+  background:rgba(254,58,126,.1);
   border:1px solid var(--bda);border-radius:100px;
   padding:.45rem 1rem;margin-bottom:1.4rem;
   font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--or2);
@@ -180,7 +179,7 @@ nav{
 }
 .hero-h1 .l1{color:var(--ink);display:block}
 .hero-h1 .l2{font-style:italic;display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-h1 .l3{display:block;color:transparent;-webkit-text-stroke:2.5px var(--or2);font-style:normal}
+.hero-h1 .l3{display:block;color:var(--or1);font-style:normal}
 .hero-desc{font-size:.9rem;color:var(--ink2);line-height:1.8;max-width:460px;margin-bottom:2rem;font-weight:400}
 .hero-desc strong{color:var(--ink);font-weight:700}
 .hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center;margin-bottom:2.2rem}
@@ -210,9 +209,9 @@ nav{
   background:var(--grad);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;
   font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
   padding:.75rem;border-radius:100px;transition:all .2s;
-  box-shadow:0 4px 14px rgba(232,98,42,.25);
+  box-shadow:0 4px 14px rgba(254,58,126,.25);
 }
-.pc-btn:hover{box-shadow:0 8px 22px rgba(232,98,42,.35);transform:scale(1.01)}
+.pc-btn:hover{box-shadow:0 8px 22px rgba(254,58,126,.35);transform:scale(1.01)}
 .pc-btn svg{width:14px;height:14px;stroke:#fff}
 
 /* TRUST BAR */
@@ -232,7 +231,7 @@ nav{
 .sec-head p strong{color:var(--ink);font-weight:700}
 .skills{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bda);border-radius:8px;overflow:hidden}
 .skill{background:var(--white);padding:1.5rem 1.3rem;transition:background .2s}
-.skill:hover{background:linear-gradient(135deg,rgba(232,98,42,.04),rgba(184,56,104,.03))}
+.skill:hover{background:rgba(254,58,126,.04)}
 .sk-ico{margin-bottom:.75rem}
 .sk-ico svg{width:26px;height:26px;stroke:var(--or2);stroke-width:1.6}
 .sk-name{font-size:.8rem;font-weight:700;margin-bottom:.35rem;color:var(--ink)}
@@ -279,7 +278,7 @@ nav{
 .about-text p{font-size:.87rem;color:var(--ink2);line-height:1.85;margin-bottom:.85rem}
 .about-text p strong{color:var(--ink);font-weight:700}
 .tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.3rem}
-.tag{background:linear-gradient(120deg,rgba(232,98,42,.08),rgba(184,56,104,.06));border:1px solid var(--bda);font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .75rem;border-radius:100px;color:var(--or2)}
+.tag{background:rgba(254,58,126,.08);border:1px solid var(--bda);font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .75rem;border-radius:100px;color:var(--or2)}
 .tag.fill{background:var(--grad);color:#fff;border:none}
 
 /* TESTIMONIALS */
@@ -290,7 +289,7 @@ nav{
 .testi-head h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .testi-avg{text-align:right}
 .avg-n{font-size:2.8rem;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.avg-stars{color:var(--or1);font-size:.95rem;letter-spacing:.05em}
+.avg-stars{color:var(--or2);font-size:.95rem;letter-spacing:.05em}
 .avg-sub{font-size:.65rem;color:var(--muted)}
 
 /* Two tabs: pro + online */
@@ -302,7 +301,7 @@ nav{
   border:1.5px solid var(--bda);background:transparent;color:var(--muted);
   transition:all .2s;
 }
-.tab-btn.active{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(232,98,42,.2)}
+.tab-btn.active{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(254,58,126,.2)}
 .tab-content{display:none}
 .tab-content.active{display:block}
 
@@ -315,7 +314,7 @@ nav{
 .tc.feat{background:var(--grad);color:#fff;border:none}
 .tc::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:5.5rem;line-height:1;position:absolute;top:-.5rem;right:.8rem;color:rgba(0,0,0,.04);pointer-events:none}
 .tc.feat::before{color:rgba(255,255,255,.1)}
-.tc-stars{font-size:.82rem;letter-spacing:.08em;margin-bottom:.7rem;color:var(--or1)}
+.tc-stars{font-size:.82rem;letter-spacing:.08em;margin-bottom:.7rem;color:var(--or2)}
 .tc.feat .tc-stars{color:rgba(255,210,160,.9)}
 .tc-text{font-size:.82rem;font-style:italic;line-height:1.75;margin-bottom:.9rem;color:var(--ink2)}
 .tc.feat .tc-text{color:rgba(255,255,255,.88)}
@@ -339,7 +338,7 @@ nav{
 .cb-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;margin-bottom:.45rem}
 .cb-desc{font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:.9rem}
 .cb-meta{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem}
-.cb-meta span{background:rgba(232,98,42,.15);border:1px solid rgba(232,98,42,.2);font-size:.6rem;font-weight:600;padding:.25rem .6rem;border-radius:100px;color:rgba(255,200,160,.85);display:flex;align-items:center;gap:.3rem}
+.cb-meta span{background:rgba(254,58,126,.15);border:1px solid rgba(254,58,126,.2);font-size:.6rem;font-weight:600;padding:.25rem .6rem;border-radius:100px;color:rgba(255,200,160,.85);display:flex;align-items:center;gap:.3rem}
 .cb-meta span svg{width:11px;height:11px;stroke:currentColor}
 .cb-price{font-size:2.8rem;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.2rem}
 .cb-note{font-size:.62rem;color:rgba(255,255,255,.3);margin-bottom:1rem}
@@ -348,20 +347,20 @@ nav{
   background:var(--grad);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;
   font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
   padding:.8rem 1.8rem;border-radius:100px;transition:all .2s;
-  box-shadow:0 4px 18px rgba(232,98,42,.3);
+  box-shadow:0 4px 18px rgba(254,58,126,.3);
 }
-.cb-btn:hover{box-shadow:0 8px 26px rgba(232,98,42,.4);transform:translateY(-2px)}
+.cb-btn:hover{box-shadow:0 8px 26px rgba(254,58,126,.4);transform:translateY(-2px)}
 .cb-btn svg{width:14px;height:14px;stroke:#fff}
 .cb-includes li{font-size:.78rem;color:rgba(255,255,255,.7);padding:.38rem 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:.55rem;line-height:1.35}
 .cb-includes li svg{flex-shrink:0;width:13px;height:13px;stroke:var(--or1)}
 .cb-includes li:last-child{border:none}
 .card{background:var(--bg);border:1.5px solid var(--bd);border-radius:8px;padding:1.6rem;display:flex;flex-direction:column;transition:border-color .2s,transform .25s,box-shadow .25s}
-.card:hover{border-color:var(--or2);transform:translateY(-3px);box-shadow:0 14px 36px rgba(232,98,42,.07)}
+.card:hover{border-color:var(--or2);transform:translateY(-3px);box-shadow:0 14px 36px rgba(254,58,126,.07)}
 .card-tag{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
 .card-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;line-height:1.2;margin-bottom:.45rem}
 .card-desc{font-size:.78rem;color:var(--muted);line-height:1.7;flex:1;margin-bottom:.9rem}
 .card-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.9rem}
-.card-meta span{background:linear-gradient(120deg,rgba(232,98,42,.07),rgba(184,56,104,.05));border:1px solid var(--bda);font-size:.58rem;font-weight:600;padding:.22rem .55rem;border-radius:100px;color:var(--or2);display:flex;align-items:center;gap:.3rem}
+.card-meta span{background:rgba(254,58,126,.07);border:1px solid var(--bda);font-size:.58rem;font-weight:600;padding:.22rem .55rem;border-radius:100px;color:var(--or2);display:flex;align-items:center;gap:.3rem}
 .card-meta span svg{width:10px;height:10px;stroke:currentColor}
 .card-price{font-size:1.7rem;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.8rem}
 .card-btn{display:flex;align-items:center;justify-content:center;gap:.4rem;border:1.5px solid var(--bda);color:var(--or2);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem;border-radius:100px;transition:all .2s}
@@ -380,7 +379,7 @@ nav{
 .guarantee svg{width:13px;height:13px;stroke:rgba(255,255,255,.3)}
 
 /* CHANNELS */
-.channels{background:linear-gradient(120deg,rgba(232,98,42,.06),rgba(184,56,104,.06));border-top:1px solid var(--bda);border-bottom:1px solid var(--bda);padding:2.5rem clamp(1.25rem,5vw,4rem)}
+.channels{background:rgba(254,58,126,.06);border-top:1px solid var(--bda);border-bottom:1px solid var(--bda);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .channels-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:1.8rem;flex-wrap:wrap}
 .ch-label{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--or2);white-space:nowrap}
 .ch-list{display:flex;gap:.7rem;flex-wrap:wrap}
@@ -440,10 +439,10 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .fcard-price strong{font-size:1.05rem;font-weight:800;color:var(--ink)}
 .fcard-price span{font-size:.68rem;color:var(--muted);text-decoration:line-through}
 .fcard-cta{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;color:#fff;background:var(--grad);padding:.6rem 1.1rem;border-radius:100px;white-space:nowrap;transition:all .2s}
-.fcard-new{border-color:rgba(212,77,110,.45);box-shadow:0 10px 30px rgba(212,77,110,.12)}
+.fcard-new{border-color:rgba(254,58,126,.45);box-shadow:0 10px 30px rgba(254,58,126,.12)}
 .fcard-badge{font-size:.6rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--grad);padding:.28rem .65rem;border-radius:100px}
 .fcard-price em{font-style:normal;font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--or3)}
-.fcard-cta:hover{box-shadow:0 6px 18px rgba(232,98,42,.3);transform:translateY(-1px)}
+.fcard-cta:hover{box-shadow:0 6px 18px rgba(254,58,126,.3);transform:translateY(-1px)}
 .formations-more{text-align:center;margin-top:2.8rem}
 
 /* Responsive */
@@ -583,7 +582,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
   .hero-right{order:-1}
   .photo-wrap{max-height:240px}
   .hero-h1{font-size:clamp(2.6rem,8.5vw,3.5rem)}
-  .hero-h1 .l3{-webkit-text-stroke:1.5px var(--or2)}
+  .hero-h1 .l3{-webkit-text-stroke:0}
   .hero-btns{flex-direction:column;align-items:stretch}
   .btn{justify-content:center;width:100%}
   .stats{gap:1.1rem}
@@ -646,13 +645,13 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 #xu-chat-toggle{
   position:fixed;bottom:24px;right:24px;z-index:8500;
   width:60px;height:60px;border-radius:50%;
-  background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));
+  background:var(--grad, #FE3A7E);
   border:none;cursor:pointer;
-  box-shadow:0 8px 28px rgba(232,98,42,.38);
+  box-shadow:0 8px 28px rgba(254,58,126,.38);
   display:flex;align-items:center;justify-content:center;
   transition:transform .25s, box-shadow .25s;
 }
-#xu-chat-toggle:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 34px rgba(232,98,42,.48)}
+#xu-chat-toggle:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 34px rgba(254,58,126,.48)}
 #xu-chat-toggle svg{width:26px;height:26px;stroke:#fff;transition:opacity .15s, transform .15s}
 #xu-chat-toggle .xu-icon-close{position:absolute;opacity:0;transform:rotate(-90deg) scale(.6)}
 #xu-chat-toggle.open .xu-icon-chat{opacity:0;transform:rotate(90deg) scale(.6)}
@@ -688,7 +687,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 }
 #xu-chat-avatar{
   width:36px;height:36px;border-radius:50%;
-  background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));
+  background:var(--grad, #FE3A7E);
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
   font-family:'Cormorant Garamond',serif;font-weight:700;color:#fff;font-size:1.1rem;
 }
@@ -712,9 +711,9 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .xu-msg{max-width:84%;font-size:.78rem;line-height:1.55;padding:.65rem .85rem;border-radius:14px;animation:xuFadeIn .25s ease}
 @keyframes xuFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .xu-msg.bot{align-self:flex-start;background:#fff;border:1px solid #ece6dd;color:#1c1815;border-bottom-left-radius:4px}
-.xu-msg.user{align-self:flex-end;background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));color:#fff;border-bottom-right-radius:4px}
+.xu-msg.user{align-self:flex-end;background:var(--grad, #FE3A7E);color:#fff;border-bottom-right-radius:4px}
 .xu-msg a{color:inherit;text-decoration:underline;text-underline-offset:2px;font-weight:600}
-.xu-msg.bot a{color:#e8622a}
+.xu-msg.bot a{color:#C8205E}
 
 /* Indicateur de saisie */
 .xu-typing{align-self:flex-start;background:#fff;border:1px solid #ece6dd;border-radius:14px;border-bottom-left-radius:4px;padding:.7rem .9rem;display:flex;gap:4px}
@@ -743,11 +742,11 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 #xu-chat-footnote a{
   display:inline-flex;align-items:center;gap:.35rem;
   color:#fff;font-weight:700;font-size:.72rem;
-  background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));
+  background:var(--grad, #FE3A7E);
   padding:.55rem 1.1rem;border-radius:100px;
   text-decoration:none;transition:transform .15s, box-shadow .15s;
 }
-#xu-chat-footnote a:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(232,98,42,.32)}
+#xu-chat-footnote a:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(254,58,126,.32)}
 
 @media(max-width:480px){
   #xu-chat-window{
@@ -759,7 +758,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 /* NAV : onglet mis en avant */
 .nav-links a{white-space:nowrap}
 @media(max-width:1340px){.nav-links{gap:.95rem}.nav-links a{font-size:.7rem}.nav-cta{padding:.5rem 1rem;font-size:.62rem;letter-spacing:.06em}.nav-logo{font-size:1.25rem}}
-.nav-links a.nav-hl{color:#fff;background:var(--grad);padding:.38rem .85rem;border-radius:100px;font-weight:700;box-shadow:0 3px 12px rgba(232,98,42,.25);display:inline-flex;align-items:center;gap:.4rem}
+.nav-links a.nav-hl{color:#fff;background:var(--grad);padding:.38rem .85rem;border-radius:100px;font-weight:700;box-shadow:0 3px 12px rgba(254,58,126,.25);display:inline-flex;align-items:center;gap:.4rem}
 .nav-links a.nav-hl:hover{color:#fff;transform:translateY(-1px)}
 .nav-links a.nav-hl small{font-size:.52rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:#f4d23c;color:#17222b;border-radius:100px;padding:.12rem .45rem}
 .drawer a.nav-hl-d{color:var(--or2)}
@@ -818,6 +817,20 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .cdef span{font-size:.84rem;color:var(--ink2);line-height:1.6}
 @media(max-width:860px){.carnets-head,.carnets-how,.cboxes{grid-template-columns:1fr}.carnets-art{transform:none;max-width:420px}.cp-hero{padding-top:3rem}}
 
+/* ===== Palette signature + accessibilité (alignée sur l'accueil) ===== */
+.btn-primary,.nav-cta,.drawer .d-cta,.mbar-main,.tag.fill,.cstep i{color:#1a1714!important}
+.btn-primary:hover,.nav-cta:hover{background:#1a1714!important;color:#fff!important}
+.xu-msg.user{color:#1a1714!important}
+.nav-logo span,.footer-logo span{background:none!important;-webkit-text-fill-color:currentColor!important;color:#FE3A7E!important}
+:focus-visible{outline:3px solid #1a1714;outline-offset:3px;border-radius:4px}
+footer :focus-visible,.cta-final :focus-visible{outline-color:#fff}
+
+#xu-chat-toggle{transition:transform .3s,opacity .3s}
+#xu-chat-toggle.xu-away{transform:translateX(90px);opacity:0;pointer-events:none}
+.carnets-new,.nav-links a.nav-hl,.nav-links a.nav-hl:hover{color:#1a1714!important}
+.btn,.btn:hover{color:#1a1714!important}
+.btn:hover{background:#1a1714!important;color:#fff!important}
+tfoot td,tfoot .n{color:#1a1714}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise.
      Site Umami : XcelUrself (xcelurself.github.io). -->
@@ -842,7 +855,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
         {"@type": "EducationalOccupationalCredential", "name": "Microsoft Office Specialist (MOS) PowerPoint", "credentialCategory": "certification", "recognizedBy": {"@type": "Organization", "name": "Microsoft"}},
         {"@type": "EducationalOccupationalCredential", "name": "TOSA Excel (915/1000)", "credentialCategory": "certification", "recognizedBy": {"@type": "Organization", "name": "Isograd"}}
       ],
-   "description": "Joffrey Gros est formateur Microsoft certifié, basé en Alsace, fondateur de XcelUrself : formations Excel, Power Query, Power Pivot, Power BI, PowerPoint et Word, en entreprise et en vidéo.",
+   "description": "Joffrey Gros est formateur sur les outils Microsoft (certifié MOS PowerPoint), basé en Alsace, fondateur de XcelUrself : formations Excel, Power Query, Power Pivot, Power BI, PowerPoint et Word, en entreprise et en vidéo.",
    "url": "https://xcelurself.github.io/xcelurself/carnets.html",
    "image": "https://xcelurself.github.io/xcelurself/joffrey-gros.webp",
    "worksFor": {
@@ -892,7 +905,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     "@id": "https://xcelurself.github.io/xcelurself/#joffrey-gros"
    },
    "foundingDate": "2018-04",
-   "description": "XcelUrself, la marque de Joffrey Gros, formateur Microsoft certifié : formations sur mesure en entreprise (présentiel en Alsace et Grand Est, distanciel partout en France) et formations vidéo sur Tuto.com.",
+   "description": "XcelUrself, la marque de Joffrey Gros, formateur sur les outils Microsoft : formations sur mesure en entreprise (présentiel en Alsace et Grand Est, distanciel partout en France) et formations vidéo sur Tuto.com.",
    "areaServed": [
     {
      "@type": "AdministrativeArea",
@@ -1578,30 +1591,13 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 <div class="drawer" id="drawer" aria-modal="true" role="dialog" aria-label="Navigation">
   <a href="index.html#competences" onclick="closeD()">Expertise</a>
   <a href="index.html#formations" onclick="closeD()">Formations</a>
-  <a class="nav-hl-d" href="carnets.html" onclick="closeD()">Mes carnets ✦ Nouveau</a>
+  <a class="nav-hl-d" href="carnets.html" onclick="closeD()">Mes carnets  Nouveau</a>
   <a href="index.html#pedagogie" onclick="closeD()">Pédagogie</a>
   <a href="index.html#profil" onclick="closeD()">Mon profil</a>
   <a href="index.html#avis" onclick="closeD()">Témoignages</a>
   <a href="index.html#entreprises" onclick="closeD()">Entreprises</a>
   <a href="index.html#faq" onclick="closeD()">FAQ</a>
       <a data-umami-event="Clic Tuto.com" class="d-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener" onclick="closeD()">Voir les formations</a>
-</div>
-
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-inner">
-    <span class="hi">Formateur Microsoft Certifié &amp; Confirmé</span>
-    <span>·</span><span>MOS PowerPoint</span>
-    <span>·</span><span>Excel · Power BI · Power Query · Power Pivot · Word</span>
-    <span>·</span><span class="hi">Débutant lundi. Efficace vendredi. ✦</span>
-    <span>·</span><span>25 formations vidéo · Accès à vie</span>
-    <span>·</span><span>4,7 / 5 sur Tuto.com</span><span>·</span>
-    <span class="hi">Formateur Microsoft Certifié &amp; Confirmé</span>
-    <span>·</span><span>MOS PowerPoint</span>
-    <span>·</span><span>Excel · Power BI · Power Query · Power Pivot · Word</span>
-    <span>·</span><span class="hi">Débutant lundi. Efficace vendredi. ✦</span>
-    <span>·</span><span>25 formations vidéo · Accès à vie</span>
-    <span>·</span><span>4,7 / 5 sur Tuto.com</span><span>·</span>
-  </div>
 </div>
 
 <nav>
@@ -1755,7 +1751,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     <p><strong>Médiation de la consommation :</strong> conformément à l'article L. 616-1 du Code de la consommation, en cas de litige non résolu directement, le consommateur peut recourir gratuitement à un médiateur de la consommation. Coordonnées du médiateur compétent disponibles sur demande.</p>
   </div>
 
-  <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur Microsoft Certifié &amp; Confirmé · Tous droits réservés</p>
+  <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur sur les outils Microsoft · Non affilié à Microsoft · Tous droits réservés</p>
 </footer>
 
 <script>
@@ -2000,6 +1996,12 @@ document.querySelectorAll('.fiq').forEach(q=>{
 // Scroll reveal
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');});},{threshold:.1});
 document.querySelectorAll('.r').forEach(el=>io.observe(el));
+</script>
+<script>
+(function(){var t=document.getElementById('xu-chat-toggle');if(!t)return;var last=window.scrollY,tm;
+addEventListener('scroll',function(){if(innerWidth>800||t.getAttribute('aria-expanded')==='true')return;var y=window.scrollY;
+if(y>last+6)t.classList.add('xu-away');else if(y<last-6)t.classList.remove('xu-away');last=y;clearTimeout(tm);
+tm=setTimeout(function(){t.classList.remove('xu-away')},1600)},{passive:true});})();
 </script>
 </body>
 </html>

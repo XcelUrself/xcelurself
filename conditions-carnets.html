@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"/>
 <style>
-:root{--bg:#faf8f5;--ink:#1c1815;--ink2:#4a4238;--or2:#c13a5a;--bd:rgba(28,24,21,.12)}
+:root{--bg:#FAF6F1;--ink:#2b2724;--ink2:#404040;--or2:#C8205E;--bd:rgba(28,24,21,.12)}
 @media(prefers-color-scheme:dark){:root{--bg:#1c1815;--ink:#faf8f5;--ink2:#cfc7bd;--or2:#f07a96;--bd:rgba(250,248,245,.15)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Montserrat,system-ui,sans-serif}
 main{max-width:780px;margin:0 auto;padding:2.5rem 1rem 4rem}
@@ -15,6 +15,14 @@ h1{font-size:1.9rem;line-height:1.2;margin:.5rem 0 .3rem}h2{font-size:1.1rem;mar
 p,li{color:var(--ink2)}a{color:var(--or2);font-weight:600}.top{font-size:.85rem}
 .box{border:1px solid var(--bd);border-radius:10px;padding:1rem 1.2rem;margin:1.2rem 0}
 small{color:var(--ink2)}
+/* ===== Palette signature + accessibilité (alignée sur l'accueil) ===== */
+.btn-primary,.nav-cta,.drawer .d-cta,.mbar-main,.tag.fill,.cstep i{color:#1a1714!important}
+.btn-primary:hover,.nav-cta:hover{background:#1a1714!important;color:#fff!important}
+.xu-msg.user{color:#1a1714!important}
+.nav-logo span,.footer-logo span{background:none!important;-webkit-text-fill-color:currentColor!important;color:#FE3A7E!important}
+:focus-visible{outline:3px solid #1a1714;outline-offset:3px;border-radius:4px}
+footer :focus-visible,.cta-final :focus-visible{outline-color:#fff}
+
 </style>
 </head>
 <body>

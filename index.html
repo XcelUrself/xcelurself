@@ -669,7 +669,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
   .hero-right{order:-1}
   .photo-wrap{max-height:240px}
   .hero-h1{font-size:clamp(2.6rem,8.5vw,3.5rem)}
-  .hero-h1 .l3{-webkit-text-stroke:1.5px var(--or2)}
+  .hero-h1 .l3{-webkit-text-stroke:0}
   .hero-btns{flex-direction:column;align-items:stretch}
   .btn{justify-content:center;width:100%}
   .stats{gap:1.1rem}
@@ -1005,6 +1005,13 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 :focus-visible{outline:3px solid #1a1714;outline-offset:3px;border-radius:4px}
 .door.main:focus-visible,.cta-final :focus-visible,footer :focus-visible,.price-card :focus-visible{outline-color:#fff}
 .door.main .door-go{color:#ffb3cc}
+.proof-quotes{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 3rem;margin-bottom:1.6rem}
+.pq blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.35rem;line-height:1.25;color:var(--ink);border-left:3px solid var(--or1);padding-left:1rem}
+.pq figcaption{font-size:.78rem;color:var(--ink2);margin:.5rem 0 0 1.1rem;line-height:1.5}
+.pq figcaption span{color:var(--muted)}
+@media(max-width:800px){.proof-quotes{grid-template-columns:1fr}}
+#xu-chat-toggle{transition:transform .3s,opacity .3s}
+#xu-chat-toggle.xu-away{transform:translateX(90px);opacity:0;pointer-events:none}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise.
      Site Umami : XcelUrself (xcelurself.github.io). -->
@@ -1845,6 +1852,10 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 <!-- ESSAI GRATUIT -->
 <section class="proof" id="essai">
   <div class="proof-inner">
+    <div class="proof-quotes">
+      <figure class="pq"><blockquote>« Ce que j'ai appris me sert déjà au quotidien. »</blockquote><figcaption>Yolène Legris, responsable administrative et financière · Voco Paris <span>(formation en direct)</span></figcaption></figure>
+      <figure class="pq"><blockquote>« Le format permet de monter rapidement en compétences et de mettre en pratique au quotidien. »</blockquote><figcaption>Delphine Salaun, contrôleuse de gestion · Atout Groupe <span>(formation en direct)</span></figcaption></figure>
+    </div>
     <div class="proof-free">
       <div>
         <p class="free-k">Gratuit · 6 min</p>
@@ -1963,7 +1974,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
           </ol>
           <p class="path-out"><b>À la fin, tu sauras :</b> poser un tableau propre, écrire tes premières formules, et utiliser les fonctions conditionnelles et de recherche.</p>
           <p class="path-total">4 cours · environ 9 h 40 · 95,96 € au prix catalogue</p>
-          <a class="btn btn-primary path-btn" href="https://fr.tuto.com/excel/cours-maitriser-fondamentaux-excel,175391.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours démarrer" data-umami-event-cours="Parcours Excel">Commencer par le cours 1</a>
+          <a class="btn btn-primary path-btn" href="https://fr.tuto.com/excel/cours-maitriser-fondamentaux-excel,175391.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours démarrer" data-umami-event-cours="Parcours Excel">Commencer sur Tuto.com</a>
         </div>
         <div class="path">
           <p class="path-tag">Parcours 2 · Intermédiaire</p>
@@ -1979,7 +1990,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
           </ol>
           <p class="path-out"><b>À la fin, tu sauras :</b> combiner plusieurs feuilles ou fichiers en une seule table, nettoyer un relevé bancaire et le mettre à jour d'un clic.</p>
           <p class="path-total">6 cours · environ 4 h 20 · 142,80 € au prix catalogue</p>
-          <a class="btn btn-primary path-btn" href="https://fr.tuto.com/excel/power-query-plusieurs-feuilles-1-table,216401.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours démarrer" data-umami-event-cours="Parcours Power Query">Commencer par le cours 1</a>
+          <a class="btn btn-primary path-btn" href="https://fr.tuto.com/excel/power-query-plusieurs-feuilles-1-table,216401.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours démarrer" data-umami-event-cours="Parcours Power Query">Commencer sur Tuto.com</a>
         </div>
         <div class="path">
           <p class="path-tag">Parcours 3 · Intermédiaire</p>
@@ -1992,7 +2003,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
           </ol>
           <p class="path-out"><b>À la fin, tu sauras :</b> analyser tes données avec des tableaux croisés dynamiques et publier ton premier tableau de bord Power BI.</p>
           <p class="path-total">3 cours · environ 3 h 10 · 68,98 € au prix catalogue</p>
-          <a class="btn btn-primary path-btn" href="https://fr.tuto.com/excel/cours-analyser-donnees,175271.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours démarrer" data-umami-event-cours="Parcours Power BI">Commencer par le cours 1</a>
+          <a class="btn btn-primary path-btn" href="https://fr.tuto.com/excel/cours-analyser-donnees,175271.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours démarrer" data-umami-event-cours="Parcours Power BI">Commencer sur Tuto.com</a>
         </div>
       </div>
     </div>
@@ -2857,6 +2868,12 @@ document.querySelectorAll('.tc-text').forEach(function(p){
   b.addEventListener('click',function(){var o=p.classList.toggle('clamp');b.textContent=o?'Lire la suite':'Réduire';b.setAttribute('aria-expanded',o?'false':'true');});
   p.insertAdjacentElement('afterend',b);
 });
+</script>
+<script>
+(function(){var t=document.getElementById('xu-chat-toggle');if(!t)return;var last=window.scrollY,tm;
+addEventListener('scroll',function(){if(innerWidth>800||t.getAttribute('aria-expanded')==='true')return;var y=window.scrollY;
+if(y>last+6)t.classList.add('xu-away');else if(y<last-6)t.classList.remove('xu-away');last=y;clearTimeout(tm);
+tm=setTimeout(function(){t.classList.remove('xu-away')},1600)},{passive:true});})();
 </script>
 </body>
 </html>
