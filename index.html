@@ -625,8 +625,6 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
   footer{padding-bottom:5.5rem}
   .hero-right{order:0!important}
   .photo-wrap{max-width:220px;margin:0 auto}
-  body.mbar-on #xu-chat-toggle{bottom:84px;transition:bottom .3s}
-  body.mbar-on #xu-chat-panel,body.mbar-on .xu-chat-panel{bottom:150px}
 }
 
 .promo-ban{display:flex;align-items:center;gap:14px;max-width:860px;margin:0 auto 2.2rem;padding:12px 16px;background:#fff;border:1.5px solid var(--or2);border-radius:14px;color:var(--ink);text-decoration:none;box-shadow:0 6px 18px rgba(28,24,21,.06)}
@@ -728,119 +726,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
    WIDGET CHAT FAQ — XcelUrself
    ============================================================ */
 
-/* ---------- Bulle flottante ---------- */
-#xu-chat-toggle{
-  position:fixed;bottom:24px;right:24px;z-index:8500;
-  width:60px;height:60px;border-radius:50%;
-  background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));
-  border:none;cursor:pointer;
-  box-shadow:0 8px 28px rgba(232,98,42,.38);
-  display:flex;align-items:center;justify-content:center;
-  transition:transform .25s, box-shadow .25s;
-}
-#xu-chat-toggle:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 34px rgba(232,98,42,.48)}
-#xu-chat-toggle svg{width:26px;height:26px;stroke:#fff;transition:opacity .15s, transform .15s}
-#xu-chat-toggle .xu-icon-close{position:absolute;opacity:0;transform:rotate(-90deg) scale(.6)}
-#xu-chat-toggle.open .xu-icon-chat{opacity:0;transform:rotate(90deg) scale(.6)}
-#xu-chat-toggle.open .xu-icon-close{opacity:1;transform:rotate(0) scale(1)}
-#xu-chat-badge{
-  position:absolute;top:-2px;right:-2px;
-  width:18px;height:18px;border-radius:50%;
-  background:#2f7a45;border:2px solid #fff;
-  display:flex;align-items:center;justify-content:center;
-  font-size:.55rem;font-weight:800;color:#fff;font-family:'Montserrat',sans-serif;
-}
-#xu-chat-badge.hide{display:none}
 
-/* ---------- Fenêtre de chat ---------- */
-#xu-chat-window{
-  position:fixed;bottom:96px;right:24px;z-index:8500;
-  width:360px;max-width:calc(100vw - 32px);
-  height:520px;max-height:calc(100vh - 140px);
-  background:#fff;border-radius:20px;
-  box-shadow:0 24px 64px rgba(28,24,21,.22);
-  display:flex;flex-direction:column;overflow:hidden;
-  opacity:0;transform:translateY(16px) scale(.97);
-  pointer-events:none;
-  transition:opacity .22s ease, transform .22s ease;
-  font-family:'Montserrat',sans-serif;
-}
-#xu-chat-window.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
-
-/* En-tête */
-#xu-chat-header{
-  background:var(--ink, #1c1815);color:#fff;
-  padding:1rem 1.1rem;display:flex;align-items:center;gap:.7rem;flex-shrink:0;
-}
-#xu-chat-avatar{
-  width:36px;height:36px;border-radius:50%;
-  background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  font-family:'Cormorant Garamond',serif;font-weight:700;color:#fff;font-size:1.1rem;
-}
-#xu-chat-header-text{flex:1;line-height:1.3}
-#xu-chat-header-text strong{display:block;font-size:.82rem;font-weight:700}
-#xu-chat-header-text span{display:block;font-size:.68rem;color:rgba(255,255,255,.55)}
-#xu-chat-header-text span::before{
-  content:'';display:inline-block;width:6px;height:6px;border-radius:50%;
-  background:#4ade80;margin-right:5px;vertical-align:middle;
-}
-
-/* Zone messages */
-#xu-chat-messages{
-  flex:1;overflow-y:auto;padding:1rem;
-  display:flex;flex-direction:column;gap:.65rem;
-  background:#faf8f5;
-}
-#xu-chat-messages::-webkit-scrollbar{width:5px}
-#xu-chat-messages::-webkit-scrollbar-thumb{background:#e3ddd5;border-radius:10px}
-
-.xu-msg{max-width:84%;font-size:.78rem;line-height:1.55;padding:.65rem .85rem;border-radius:14px;animation:xuFadeIn .25s ease}
-@keyframes xuFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-.xu-msg.bot{align-self:flex-start;background:#fff;border:1px solid #ece6dd;color:#1c1815;border-bottom-left-radius:4px}
-.xu-msg.user{align-self:flex-end;background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));color:#fff;border-bottom-right-radius:4px}
-.xu-msg a{color:inherit;text-decoration:underline;text-underline-offset:2px;font-weight:600}
-.xu-msg.bot a{color:#e8622a}
-
-/* Indicateur de saisie */
-.xu-typing{align-self:flex-start;background:#fff;border:1px solid #ece6dd;border-radius:14px;border-bottom-left-radius:4px;padding:.7rem .9rem;display:flex;gap:4px}
-.xu-typing span{width:6px;height:6px;border-radius:50%;background:#c9c0b3;animation:xuBounce 1.2s infinite}
-.xu-typing span:nth-child(2){animation-delay:.15s}
-.xu-typing span:nth-child(3){animation-delay:.3s}
-@keyframes xuBounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
-
-/* Suggestions rapides (chips) */
-#xu-chat-suggestions{
-  padding:.7rem 1rem;display:flex;flex-wrap:wrap;gap:.4rem;
-  border-top:1px solid #ece6dd;background:#fff;flex-shrink:0;
-}
-.xu-chip{
-  font-size:.68rem;font-weight:600;color:#1c1815;
-  background:#f3eee6;border:1px solid #ece6dd;border-radius:100px;
-  padding:.4rem .75rem;cursor:pointer;white-space:nowrap;
-  transition:background .15s, border-color .15s;
-}
-.xu-chip:hover{background:#fde9da;border-color:#f2c49a}
-
-/* Pied de note — devient le seul point de contact direct */
-#xu-chat-footnote{
-  font-size:.72rem;color:#a39b8c;text-align:center;padding:.85rem 1rem;background:#fff;flex-shrink:0;border-top:1px solid #ece6dd;
-}
-#xu-chat-footnote a{
-  display:inline-flex;align-items:center;gap:.35rem;
-  color:#fff;font-weight:700;font-size:.72rem;
-  background:var(--grad, linear-gradient(135deg,#e8622a,#f2a35c));
-  padding:.55rem 1.1rem;border-radius:100px;
-  text-decoration:none;transition:transform .15s, box-shadow .15s;
-}
-#xu-chat-footnote a:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(232,98,42,.32)}
-
-@media(max-width:480px){
-  #xu-chat-window{
-    right:16px;left:16px;width:auto;bottom:88px;height:calc(100vh - 170px);
-  }
-  #xu-chat-toggle{right:18px;bottom:18px}
-}
 
 /* NAV : onglet mis en avant */
 .nav-links a{white-space:nowrap}
@@ -1001,7 +887,6 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .proof-free .free-k,.free-k{color:#1f7a64}
 .eyebrow{color:var(--ink2)}
 .eyebrow::before{background:var(--or1)}
-.xu-msg.user{color:#1a1714!important}
 :focus-visible{outline:3px solid #1a1714;outline-offset:3px;border-radius:4px}
 .door.main:focus-visible,.cta-final :focus-visible,footer :focus-visible,.price-card :focus-visible{outline-color:#fff}
 .door.main .door-go{color:#ffb3cc}
@@ -1010,8 +895,6 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .pq figcaption{font-size:.78rem;color:var(--ink2);margin:.5rem 0 0 1.1rem;line-height:1.5}
 .pq figcaption span{color:var(--muted)}
 @media(max-width:800px){.proof-quotes{grid-template-columns:1fr}}
-#xu-chat-toggle{transition:transform .3s,opacity .3s}
-#xu-chat-toggle.xu-away{transform:translateX(90px);opacity:0;pointer-events:none}
 .ba-arrow{font-size:.74rem;font-weight:600;color:var(--ink2)}
 .ba-arrow b{color:var(--or1);font-size:1.1rem;margin-right:.3rem}
 .st{font-family:Arial,Helvetica,sans-serif;font-size:.56rem;color:#333;padding:.55rem .65rem;background:#fff}
@@ -1201,6 +1084,75 @@ nav.scrolled{box-shadow:0 8px 24px rgba(43,39,36,.07)}
 .fshot{background:var(--white);border-radius:12px;overflow:hidden;color:var(--ink)}
 .fshot img{display:block;width:100%;height:auto}
 .fshot span{display:block;font-size:.72rem;color:var(--muted);padding:.55rem .9rem;border-top:1px solid rgba(43,39,36,.12)}
+
+/* ===== Aide rapide (remplace le faux chat) ===== */
+#aide-fab{position:fixed;left:max(14px,env(safe-area-inset-left));bottom:var(--fab-b,18px);z-index:850;display:flex;align-items:center;gap:.5rem;min-height:48px;padding:0 1.05rem 0 .85rem;border-radius:100px;background:#fff;color:var(--ink);border:2px solid var(--ink);font:inherit;font-size:.8rem;font-weight:800;cursor:pointer;box-shadow:0 8px 24px rgba(28,24,21,.18);transition:bottom .3s var(--ease-out),transform .15s var(--ease-out)}
+#aide-fab:active{transform:scale(.96)}
+#aide-fab svg{width:20px;height:20px;flex:none}
+#aide-fab:focus-visible{outline:3px solid #FE3A7E;outline-offset:3px}
+@media (hover:hover) and (pointer:fine){#aide-fab:hover{background:var(--ink);color:#fff}}
+@media (min-width:801px){#aide-fab{left:auto;right:24px;bottom:var(--fab-b,18px)}}
+@media (max-width:800px){#aide-fab{padding:0;width:48px;justify-content:center}#aide-fab span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}#aide-fab{border-width:2px}}
+dialog.aide{border:0;padding:0;background:var(--bg,#FAF6F1);color:var(--ink);width:min(480px,100vw);max-width:100vw;max-height:88dvh;margin:auto 0 0 auto;border-radius:20px 20px 0 0;box-shadow:0 -12px 48px rgba(28,24,21,.28);overflow:hidden}
+dialog.aide[open]{display:flex;flex-direction:column;animation:aideUp .35s var(--ease-out)}
+dialog.aide::backdrop{background:rgba(26,23,20,.55)}
+@keyframes aideUp{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+@media (min-width:601px){dialog.aide{margin:auto 24px 24px auto;border-radius:20px}}
+.aide-h{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.1rem .4rem}
+.aide-h h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;line-height:1.05;font-weight:700}
+.aide-x{flex:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font-size:1.1rem;cursor:pointer;display:grid;place-items:center}
+.aide-x:focus-visible,.aide-b:focus-visible,.aide-c a:focus-visible,.aide-s input:focus-visible{outline:3px solid #FE3A7E;outline-offset:2px}
+.aide-p{padding:0 1.1rem;font-size:.82rem;color:var(--ink2);line-height:1.5}
+.aide-s{display:block;padding:.7rem 1.1rem .3rem}
+.aide-s input{width:100%;min-height:48px;font:inherit;font-size:1rem;padding:.6rem 1rem;border:1.5px solid var(--bd);border-radius:12px;background:#fff;color:var(--ink)}
+.aide-l{list-style:none;margin:0;padding:.3rem 1.1rem;overflow:auto;flex:1;-webkit-overflow-scrolling:touch}
+.aide-l li{border-top:1px solid var(--bd)}
+.aide-l li:first-child{border-top:0}
+.aide-b{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;text-align:left;min-height:52px;padding:.7rem 0;background:none;border:0;font:inherit;font-size:.92rem;font-weight:700;color:var(--ink);cursor:pointer}
+.aide-b::after{content:"+";font-size:1.3rem;font-weight:400;line-height:1;transition:transform .25s var(--ease-out)}
+.aide-b[aria-expanded="true"]::after{transform:rotate(45deg)}
+.aide-a{font-size:.86rem;line-height:1.65;color:var(--ink2);padding:0 0 1rem}
+.aide-a a{color:var(--ink);font-weight:700;text-decoration:underline;text-decoration-color:var(--or1);text-decoration-thickness:2px;text-underline-offset:3px}
+.aide-empty{padding:1rem 1.1rem;font-size:.88rem}
+.aide-c{display:flex;gap:.6rem;padding:.8rem 1.1rem calc(.9rem + env(safe-area-inset-bottom));border-top:1px solid var(--bd);background:var(--white,#fff);flex-wrap:wrap}
+.aide-c a{flex:1 1 140px;display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:100px;font-size:.78rem;font-weight:800;border:2px solid var(--ink);color:var(--ink)}
+.aide-c a.pri{background:var(--or1);border-color:var(--or1);color:#1a1714}
+.aide-f{font-size:.72rem;color:var(--muted);padding:0 1.1rem .8rem;background:var(--white,#fff)}
+.d-aide{display:flex;align-items:center;width:100%;min-height:52px;background:none;border:0;border-bottom:1px solid rgba(28,24,21,.07);font:inherit;font-size:inherit;font-weight:inherit;color:inherit;text-align:left;cursor:pointer;padding:0;gap:.6rem}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.drawer .d-aide{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--ink);padding:.5rem 0;justify-content:flex-start}
+.drawer .d-aide::before{content:'?';display:inline-grid;place-items:center;width:1.5rem;height:1.5rem;border:2px solid var(--ink);border-radius:50%;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:800}
+body:has(.drawer.open) #aide-fab,body:has(.drawer.open) #totop{display:none}
+@media (prefers-reduced-motion:reduce){dialog.aide[open]{animation:none}.aide-b::after{transition:none}}
+
+/* ===== Mobile : cibles tactiles, lisibilité, avis en défilement horizontal ===== */
+@media(max-width:800px){
+  .hamburger{width:44px;height:44px;padding:10px}
+  .drawer a{min-height:52px;display:flex;align-items:center}
+  .fcard-cta{min-height:44px;display:inline-flex;align-items:center;font-size:.76rem}
+  .fcard-desc{font-size:.84rem}.fcard-soft{font-size:.75rem}.fcard-rate{font-size:.78rem}
+  .fcard-best,.fcard-badge,.path-tag,.fcat-count,.tc-role,.stat-l,.tab-btn,.ba-k,.free-k,.lp-k,.mc-kicker,.ch-label,.trust-label{font-size:.74rem}
+  .ffilter{min-height:44px;font-size:.82rem}
+  .g-k,.g-go,.door-k,.door-go,.path-total{font-size:.82rem}
+  .fall summary,.path li a{min-height:44px}
+  .hero-alt,.tc-more,.tab-btn,.btn{min-height:44px;display:inline-flex;align-items:center}
+  .tc-more{padding:.2rem .3rem}
+  .path li a,.proof a.pl{display:inline-flex;align-items:center;padding:.35rem 0}
+  .footer-links{gap:0 .4rem}
+  .footer-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 .6rem}
+  .tab-content.active .tgrid{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:.9rem;padding:.2rem .1rem 1.1rem;margin-inline:-.2rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tab-content.active .tgrid::-webkit-scrollbar{display:none}
+  .tab-content.active .tgrid>.tc{flex:0 0 86%;scroll-snap-align:center}
+  .tswipe{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.76rem;color:var(--ink2);margin:-.3rem 0 .8rem}
+  #legal-toggle{display:flex}
+  #legal-wrap{max-height:0;overflow:hidden}
+  #legal-wrap.open{max-height:none;overflow:visible}
+}
+@media(min-width:801px){#legal-toggle{display:none}.tswipe{display:none}}
+#legal-toggle{width:calc(100% - 2.5rem);max-width:900px;margin:1.6rem auto 0;min-height:48px;align-items:center;justify-content:space-between;background:transparent;border:1.5px solid rgba(250,248,245,.4);border-radius:12px;color:rgba(250,248,245,.9);font:inherit;font-size:.82rem;font-weight:700;padding:0 1rem;cursor:pointer}
+#legal-toggle::after{content:"+";font-size:1.3rem;font-weight:400}
+#legal-toggle[aria-expanded="true"]::after{content:"–"}
+#legal-toggle:focus-visible{outline:3px solid #FE3A7E;outline-offset:3px}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise.
      Site Umami : XcelUrself (xcelurself.github.io). -->
@@ -1928,36 +1880,21 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 
 
 
-<!-- Bulle flottante -->
-<button id="xu-chat-toggle" aria-label="Ouvrir le chat d'aide" aria-expanded="false">
-  <svg class="xu-icon-chat" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-  <svg class="xu-icon-close" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  <span id="xu-chat-badge">1</span>
-</button>
-
-<!-- Fenêtre de chat -->
-<div id="xu-chat-window" role="dialog" aria-label="Assistant XcelUrself" aria-hidden="true">
-  <div id="xu-chat-header">
-    <div id="xu-chat-avatar">X</div>
-    <div id="xu-chat-header-text">
-      <strong>Assistant XcelUrself</strong>
-      <span>Répond instantanément</span>
-    </div>
-  </div>
-
-  <div id="xu-chat-messages"></div>
-
-  <div id="xu-chat-suggestions">
-    <button class="xu-chip" data-q="niveau">Quel niveau requis ?</button>
-    <button class="xu-chip" data-q="duree">Combien de temps ?</button>
-    <button class="xu-chip" data-q="garantie">Et si ça ne me convient pas ?</button>
-    <button class="xu-chip" data-q="contenu">Que contient une formation ?</button>
-  </div>
-
-  <p id="xu-chat-footnote">Réponses automatiques · <a href="#" id="xu-footnote-mail">Envoie-moi un email</a></p>
-</div>
 
 
+
+
+
+<button id="aide-fab" type="button" aria-haspopup="dialog" aria-label="Aide : questions fréquentes" data-umami-event="Aide : ouvrir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4.5"/><line x1="12" y1="17.5" x2="12" y2="17.5"/></svg><span>Aide</span></button>
+<dialog class="aide" id="aide" aria-labelledby="aide-t">
+  <div class="aide-h"><h2 id="aide-t">Une question ?</h2><button class="aide-x" type="button" aria-label="Fermer l'aide">✕</button></div>
+  <p class="aide-p">Les réponses aux questions les plus fréquentes. Si la vôtre n'y est pas, écrivez-moi : je réponds personnellement.</p>
+  <label class="aide-s"><span class="sr-only">Rechercher dans l'aide</span><input id="aide-q" type="search" placeholder="Rechercher : niveau, durée, prix…" autocomplete="off" enterkeyhint="search"/></label>
+  <ul class="aide-l" id="aide-l"></ul>
+  <p class="aide-empty" id="aide-empty" hidden>Aucune réponse ne correspond. Écrivez-moi, je réponds personnellement.</p>
+  <div class="aide-c"><a class="pri" id="aide-mail" href="mailto:mr.grosj@gmail.com" data-umami-event="Aide : e-mail">M'écrire</a><a href="https://www.linkedin.com/in/joffreygros/" target="_blank" rel="noopener" data-umami-event="Aide : LinkedIn">LinkedIn</a></div>
+  <p class="aide-f">Réponses rédigées à l'avance, sans assistant automatique.</p>
+</dialog>
 
 <div class="drawer" id="drawer" aria-modal="true" role="dialog" aria-label="Navigation">
   <a href="#competences" onclick="closeD()">Expertise</a>
@@ -1968,6 +1905,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
   <a href="#avis" onclick="closeD()">Témoignages</a>
   <a href="#entreprises" onclick="closeD()">Entreprises</a>
   <a href="#faq" onclick="closeD()">FAQ</a>
+  <button class="d-aide" type="button" onclick="closeD();openAide()" data-umami-event="Menu : aide">Une question ? Aide rapide</button>
       <a data-umami-event="Clic Tuto.com" class="d-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener" onclick="closeD()">Voir les formations</a>
 </div>
 
@@ -2873,7 +2811,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeD();});
 // Barre d'action mobile : visible après le haut de page, masquée sur le catalogue et la fiche
 (function(){
   var bar=document.getElementById('mbar');if(!bar)return;
-  var hide=[document.getElementById('formations'),document.getElementById('fiche-memo')].filter(Boolean);
+  var hide=[document.getElementById('formations'),document.getElementById('fiche-memo'),document.querySelector('.cta-final'),document.querySelector('footer')].filter(Boolean);
   function upd(){
     var y=window.scrollY,vh=window.innerHeight,over=false;
     hide.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<vh*.6&&r.bottom>vh*.4)over=true;});
@@ -2897,15 +2835,7 @@ document.querySelectorAll('.fiq').forEach(q=>{
   q.addEventListener('click',()=>{const fi=q.parentElement,open=fi.classList.contains('open');document.querySelectorAll('.fi').forEach(f=>f.classList.remove('open'));if(!open)fi.classList.add('open');});
 });
 
-// ============================================================
-// WIDGET CHAT FAQ — XcelUrself
-// ============================================================
 (function(){
-
-  // ============================================================
-  // BASE DE CONNAISSANCES — à adapter à votre catalogue
-  // Chaque entrée : mots-clés à détecter + réponse (HTML autorisé)
-  // ============================================================
   var KB = [
     {
       id: 'niveau',
@@ -2953,149 +2883,53 @@ document.querySelectorAll('.fiq').forEach(q=>{
       answer: "Pour un échange direct avec moi, le plus simple est de me contacter sur <a href=\"https://www.linkedin.com/in/joffreygros/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>. Je réponds personnellement à chaque message."
     }
   ];
-
-  // ---------- Email de contact (à modifier ici si besoin) ----------
-  var CONTACT_EMAIL = "mr.grosj@gmail.com";
-
-  function buildMailto(userText) {
-    var subject = "Question depuis le site XcelUrself";
-    var body = "Bonjour Joffrey,\n\n" + (userText ? "Voici ma question : " + userText : "J'ai une question sur vos formations.") + "\n\nMerci d'avance.";
-    return "mailto:" + CONTACT_EMAIL
-      + "?subject=" + encodeURIComponent(subject)
-      + "&body=" + encodeURIComponent(body);
-  }
-
-  function buildFallback(userText) {
-    return "Je n'ai pas la réponse exacte à cette question. Tu peux "
-      + "<a href=\"" + buildMailto(userText) + "\">m'envoyer un email directement</a>, "
-      + "me contacter sur <a href=\"https://www.linkedin.com/in/joffreygros/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>, "
-      + "ou consulter la <a href=\"#faq\">FAQ complète</a> un peu plus bas sur cette page.";
-  }
-
-  var GREETING = "Bonjour 👋 Je suis l'assistant XcelUrself. Pose-moi une question sur le contenu, le niveau, la durée ou les modalités d'une formation, je réponds tout de suite.";
-
-  function normalize(str) {
-    return str.toLowerCase()
-      .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // strip accents
-      .replace(/[^\w\s]/g, ' ');
-  }
-
-  function findAnswer(userText) {
-    var norm = normalize(userText);
-    var bestMatch = null;
-    var bestScore = 0;
-    KB.forEach(function(entry) {
-      var score = 0;
-      entry.keywords.forEach(function(kw) {
-        if (norm.indexOf(normalize(kw)) !== -1) score++;
-      });
-      if (score > bestScore) {
-        bestScore = score;
-        bestMatch = entry;
-      }
-    });
-    return bestMatch ? bestMatch.answer : buildFallback(userText);
-  }
-
-  // ---------- DOM refs ----------
-  var toggle = document.getElementById('xu-chat-toggle');
-  var win = document.getElementById('xu-chat-window');
-  var messages = document.getElementById('xu-chat-messages');
-  var badge = document.getElementById('xu-chat-badge');
-  var chips = document.querySelectorAll('.xu-chip');
-  var isOpen = false;
-  var greeted = false;
-
-  // Synchronise le lien email du pied de page avec CONTACT_EMAIL
-  var footnoteMail = document.getElementById('xu-footnote-mail');
-  if (footnoteMail) footnoteMail.href = buildMailto('');
-
-  function addMessage(text, who) {
-    var div = document.createElement('div');
-    div.className = 'xu-msg ' + who;
-    div.innerHTML = text;
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
-  }
-
-  function showTyping() {
-    var div = document.createElement('div');
-    div.className = 'xu-typing';
-    div.id = 'xu-typing-indicator';
-    div.innerHTML = '<span></span><span></span><span></span>';
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
-  }
-
-  function hideTyping() {
-    var el = document.getElementById('xu-typing-indicator');
-    if (el) el.remove();
-  }
-
-  function openChat() {
-    isOpen = true;
-    win.classList.add('open');
-    win.setAttribute('aria-hidden', 'false');
-    toggle.classList.add('open');
-    toggle.setAttribute('aria-expanded', 'true');
-    badge.classList.add('hide');
-    if (!greeted) {
-      greeted = true;
-      setTimeout(function() { addMessage(GREETING, 'bot'); }, 300);
-    }
-  }
-
-  function closeChat() {
-    isOpen = false;
-    win.classList.remove('open');
-    win.setAttribute('aria-hidden', 'true');
-    toggle.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-  }
-
-  toggle.addEventListener('click', function() {
-    isOpen ? closeChat() : openChat();
+  var TITLES={"niveau": "Quel niveau faut-il avoir ?", "duree": "Combien de temps dure une formation ?", "garantie": "Et si ça ne me convient pas ?", "contenu": "Que contient une formation ?", "prix": "Combien ça coûte ?", "logiciel": "Quels logiciels enseignes-tu ?", "acces": "Combien de temps ai-je accès au cours ?", "certif": "Y a-t-il un certificat ?", "contact": "Comment te joindre ?"};
+  var dlg=document.getElementById('aide'),list=document.getElementById('aide-l'),q=document.getElementById('aide-q'),empty=document.getElementById('aide-empty'),mail=document.getElementById('aide-mail'),fab=document.getElementById('aide-fab'),last=null;
+  if(!dlg||!list)return;
+  function norm(t){return String(t).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/<[^>]*>/g,' ').replace(/[^\w\s]/g,' ');}
+  KB.forEach(function(k,i){
+    var li=document.createElement('li');li.dataset.id=k.id;
+    var b=document.createElement('button');b.type='button';b.className='aide-b';b.setAttribute('aria-expanded','false');b.id='aq'+i;b.setAttribute('aria-controls','aa'+i);
+    var sp=document.createElement('span');sp.textContent=TITLES[k.id]||k.id;b.appendChild(sp);
+    var a=document.createElement('div');a.className='aide-a';a.id='aa'+i;a.hidden=true;a.setAttribute('role','region');a.setAttribute('aria-labelledby','aq'+i);a.innerHTML=k.answer;
+    b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',o?'false':'true');a.hidden=o;if(!o&&window.umami)umami.track('Aide : question',{q:k.id});});
+    a.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('a[href^="#"]');if(l){dlg.close();}});
+    li.appendChild(b);li.appendChild(a);list.appendChild(li);
+    k._n=norm(k.keywords.join(' ')+' '+(TITLES[k.id]||'')+' '+k.answer);
   });
-
-  chips.forEach(function(chip) {
-    chip.addEventListener('click', function() {
-      var key = chip.getAttribute('data-q');
-      var entry = KB.filter(function(k) { return k.id === key; })[0];
-      if (entry) {
-        addMessage(chip.textContent, 'user');
-        showTyping();
-        setTimeout(function() {
-          hideTyping();
-          addMessage(entry.answer, 'bot');
-        }, 450);
-      }
-    });
-  });
-
-  // Fermer en cliquant en dehors (desktop uniquement)
-  document.addEventListener('click', function(e) {
-    if (isOpen && window.innerWidth > 480 &&
-        !win.contains(e.target) && !toggle.contains(e.target)) {
-      closeChat();
-    }
-  });
-
-  // Auto-ouverture discrète après 18s si jamais ouvert (engagement passif)
-  setTimeout(function() {
-    if (!greeted) {
-      badge.textContent = '1';
-      badge.classList.remove('hide');
-    }
-  }, 18000);
-
+  function filter(){
+    var t=norm(q.value).trim(),words=t?t.split(/\s+/).filter(function(w){return w.length>1;}):[],n=0;
+    [].forEach.call(list.children,function(li,i){var k=KB[i],ok=!words.length||words.every(function(w){return k._n.indexOf(w)>-1;});li.hidden=!ok;if(ok)n++;});
+    empty.hidden=n>0;
+    mail.href='mailto:mr.grosj@gmail.com?subject='+encodeURIComponent('Question depuis le site XcelUrself')+'&body='+encodeURIComponent('Bonjour Joffrey,\n\n'+(q.value.trim()?'Voici ma question : '+q.value.trim():"J'ai une question sur vos formations.")+'\n\nMerci d\'avance.');
+  }
+  q.addEventListener('input',filter);filter();
+  window.openAide=function(){last=document.activeElement;if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');document.documentElement.style.overflow='hidden';};
+  dlg.addEventListener('close',function(){document.documentElement.style.overflow='';if(last&&last.focus&&last!==document.body)try{last.focus({preventScroll:true});}catch(e){}});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+  dlg.querySelector('.aide-x').addEventListener('click',function(){dlg.close();});
+  fab.addEventListener('click',window.openAide);
 })();
-// ============================================================
+/* mentions légales repliées sur mobile */
+(function(){
+  var legal=document.getElementById('mentions-legales');if(!legal)return;
+  var wrap=document.createElement('div');wrap.id='legal-wrap';legal.parentNode.insertBefore(wrap,legal);
+  var n=legal;while(n&&!(n.classList&&n.classList.contains('footer-copy'))){var nx=n.nextElementSibling;wrap.appendChild(n);n=nx;}
+  var t=document.createElement('button');t.type='button';t.id='legal-toggle';t.setAttribute('aria-expanded','false');t.setAttribute('aria-controls','legal-wrap');t.textContent='Mentions légales, CGV et confidentialité';
+  wrap.parentNode.insertBefore(t,wrap);
+  function set(o){t.setAttribute('aria-expanded',o?'true':'false');wrap.classList.toggle('open',o);}
+  t.addEventListener('click',function(){set(t.getAttribute('aria-expanded')!=='true');});
+  document.querySelectorAll('a[href="#mentions-legales"],a[href="#cgv"],a[href="#confidentialite"]').forEach(function(a){a.addEventListener('click',function(){set(true);});});
+})();
+/* avis : indication de défilement horizontal sur mobile */
+(function(){
+  document.querySelectorAll('.tab-content').forEach(function(c){
+    var g=c.querySelector('.tgrid');if(!g)return;
+    var p=document.createElement('p');p.className='tswipe';p.setAttribute('aria-hidden','true');p.textContent='← Faites glisser pour lire les autres avis →';
+    c.insertBefore(p,g);
+  });
+})();
 
-// Scroll reveal
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');});},{threshold:.1});
-document.querySelectorAll('.r').forEach(el=>io.observe(el));
-// Filet de sécurité : tout s'affiche après 2,5 s, même si l'observateur échoue
-setTimeout(()=>document.querySelectorAll('.r:not(.v)').forEach(el=>el.classList.add('v')),2500);
 </script>
 <script>
 document.querySelectorAll('.tc-text').forEach(function(p){
@@ -3106,12 +2940,7 @@ document.querySelectorAll('.tc-text').forEach(function(p){
   p.insertAdjacentElement('afterend',b);
 });
 </script>
-<script>
-(function(){var t=document.getElementById('xu-chat-toggle');if(!t)return;var last=window.scrollY,tm;
-addEventListener('scroll',function(){if(innerWidth>800||t.getAttribute('aria-expanded')==='true')return;var y=window.scrollY;
-if(y>last+6)t.classList.add('xu-away');else if(y<last-6)t.classList.remove('xu-away');last=y;clearTimeout(tm);
-tm=setTimeout(function(){t.classList.remove('xu-away')},1600)},{passive:true});})();
-</script>
+
 <script>
 (function(){
   var root=document.documentElement;
@@ -3288,6 +3117,46 @@ tm=setTimeout(function(){t.classList.remove('xu-away')},1600)},{passive:true});}
     c.textContent='Offre −20 % : plus que '+t; c.hidden=false;
   }
   var timer=setInterval(tickC,30000); tickC();
+})();
+</script>
+
+<button id="totop" type="button" aria-label="Remonter en haut de la page" data-umami-event="Remonter en haut"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+<style>
+#totop{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:var(--fab-b,18px);z-index:850;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#2b2724;color:#fff;border:2px solid #fff;cursor:pointer;box-shadow:0 8px 22px rgba(28,24,21,.28);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s ease,transform .3s cubic-bezier(.23,1,.32,1),bottom .3s cubic-bezier(.23,1,.32,1),visibility 0s linear .3s}
+#totop.show{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+#totop:active{transform:scale(.94)}
+#totop:focus-visible{outline:3px solid #FE3A7E;outline-offset:3px}
+@media (hover:hover) and (pointer:fine){#totop:hover{background:#FE3A7E;color:#1a1714}}
+@media (min-width:801px){#totop{right:24px;bottom:calc(var(--fab-b,18px) + 64px)}}
+@media (prefers-reduced-motion:reduce){#totop{transition:none}}
+</style>
+<script>
+(function(){
+  var b=document.getElementById('totop');if(!b)return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,last=window.scrollY,up=false,idle=null,tick=false;
+  function bar(){
+    var m=document.getElementById('mbar')||document.querySelector('.mbar'),h=0;
+    if(m){var cs=getComputedStyle(m),r=m.getBoundingClientRect();if(cs.display!=='none'&&cs.visibility!=='hidden'&&r.top<innerHeight-2)h=innerHeight-r.top;}
+    document.documentElement.style.setProperty('--fab-b',(Math.round(h)+16)+'px');
+  }
+  function upd(){
+    tick=false;
+    var y=window.scrollY,vh=window.innerHeight,doc=document.documentElement.scrollHeight;
+    if(y>last+6)up=false;else if(y<last-6)up=true;
+    last=y;
+    var far=y>vh*1.2,nearEnd=y+vh>doc-vh*1.4,wide=window.innerWidth>800;
+    b.classList.toggle('show',far&&(wide||up||nearEnd));
+    clearTimeout(idle);
+    if(far&&!wide&&!nearEnd)idle=setTimeout(function(){b.classList.remove('show')},3200);
+    bar();
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});
+  window.addEventListener('resize',upd);
+  b.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    var t=document.querySelector('a,button');if(t&&t!==b)setTimeout(function(){try{t.focus({preventScroll:true});}catch(e){}},reduce?0:600);
+  });
+  upd();
 })();
 </script>
 </body>

@@ -290,6 +290,25 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
 .lb-head .fict{position:static;box-shadow:none;white-space:nowrap}
 @media(max-width:700px){.fict{font-size:.66rem;padding:.3rem .6rem}}
 @media (prefers-reduced-motion:reduce){.hz-leg,.hz-z{transition:none}}
+
+/* ===== Mobile : grille tarifaire en cartes, cibles tactiles ===== */
+@media(max-width:700px){
+  .tablewrap{overflow:visible;background:none;border:0;border-radius:0}
+  table{display:block;min-width:0;font-size:.9rem}
+  thead{display:none}
+  tbody{display:grid;gap:.7rem}
+  tbody tr{display:grid;grid-template-columns:1fr auto;gap:.2rem .8rem;background:var(--white);border:1px solid var(--bd);border-radius:14px;padding:.95rem 1.05rem}
+  tbody td{border:0;padding:0}
+  tbody td:nth-child(1){grid-column:1;font-weight:800}
+  tbody td:nth-child(4){grid-column:2;grid-row:1;text-align:right;font-size:1.15rem}
+  tbody td:nth-child(2){grid-column:1/-1;color:var(--ink2);font-size:.84rem;line-height:1.5}
+  tbody td:nth-child(3){grid-column:1/-1;font-size:.78rem;color:var(--muted)}
+  tbody td:nth-child(3)::before{content:"Durée : "}
+  tbody tr:hover td{background:none}
+  .back,.logo{min-height:44px;display:inline-flex;align-items:center}
+  .textlink{min-height:44px;display:inline-flex;align-items:center}
+  footer a{display:inline-flex;align-items:center;min-height:44px}
+}
 </style>
 </head>
 <body>
@@ -946,6 +965,46 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
     });
     [].forEach.call(document.querySelectorAll('[data-open]'),function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-open');if(HZ[k])openLb(k);});});
   })();
+</script>
+
+<button id="totop" type="button" aria-label="Remonter en haut de la page" data-umami-event="Remonter en haut"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+<style>
+#totop{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:var(--fab-b,18px);z-index:850;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#2b2724;color:#fff;border:2px solid #fff;cursor:pointer;box-shadow:0 8px 22px rgba(28,24,21,.28);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s ease,transform .3s cubic-bezier(.23,1,.32,1),bottom .3s cubic-bezier(.23,1,.32,1),visibility 0s linear .3s}
+#totop.show{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+#totop:active{transform:scale(.94)}
+#totop:focus-visible{outline:3px solid #FE3A7E;outline-offset:3px}
+@media (hover:hover) and (pointer:fine){#totop:hover{background:#FE3A7E;color:#1a1714}}
+@media (min-width:801px){#totop{right:24px;bottom:calc(var(--fab-b,18px) + 64px)}}
+@media (prefers-reduced-motion:reduce){#totop{transition:none}}
+</style>
+<script>
+(function(){
+  var b=document.getElementById('totop');if(!b)return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,last=window.scrollY,up=false,idle=null,tick=false;
+  function bar(){
+    var m=document.getElementById('mbar')||document.querySelector('.mbar'),h=0;
+    if(m){var cs=getComputedStyle(m),r=m.getBoundingClientRect();if(cs.display!=='none'&&cs.visibility!=='hidden'&&r.top<innerHeight-2)h=innerHeight-r.top;}
+    document.documentElement.style.setProperty('--fab-b',(Math.round(h)+16)+'px');
+  }
+  function upd(){
+    tick=false;
+    var y=window.scrollY,vh=window.innerHeight,doc=document.documentElement.scrollHeight;
+    if(y>last+6)up=false;else if(y<last-6)up=true;
+    last=y;
+    var far=y>vh*1.2,nearEnd=y+vh>doc-vh*1.4,wide=window.innerWidth>800;
+    b.classList.toggle('show',far&&(wide||up||nearEnd));
+    clearTimeout(idle);
+    if(far&&!wide&&!nearEnd)idle=setTimeout(function(){b.classList.remove('show')},3200);
+    bar();
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});
+  window.addEventListener('resize',upd);
+  b.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    var t=document.querySelector('a,button');if(t&&t!==b)setTimeout(function(){try{t.focus({preventScroll:true});}catch(e){}},reduce?0:600);
+  });
+  upd();
+})();
 </script>
 </body>
 </html>

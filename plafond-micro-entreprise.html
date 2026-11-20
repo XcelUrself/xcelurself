@@ -120,6 +120,9 @@ tfoot td,tfoot .n{color:#1a1714}
 .fiq .plus,.cbox.paid li::before{color:var(--or1)}
 .btn-outline:hover,.card-btn:hover{color:#1a1714}
 
+
+@media(max-width:480px){.nav-cta .hide-s{display:none}.nav-cta{display:inline-flex;align-items:center;min-height:44px;padding:0 1.1rem}}
+@media(max-width:700px){nav a,footer a,.back{min-height:44px;display:inline-flex;align-items:center}}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise (même site que la page d'accueil). -->
 <script>
@@ -140,7 +143,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
       <li><a href="index.html#avis">Témoignages</a></li>
       <li><a href="index.html#faq">FAQ</a></li>
     </ul>
-    <a data-umami-event="Clic Tuto.com" class="nav-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Accéder aux formations</a>
+    <a data-umami-event="Clic Tuto.com" class="nav-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener"><span class="hide-s">Accéder aux </span>formations</a>
   </div>
 </nav>
 
@@ -208,5 +211,45 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
   </div>
 </footer>
 
+
+<button id="totop" type="button" aria-label="Remonter en haut de la page" data-umami-event="Remonter en haut"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+<style>
+#totop{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:var(--fab-b,18px);z-index:850;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#2b2724;color:#fff;border:2px solid #fff;cursor:pointer;box-shadow:0 8px 22px rgba(28,24,21,.28);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s ease,transform .3s cubic-bezier(.23,1,.32,1),bottom .3s cubic-bezier(.23,1,.32,1),visibility 0s linear .3s}
+#totop.show{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+#totop:active{transform:scale(.94)}
+#totop:focus-visible{outline:3px solid #FE3A7E;outline-offset:3px}
+@media (hover:hover) and (pointer:fine){#totop:hover{background:#FE3A7E;color:#1a1714}}
+@media (min-width:801px){#totop{right:24px;bottom:calc(var(--fab-b,18px) + 64px)}}
+@media (prefers-reduced-motion:reduce){#totop{transition:none}}
+</style>
+<script>
+(function(){
+  var b=document.getElementById('totop');if(!b)return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,last=window.scrollY,up=false,idle=null,tick=false;
+  function bar(){
+    var m=document.getElementById('mbar')||document.querySelector('.mbar'),h=0;
+    if(m){var cs=getComputedStyle(m),r=m.getBoundingClientRect();if(cs.display!=='none'&&cs.visibility!=='hidden'&&r.top<innerHeight-2)h=innerHeight-r.top;}
+    document.documentElement.style.setProperty('--fab-b',(Math.round(h)+16)+'px');
+  }
+  function upd(){
+    tick=false;
+    var y=window.scrollY,vh=window.innerHeight,doc=document.documentElement.scrollHeight;
+    if(y>last+6)up=false;else if(y<last-6)up=true;
+    last=y;
+    var far=y>vh*1.2,nearEnd=y+vh>doc-vh*1.4,wide=window.innerWidth>800;
+    b.classList.toggle('show',far&&(wide||up||nearEnd));
+    clearTimeout(idle);
+    if(far&&!wide&&!nearEnd)idle=setTimeout(function(){b.classList.remove('show')},3200);
+    bar();
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});
+  window.addEventListener('resize',upd);
+  b.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    var t=document.querySelector('a,button');if(t&&t!==b)setTimeout(function(){try{t.focus({preventScroll:true});}catch(e){}},reduce?0:600);
+  });
+  upd();
+})();
+</script>
 </body>
 </html>
