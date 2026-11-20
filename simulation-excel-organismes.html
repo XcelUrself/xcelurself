@@ -309,6 +309,13 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
   .textlink{min-height:44px;display:inline-flex;align-items:center}
   footer a{display:inline-flex;align-items:center;min-height:44px}
 }
+
+/* ===== Rendez-vous Calendly ===== */
+.rdv-line{margin-top:1.2rem;font-size:.9rem;color:var(--ink2)}
+.pilot .btn-ghost,.final .btn-ghost{color:#fff;border-color:#fff}
+@media (hover:hover) and (pointer:fine){.pilot .btn-ghost:hover,.final .btn-ghost:hover{background:#fff;color:var(--ink)}}
+.pilot .cta{gap:.8rem}
+@media(max-width:700px){.mbar .btn{padding:.85rem .6rem;font-size:.74rem;white-space:nowrap}.mbar .btn-ghost{flex:.9}}
 </style>
 </head>
 <body>
@@ -327,6 +334,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
     <p class="lead rv">Une simulation adaptative et un test de positionnement, dans Excel, avec un tableau de bord qui rassemble les résultats de la promo. Votre positionnement d'entrée et votre évaluation finale, prêts à l'emploi.</p>
     <div class="cta rv">
       <a class="btn btn-primary" data-forms href="#" data-umami-event="Orga : hero pilote">Demander un pilote gratuit</a>
+      <a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Orga : hero rdv">Réserver un échange de 20 min</a>
       <a class="textlink" href="#licence" data-umami-event="Orga : hero voir formules">Voir les formules et les prix</a>
     </div>
     <p class="reassure rv">Sans engagement · réponse sous 48 h ouvrées · jusqu'à 15 stagiaires</p>
@@ -477,6 +485,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
         </tbody>
       </table>
     </div>
+    <p class="rdv-line rv">Un doute sur la formule à choisir ? <a class="textlink" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Orga : tarifs rdv">Réservez un échange de 20 minutes</a>, gratuit et sans engagement.</p>
     <p class="note rv">TVA non applicable, art. 293 B du CGI. Tarifs en vigueur à la date de consultation, soumis au contrat de licence remis avant toute commande.</p>
   </div>
 </section>
@@ -496,6 +505,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
         </ul>
         <div class="cta" style="margin-top:1.4rem">
           <a class="btn btn-primary" data-forms href="#" data-umami-event="Orga : demande pilote">Demander un pilote</a>
+          <a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Orga : pilote rdv">Réserver un échange de 20 min</a>
         </div>
       </div>
     </div>
@@ -533,7 +543,10 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
     <div class="final rv">
       <h2>Vos stagiaires, <em>positionnés</em> dès lundi.</h2>
       <p>Commencez par un pilote gratuit : une session complète, jusqu'à 15 stagiaires, sans engagement.</p>
-      <a class="btn btn-primary" data-forms href="#" data-umami-event="Orga : fin de page pilote">Demander un pilote gratuit</a>
+      <div class="cta" style="justify-content:center">
+        <a class="btn btn-primary" data-forms href="#" data-umami-event="Orga : fin de page pilote">Demander un pilote gratuit</a>
+        <a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Orga : fin de page rdv">Réserver un échange de 20 min</a>
+      </div>
     </div>
   </div>
 </section>
@@ -547,7 +560,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
 
 <div class="mbar" id="mbar" aria-hidden="true">
   <a class="btn btn-primary" data-forms href="#" data-umami-event="Orga : barre mobile pilote">Demander un pilote</a>
-  <a class="textlink" href="#licence">Voir les prix</a>
+  <a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Orga : barre mobile rdv">Échange 20 min</a>
 </div>
 
 <script>

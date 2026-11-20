@@ -1155,6 +1155,9 @@ body:has(.drawer.open) #aide-fab,body:has(.drawer.open) #totop{display:none}
 #legal-toggle::after{content:"+";font-size:1.3rem;font-weight:400}
 #legal-toggle[aria-expanded="true"]::after{content:"–"}
 #legal-toggle:focus-visible{outline:3px solid #FE3A7E;outline-offset:3px}
+
+.feature-rdv{position:relative;z-index:2;color:#fff;font-weight:700;text-decoration:underline;text-decoration-color:var(--or1);text-decoration-thickness:2px;text-underline-offset:4px;white-space:nowrap}
+@media(max-width:800px){.feature-rdv{display:flex;align-items:center;min-height:44px;width:fit-content}.feature-note .sep{display:none}}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise.
      Site Umami : XcelUrself (xcelurself.github.io). -->
@@ -2046,7 +2049,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
         <div><b>25</b><span>questions de positionnement</span></div>
       </div>
       <a class="btn btn-primary feature-btn" href="simulation-excel-organismes.html" data-umami-event="Accueil : carte organismes">Découvrir la simulation <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      <p class="feature-note">Pilote gratuit jusqu'à 15 stagiaires · sans engagement</p>
+      <p class="feature-note">Pilote gratuit jusqu'à 15 stagiaires · sans engagement<span class="sep" aria-hidden="true"> · </span><a class="feature-rdv" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : carte organismes rdv">Réserver un échange de 20 min</a></p>
     </div>
     <div class="fshot">
       <img src="img/tdb-kpi-niveaux.webp?v=2" width="972" height="350" loading="lazy" decoding="async" alt="Aperçu du tableau de bord formateur : 22 stagiaires, score moyen 711, niveau le plus fréquent Opérationnel, répartition de la promo par niveau de Initial à Expert."/>
