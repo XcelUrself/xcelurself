@@ -351,7 +351,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
         <button type="button" role="tab" id="vt6" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite promo">7 · La promo</button>
       </div>
       <div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Simulation Excel.xlsx</span></div>
-        <div class="tview" id="vview" role="tabpanel" aria-labelledby="vt0"><span class="fict">Exemple fictif : noms et résultats inventés</span>
+        <div class="tview" id="vview" role="tabpanel" aria-labelledby="vt0"><span class="fict">Exemple : identités inventées, pas de vraies personnes</span>
           <div class="tstage" data-w="1198" data-h="672" data-max="2.3"><img src="img/tour-accueil.webp" width="1198" height="672" decoding="async" alt="Écran d'accueil du fichier de simulation : bannière, présentation du parcours, menu de navigation avec progression, réglages du prénom, du mode et de la série."/><i class="hl"></i></div>
           <div class="tstage" data-w="1198" data-h="935" data-max="2.3"><img src="img/simulation-question-tcd.webp" width="1198" height="935" loading="lazy" decoding="async" alt="Écran d'une question : créer un tableau croisé dynamique, avec le menu de gauche et la progression du parcours."/><i class="hl"></i></div>
           <div class="tstage" data-w="1270" data-h="972" data-max="1.6"><img src="img/tour-bilan.webp" width="1270" height="972" loading="lazy" decoding="async" alt="Écran du bilan : score sur 1000, niveau, réussite par domaine, radar de profil, plan de révision et code résultat à envoyer au formateur."/><i class="hl"></i></div>
@@ -401,7 +401,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
           <div class="hz" data-hz="rapport"><img src="img/tableau-de-bord-rapport.webp" width="1226" height="932" loading="lazy" decoding="async" alt="Écran « Rapport » : rapport de promotion d'une page avec chiffres clés, répartition par niveau, réussite par domaine et notions à travailler en priorité."/></div></div>
         <p class="cap"><b>Un rapport d'une page :</b> à imprimer ou à envoyer en PDF, avec les chiffres clés, la répartition par niveau et les points à travailler.</p></div>
       </div>
-      <p class="shotnote">Exemple de démonstration : tous les noms, prénoms et résultats affichés sont fictifs. Ils ont été inventés pour illustrer le tableau de bord ; aucune personne réelle n'est concernée.</p>
+      <p class="shotnote">Exemple de démonstration : les stagiaires présentés sont des identités inventées, pas de vraies personnes. Leurs noms, prénoms et résultats ont été créés pour illustrer le tableau de bord.</p>
     </div>
   </div>
 </section>
@@ -780,7 +780,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
         {r:[238,82,992,150],l:"Chiffres clés",t:"Effectif, score moyen, niveau le plus fréquent et réussite globale, d'un coup d'œil."},
         {r:[238,262,630,340],l:"Niveaux et domaines",t:"La répartition de la promo par niveau et la réussite par domaine."},
         {r:[892,238,328,350],l:"Profil de la promo",t:"Le profil de la promo face au seuil de maîtrise."},
-        {r:[238,604,630,240],l:"À retravailler",t:"Le point faible de la promo et les notions à retravailler en priorité. (Exemple de démonstration : stagiaires fictifs.)"}]}
+        {r:[238,604,630,240],l:"À retravailler",t:"Le point faible de la promo et les notions à retravailler en priorité. (Exemple de démonstration : identités inventées.)"}]}
     ];
     var root=document.getElementById('visite'); if(!root)return;
     var view=document.getElementById('vview'),stages=[].slice.call(view.querySelectorAll('.tstage')),
@@ -901,7 +901,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
       else if(own){host.classList.add('touch');}
       if(!own)show(null);
       if(withOpen){
-        var fb=document.createElement('span');fb.className='fict';fb.textContent='Données fictives';host.appendChild(fb);
+        var fb=document.createElement('span');fb.className='fict';fb.textContent='Identités inventées';host.appendChild(fb);
         var o=document.createElement('button');o.type='button';o.className='hz-open';o.textContent='Agrandir ⤢';o.setAttribute('aria-label','Agrandir : '+d.title);
         o.addEventListener('click',function(e){e.stopPropagation();openLb(key);});host.appendChild(o);
       }
@@ -920,7 +920,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
       var head=document.createElement('div');head.className='lb-head';
       var h=document.createElement('h2');h.textContent=d.title;
       var c=document.createElement('button');c.type='button';c.className='lb-close';c.textContent='Fermer ✕';c.addEventListener('click',function(){dlg.close();});
-      var fk=document.createElement('span');fk.className='fict';fk.textContent='Données fictives';
+      var fk=document.createElement('span');fk.className='fict';fk.textContent='Identités inventées';
       head.appendChild(h);head.appendChild(fk);head.appendChild(c);
       var body=document.createElement('div');body.className='lb-body';
       var host=document.createElement('div');host.className='hz touch';
