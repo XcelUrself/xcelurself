@@ -258,6 +258,8 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .hz-z:hover,.hz-z.on,.hz-z:focus-visible{border:2px solid var(--pink);background:rgba(254,58,126,.12);outline:none}
 .hz-leg{position:absolute;left:.7rem;right:.7rem;bottom:.7rem;background:var(--ink);color:#fff;border-radius:10px;padding:.65rem .9rem;font-size:.82rem;line-height:1.45;opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .2s ease,transform .25s var(--ease-out)}
 .hz-leg.on{opacity:1;transform:none}
+.hz-leg.top{bottom:auto;top:.7rem}
+
 .hz-leg b{display:block;font-size:.84rem;margin-bottom:.1rem;color:#fff}
 .hz-leg b::before{content:"";display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:var(--pink);margin-right:.45rem}
 .hz-open{position:absolute;top:.6rem;right:.6rem;line-height:1.2;font:inherit;font-size:.74rem;font-weight:800;color:#1a1714;background:var(--pink);border:0;border-radius:100px;min-height:44px;padding:.45rem 1rem;cursor:pointer;box-shadow:0 4px 14px rgba(43,39,36,.25);transition:transform .15s var(--ease-out)}
@@ -352,8 +354,8 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
       </div>
       <div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Simulation Excel.xlsx</span></div>
         <div class="tview" id="vview" role="tabpanel" aria-labelledby="vt0"><span class="fict">Exemple : identités inventées, pas de vraies personnes</span>
-          <div class="tstage" data-w="1198" data-h="672" data-max="2.3"><img src="img/tour-accueil.webp?v=2" width="1198" height="672" decoding="async" alt="Écran d'accueil du fichier de simulation : bannière, présentation du parcours, menu de navigation avec progression, réglages du prénom, du mode et de la série."/><i class="hl"></i></div>
-          <div class="tstage" data-w="1198" data-h="935" data-max="2.3"><img src="img/simulation-question-tcd.webp?v=2" width="1198" height="935" loading="lazy" decoding="async" alt="Écran d'une question : créer un tableau croisé dynamique, avec le menu de gauche et la progression du parcours."/><i class="hl"></i></div>
+          <div class="tstage" data-w="1198" data-h="672" data-max="1.7"><img src="img/tour-accueil.webp?v=3" width="1198" height="672" decoding="async" alt="Écran d'accueil du fichier de simulation : bannière, présentation du parcours, menu de navigation avec progression, réglages du prénom, du mode et de la série."/><i class="hl"></i></div>
+          <div class="tstage" data-w="1198" data-h="935" data-max="1.7"><img src="img/simulation-question-tcd.webp?v=3" width="1198" height="935" loading="lazy" decoding="async" alt="Écran d'une question : créer un tableau croisé dynamique, avec le menu de gauche et la progression du parcours."/><i class="hl"></i></div>
           <div class="tstage" data-w="1270" data-h="972" data-max="1.6"><img src="img/tour-bilan.webp?v=2" width="1270" height="972" loading="lazy" decoding="async" alt="Écran du bilan : score sur 1000, niveau, réussite par domaine, radar de profil, plan de révision et code résultat à envoyer au formateur."/><i class="hl"></i></div>
           <div class="tstage" data-w="1304" data-h="953" data-max="1.6"><img src="img/tour-certificat.webp?v=2" width="1304" height="953" loading="lazy" decoding="async" alt="Écran du certificat d'entraînement : nom du stagiaire, score sur 1000, niveau estimé, nombre de questions et réussite par domaine."/><i class="hl"></i></div>
           <div class="tstage" data-w="1249" data-h="1004" data-max="1.6"><img src="img/tour-niveaux.webp?v=2" width="1249" height="1004" loading="lazy" decoding="async" alt="Écran « Les certifications Excel en bref » : fonctionnement d'un test adaptatif, les cinq niveaux de la simulation et conseils pour le jour J."/><i class="hl"></i></div>
@@ -754,33 +756,33 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
         {r:[876,108,330,490],l:"Difficulté adaptative",t:"Le parcours s'adapte à chaque réponse, avec un repère de temps : environ 60 minutes."}]},
       {shots:[
         {r:null,t:"À la dernière question, le bilan s'affiche tout de suite."},
-        {r:[240,190,640,170],l:"Score et niveau",t:"Le score sur 1000 et le niveau, avec un message personnalisé."},
-        {r:[888,82,338,386],l:"Radar de profil",t:"Un radar de profil par domaine, face au seuil de maîtrise de 80 %."},
-        {r:[240,365,650,262],l:"4 domaines",t:"Les quatre domaines : maîtrisé, à consolider, à revoir, avec accès aux erreurs."},
-        {r:[240,610,650,260],l:"Plan de révision",t:"Un plan de révision sur mesure : chaque point faible renvoie vers la formation ou la fiche qui correspond."},
-        {r:[900,472,328,368],l:"Code résultat",t:"Un code résultat anonyme à envoyer au formateur : prénom choisi, score et réussites, rien d'autre."}]},
+        {r:[248,196,616,160],l:"Score et niveau",t:"Le score sur 1000 et le niveau, avec un message personnalisé."},
+        {r:[900,92,314,364],l:"Radar de profil",t:"Un radar de profil par domaine, face au seuil de maîtrise de 80 %."},
+        {r:[248,354,616,262],l:"4 domaines",t:"Les quatre domaines : maîtrisé, à consolider, à revoir, avec accès aux erreurs."},
+        {r:[248,614,616,262],l:"Plan de révision",t:"Un plan de révision sur mesure : chaque point faible renvoie vers la formation ou la fiche qui correspond."},
+        {r:[900,482,314,322],l:"Code résultat",t:"Un code résultat anonyme à envoyer au formateur : prénom choisi, score et réussites, rien d'autre."}]},
       {shots:[
         {r:null,t:"Chaque stagiaire repart avec un certificat d'entraînement personnalisé."},
-        {r:[236,106,968,76],l:"Certificat d'entraînement",t:"Un certificat d'entraînement au nom du stagiaire, aux couleurs du fichier."},
-        {r:[240,318,964,102],l:"Score, niveau, questions",t:"Le score sur 1000, le niveau estimé et le nombre de questions traitées."},
-        {r:[470,422,500,70],l:"Domaines et distinctions",t:"La réussite par domaine et des distinctions, comme « Question Expert réussie »."},
-        {r:[300,500,860,92],l:"Mention claire",t:"Mention explicite : score indicatif, non affilié à un organisme certificateur, document qui n'est pas une certification."}]},
+        {r:[247,114,946,196],l:"Certificat d'entraînement",t:"Un certificat d'entraînement au nom du stagiaire, aux couleurs du fichier."},
+        {r:[247,328,946,80],l:"Score, niveau, questions",t:"Le score sur 1000, le niveau estimé et le nombre de questions traitées."},
+        {r:[494,430,462,52],l:"Domaines et distinctions",t:"La réussite par domaine et des distinctions, comme « Question Expert réussie »."},
+        {r:[330,508,780,78],l:"Mention claire",t:"Mention explicite : score indicatif, non affilié à un organisme certificateur, document qui n'est pas une certification."}]},
       {shots:[
         {r:null,t:"Un écran pédagogique explique le principe du test adaptatif et les niveaux."},
-        {r:[236,270,968,142],l:"Test adaptatif",t:"Le principe du test adaptatif expliqué simplement : questions plus difficiles si l'on réussit, plus simples sinon."},
-        {r:[236,440,968,314],l:"Les 5 niveaux",t:"Les 5 niveaux de la simulation, de Initial à Expert, avec la plage de score et ce que le stagiaire sait faire."},
-        {r:[236,886,968,112],l:"Conseils du jour J",t:"Des conseils pour le jour J : lire la consigne, gérer son temps, vérifier ses références."}]},
+        {r:[248,276,746,130],l:"Test adaptatif",t:"Le principe du test adaptatif expliqué simplement : questions plus difficiles si l'on réussit, plus simples sinon."},
+        {r:[248,432,944,314],l:"Les 5 niveaux",t:"Les 5 niveaux de la simulation, de Initial à Expert, avec la plage de score et ce que le stagiaire sait faire."},
+        {r:[248,900,600,102],l:"Conseils du jour J",t:"Des conseils pour le jour J : lire la consigne, gérer son temps, vérifier ses références."}]},
       {shots:[
         {r:null,t:"Le formateur colle les codes reçus : le fichier contrôle chacun d'eux."},
-        {r:[240,100,980,68],l:"Un code par ligne",t:"Un code par ligne, copié depuis Forms ou un e-mail. Le contrôle signale les doublons et les codes mal copiés."},
-        {r:[240,160,470,170],l:"Codes collés",t:"Les codes collés dans la colonne orange, jusqu'à 300 par tableau de bord."},
-        {r:[690,186,515,330],l:"Contrôle et décodage",t:"Chaque code est vérifié (OK), puis décodé : stagiaire, score et type de test. Sans macro."}]},
+        {r:[244,108,940,56],l:"Un code par ligne",t:"Un code par ligne, copié depuis Forms ou un e-mail. Le contrôle signale les doublons et les codes mal copiés."},
+        {r:[244,168,462,160],l:"Codes collés",t:"Les codes collés dans la colonne orange, jusqu'à 300 par tableau de bord."},
+        {r:[698,196,500,330],l:"Contrôle et décodage",t:"Chaque code est vérifié (OK), puis décodé : stagiaire, score et type de test. Sans macro."}]},
       {shots:[
         {r:null,t:"Et la promo se lit d'un coup d'œil, sans aucun calcul à faire."},
-        {r:[238,82,992,150],l:"Chiffres clés",t:"Effectif, score moyen, niveau le plus fréquent et réussite globale, d'un coup d'œil."},
-        {r:[238,262,630,340],l:"Niveaux et domaines",t:"La répartition de la promo par niveau et la réussite par domaine."},
-        {r:[892,238,328,350],l:"Profil de la promo",t:"Le profil de la promo face au seuil de maîtrise."},
-        {r:[238,604,630,240],l:"À retravailler",t:"Le point faible de la promo et les notions à retravailler en priorité. (Exemple de démonstration : identités inventées.)"}]}
+        {r:[246,86,950,140],l:"Chiffres clés",t:"Effectif, score moyen, niveau le plus fréquent et réussite globale, d'un coup d'œil."},
+        {r:[246,270,616,322],l:"Niveaux et domaines",t:"La répartition de la promo par niveau et la réussite par domaine."},
+        {r:[904,272,300,432],l:"Profil de la promo",t:"Le profil de la promo face au seuil de maîtrise."},
+        {r:[246,608,616,236],l:"À retravailler",t:"Le point faible de la promo et les notions à retravailler en priorité. (Exemple de démonstration : identités inventées.)"}]}
     ];
     var root=document.getElementById('visite'); if(!root)return;
     var view=document.getElementById('vview'),stages=[].slice.call(view.querySelectorAll('.tstage')),
@@ -846,35 +848,39 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
   (function(){
     var HZ={
       promo:{w:1240,h:934,src:'img/tableau-de-bord-ma-promo.webp?v=2',title:'Tableau de bord formateur · Ma promo',alt:'Écran « Ma promo » du tableau de bord formateur avec une promo de 22 stagiaires.',z:[
-        [[10,65,200,320],'Menu','Navigation : Ma promo, Stagiaires, Questions, Coller les codes, Rapport.'],
-        [[248,90,972,130],'Chiffres clés','Effectif, score moyen, niveau le plus fréquent et réussite globale de la promo.'],
-        [[248,275,610,160],'Répartition par niveau','Combien de stagiaires à chaque niveau, de Initial à Expert.'],
-        [[248,458,610,135],'Réussite par domaine','Environnement, calculs, mise en forme, données : réussite et nombre de bonnes réponses.'],
-        [[248,612,610,24],'Point faible','Le domaine le plus fragile de la promo, repéré automatiquement.'],
-        [[248,637,610,26],'Question défi','La question la plus difficile : combien de stagiaires l\'ont reçue et réussie.'],
-        [[248,668,610,170],'Notions à travailler','Les notions les plus ratées par la promo, à retravailler en priorité.'],
-        [[905,270,300,420],'Profil de la promo','Réussite par domaine face au seuil de maîtrise de 80 %.'],
-        [[918,712,274,140],'Accès rapides','Un clic vers la liste des stagiaires ou vers le rapport imprimable.']]},
+        [[8,62,204,320],'Menu','Navigation : Ma promo, Stagiaires, Questions, Coller les codes, Rapport.'],
+        [[246,88,948,136],'Chiffres clés','Effectif, score moyen, niveau le plus fréquent et réussite globale de la promo.'],
+        [[246,274,616,162],'Répartition par niveau','Combien de stagiaires à chaque niveau, de Initial à Expert.'],
+        [[246,456,616,132],'Réussite par domaine','Environnement, calculs, mise en forme, données : réussite et nombre de bonnes réponses.'],
+        [[246,612,266,24],'Point faible','Le domaine le plus fragile de la promo, repéré automatiquement.'],
+        [[246,634,614,30],'Question défi','La question la plus difficile : combien de stagiaires l\'ont reçue et réussie.'],
+        [[246,666,616,176],'Notions à travailler','Les notions les plus ratées par la promo, à retravailler en priorité.'],
+        [[904,272,300,432],'Profil de la promo','Réussite par domaine face au seuil de maîtrise de 80 %.'],
+        [[914,708,282,142],'Accès rapides','Un clic vers la liste des stagiaires ou vers le rapport imprimable.']
+      ]},
       stagiaires:{w:1239,h:788,src:'img/tableau-de-bord-stagiaires.webp?v=2',title:'Tableau de bord formateur · Stagiaires',alt:'Écran « Stagiaires » : les 22 stagiaires classés par score, avec leur niveau et leur réussite par domaine.',z:[
-        [[250,166,232,604],'Classement','Une ligne par stagiaire, classée du meilleur au plus faible score.'],
-        [[483,166,98,604],'Score','Le score sur 1000 de chaque stagiaire.'],
-        [[581,166,120,604],'Niveau','Le niveau estimé, de Initial à Expert.'],
-        [[701,166,220,604],'Questions posées','Le nombre de questions reçues par chaque stagiaire.'],
-        [[921,166,272,604],'Réussite par domaine','Environnement, calculs, mise en forme, données : rouge à renforcer, vert maîtrisé.']]},
+        [[248,166,236,604],'Classement','Une ligne par stagiaire, classée du meilleur au plus faible score.'],
+        [[482,166,100,604],'Score','Le score sur 1000 de chaque stagiaire.'],
+        [[580,166,122,604],'Niveau','Le niveau estimé, de Initial à Expert.'],
+        [[700,166,222,604],'Questions posées','Le nombre de questions reçues par chaque stagiaire.'],
+        [[920,166,274,604],'Réussite par domaine','Environnement, calculs, mise en forme, données : rouge à renforcer, vert maîtrisé.']
+      ]},
       codes:{w:1285,h:878,src:'img/tableau-de-bord-codes.webp?v=2',title:'Tableau de bord formateur · Coller les codes',alt:'Écran « Coller les codes » : 22 codes résultat collés, tous contrôlés valides, avec le stagiaire, le score et le type de test.',z:[
-        [[250,112,960,48],'Consigne','Un code par ligne, copié depuis Forms ou un e-mail. Collage en valeurs seules.'],
-        [[250,170,300,24],'Compteur','Combien de codes sont valides et combien restent à vérifier.'],
-        [[249,194,452,600],'Codes résultat','La colonne où l\'on colle les codes reçus des stagiaires, jusqu\'à 300.'],
-        [[700,194,160,600],'Contrôle','OK si le code est valide ; sinon Doublon, Code altéré ou Code invalide.'],
-        [[858,194,336,600],'Décodage','Le fichier lit le code : stagiaire, score et type de test, sans macro.']]},
+        [[248,112,926,44],'Consigne','Un code par ligne, copié depuis Forms ou un e-mail. Collage en valeurs seules.'],
+        [[248,170,192,22],'Compteur','Combien de codes sont valides et combien restent à vérifier.'],
+        [[248,198,454,598],'Codes résultat','La colonne où l\'on colle les codes reçus des stagiaires, jusqu\'à 300.'],
+        [[700,198,160,598],'Contrôle','OK si le code est valide ; sinon Doublon, Code altéré ou Code invalide.'],
+        [[860,198,334,598],'Décodage','Le fichier lit le code : stagiaire, score et type de test, sans macro.']
+      ]},
       rapport:{w:1226,h:932,src:'img/tableau-de-bord-rapport.webp?v=2',title:'Tableau de bord formateur · Rapport',alt:'Écran « Rapport » : rapport de promotion d\'une page avec chiffres clés, répartition par niveau, réussite par domaine et notions à travailler.',z:[
-        [[249,115,942,56],'Titre du rapport','Le nom de la promo ou de l\'organisme et la date, repris automatiquement.'],
-        [[249,222,942,78],'Chiffres clés','Stagiaires, score moyen, niveau le plus fréquent, réussite globale.'],
-        [[249,326,430,158],'Répartition par niveau','Le nombre de stagiaires à chaque niveau.'],
-        [[702,326,490,158],'Réussite par domaine','La réussite de la promo dans chaque domaine, et son point faible.'],
-        [[249,508,500,108],'À travailler en priorité','Les notions les plus ratées, pour orienter la suite de la formation.'],
-        [[330,638,780,24],'Méthode','Rappel de la méthode : test adaptatif, score indicatif sur 1000.'],
-        [[420,688,600,54],'Signature','Votre nom et vos mentions, prêtes à imprimer ou à exporter en PDF.']]}
+        [[247,112,946,80],'Titre du rapport','Le nom de la promo ou de l\'organisme et la date, repris automatiquement.'],
+        [[247,222,946,78],'Chiffres clés','Stagiaires, score moyen, niveau le plus fréquent, réussite globale.'],
+        [[247,326,456,158],'Répartition par niveau','Le nombre de stagiaires à chaque niveau.'],
+        [[700,326,462,156],'Réussite par domaine','La réussite de la promo dans chaque domaine, et son point faible.'],
+        [[247,508,310,100],'À travailler en priorité','Les notions les plus ratées, pour orienter la suite de la formation.'],
+        [[346,638,748,24],'Méthode','Rappel de la méthode : test adaptatif, score indicatif sur 1000.'],
+        [[428,688,586,52],'Signature','Votre nom et vos mentions, prêtes à imprimer ou à exporter en PDF.']
+      ]}
     };
     function pc(v,t){return (v/t*100).toFixed(3)+'%';}
     function enhance(host,key,legEl,withOpen){
@@ -883,7 +889,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
       function show(i){
         var zs=host.querySelectorAll('.hz-z');[].forEach.call(zs,function(z,j){z.classList.toggle('on',j===i);});
         on=i;
-        if(own){if(i===null){leg.classList.remove('on');}else{leg.innerHTML='<b></b><span></span>';leg.firstChild.textContent=d.z[i][1];leg.lastChild.textContent=d.z[i][2];leg.classList.add('on');}}
+        if(own){if(i===null){leg.classList.remove('on');}else{leg.classList.toggle('top',(d.z[i][0][1]+d.z[i][0][3]/2)/d.h>.5);leg.innerHTML='<b></b><span></span>';leg.firstChild.textContent=d.z[i][1];leg.lastChild.textContent=d.z[i][2];leg.classList.add('on');}}
         else{if(i===null){leg.className='lb-leg idle';leg.textContent='Survolez ou touchez une zone de l\'image pour sa légende.';}else{leg.className='lb-leg';leg.innerHTML='<b></b><span></span>';leg.firstChild.textContent=d.z[i][1]+' ·';leg.lastChild.textContent=d.z[i][2];}}
       }
       d.z.forEach(function(z,i){
