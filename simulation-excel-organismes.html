@@ -280,10 +280,14 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   var FORM_URL='';
   var CONTACT='mr.grosj@gmail.com';
   function mail(subject,body){return 'mailto:'+CONTACT+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);}
-  function dest(subject,body){return FORM_URL||mail(subject,body);}
+  function dest(subject,body,params){
+    if(!FORM_URL) return mail(subject,body);
+    var q=Object.keys(params||{}).filter(function(k){return params[k]!==undefined&&params[k]!=='';}).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(params[k]);}).join('&');
+    return FORM_URL+(q?(FORM_URL.indexOf('?')>-1?'&':'?')+q:'');
+  }
   function openNew(a){if(FORM_URL){a.target='_blank'; a.rel='noopener';}}
   var PILOT_BODY="Bonjour Joffrey,\n\nJe souhaite un pilote gratuit de la Simulation Excel.\n\nOrganisme : \nNom et fonction : \nTéléphone : \nNombre de stagiaires de la promotion (15 au plus) : \nDate de début de la formation : \nVersion d'Excel des stagiaires : \n\nMerci !";
-  document.querySelectorAll('[data-forms]').forEach(function(a){a.href=dest('Demande de pilote : Simulation Excel',PILOT_BODY); openNew(a);});
+  document.querySelectorAll('[data-forms]').forEach(function(a){a.href=dest('Demande de pilote : Simulation Excel',PILOT_BODY,{origine:'pilote'}); openNew(a);});
 
   /* ---- Grille de prix HT (feuille « Grille » du simulateur de licence) ---- */
   var P={p5:125,p10:220,p25:450,session:290,sessionMax:15,annuelle:990,devisAuDela:100};
@@ -382,7 +386,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
       cadre:{un:"Un seul site",multi:"Plusieurs sites",revente:"Mis à disposition d'autres structures"},
       xl:{pc:"Windows, Excel 2021 ou Microsoft 365",pc19:"Windows, Excel 2019",old:"Windows, Excel 2016 ou plus ancien",mac:"Mac",web:"Excel en ligne",nsp:"Je ne sais pas"}};
     var recap=function(reco){return "Bonjour Joffrey,\n\nVoici ma situation :\n- Structure : "+LBL.type[A.type]+"\n- Stagiaires : "+A.vol+"\n- Durée : "+LBL.dur[A.dur]+"\n- Utilisation : "+LBL.cadre[A.cadre]+"\n- Excel : "+LBL.xl[A.xl]+"\n- Formule recommandée : "+reco+"\n\nOrganisme : \nNom et fonction : \nTéléphone : \n\nMerci !";};
-    var cta=function(label,evt,subject,reco){var a=el('a','btn btn-primary',label); a.href=dest(subject,recap(reco)); openNew(a); a.setAttribute('data-umami-event',evt); return a;};
+    var cta=function(label,evt,subject,reco){var a=el('a','btn btn-primary',label); a.href=dest(subject,recap(reco),{origine:'selecteur',structure:LBL.type[A.type],stagiaires:A.vol,duree:LBL.dur[A.dur],usage:LBL.cadre[A.cadre],excel:LBL.xl[A.xl],formule:reco}); openNew(a); a.setAttribute('data-umami-event',evt); return a;};
     if(r.devis){
       w.appendChild(el('p','k','Ma recommandation'));
       w.appendChild(el('h3','','Une offre sur devis'));
