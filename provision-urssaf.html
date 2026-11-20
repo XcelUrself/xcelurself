@@ -23,7 +23,7 @@
 :root{
   --bg:#FAF6F1;--bg2:#F3EDE5;--bg3:#ECE4DA;
   --ink:#2b2724;--ink2:#404040;--muted:#655d55;
-  --or1:#FE3A7E;--or2:#C8205E;--or3:#B01C53;
+  --or1:#FE3A7E;--or2:#FE3A7E;--or3:#D92A66;
   --grad:#FE3A7E;
   --gradr:#B01C53;
   --bd:rgba(28,24,21,.1);--bda:rgba(254,58,126,.18);
@@ -44,15 +44,15 @@ nav{position:sticky;top:0;z-index:650;background:rgba(250,248,245,.96);backdrop-
 .nav-logo span,.footer-logo span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .nav-links{display:flex;gap:1.8rem}
 .nav-links a{font-size:.75rem;font-weight:600;letter-spacing:.04em;color:var(--ink2);transition:color .2s}
-.nav-links a:hover{color:var(--or2)}
+.nav-links a:hover{color:var(--ink)}
 .nav-cta{background:var(--grad);color:#fff;font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.3rem;border-radius:100px;transition:all .2s;flex-shrink:0;box-shadow:0 3px 12px rgba(254,58,126,.2)}
 .nav-cta:hover{box-shadow:0 6px 20px rgba(254,58,126,.3);transform:translateY(-1px)}
 
 /* ARTICLE */
 .wrap{max-width:760px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) clamp(1.25rem,5vw,2rem) 4.5rem}
-.back{font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--or2)}
+.back{font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--ink)}
 .back:hover{text-decoration:underline;text-underline-offset:3px}
-.eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--or2);display:flex;align-items:center;gap:.7rem;margin:2rem 0 1rem}
+.eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:.7rem;margin:2rem 0 1rem}
 .eyebrow::before{content:'';width:1.8rem;height:1.5px;background:var(--grad);flex-shrink:0}
 h1{font-family:'Montserrat',sans-serif;font-size:clamp(2.1rem,6.4vw,3.6rem);font-weight:900;line-height:.98;letter-spacing:-.03em;margin-bottom:1.6rem}
 h1 .l1{display:block;color:var(--ink)}
@@ -64,19 +64,19 @@ h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3.4vw,2.3rem);f
 h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding-right:.08em}
 p{color:var(--ink2);margin-bottom:1rem;line-height:1.85}
 p strong,li strong{color:var(--ink);font-weight:700}
-a.in{color:var(--or2);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+a.in{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .formule{margin:1.6rem 0;padding:1.3rem 1.5rem;background:rgba(254,58,126,.08);border:1px solid var(--bda);border-left:4px solid var(--or2);border-radius:0 14px 14px 0;font-weight:700;font-size:1.02rem;color:var(--ink);line-height:1.6}
 .tablewrap{overflow-x:auto;margin:1.4rem 0 .8rem;border:1px solid var(--bd);border-radius:14px;background:#fff}
 table{width:100%;border-collapse:collapse;font-size:.88rem}
 th,td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--bd);color:var(--ink2)}
-th{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--or2);background:var(--bg2)}
+th{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--bg2)}
 td.n,th.n{text-align:right;white-space:nowrap}
 td.n{font-weight:700;color:var(--ink)}
 tbody tr:last-child td{border-bottom:0}
 tfoot td{font-weight:800;color:var(--ink);background:var(--bg2);border-bottom:0;border-top:1px solid var(--bd)}
 tfoot td.n{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;border-top:0}
 .note{font-size:.78rem;color:var(--muted);line-height:1.75;margin-top:.6rem}
-.note a{color:var(--or2);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.note a{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:2px}
 ul.err{margin:1rem 0 1.2rem;display:grid;gap:.7rem}
 ul.err li{position:relative;padding:1rem 1.2rem 1rem 3.1rem;background:#fff;border:1px solid var(--bd);border-radius:14px;color:var(--ink2);line-height:1.7;counter-increment:e}
 ul.err{counter-reset:e}
@@ -115,6 +115,10 @@ footer :focus-visible,.cta-final :focus-visible{outline-color:#fff}
 .btn,.btn:hover{color:#1a1714!important}
 .btn:hover{background:#1a1714!important;color:#fff!important}
 tfoot td,tfoot .n{color:#1a1714}
+/* ===== Un seul rose (aligné sur l'accueil) ===== */
+.fiq .plus,.cbox.paid li::before{color:var(--or1)}
+.btn-outline:hover,.card-btn:hover{color:#1a1714}
+
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise (même site que la page d'accueil). -->
 <script>
