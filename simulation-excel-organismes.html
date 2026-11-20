@@ -4,19 +4,23 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Simulation Excel pour organismes de formation · XcelUrself</title>
-<meta name="description" content="Positionnement d'entrée, simulation adaptative et tableau de bord formateur pour mesurer le niveau Excel de vos stagiaires. Licence au nom de l'organisme, tarifs HT, pilote gratuit."/>
+<meta name="description" content="Mesurez le niveau Excel de vos stagiaires dès le 1er jour : simulation adaptative, test de positionnement et tableau de bord formateur. Licence au nom de l'organisme, tarifs HT, pilote gratuit."/>
 <link rel="canonical" href="https://xcelurself.github.io/xcelurself/simulation-excel-organismes.html"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Simulation Excel pour organismes de formation · XcelUrself"/>
 <meta property="og:description" content="Mesurez le niveau Excel de vos stagiaires dès le 1er jour : simulation adaptative, test de positionnement et tableau de bord formateur."/>
 <meta property="og:image" content="https://xcelurself.github.io/xcelurself/og-xcelurself.png"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Est-ce une certification officielle ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. La simulation est un entraînement aux certifications Excel : le score et le niveau sont indicatifs. Elle n'est affiliée à aucun organisme certificateur et ne délivre pas de certification."}}, {"@type": "Question", "name": "Quelles versions d'Excel faut-il ?", "acceptedAnswer": {"@type": "Answer", "text": "Excel 2021 ou Microsoft 365 sous Windows. Une édition dédiée existe pour Excel 2019 (118 questions au lieu de 128). Le fonctionnement sur Mac reste à confirmer : demandez-moi avant de commander. Les fichiers ne fonctionnent pas dans Excel en ligne, Google Sheets ou LibreOffice."}}, {"@type": "Question", "name": "Faut-il installer quelque chose ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Ce sont des fichiers .xlsx sans macro : vos stagiaires les ouvrent dans Excel, sans compte à créer."}}, {"@type": "Question", "name": "Que deviennent les données des stagiaires ?", "acceptedAnswer": {"@type": "Answer", "text": "Le fichier fonctionne entièrement sur l'ordinateur du stagiaire et n'envoie rien de lui-même. Le code résultat qu'il vous transmet contient un prénom ou un pseudo facultatif, le score et la réussite question par question."}}, {"@type": "Question", "name": "Que puis-je faire de la licence ?", "acceptedAnswer": {"@type": "Answer", "text": "Une licence non exclusive, au nom de votre organisme, pour vos propres stagiaires, pendant la durée de la formule choisie (12 mois pour les packs et l'Annuelle, 3 mois pour la Session). Elle inclut les mises à jour et une assistance par e-mail. La revente, la diffusion et la modification des fichiers sont interdites. Le contrat détaillé vous est remis avant toute commande."}}, {"@type": "Question", "name": "Comment se passent la commande et la facturation ?", "acceptedAnswer": {"@type": "Answer", "text": "Après votre demande, vous recevez un devis (ou la mise en place du pilote) et le contrat de licence. La facture est payable à 30 jours par virement. Une fois la licence signée, je vous livre les fichiers par e-mail, au nom de votre organisme."}}, {"@type": "Question", "name": "Puis-je tester avant de m'engager ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, avec le pilote gratuit : une session complète, jusqu'à 15 stagiaires, en échange d'un témoignage et des codes résultat de la promo. Une version découverte gratuite de 10 questions est aussi disponible sur demande."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
+<script>
+(function(){var id='60f60fb4-a75b-4e22-bbfb-832064c7c8a5';var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umami.is/script.js';sc.setAttribute('data-website-id',id);document.head.appendChild(sc);})();
+</script>
 <style>
 :root{
   --bg:#FAF6F1;--bg2:#F3EDE5;--bg3:#ECE4DA;--white:#FDFBF8;
   --ink:#2b2724;--ink2:#404040;--muted:#655d55;
-  --pink:#FE3A7E;--pink-deep:#D92A66;--sage:#1f7a64;
+  --pink:#FE3A7E;--sage:#1f7a64;
   --bd:rgba(43,39,36,.12);
   --ease-out:cubic-bezier(.23,1,.32,1);
 }
@@ -28,13 +32,11 @@ a{color:inherit}
 .wrap{max-width:1160px;margin:0 auto;padding-inline:clamp(1.25rem,5vw,4rem)}
 :focus-visible{outline:3px solid #1a1714;outline-offset:3px;border-radius:4px}
 
-/* barre du haut */
 .top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1rem;border-bottom:1px solid var(--bd)}
 .logo{font-weight:800;font-size:1.3rem;text-decoration:none;letter-spacing:.01em}
 .logo span{color:var(--pink)}
 .back{font-size:.8rem;font-weight:600;color:var(--ink2);text-decoration:underline;text-underline-offset:4px}
 
-/* boutons */
 .btn{display:inline-flex;align-items:center;gap:.5rem;font:inherit;font-weight:700;font-size:.76rem;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;border-radius:100px;padding:.9rem 1.7rem;cursor:pointer;border:1.5px solid transparent;transition:transform .16s var(--ease-out),background-color .2s ease,color .2s ease,border-color .2s ease}
 .btn-primary{background:var(--pink);color:#1a1714}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
@@ -43,6 +45,7 @@ a{color:inherit}
   .btn-primary:hover{background:#1a1714;color:#fff;transform:translateY(-2px)}
   .btn-ghost:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
 }
+.textlink{font-size:.84rem;font-weight:700;color:var(--ink);text-decoration:underline;text-decoration-color:var(--pink);text-decoration-thickness:2px;text-underline-offset:5px}
 
 /* hero */
 .hero{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center;padding-block:4.5rem 4rem}
@@ -52,21 +55,27 @@ h1{font-size:clamp(2.1rem,4.4vw,3.9rem);font-weight:900;line-height:1.02;letter-
 h1 em{font-style:normal;position:relative;display:inline-block;isolation:isolate;white-space:nowrap}
 h1 em::after{content:"";position:absolute;left:-.06em;right:-.06em;bottom:.05em;height:.42em;background:var(--pink);opacity:.4;z-index:-1;border-radius:.08em;transform-origin:0 50%}
 .lead{font-size:1rem;color:var(--ink2);max-width:520px;margin-bottom:1.8rem}
-.cta{display:flex;flex-wrap:wrap;gap:.9rem}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.5rem}
+.reassure{font-size:.8rem;color:var(--ink2);margin-top:1.1rem}
 .facts{background:var(--white);border:1px solid var(--bd);border-radius:16px;padding:1.6rem 1.8rem;display:grid;gap:1.1rem}
 .facts h2{font-size:.82rem;font-weight:700;color:var(--ink2)}
 .fact{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;align-items:baseline;border-top:1px solid var(--bd);padding-top:1rem}
 .fact b{font-size:2rem;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;min-width:3.2rem}
 .fact span{font-size:.86rem;color:var(--ink2);line-height:1.5}
 
-/* sections */
 section{padding-block:4rem}
 .alt{background:#F8F2EB}
 h2.t{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.4vw,2.8rem);font-weight:700;line-height:1.05;margin-bottom:.7rem;text-wrap:balance}
 h2.t em{font-style:italic;color:var(--pink)}
 .sub{font-size:.92rem;color:var(--ink2);max-width:640px;margin-bottom:2rem}
 
-/* contenu de la licence */
+/* parcours en 3 étapes : l'ordre est une information réelle */
+.steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.step{border-top:2px solid var(--ink);padding-top:1.1rem;display:grid;gap:.4rem;align-content:start}
+.step .n{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;line-height:1;color:var(--pink)}
+.step h3{font-size:1.02rem;font-weight:800;line-height:1.3}
+.step p{font-size:.86rem;color:var(--ink2);line-height:1.65}
+
 .items{display:grid;grid-template-columns:1fr 1fr;gap:0 3rem}
 .item{padding:1.2rem 0;border-top:1px solid var(--bd)}
 .item b{display:block;font-size:1rem;font-weight:800;margin-bottom:.2rem}
@@ -81,6 +90,14 @@ h2.t em{font-style:italic;color:var(--pink)}
 .prog i.on{background:var(--pink)}
 .linkbtn{background:none;border:0;font:inherit;font-size:.8rem;font-weight:700;color:var(--ink2);cursor:pointer;text-decoration:underline;text-underline-offset:4px;padding:.4rem 0;margin-top:1rem}
 .linkbtn[hidden]{display:none}
+.live{margin-top:1.3rem;padding-top:1rem;border-top:1px solid var(--bd)}
+.live[hidden]{display:none}
+.live-k{font-size:.74rem;font-weight:700;color:var(--ink2);margin-bottom:.4rem}
+.live ul{list-style:none;display:grid;gap:.15rem;margin-bottom:.7rem}
+.live li{font-size:.82rem;color:var(--ink);padding-left:1.1rem;position:relative}
+.live li::before{content:"✓";position:absolute;left:0;color:var(--pink);font-weight:800}
+.live .est{font-size:.84rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.live .est small{display:block;font-size:.74rem;font-weight:500;color:var(--ink2)}
 .pin{animation:pin .22s var(--ease-out)}
 @keyframes pin{from{opacity:0;transform:translateY(6px)}}
 .qstep{font-size:.76rem;font-weight:700;color:var(--ink2);margin-bottom:.3rem}
@@ -112,7 +129,6 @@ h2.t em{font-style:italic;color:var(--pink)}
 .res .linkbtn{color:#fff;margin:0}
 .res :focus-visible{outline-color:#fff}
 
-/* grille tarifaire */
 .tablewrap{overflow-x:auto;background:var(--white);border:1px solid var(--bd);border-radius:14px}
 table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:560px}
 th,td{text-align:left;padding:.9rem 1.2rem;border-bottom:1px solid var(--bd)}
@@ -121,40 +137,59 @@ tr:last-child td{border-bottom:0}
 td.n{font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
 .note{font-size:.8rem;color:var(--muted);margin-top:.9rem;max-width:720px}
 
-/* pilote */
 .pilot{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem 3rem;align-items:center;background:var(--ink);color:#fff;border-radius:18px;padding:2.4rem}
 .pilot h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;line-height:1.05;margin-bottom:.6rem}
 .pilot p{color:rgba(255,255,255,.86);font-size:.92rem}
 .pilot ul{list-style:none;display:grid;gap:.5rem;margin:0}
 .pilot li{padding-left:1.4rem;position:relative;font-size:.88rem;color:rgba(255,255,255,.9)}
 .pilot li::before{content:"✓";position:absolute;left:0;color:var(--pink);font-weight:800}
-.pilot :focus-visible{outline-color:#fff}
+.pilot :focus-visible,.final :focus-visible{outline-color:#fff}
 
-/* conditions */
 .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
 .cols h3{font-size:.95rem;font-weight:800;margin-bottom:.4rem}
 .cols p{font-size:.84rem;color:var(--ink2);line-height:1.65}
 
-footer{padding-block:2.5rem;border-top:1px solid var(--bd);font-size:.78rem;color:var(--muted)}
+/* FAQ */
+.faq{max-width:820px}
+.faq details{border-top:1px solid var(--bd)}
+.faq details:last-of-type{border-bottom:1px solid var(--bd)}
+.faq summary{list-style:none;cursor:pointer;padding:1.1rem 2rem 1.1rem 0;font-weight:700;font-size:.95rem;line-height:1.4;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:.2rem;top:.85rem;font-size:1.4rem;font-weight:500;color:var(--pink);transition:transform .25s var(--ease-out)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{font-size:.88rem;color:var(--ink2);line-height:1.75;padding:0 2rem 1.2rem 0}
+
+/* fin de page */
+.final{background:var(--ink);color:#fff;border-radius:18px;padding:3rem 2rem;text-align:center}
+.final h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.4vw,2.8rem);font-weight:700;line-height:1.05;margin-bottom:.6rem;text-wrap:balance}
+.final h2 em{font-style:italic;color:var(--pink)}
+.final p{color:rgba(255,255,255,.86);font-size:.92rem;margin:0 auto 1.5rem;max-width:520px}
+
+footer{padding-block:2.5rem 5rem;border-top:1px solid var(--bd);font-size:.78rem;color:var(--muted)}
 footer p+p{margin-top:.5rem}
 footer a{text-decoration:underline;text-underline-offset:3px}
 
-/* apparition au défilement (désactivée si mouvement réduit) */
+/* barre d'action mobile */
+.mbar{display:none}
+@media(max-width:800px){
+  .mbar{display:flex;align-items:center;gap:.9rem;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:.7rem max(16px,env(safe-area-inset-right,0px)) calc(.7rem + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(250,246,241,.97);border-top:1px solid var(--bd);transform:translateY(100%);visibility:hidden;transition:transform .3s var(--ease-out),visibility .3s}
+  .mbar.show{transform:none;visibility:visible}
+  .mbar .btn{flex:1;justify-content:center;padding:.85rem 1rem}
+  .mbar .textlink{white-space:nowrap}
+}
+
 .mo .rv{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
 .mo .rv.v{opacity:1;transform:none}
 .mo h1 em::after{transform:scaleX(0)}
 .mo h1.v em::after{transform:none;transition:transform .7s var(--ease-out) .5s}
-@media (prefers-reduced-motion:reduce){.pin{animation:none}.mo .rv{opacity:1;transform:none;transition:none}}
+@media (prefers-reduced-motion:reduce){.pin{animation:none}.mo .rv{opacity:1;transform:none;transition:none}.mbar{transition:none}}
 
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;padding-block:3rem 2.5rem}
   .picker,.pilot{grid-template-columns:1fr;padding:1.5rem}
-  .items,.cols{grid-template-columns:1fr}
+  .items,.cols,.steps{grid-template-columns:1fr}
 }
 </style>
-<script>
-(function(){var id='60f60fb4-a75b-4e22-bbfb-832064c7c8a5';var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umami.is/script.js';sc.setAttribute('data-website-id',id);document.head.appendChild(sc);})();
-</script>
 </head>
 <body>
 <div class="wrap">
@@ -167,12 +202,13 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 <header class="wrap hero">
   <div>
     <p class="eyebrow">Pour les organismes de formation, CFA, écoles et entreprises</p>
-    <h1 class="rv">Le niveau Excel de tes stagiaires, <em>dès le 1er jour.</em></h1>
-    <p class="lead rv">Une simulation adaptative et un test de positionnement, dans Excel, avec un tableau de bord qui rassemble les résultats de la promo. Ton positionnement d'entrée et ton évaluation finale, prêts à l'emploi.</p>
+    <h1 class="rv">Le niveau Excel de vos stagiaires, <em>dès le 1er jour.</em></h1>
+    <p class="lead rv">Une simulation adaptative et un test de positionnement, dans Excel, avec un tableau de bord qui rassemble les résultats de la promo. Votre positionnement d'entrée et votre évaluation finale, prêts à l'emploi.</p>
     <div class="cta rv">
-      <a class="btn btn-primary" href="#licence" data-umami-event="Orga : choisir licence">Choisir ma licence</a>
-      <a class="btn btn-ghost" href="#pilote" data-umami-event="Orga : voir pilote">Voir le pilote gratuit</a>
+      <a class="btn btn-primary" data-forms href="#" data-umami-event="Orga : hero pilote">Demander un pilote gratuit</a>
+      <a class="textlink" href="#licence" data-umami-event="Orga : hero voir formules">Voir les formules et les prix</a>
     </div>
+    <p class="reassure rv">Sans engagement · réponse sous 48 h ouvrées · jusqu'à 15 stagiaires</p>
   </div>
   <aside class="facts rv" aria-label="Contenu en chiffres">
     <h2>Ce que contient la licence</h2>
@@ -183,38 +219,51 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   </aside>
 </header>
 
-<section class="alt">
+<section class="alt" id="parcours">
   <div class="wrap">
-    <h2 class="t rv">Ce que reçoit <em>ton organisme.</em></h2>
-    <p class="sub rv">Une licence au nom de ton organisme : son nom s'affiche sur chaque écran et sur le certificat d'entraînement.</p>
+    <h2 class="t rv">Comment ça <em>marche.</em></h2>
+    <p class="sub rv">Trois temps, du premier jour de formation jusqu'au bilan de la promo.</p>
+    <ol class="steps">
+      <li class="step rv"><span class="n" aria-hidden="true">1</span><h3>Positionnez à l'entrée</h3><p>Vos stagiaires passent le test de positionnement, environ 40 minutes. Le bilan donne le niveau estimé et oriente vers la formation qui correspond.</p></li>
+      <li class="step rv"><span class="n" aria-hidden="true">2</span><h3>Entraînez pendant la formation</h3><p>La simulation propose 35 questions qui s'adaptent à chaque réponse, avec le mode Entraînement (verdict et correction immédiats) ou le mode Examen.</p></li>
+      <li class="step rv"><span class="n" aria-hidden="true">3</span><h3>Suivez la promo d'un coup d'œil</h3><p>Chaque stagiaire vous transmet son code résultat. Vous le collez dans le tableau de bord : une ligne par stagiaire, les niveaux de la promo, la réussite par domaine et par question.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="t rv">Ce que reçoit <em>votre organisme.</em></h2>
+    <p class="sub rv">Une licence au nom de votre organisme : son nom s'affiche sur chaque écran et sur le certificat d'entraînement.</p>
     <div class="items">
       <div class="item rv"><b>Simulation complète</b><span>Mode Examen (résultat à la fin) ou Entraînement (verdict et correction à chaque question), avec un plan de révision.</span></div>
       <div class="item rv"><b>Test de positionnement</b><span>À l'entrée en formation : le bilan donne le niveau estimé et oriente vers la formation qui correspond.</span></div>
-      <div class="item rv"><b>Tableau de bord formateur</b><span>Colle les codes résultat : une ligne par stagiaire, les niveaux de la promo, la réussite par domaine et par question.</span></div>
+      <div class="item rv"><b>Tableau de bord formateur</b><span>Collez les codes résultat : une ligne par stagiaire, les niveaux de la promo, la réussite par domaine et par question.</span></div>
       <div class="item rv"><b>Mises à jour et assistance</b><span>Les nouvelles versions et les corrections pendant la durée de la licence, avec une assistance par e-mail.</span></div>
     </div>
   </div>
 </section>
 
-<section id="licence">
+<section class="alt" id="licence">
   <div class="wrap">
-    <h2 class="t rv">Quelle licence <em>pour ta structure ?</em></h2>
+    <h2 class="t rv">Quelle licence <em>pour votre structure ?</em></h2>
     <p class="sub rv">Cinq questions, trente secondes. Le résultat reprend la grille tarifaire ci-dessous : aucune donnée n'est envoyée.</p>
     <div class="picker rv" id="picker">
       <div class="side">
-        <h2 id="pk-t">Trouve ta formule</h2>
-        <p>Une réponse par question. Tu peux revenir en arrière à tout moment.</p>
+        <h2 id="pk-t">Trouvez votre formule</h2>
+        <p>Une réponse par question. Vous pouvez revenir en arrière à tout moment.</p>
         <div class="prog" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="live" id="pk-live" aria-live="polite" hidden></div>
         <button class="linkbtn" type="button" id="pk-back" hidden>← Question précédente</button>
       </div>
       <div id="pk-main">
-        <p style="font-size:.9rem;color:var(--ink2)">Pour choisir sans le sélecteur, consulte la grille tarifaire plus bas ou <a href="#pilote">demande un pilote gratuit</a>.</p>
+        <p style="font-size:.9rem;color:var(--ink2)">Pour choisir sans le sélecteur, consultez la grille tarifaire plus bas ou <a href="#pilote">demandez un pilote gratuit</a>.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="tarifs">
+<section id="tarifs">
   <div class="wrap">
     <h2 class="t rv">La grille <em>tarifaire.</em></h2>
     <p class="sub rv">Prix hors taxes. Chaque offre inclut la simulation, le test de positionnement, le tableau de bord formateur, les mises à jour et l'assistance pendant la durée de la licence.</p>
@@ -240,14 +289,14 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   <div class="wrap">
     <div class="pilot rv">
       <div>
-        <h2>Commence par <em style="font-style:italic;color:var(--pink)">un pilote gratuit.</em></h2>
-        <p>Une session complète, jusqu'à 15 stagiaires, pour voir le tableau de bord remplir ses lignes avec tes propres promotions.</p>
+        <h2>Commencez par <em style="font-style:italic;color:var(--pink)">un pilote gratuit.</em></h2>
+        <p>Une session complète, jusqu'à 15 stagiaires, pour voir le tableau de bord remplir ses lignes avec vos propres promotions.</p>
       </div>
       <div>
         <ul>
-          <li>Sans engagement : tu testes avant de choisir une licence</li>
-          <li>En échange : un témoignage et les codes résultat de ta promo</li>
-          <li>À la fin, je te propose la formule qui correspond à ton volume</li>
+          <li>Sans engagement : vous testez avant de choisir une licence</li>
+          <li>En échange : un témoignage et les codes résultat de votre promo</li>
+          <li>À la fin, je vous propose la formule qui correspond à votre volume</li>
         </ul>
         <div class="cta" style="margin-top:1.4rem">
           <a class="btn btn-primary" data-forms href="#" data-umami-event="Orga : demande pilote">Demander un pilote</a>
@@ -262,8 +311,33 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     <h2 class="t rv">Ce qu'il faut <em>savoir avant.</em></h2>
     <div class="cols">
       <div class="rv"><h3>Données des stagiaires</h3><p>Le fichier fonctionne entièrement sur l'ordinateur du stagiaire et n'envoie rien de lui-même. Le code résultat contient un prénom ou un pseudo facultatif, le score et la réussite question par question.</p></div>
-      <div class="rv"><h3>Licence d'utilisation</h3><p>Licence non exclusive, au nom de ton organisme, pour tes propres stagiaires. La revente, la diffusion et la modification des fichiers sont interdites. Le contrat détaillé t'est remis avant toute commande.</p></div>
+      <div class="rv"><h3>Licence d'utilisation</h3><p>Licence non exclusive, au nom de votre organisme, pour vos propres stagiaires. La revente, la diffusion et la modification des fichiers sont interdites. Le contrat détaillé vous est remis avant toute commande.</p></div>
       <div class="rv"><h3>Compatibilité et portée</h3><p>Excel 2021 ou Microsoft 365 sous Windows, édition dédiée pour Excel 2019. Le score est indicatif : entraînement aux certifications Excel, non affilié à un organisme certificateur.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2 class="t rv">Vos questions, <em>mes réponses.</em></h2>
+    <div class="faq">
+<details class="rv"><summary>Est-ce une certification officielle ?</summary><p>Non. La simulation est un entraînement aux certifications Excel : le score et le niveau sont indicatifs. Elle n'est affiliée à aucun organisme certificateur et ne délivre pas de certification.</p></details>
+<details class="rv"><summary>Quelles versions d'Excel faut-il ?</summary><p>Excel 2021 ou Microsoft 365 sous Windows. Une édition dédiée existe pour Excel 2019 (118 questions au lieu de 128). Le fonctionnement sur Mac reste à confirmer : demandez-moi avant de commander. Les fichiers ne fonctionnent pas dans Excel en ligne, Google Sheets ou LibreOffice.</p></details>
+<details class="rv"><summary>Faut-il installer quelque chose ?</summary><p>Non. Ce sont des fichiers .xlsx sans macro : vos stagiaires les ouvrent dans Excel, sans compte à créer.</p></details>
+<details class="rv"><summary>Que deviennent les données des stagiaires ?</summary><p>Le fichier fonctionne entièrement sur l'ordinateur du stagiaire et n'envoie rien de lui-même. Le code résultat qu'il vous transmet contient un prénom ou un pseudo facultatif, le score et la réussite question par question.</p></details>
+<details class="rv"><summary>Que puis-je faire de la licence ?</summary><p>Une licence non exclusive, au nom de votre organisme, pour vos propres stagiaires, pendant la durée de la formule choisie (12 mois pour les packs et l'Annuelle, 3 mois pour la Session). Elle inclut les mises à jour et une assistance par e-mail. La revente, la diffusion et la modification des fichiers sont interdites. Le contrat détaillé vous est remis avant toute commande.</p></details>
+<details class="rv"><summary>Comment se passent la commande et la facturation ?</summary><p>Après votre demande, vous recevez un devis (ou la mise en place du pilote) et le contrat de licence. La facture est payable à 30 jours par virement. Une fois la licence signée, je vous livre les fichiers par e-mail, au nom de votre organisme.</p></details>
+<details class="rv"><summary>Puis-je tester avant de m'engager ?</summary><p>Oui, avec le pilote gratuit : une session complète, jusqu'à 15 stagiaires, en échange d'un témoignage et des codes résultat de la promo. Une version découverte gratuite de 10 questions est aussi disponible sur demande.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="final">
+  <div class="wrap">
+    <div class="final rv">
+      <h2>Vos stagiaires, <em>positionnés</em> dès lundi.</h2>
+      <p>Commencez par un pilote gratuit : une session complète, jusqu'à 15 stagiaires, sans engagement.</p>
+      <a class="btn btn-primary" data-forms href="#" data-umami-event="Orga : fin de page pilote">Demander un pilote gratuit</a>
     </div>
   </div>
 </section>
@@ -274,6 +348,11 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     <p>Joffrey Gros, entrepreneur individuel, formateur sur les outils Microsoft. Non affilié à Microsoft.</p>
   </div>
 </footer>
+
+<div class="mbar" id="mbar" aria-hidden="true">
+  <a class="btn btn-primary" data-forms href="#" data-umami-event="Orga : barre mobile pilote">Demander un pilote</a>
+  <a class="textlink" href="#licence">Voir les prix</a>
+</div>
 
 <script>
 (function(){
@@ -299,24 +378,78 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   if(!reduce) document.documentElement.classList.add('mo');
   var rv=[].slice.call(document.querySelectorAll('.rv'));
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target);}});},{threshold:.1});
-  rv.forEach(function(el,i){io.observe(el);});
+  rv.forEach(function(el){io.observe(el);});
   setTimeout(function(){rv.forEach(function(el){el.classList.add('v');});},3000);
+
+  /* ---- Barre d'action mobile : visible après l'entrée de page, masquée près des appels à l'action ---- */
+  var mbar=document.getElementById('mbar'), hero=document.querySelector('.hero'), nearCta=0;
+  function mb(){ if(!mbar) return; var past=window.scrollY>(hero?hero.offsetHeight*0.8:400); var on=past&&!nearCta; mbar.classList.toggle('show',on); mbar.setAttribute('aria-hidden',on?'false':'true'); }
+  var io5=new IntersectionObserver(function(es){es.forEach(function(e){e.target.__in=e.isIntersecting;}); nearCta=(document.getElementById('pilote').__in||document.getElementById('final').__in)?1:0; mb();},{threshold:.2});
+  ['pilote','final'].forEach(function(id){var s=document.getElementById(id); if(s) io5.observe(s);});
+  addEventListener('scroll',mb,{passive:true}); mb();
 
   /* ---- Sélecteur de licence ---- */
   var main=document.getElementById('pk-main'); if(!main) return;
-  var back=document.getElementById('pk-back'), bars=document.querySelectorAll('.prog i');
+  var back=document.getElementById('pk-back'), bars=document.querySelectorAll('.prog i'), liveBox=document.getElementById('pk-live');
+  var LBL={type:{ind:"Formateur indépendant",of:"Organisme de formation",cfa:"CFA ou école",ent:"Entreprise (formation interne)",res:"Réseau ou revendeur"},
+    dur:{'3':"3 mois",'6':"6 mois",'12':"12 mois",plus:"Plus de 12 mois"},
+    cadre:{un:"Un seul site",multi:"Plusieurs sites",revente:"Mis à disposition d'autres structures"},
+    xl:{pc:"Windows, Excel 2021 ou Microsoft 365",pc19:"Windows, Excel 2019",old:"Windows, Excel 2016 ou plus ancien",mac:"Mac",web:"Excel en ligne",nsp:"Je ne sais pas"}};
   var Q=[
-    {k:'type',t:"Qui es-tu ?",o:[['ind',"Formateur indépendant",""],['of',"Organisme de formation",""],['cfa',"CFA ou école",""],['ent',"Entreprise","Formation interne"],['res',"Réseau ou revendeur","Plusieurs structures"]]},
-    {k:'vol',t:"Combien de stagiaires veux-tu évaluer sur la durée de la licence ?",num:true},
+    {k:'type',t:"Qui êtes-vous ?",o:[['ind',"Formateur indépendant",""],['of',"Organisme de formation",""],['cfa',"CFA ou école",""],['ent',"Entreprise","Formation interne"],['res',"Réseau ou revendeur","Plusieurs structures"]]},
+    {k:'vol',t:"Combien de stagiaires souhaitez-vous évaluer sur la durée de la licence ?",num:true},
     {k:'dur',t:"Sur quelle durée ?",o:[['3',"3 mois","Une promotion"],['6',"6 mois",""],['12',"12 mois","Une année de formation"],['plus',"Plus de 12 mois",""]]},
-    {k:'cadre',t:"Comment utiliseras-tu les fichiers ?",o:[['un',"Sur un seul site","Pour tes propres stagiaires"],['multi',"Sur plusieurs sites","Plusieurs lieux de formation"],['revente',"Mis à disposition d'autres structures","Revente ou partage"]]},
-    {k:'xl',t:"Quelle version d'Excel utilisent tes stagiaires ?",o:[['pc',"Windows, Excel 2021 ou Microsoft 365",""],['pc19',"Windows, Excel 2019","Édition dédiée"],['old',"Windows, Excel 2016 ou plus ancien",""],['mac',"Mac",""],['web',"Excel en ligne",""],['nsp',"Je ne sais pas",""]]}
+    {k:'cadre',t:"Comment utiliserez-vous les fichiers ?",o:[['un',"Sur un seul site","Pour vos propres stagiaires"],['multi',"Sur plusieurs sites","Plusieurs lieux de formation"],['revente',"Mis à disposition d'autres structures","Revente ou partage"]]},
+    {k:'xl',t:"Quelle version d'Excel utilisent vos stagiaires ?",o:[['pc',"Windows, Excel 2021 ou Microsoft 365",""],['pc19',"Windows, Excel 2019","Édition dédiée"],['old',"Windows, Excel 2016 ou plus ancien",""],['mac',"Mac",""],['web',"Excel en ligne",""],['nsp',"Je ne sais pas",""]]}
   ];
   var A={}, step=0;
   function el(tag,cls,html){var e=document.createElement(tag); if(cls) e.className=cls; if(html!==undefined) e.innerHTML=html; return e;}
   function fmt(n){return new Intl.NumberFormat('fr-FR').format(n);}
-  function setProg(){bars.forEach(function(b,i){b.classList.toggle('on',i<step);}); back.hidden=(step===0);}
+  function setProg(){bars.forEach(function(b,i){b.classList.toggle('on',i<step);}); back.hidden=(step===0); live();}
   function focusOn(sel){var t=main.querySelector(sel); if(t){t.setAttribute('tabindex','-1'); t.focus({preventScroll:true});}}
+
+  /* meilleur assemblage de packs de 25, 10 et 5 pour couvrir V stagiaires (même logique que le simulateur) */
+  function packs(V){
+    var best=null, maxE=Math.ceil(V/25), maxF=Math.ceil(V/10);
+    for(var e=0;e<=maxE;e++) for(var f=0;f<=maxF;f++){
+      var g=Math.max(0,Math.ceil((V-25*e-10*f)/5)), cap=25*e+10*f+5*g;
+      if(cap<V) continue;
+      var cost=e*P.p25+f*P.p10+g*P.p5;
+      if(!best||cost<best.cost||(cost===best.cost&&cap<best.cap)) best={e:e,f:f,g:g,cost:cost,cap:cap};
+    }
+    var parts=[]; if(best.e) parts.push(best.e+' pack'+(best.e>1?'s':'')+' de 25'); if(best.f) parts.push(best.f+' pack'+(best.f>1?'s':'')+' de 10'); if(best.g) parts.push(best.g+' pack'+(best.g>1?'s':'')+' de 5');
+    return {price:best.cost,label:parts.join(' + '),cap:best.cap};
+  }
+  function plan(a){
+    var V=a.vol, why=[];
+    if(a.type==='res') why.push("Un réseau ou un revendeur");
+    if(a.cadre==='revente') why.push("Une mise à disposition à d'autres structures");
+    if(a.cadre==='multi') why.push("Plusieurs sites");
+    if(a.dur==='plus') why.push("Une durée de plus de 12 mois");
+    if(V>P.devisAuDela) why.push("Plus de "+P.devisAuDela+" stagiaires par an");
+    if(why.length) return {devis:true,why:why};
+    var opts=[], pk=packs(V);
+    opts.push({name:'Packs de stagiaires',price:pk.price,detail:pk.label+' · '+pk.cap+' stagiaires · valables 12 mois'});
+    opts.push({name:'Licence annuelle',price:P.annuelle,detail:'Stagiaires illimités, un site · 12 mois'});
+    if((a.dur==='3')&&V<=P.sessionMax) opts.push({name:'Session de 3 mois',price:P.session,detail:'Une promotion, '+P.sessionMax+' stagiaires au plus'});
+    opts.sort(function(x,y){return x.price-y.price;});
+    return {devis:false,main:opts[0],other:opts[1]};
+  }
+
+  /* récapitulatif en direct : on voit ses réponses et une première estimation dès le nombre de stagiaires */
+  function live(){
+    liveBox.textContent='';
+    var items=[]; if(A.type) items.push(LBL.type[A.type]); if(A.vol) items.push(A.vol+' stagiaire'+(A.vol>1?'s':'')); if(A.dur) items.push(LBL.dur[A.dur]); if(A.cadre) items.push(LBL.cadre[A.cadre]); if(A.xl) items.push(LBL.xl[A.xl]);
+    if(!items.length||step>=Q.length){liveBox.hidden=true; return;}
+    liveBox.hidden=false;
+    liveBox.appendChild(el('p','live-k','Votre sélection'));
+    var ul=el('ul'); items.forEach(function(t){ul.appendChild(el('li','',t));}); liveBox.appendChild(ul);
+    if(A.vol){
+      var r=plan(Object.assign({dur:'12',cadre:'un'},A));
+      var est=r.devis?"Offre sur devis probable":"Estimation : "+fmt(r.main.price)+" € HT";
+      liveBox.appendChild(el('p','est',est+'<small>'+(r.devis?"Selon vos prochaines réponses.":"Affinée par les questions suivantes.")+'</small>'));
+    }
+  }
 
   function renderQ(){
     var q=Q[step]; main.textContent='';
@@ -344,76 +477,46 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     main.appendChild(w); setProg(); if(step>0) focusOn('.qt');
   }
 
-  /* meilleur assemblage de packs de 25, 10 et 5 pour couvrir V stagiaires (même logique que le simulateur) */
-  function packs(V){
-    var best=null, maxE=Math.ceil(V/25), maxF=Math.ceil(V/10);
-    for(var e=0;e<=maxE;e++) for(var f=0;f<=maxF;f++){
-      var g=Math.max(0,Math.ceil((V-25*e-10*f)/5)), cap=25*e+10*f+5*g;
-      if(cap<V) continue;
-      var cost=e*P.p25+f*P.p10+g*P.p5;
-      if(!best||cost<best.cost||(cost===best.cost&&cap<best.cap)) best={e:e,f:f,g:g,cost:cost,cap:cap};
-    }
-    var parts=[]; if(best.e) parts.push(best.e+' pack'+(best.e>1?'s':'')+' de 25'); if(best.f) parts.push(best.f+' pack'+(best.f>1?'s':'')+' de 10'); if(best.g) parts.push(best.g+' pack'+(best.g>1?'s':'')+' de 5');
-    return {price:best.cost,label:parts.join(' + '),cap:best.cap};
-  }
-  function plan(){
-    var V=A.vol, why=[];
-    if(A.type==='res') why.push("Un réseau ou un revendeur");
-    if(A.cadre==='revente') why.push("Une mise à disposition à d'autres structures");
-    if(A.cadre==='multi') why.push("Plusieurs sites");
-    if(A.dur==='plus') why.push("Une durée de plus de 12 mois");
-    if(V>P.devisAuDela) why.push("Plus de "+P.devisAuDela+" stagiaires par an");
-    if(why.length) return {devis:true,why:why};
-    var opts=[], pk=packs(V);
-    opts.push({name:'Packs de stagiaires',price:pk.price,detail:pk.label+' · '+pk.cap+' stagiaires · valables 12 mois'});
-    opts.push({name:'Licence annuelle',price:P.annuelle,detail:'Stagiaires illimités, un site · 12 mois'});
-    if((A.dur==='3')&&V<=P.sessionMax) opts.push({name:'Session de 3 mois',price:P.session,detail:'Une promotion, '+P.sessionMax+' stagiaires au plus'});
-    opts.sort(function(a,b){return a.price-b.price;});
-    return {devis:false,main:opts[0],other:opts[1]};
-  }
   function compat(){
     var m={
       pc:null,
       pc19:"Excel 2019 : l'édition dédiée est fournie. Elle ne contient pas les 3 questions qui demandent les fonctions FILTRE, UNIQUE et TRIER (118 questions au lieu de 128).",
       old:"Excel 2016 ou plus ancien n'est pas pris en charge : la simulation demande Excel 2021 ou Microsoft 365 (ou Excel 2019 avec l'édition dédiée).",
-      mac:"Sur Mac, le fonctionnement reste à confirmer : demande-moi avant de commander. La simulation est conçue pour Excel sous Windows.",
-      web:"Excel en ligne n'est pas pris en charge : les stagiaires doivent ouvrir les fichiers dans l'application Excel.",
-      nsp:"Vérifie la version d'Excel de tes stagiaires avant de commander : Excel 2021 ou Microsoft 365 sous Windows (Excel 2019 avec l'édition dédiée)."
+      mac:"Sur Mac, le fonctionnement reste à confirmer : demandez-moi avant de commander. La simulation est conçue pour Excel sous Windows.",
+      web:"Excel en ligne n'est pas pris en charge : vos stagiaires doivent ouvrir les fichiers dans l'application Excel.",
+      nsp:"Vérifiez la version d'Excel de vos stagiaires avant de commander : Excel 2021 ou Microsoft 365 sous Windows (Excel 2019 avec l'édition dédiée)."
     };
     return m[A.xl]||null;
   }
+  function recap(reco){return "Bonjour Joffrey,\n\nVoici ma situation :\n- Structure : "+LBL.type[A.type]+"\n- Stagiaires : "+A.vol+"\n- Durée : "+LBL.dur[A.dur]+"\n- Utilisation : "+LBL.cadre[A.cadre]+"\n- Excel : "+LBL.xl[A.xl]+"\n- Formule recommandée : "+reco+"\n\nOrganisme : \nNom et fonction : \nTéléphone : \n\nMerci !";}
+  function cta(label,evt,subject,reco){var a=el('a','btn btn-primary',label); a.href=dest(subject,recap(reco),{origine:'selecteur',structure:LBL.type[A.type],stagiaires:A.vol,duree:LBL.dur[A.dur],usage:LBL.cadre[A.cadre],excel:LBL.xl[A.xl],formule:reco}); openNew(a); a.setAttribute('data-umami-event',evt); return a;}
+
   function renderRes(){
-    var r=plan(), w=el('div','res pin'); main.textContent='';
-    var LBL={type:{ind:"Formateur indépendant",of:"Organisme de formation",cfa:"CFA ou école",ent:"Entreprise (formation interne)",res:"Réseau ou revendeur"},
-      dur:{'3':"3 mois",'6':"6 mois",'12':"12 mois",plus:"Plus de 12 mois"},
-      cadre:{un:"Un seul site",multi:"Plusieurs sites",revente:"Mis à disposition d'autres structures"},
-      xl:{pc:"Windows, Excel 2021 ou Microsoft 365",pc19:"Windows, Excel 2019",old:"Windows, Excel 2016 ou plus ancien",mac:"Mac",web:"Excel en ligne",nsp:"Je ne sais pas"}};
-    var recap=function(reco){return "Bonjour Joffrey,\n\nVoici ma situation :\n- Structure : "+LBL.type[A.type]+"\n- Stagiaires : "+A.vol+"\n- Durée : "+LBL.dur[A.dur]+"\n- Utilisation : "+LBL.cadre[A.cadre]+"\n- Excel : "+LBL.xl[A.xl]+"\n- Formule recommandée : "+reco+"\n\nOrganisme : \nNom et fonction : \nTéléphone : \n\nMerci !";};
-    var cta=function(label,evt,subject,reco){var a=el('a','btn btn-primary',label); a.href=dest(subject,recap(reco),{origine:'selecteur',structure:LBL.type[A.type],stagiaires:A.vol,duree:LBL.dur[A.dur],usage:LBL.cadre[A.cadre],excel:LBL.xl[A.xl],formule:reco}); openNew(a); a.setAttribute('data-umami-event',evt); return a;};
+    var r=plan(A), w=el('div','res pin'); main.textContent='';
     if(r.devis){
       w.appendChild(el('p','k','Ma recommandation'));
       w.appendChild(el('h3','','Une offre sur devis'));
-      w.appendChild(el('p','','Ta situation sort de la grille standard : '+r.why.map(function(x){return x.charAt(0).toLowerCase()+x.slice(1);}).join(', ')+'. On construit ensemble une offre adaptée (volume, sites, durée, fichiers à ton nom).'));
+      w.appendChild(el('p','','Votre situation sort de la grille standard : '+r.why.map(function(x){return x.charAt(0).toLowerCase()+x.slice(1);}).join(', ')+'. Nous construisons ensemble une offre adaptée (volume, sites, durée, fichiers à votre nom).'));
       var act=el('div','actions'); act.appendChild(cta('Demander un devis','Orga : demande devis','Demande de devis : Simulation Excel','Offre sur devis')); w.appendChild(act);
     }else{
       var m=r.main;
-      w.appendChild(el('p','k','Ma recommandation'));
+      w.appendChild(el('p','k','Recommandé pour '+A.vol+' stagiaire'+(A.vol>1?'s':'')));
       w.appendChild(el('h3','',m.name));
       w.appendChild(el('p','price',fmt(m.price)+' €<small>HT</small>'));
       w.appendChild(el('p','',m.detail+'.'));
-      var ul=el('ul'); ['Licence au nom de ton organisme','Simulation complète, test de positionnement et tableau de bord formateur','Mises à jour et assistance par e-mail pendant la licence'].forEach(function(t){ul.appendChild(el('li','',t));}); w.appendChild(ul);
+      var ul=el('ul'); ['Licence au nom de votre organisme','Simulation complète, test de positionnement et tableau de bord formateur','Mises à jour et assistance par e-mail pendant la licence'].forEach(function(t){ul.appendChild(el('li','',t));}); w.appendChild(ul);
       if(r.other) w.appendChild(el('p','alt-line','Autre option : '+r.other.name+', '+fmt(r.other.price)+' € HT ('+r.other.detail.toLowerCase()+').'));
       var act2=el('div','actions'); act2.appendChild(cta('Demander cette licence','Orga : demande licence','Demande de licence : Simulation Excel',m.name+' ('+fmt(m.price)+' € HT)')); w.appendChild(act2);
     }
     var c=compat(); if(c) w.appendChild(el('p','warn',c));
-    w.appendChild(el('p','alt-line','Pas encore décidé ? <a href="#pilote" style="color:#fff">Commence par un pilote gratuit</a>.'));
+    w.appendChild(el('p','alt-line','Pas encore décidé ? <a href="#pilote" style="color:#fff">Commencez par un pilote gratuit</a>.'));
     var rs=el('button','linkbtn','Recommencer'); rs.type='button'; rs.addEventListener('click',function(){A={}; step=0; renderQ(); focusOn('.qt');});
     var ra=el('div','actions'); ra.appendChild(rs); w.appendChild(ra);
     main.appendChild(w); setProg(); focusOn('h3');
   }
   back.addEventListener('click',function(){ if(step>0) step--; renderQ(); focusOn('.qt'); });
   renderQ();
-  window.__licence={plan:function(a){A=a; return plan();}};
+  window.__licence={plan:function(a){return plan(Object.assign({},a));}};
 })();
 </script>
 </body>
