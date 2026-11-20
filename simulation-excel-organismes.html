@@ -178,11 +178,33 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   .mbar .textlink{white-space:nowrap}
 }
 
+/* barre de progression de lecture, comme sur l'accueil */
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;pointer-events:none}
+.progress i{display:block;height:100%;background:var(--pink);transform:scaleX(0);transform-origin:0 50%}
+/* mini tableau de bord : les barres se remplissent ligne par ligne */
+.mini{margin-top:.9rem;border:1px solid var(--bd);background:var(--white);border-radius:10px;padding:.8rem .9rem;display:grid;gap:.4rem;font-family:Consolas,"Courier New",monospace;font-size:.68rem;color:var(--muted)}
+.mrow{display:grid;grid-template-columns:4.3rem 1fr;align-items:center;gap:.5rem}
+.mrow i{display:block;height:.7rem;border-radius:3px;background:rgba(254,58,126,var(--a));width:var(--w);transform-origin:0 50%}
+.mtot{margin-top:.2rem;border:2px solid var(--pink);border-radius:5px;padding:.25rem .55rem;display:flex;gap:.6rem;align-items:baseline;color:var(--ink)}
+.mtot em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:1.05rem}
+.mo .mini .mrow i{transform:scaleX(0)}
+.mo .step.v .mini .mrow i{transform:none;transition:transform .7s var(--ease-out)}
+.mo .step.v .mini .mrow:nth-child(1) i{transition-delay:.35s}
+.mo .step.v .mini .mrow:nth-child(2) i{transition-delay:.45s}
+.mo .step.v .mini .mrow:nth-child(3) i{transition-delay:.55s}
+.mo .step.v .mini .mrow:nth-child(4) i{transition-delay:.65s}
+.mo .step.v .mini .mrow:nth-child(5) i{transition-delay:.75s}
+.mo .mini .mtot{opacity:0}
+.mo .step.v .mini .mtot{opacity:1;transition:opacity .4s ease 1.15s}
+/* retours au survol et à l'ouverture */
+@media (hover:hover) and (pointer:fine){tbody tr{transition:background-color .2s ease}tbody tr:hover td{background:var(--bg2)}}
+.faq details[open] p{animation:pin .25s var(--ease-out)}
+
 .mo .rv{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
 .mo .rv.v{opacity:1;transform:none}
 .mo h1 em::after{transform:scaleX(0)}
 .mo h1.v em::after{transform:none;transition:transform .7s var(--ease-out) .5s}
-@media (prefers-reduced-motion:reduce){.pin{animation:none}.mo .rv{opacity:1;transform:none;transition:none}.mbar{transition:none}}
+@media (prefers-reduced-motion:reduce){.pin,.faq details[open] p{animation:none}.mo .rv{opacity:1;transform:none;transition:none}.mbar{transition:none}}
 
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;padding-block:3rem 2.5rem}
@@ -192,6 +214,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 </style>
 </head>
 <body>
+<div class="progress" aria-hidden="true"><i></i></div>
 <div class="wrap">
   <div class="top">
     <a class="logo" href="index.html">Xcel<span>Urself</span></a>
@@ -212,9 +235,9 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   </div>
   <aside class="facts rv" aria-label="Contenu en chiffres">
     <h2>Ce que contient la licence</h2>
-    <div class="fact"><b>35</b><span>questions par parcours, environ 60 minutes, qui s'adaptent au niveau de chaque stagiaire</span></div>
-    <div class="fact"><b>128</b><span>questions, chacune en deux variantes : deux stagiaires côte à côte n'ont pas la même</span></div>
-    <div class="fact"><b>25</b><span>questions pour le test de positionnement, environ 40 minutes, avec la formation conseillée</span></div>
+    <div class="fact"><b data-count="35">35</b><span>questions par parcours, environ 60 minutes, qui s'adaptent au niveau de chaque stagiaire</span></div>
+    <div class="fact"><b data-count="128">128</b><span>questions, chacune en deux variantes : deux stagiaires côte à côte n'ont pas la même</span></div>
+    <div class="fact"><b data-count="25">25</b><span>questions pour le test de positionnement, environ 40 minutes, avec la formation conseillée</span></div>
     <div class="fact"><b>0</b><span>macro, aucun compte à créer : des fichiers .xlsx qui s'ouvrent dans Excel</span></div>
   </aside>
 </header>
@@ -226,7 +249,16 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     <ol class="steps">
       <li class="step rv"><span class="n" aria-hidden="true">1</span><h3>Positionnez à l'entrée</h3><p>Vos stagiaires passent le test de positionnement, environ 40 minutes. Le bilan donne le niveau estimé et oriente vers la formation qui correspond.</p></li>
       <li class="step rv"><span class="n" aria-hidden="true">2</span><h3>Entraînez pendant la formation</h3><p>La simulation propose 35 questions qui s'adaptent à chaque réponse, avec le mode Entraînement (verdict et correction immédiats) ou le mode Examen.</p></li>
-      <li class="step rv"><span class="n" aria-hidden="true">3</span><h3>Suivez la promo d'un coup d'œil</h3><p>Chaque stagiaire vous transmet son code résultat. Vous le collez dans le tableau de bord : une ligne par stagiaire, les niveaux de la promo, la réussite par domaine et par question.</p></li>
+      <li class="step rv"><span class="n" aria-hidden="true">3</span><h3>Suivez la promo d'un coup d'œil</h3><p>Chaque stagiaire vous transmet son code résultat. Vous le collez dans le tableau de bord : une ligne par stagiaire, les niveaux de la promo, la réussite par domaine et par question.</p>
+        <div class="mini" aria-hidden="true">
+          <div class="mrow"><span>Camille</span><i style="--w:34%;--a:.28"></i></div>
+          <div class="mrow"><span>Karim</span><i style="--w:58%;--a:.45"></i></div>
+          <div class="mrow"><span>Inès</span><i style="--w:46%;--a:.62"></i></div>
+          <div class="mrow"><span>Louis</span><i style="--w:76%;--a:.8"></i></div>
+          <div class="mrow"><span>Sofia</span><i style="--w:98%;--a:1"></i></div>
+          <div class="mtot"><span>Σ promo</span><em>niveaux connus.</em></div>
+        </div>
+      </li>
     </ol>
   </div>
 </section>
@@ -376,10 +408,37 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduce) document.documentElement.classList.add('mo');
+  /* cascade : les éléments d'un même groupe apparaissent à 70 ms d'écart (5 au plus) */
+  if(!reduce){
+    ['.steps > li','.items > .item','.cols > div','.fact','.faq details'].forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(el,i){el.style.transitionDelay=(Math.min(i,5)*70)+'ms';});
+    });
+  }
   var rv=[].slice.call(document.querySelectorAll('.rv'));
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target);}});},{threshold:.1});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target; el.classList.add('v'); io.unobserve(el); setTimeout(function(){el.style.transitionDelay='';},1200);}});},{threshold:.1});
   rv.forEach(function(el){io.observe(el);});
   setTimeout(function(){rv.forEach(function(el){el.classList.add('v');});},3000);
+
+  /* barre de progression de lecture */
+  var bar=document.querySelector('.progress i'), tick=false;
+  function onScroll(){ if(tick) return; tick=true; requestAnimationFrame(function(){ var h=document.documentElement.scrollHeight-innerHeight; if(bar) bar.style.transform='scaleX('+(h>0?Math.min(1,window.scrollY/h):0)+')'; tick=false; }); }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* chiffres qui comptent, une seule fois */
+  var nums=[].slice.call(document.querySelectorAll('[data-count]'));
+  function nf(v){return new Intl.NumberFormat('fr-FR').format(Math.round(v));}
+  function count(el){
+    if(el.__done) return; el.__done=true;
+    var end=+el.getAttribute('data-count'), t0=null, dur=1000;
+    function step(t){ if(t0===null) t0=t; var p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3); el.textContent=nf(end*e); if(p<1) requestAnimationFrame(step); else el.textContent=nf(end); }
+    requestAnimationFrame(step);
+  }
+  if(!reduce && nums.length){
+    nums.forEach(function(el){el.textContent='0';});
+    var io3=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io3.unobserve(e.target); setTimeout(function(){count(e.target);},350);}});},{threshold:.6});
+    nums.forEach(function(el){io3.observe(el);});
+    setTimeout(function(){nums.forEach(count);},4000);
+  }
 
   /* ---- Barre d'action mobile : visible après l'entrée de page, masquée près des appels à l'action ---- */
   var mbar=document.getElementById('mbar'), hero=document.querySelector('.hero'), nearCta=0;
