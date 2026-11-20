@@ -22,7 +22,7 @@
   --ink:#2b2724;--ink2:#404040;--muted:#655d55;
   --pink:#FE3A7E;--sage:#1f7a64;
   --bd:rgba(43,39,36,.12);
-  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-out:cubic-bezier(.23,1,.32,1);--ease-inout:cubic-bezier(.77,0,.175,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -197,17 +197,13 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   .items,.cols,.steps{grid-template-columns:1fr}
 }
 /* ===== Captures réelles du fichier ===== */
-.shots{display:grid;grid-template-columns:1.15fr 1fr;gap:1.6rem;align-items:start}
 .shot{margin:0}
 .shot .win{background:var(--white);border:1px solid var(--bd);border-radius:12px;overflow:hidden;box-shadow:0 18px 40px rgba(43,39,36,.12)}
 .shot .bar{display:flex;align-items:center;gap:.4rem;padding:.55rem .8rem;background:var(--bg3);border-bottom:1px solid var(--bd);font-size:.7rem;font-weight:600;color:var(--ink2)}
 .shot .bar i{width:.6rem;height:.6rem;border-radius:50%;background:var(--ink);opacity:.25}
 .shot .bar span{margin-left:.4rem}
 .shot img{display:block;width:100%;height:auto}
-.shot figcaption{font-size:.84rem;color:var(--ink2);line-height:1.55;margin-top:.9rem}
-.shot figcaption b{color:var(--ink)}
 .shotnote{font-size:.8rem;color:var(--ink2);margin-top:1.4rem}
-@media(max-width:860px){.shots{grid-template-columns:1fr}}
 @media (hover:hover) and (pointer:fine){.shot .win{transition:transform .3s var(--ease-out),box-shadow .3s var(--ease-out)}.shot:hover .win{transform:translateY(-3px);box-shadow:0 24px 48px rgba(43,39,36,.16)}}
 /* ===== Aperçu du tableau de bord (onglets) + étape 3 ===== */
 .dash{margin-top:3.4rem}
@@ -230,6 +226,32 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:600px){.dash .win{overflow-x:auto;-webkit-overflow-scrolling:touch}.dash .win img{min-width:700px}.dash .win .bar{min-width:700px}.dash .swipe{display:block}}
 .dash .swipe{display:none;font-size:.74rem;color:var(--ink2);margin-top:.5rem}
 @media (prefers-reduced-motion:reduce){.tpanel:not([hidden]){animation:none}}
+/* ===== Visite guidée : zoom simulé sur le fichier ===== */
+.tour{margin-top:.5rem}
+.tour .win{max-width:1100px;margin-top:.2rem;background:var(--white);border:1px solid var(--bd);border-radius:12px;overflow:hidden;box-shadow:0 18px 40px rgba(43,39,36,.12)}
+.tour .bar{display:flex;align-items:center;gap:.4rem;padding:.55rem .8rem;background:var(--bg3);border-bottom:1px solid var(--bd);font-size:.7rem;font-weight:600;color:var(--ink2)}
+.tour .bar i{width:.6rem;height:.6rem;border-radius:50%;background:var(--ink);opacity:.25}
+.tour .bar span{margin-left:.4rem}
+.tview{position:relative;aspect-ratio:1198/760;overflow:hidden;background:var(--bg2)}
+.tstage{position:absolute;left:0;top:0;transform-origin:0 0;opacity:0;pointer-events:none;transition:opacity .5s ease}
+.tstage.on{opacity:1}
+.tstage img{display:block;width:100%;height:100%}
+.tstage.zoom{transition:opacity .5s ease,transform 1s var(--ease-inout)}
+.tstage .hl{position:absolute;border:calc(3px / var(--s,1)) solid var(--pink);border-radius:calc(8px / var(--s,1));box-shadow:0 0 0 9999px rgba(43,39,36,.5);opacity:0;transition:opacity .5s ease,left 1s var(--ease-inout),top 1s var(--ease-inout),width 1s var(--ease-inout),height 1s var(--ease-inout)}
+.tstage.focus .hl{opacity:1}
+.tcap{max-width:1100px;margin-top:1rem;display:grid;grid-template-columns:1fr auto;gap:1rem 2rem;align-items:start}
+.tcap-t{font-size:.95rem;line-height:1.6;color:var(--ink);min-height:3.2em;font-weight:500}
+.tctl{display:flex;align-items:center;gap:.5rem}
+.tbtn{font:inherit;font-size:.84rem;font-weight:700;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:100px;min-width:44px;min-height:44px;padding:0 .9rem;cursor:pointer;transition:background-color .2s ease,color .2s ease,transform .12s var(--ease-out)}
+.tbtn:active{transform:scale(.96)}
+.tbtn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.tbtn[aria-pressed="true"]{background:var(--ink);color:#fff}
+@media (hover:hover) and (pointer:fine){.tbtn:hover{background:var(--bg3)}.tbtn[aria-pressed="true"]:hover{background:var(--ink)}}
+.tdots{display:flex;gap:.35rem;align-items:center;padding:0 .4rem}
+.tdots i{width:.5rem;height:.5rem;border-radius:50%;background:var(--ink);opacity:.2;transition:opacity .3s ease,background-color .3s ease,transform .3s var(--ease-out)}
+.tdots i.on{background:var(--pink);opacity:1;transform:scale(1.35)}
+@media(max-width:700px){.tcap{grid-template-columns:1fr}.tctl{flex-wrap:wrap}.tview{aspect-ratio:1198/900}}
+@media (prefers-reduced-motion:reduce){.tstage,.tstage.zoom,.tstage .hl{transition:none!important}}
 </style>
 </head>
 <body>
@@ -280,19 +302,32 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 
 <section id="apercu">
   <div class="wrap">
-    <h2 class="t rv">À quoi ça <em>ressemble.</em></h2>
-    <p class="sub rv">De vraies captures du fichier, tel que vos stagiaires l'ouvrent dans Excel : une question à la fois, dans de vraies cellules.</p>
-    <div class="shots">
-      <figure class="shot rv">
-        <div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Simulation Excel.xlsx</span></div>
-        <img src="img/simulation-question-tcd.webp" width="1198" height="935" loading="lazy" decoding="async" alt="Capture du fichier de simulation : question « Créer un TCD », avec un tableau de ventes à analyser, une case de réponse et la progression du parcours dans le menu de gauche."/></div>
-        <figcaption><b>On ne coche pas, on fait.</b> Le stagiaire construit son tableau croisé dynamique sur la feuille, puis reporte le résultat.</figcaption>
-      </figure>
-      <figure class="shot rv">
-        <div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Simulation Excel.xlsx</span></div>
-        <img src="img/simulation-question-formule.webp" width="1198" height="700" loading="lazy" decoding="async" alt="Capture du fichier de simulation : question « Somme avec un critère », avec un petit tableau de ventes et une case orange pour écrire la formule."/></div>
-        <figcaption><b>Des formules à écrire.</b> La réponse est lue dans la cellule : la difficulté suivante s'ajuste au résultat.</figcaption>
-      </figure>
+    <h2 class="t rv">Un vrai parcours, <em>pas un fichier plat.</em></h2>
+    <p class="sub rv">Navigation guidée, difficulté qui s'adapte, bilan, plan de révision et tableau de bord : voici le fichier tel que vos stagiaires l'ouvrent, dans Excel. Zoom sur ce qui le distingue.</p>
+    <div class="tour rv" id="visite" aria-label="Visite guidée du fichier">
+      <div class="tabs" role="tablist" aria-label="Étapes de la visite">
+        <button type="button" role="tab" id="vt0" aria-controls="vview" aria-selected="true" data-umami-event="Orga : visite accueil">1 · Accueil</button>
+        <button type="button" role="tab" id="vt1" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite question">2 · Une question</button>
+        <button type="button" role="tab" id="vt2" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite bilan">3 · Le bilan</button>
+        <button type="button" role="tab" id="vt3" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite promo">4 · La promo</button>
+      </div>
+      <div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Simulation Excel.xlsx</span></div>
+        <div class="tview" id="vview" role="tabpanel" aria-labelledby="vt0">
+          <div class="tstage" data-w="1198" data-h="672"><img src="img/tour-accueil.webp" width="1198" height="672" decoding="async" alt="Écran d'accueil du fichier de simulation : bannière, présentation du parcours, menu de navigation avec progression, réglages du prénom, du mode et de la série."/><i class="hl"></i></div>
+          <div class="tstage" data-w="1198" data-h="935"><img src="img/simulation-question-tcd.webp" width="1198" height="935" decoding="async" alt="Écran d'une question : créer un tableau croisé dynamique, avec le menu de gauche et la progression du parcours."/><i class="hl"></i></div>
+          <div class="tstage" data-w="1270" data-h="972"><img src="img/tour-bilan.webp" width="1270" height="972" decoding="async" alt="Écran du bilan : score sur 1000, niveau, réussite par domaine, radar de profil, plan de révision et code résultat à envoyer au formateur."/><i class="hl"></i></div>
+          <div class="tstage" data-w="1198" data-h="880"><img src="img/tableau-de-bord-ma-promo.webp" width="1198" height="880" decoding="async" alt="Écran « Ma promo » du tableau de bord formateur avec une promo de 24 stagiaires."/><i class="hl"></i></div>
+        </div>
+      </div>
+      <div class="tcap">
+        <p class="tcap-t" id="vcap" aria-live="polite"></p>
+        <div class="tctl">
+          <button type="button" class="tbtn" id="vprev" aria-label="Zoom précédent">←</button>
+          <span class="tdots" id="vdots" aria-hidden="true"></span>
+          <button type="button" class="tbtn" id="vnext" aria-label="Zoom suivant">→</button>
+          <button type="button" class="tbtn tplay" id="vplay" aria-pressed="false" aria-label="Lecture automatique"><span>Lecture auto</span></button>
+        </div>
+      </div>
     </div>
 
     <div class="dash rv" id="tdb">
@@ -640,7 +675,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 })();
 
   (function(){
-    var tabs=[].slice.call(document.querySelectorAll('.tabs [role=tab]'));
+    var tabs=[].slice.call(document.querySelectorAll('#tdb .tabs [role=tab]'));
     function show(t,focus){
       tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});
       if(focus)t.focus();
@@ -656,6 +691,88 @@ footer a{text-decoration:underline;text-underline-offset:3px}
         if(n){e.preventDefault();show(n,true);}
       });
     });
+  })();
+
+  (function(){
+    var SC=[
+      {shots:[
+        {r:null,t:"Dès l'ouverture : un écran d'accueil, pas une feuille de calcul. Menu, progression et réglages sont toujours à portée."},
+        {r:[236,118,610,208],t:"Une vraie page d'accueil : le stagiaire sait ce qu'il va faire avant de commencer."},
+        {r:[0,60,196,520],t:"Un menu de navigation (Accueil, Question en cours, Bilan, Correction…) et une checklist de préparation qui se coche au fil des réglages."},
+        {r:[885,118,312,520],t:"Prénom, mode (Examen ou Entraînement) et série se règlent ici. Aucune macro : tout est dans les cellules."}]},
+      {shots:[
+        {r:null,t:"Une question à la fois, dans de vraies cellules : le stagiaire manipule vraiment Excel."},
+        {r:[236,118,640,600],t:"Il crée son tableau croisé dynamique sur la feuille, puis reporte le résultat dans la case orange."},
+        {r:[0,500,196,270],t:"Navigation linéaire : une seule question à l'écran, sans retour en arrière. La difficulté monte quand on réussit, redescend quand on se trompe."},
+        {r:[885,118,312,470],t:"Le parcours s'adapte à chaque réponse, avec un repère de temps : environ 60 minutes."}]},
+      {shots:[
+        {r:null,t:"À la dernière question, le bilan s'affiche tout de suite."},
+        {r:[250,195,620,150],t:"Le score sur 1000 et le niveau, avec un message personnalisé."},
+        {r:[900,95,315,360],t:"Un radar de profil par domaine, face au seuil de maîtrise de 80 %."},
+        {r:[250,375,630,240],t:"Les quatre domaines : maîtrisé, à consolider, à revoir, avec accès aux erreurs."},
+        {r:[250,612,630,250],t:"Un plan de révision sur mesure : chaque point faible renvoie vers la formation ou la fiche qui correspond."},
+        {r:[900,485,315,340],t:"Un code résultat anonyme à envoyer au formateur : prénom choisi, score et réussites, rien d'autre."}]},
+      {shots:[
+        {r:null,t:"Le formateur colle les codes reçus : le tableau de bord calcule la promo, sans macro."},
+        {r:[236,92,942,130],t:"Effectif, score moyen, niveau le plus fréquent et réussite globale, d'un coup d'œil."},
+        {r:[236,270,610,320],t:"La répartition de la promo par niveau et la réussite par domaine."},
+        {r:[885,248,312,300],t:"Le profil de la promo face au seuil de maîtrise."},
+        {r:[236,612,610,230],t:"Les notions à retravailler en priorité. (Exemple de démonstration : stagiaires fictifs.)"}]}
+    ];
+    var root=document.getElementById('visite'); if(!root)return;
+    var view=document.getElementById('vview'),stages=[].slice.call(view.querySelectorAll('.tstage')),
+        tabs=[].slice.call(root.querySelectorAll('[role=tab]')),cap=document.getElementById('vcap'),
+        dots=document.getElementById('vdots'),play=document.getElementById('vplay');
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var si=0,hi=0,auto=false,timer=null,inView=false,hover=false,ro=0;
+    function place(stage,r,animate){
+      var iw=+stage.dataset.w,ih=+stage.dataset.h,vw=view.clientWidth,vh=view.clientHeight,hl=stage.querySelector('.hl'),s,cx,cy;
+      if(!r){s=Math.min(vw/iw,vh/ih)*.98;cx=iw/2;cy=ih/2;stage.classList.remove('focus');}
+      else{s=Math.min(vw*.9/r[2],vh*.9/r[3]);s=Math.min(s,Math.max(vw/iw*3,1.2));cx=r[0]+r[2]/2;cy=r[1]+r[3]/2;
+        hl.style.left=r[0]+'px';hl.style.top=r[1]+'px';hl.style.width=r[2]+'px';hl.style.height=r[3]+'px';stage.classList.add('focus');}
+      stage.style.setProperty('--s',s);
+      stage.classList.toggle('zoom',!!animate&&!reduce);
+      stage.style.width=iw+'px';stage.style.height=ih+'px';
+      stage.style.transform='translate('+(vw/2-s*cx)+'px,'+(vh/2-s*cy)+'px) scale('+s+')';
+    }
+    function dotsFor(){dots.innerHTML='';SC[si].shots.forEach(function(_,i){var d=document.createElement('i');if(i===hi)d.className='on';dots.appendChild(d);});}
+    function render(animate,sceneChanged){
+      stages.forEach(function(st,i){st.classList.toggle('on',i===si);});
+      var st=stages[si];
+      if(sceneChanged){place(st,null,false);if(hi>0){void st.offsetWidth;}}
+      place(st,SC[si].shots[hi].r,animate);
+      cap.textContent=SC[si].shots[hi].t;
+      tabs.forEach(function(t,i){t.setAttribute('aria-selected',i===si);t.tabIndex=i===si?0:-1;});
+      view.setAttribute('aria-labelledby',tabs[si].id);
+      dotsFor();
+    }
+    function go(s,h,animate){
+      var changed=s!==si; si=s;hi=h; render(animate!==false&&!changed,changed);
+      if(changed&&h>0){requestAnimationFrame(function(){requestAnimationFrame(function(){place(stages[si],SC[si].shots[hi].r,true);});});}
+    }
+    function next(){var n=SC[si].shots.length;if(hi+1<n)go(si,hi+1);else go((si+1)%SC.length,0);}
+    function prev(){if(hi>0)go(si,hi-1);else{var p=(si+SC.length-1)%SC.length;go(p,SC[p].shots.length-1);}}
+    function sched(){clearTimeout(timer);if(auto&&inView&&!hover&&!document.hidden)timer=setTimeout(function(){next();sched();},hi===0?3200:4600);}
+    function setAuto(v){auto=v;play.setAttribute('aria-pressed',v);play.firstChild.textContent=v?'Pause':'Lecture auto';sched();}
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){setAuto(false);go(i,0);});
+      t.addEventListener('keydown',function(e){var n=null;
+        if(e.key==='ArrowRight')n=(i+1)%tabs.length;else if(e.key==='ArrowLeft')n=(i+tabs.length-1)%tabs.length;
+        if(n!==null){e.preventDefault();setAuto(false);go(n,0);tabs[n].focus();}});
+    });
+    document.getElementById('vnext').addEventListener('click',function(){setAuto(false);next();});
+    document.getElementById('vprev').addEventListener('click',function(){setAuto(false);prev();});
+    play.addEventListener('click',function(){setAuto(!auto);});
+    view.addEventListener('mouseenter',function(){hover=true;clearTimeout(timer);});
+    view.addEventListener('mouseleave',function(){hover=false;sched();});
+    document.addEventListener('visibilitychange',sched);
+    window.addEventListener('resize',function(){clearTimeout(ro);ro=setTimeout(function(){place(stages[si],SC[si].shots[hi].r,false);},120);});
+    if('IntersectionObserver' in window){new IntersectionObserver(function(es){var was=inView;inView=es[0].isIntersecting;if(inView&&!was&&!reduce&&!autoTouched){autoTouched=true;setAuto(true);}else sched();},{threshold:.5}).observe(view);}
+    var autoTouched=false;
+    var imgs=stages.map(function(s){return s.querySelector('img');});
+    function init(){render(false,true);}
+    init();
+    imgs.forEach(function(i){if(!i.complete)i.addEventListener('load',init);});
   })();
 </script>
 </body>
