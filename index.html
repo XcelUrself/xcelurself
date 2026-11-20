@@ -1195,19 +1195,12 @@ nav.scrolled{box-shadow:0 8px 24px rgba(43,39,36,.07)}
 .feature-btn::after{content:"";position:absolute;inset:0;border-radius:18px}
 .feature-note{font-size:.78rem;color:rgba(255,255,255,.78);margin-top:.8rem}
 .feature :focus-visible{outline-color:#fff}
-.fmini{background:var(--white);color:var(--ink);border-radius:12px;padding:1.1rem 1.2rem;display:grid;gap:.5rem;font-family:Consolas,"Courier New",monospace;font-size:.72rem}
-.fmrow{display:grid;grid-template-columns:4.6rem 1fr;align-items:center;gap:.6rem;color:var(--muted)}
-.fmrow i{display:block;height:.8rem;border-radius:3px;background:rgba(254,58,126,var(--a));width:var(--w);transform-origin:0 50%}
-.fmtot{margin-top:.3rem;border:2px solid var(--or1);border-radius:5px;padding:.3rem .6rem;display:flex;gap:.7rem;align-items:baseline;color:var(--ink)}
-.fmtot em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:1.1rem}
-.mo .feature .fmrow i{transform:scaleX(0)}
-.mo .feature.v .fmrow i{transform:none;transition:transform .7s var(--ease-out)}
-.mo .feature.v .fmrow:nth-child(1) i{transition-delay:.35s}.mo .feature.v .fmrow:nth-child(2) i{transition-delay:.45s}.mo .feature.v .fmrow:nth-child(3) i{transition-delay:.55s}.mo .feature.v .fmrow:nth-child(4) i{transition-delay:.65s}.mo .feature.v .fmrow:nth-child(5) i{transition-delay:.75s}
-.mo .feature .fmtot{opacity:0}
-.mo .feature.v .fmtot{opacity:1;transition:opacity .4s ease 1.15s}
 @media (hover:hover) and (pointer:fine){.feature.v.rd:hover{transform:translateY(-3px);box-shadow:0 22px 48px rgba(43,39,36,.18)}}
 @media(max-width:900px){.feature{grid-template-columns:1fr;padding:1.6rem}}
 @media(max-width:560px){.feature-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}.feature-nums b{font-size:1.4rem}.feature-nums span{display:block;line-height:1.3}}
+.fshot{background:var(--white);border-radius:12px;overflow:hidden;color:var(--ink)}
+.fshot img{display:block;width:100%;height:auto}
+.fshot span{display:block;font-size:.72rem;color:var(--muted);padding:.55rem .9rem;border-top:1px solid rgba(43,39,36,.12)}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise.
      Site Umami : XcelUrself (xcelurself.github.io). -->
@@ -2115,13 +2108,9 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
       <a class="btn btn-primary feature-btn" href="simulation-excel-organismes.html" data-umami-event="Accueil : carte organismes">Découvrir la simulation <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       <p class="feature-note">Pilote gratuit jusqu'à 15 stagiaires · sans engagement</p>
     </div>
-    <div class="fmini" aria-hidden="true">
-      <div class="fmrow"><span>Camille</span><i style="--w:34%;--a:.28"></i></div>
-      <div class="fmrow"><span>Karim</span><i style="--w:58%;--a:.45"></i></div>
-      <div class="fmrow"><span>Inès</span><i style="--w:46%;--a:.62"></i></div>
-      <div class="fmrow"><span>Louis</span><i style="--w:76%;--a:.8"></i></div>
-      <div class="fmrow"><span>Sofia</span><i style="--w:98%;--a:1"></i></div>
-      <div class="fmtot"><span>Σ promo</span><em>niveaux connus.</em></div>
+    <div class="fshot">
+      <img src="img/tdb-kpi-niveaux.webp" width="942" height="350" loading="lazy" decoding="async" alt="Aperçu du tableau de bord formateur : 24 stagiaires, score moyen 604, niveau le plus fréquent Opérationnel, répartition de la promo par niveau de Initial à Expert."/>
+      <span>Le tableau de bord formateur, avec une promo d'exemple (données fictives)</span>
     </div>
   </div>
 </section>

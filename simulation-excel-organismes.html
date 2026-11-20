@@ -181,21 +181,6 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 /* barre de progression de lecture, comme sur l'accueil */
 .progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;pointer-events:none}
 .progress i{display:block;height:100%;background:var(--pink);transform:scaleX(0);transform-origin:0 50%}
-/* mini tableau de bord : les barres se remplissent ligne par ligne */
-.mini{margin-top:.9rem;border:1px solid var(--bd);background:var(--white);border-radius:10px;padding:.8rem .9rem;display:grid;gap:.4rem;font-family:Consolas,"Courier New",monospace;font-size:.68rem;color:var(--muted)}
-.mrow{display:grid;grid-template-columns:4.3rem 1fr;align-items:center;gap:.5rem}
-.mrow i{display:block;height:.7rem;border-radius:3px;background:rgba(254,58,126,var(--a));width:var(--w);transform-origin:0 50%}
-.mtot{margin-top:.2rem;border:2px solid var(--pink);border-radius:5px;padding:.25rem .55rem;display:flex;gap:.6rem;align-items:baseline;color:var(--ink)}
-.mtot em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:1.05rem}
-.mo .mini .mrow i{transform:scaleX(0)}
-.mo .step.v .mini .mrow i{transform:none;transition:transform .7s var(--ease-out)}
-.mo .step.v .mini .mrow:nth-child(1) i{transition-delay:.35s}
-.mo .step.v .mini .mrow:nth-child(2) i{transition-delay:.45s}
-.mo .step.v .mini .mrow:nth-child(3) i{transition-delay:.55s}
-.mo .step.v .mini .mrow:nth-child(4) i{transition-delay:.65s}
-.mo .step.v .mini .mrow:nth-child(5) i{transition-delay:.75s}
-.mo .mini .mtot{opacity:0}
-.mo .step.v .mini .mtot{opacity:1;transition:opacity .4s ease 1.15s}
 /* retours au survol et à l'ouverture */
 @media (hover:hover) and (pointer:fine){tbody tr{transition:background-color .2s ease}tbody tr:hover td{background:var(--bg2)}}
 .faq details[open] p{animation:pin .25s var(--ease-out)}
@@ -224,6 +209,27 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .shotnote{font-size:.8rem;color:var(--ink2);margin-top:1.4rem}
 @media(max-width:860px){.shots{grid-template-columns:1fr}}
 @media (hover:hover) and (pointer:fine){.shot .win{transition:transform .3s var(--ease-out),box-shadow .3s var(--ease-out)}.shot:hover .win{transform:translateY(-3px);box-shadow:0 24px 48px rgba(43,39,36,.16)}}
+/* ===== Aperçu du tableau de bord (onglets) + étape 3 ===== */
+.dash{margin-top:3.4rem}
+.dash h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:700;line-height:1.1;margin-bottom:.5rem}
+.dash h3 em{font-style:italic;color:var(--pink)}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+.tabs button{font:inherit;font-size:.82rem;font-weight:700;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:100px;padding:.5rem 1.1rem;min-height:44px;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+.tabs button[aria-selected="true"]{background:var(--ink);color:#fff}
+@media (hover:hover) and (pointer:fine){.tabs button[aria-selected="false"]:hover{background:var(--bg3)}}
+.tabs button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.tpanel .cap{font-size:.86rem;color:var(--ink2);line-height:1.6;margin-top:1rem;max-width:720px}
+.tpanel .cap b{color:var(--ink)}
+.tpanel:not([hidden]){animation:tin .35s var(--ease-out)}
+@keyframes tin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.dash .win{max-width:1000px}
+.minishot{display:block;margin-top:.9rem;border:1px solid var(--bd);border-radius:10px;overflow:hidden;background:var(--white)}
+.minishot img{display:block;width:100%;height:auto}
+.minishot span{display:block;font-size:.74rem;font-weight:700;color:var(--ink);padding:.5rem .8rem;border-top:1px solid var(--bd);text-decoration:underline;text-decoration-color:var(--pink);text-decoration-thickness:2px;text-underline-offset:4px}
+@media (hover:hover) and (pointer:fine){.minishot{transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out)}.minishot:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(43,39,36,.12)}}
+@media(max-width:600px){.dash .win{overflow-x:auto;-webkit-overflow-scrolling:touch}.dash .win img{min-width:700px}.dash .win .bar{min-width:700px}.dash .swipe{display:block}}
+.dash .swipe{display:none;font-size:.74rem;color:var(--ink2);margin-top:.5rem}
+@media (prefers-reduced-motion:reduce){.tpanel:not([hidden]){animation:none}}
 </style>
 </head>
 <body>
@@ -263,14 +269,10 @@ footer a{text-decoration:underline;text-underline-offset:3px}
       <li class="step rv"><span class="n" aria-hidden="true">1</span><h3>Positionnez à l'entrée</h3><p>Vos stagiaires passent le test de positionnement, environ 40 minutes. Le bilan donne le niveau estimé et oriente vers la formation qui correspond.</p></li>
       <li class="step rv"><span class="n" aria-hidden="true">2</span><h3>Entraînez pendant la formation</h3><p>La simulation propose 35 questions qui s'adaptent à chaque réponse, avec le mode Entraînement (verdict et correction immédiats) ou le mode Examen.</p></li>
       <li class="step rv"><span class="n" aria-hidden="true">3</span><h3>Suivez la promo d'un coup d'œil</h3><p>Chaque stagiaire vous transmet son code résultat. Vous le collez dans le tableau de bord : une ligne par stagiaire, les niveaux de la promo, la réussite par domaine et par question.</p>
-        <div class="mini" aria-hidden="true">
-          <div class="mrow"><span>Camille</span><i style="--w:34%;--a:.28"></i></div>
-          <div class="mrow"><span>Karim</span><i style="--w:58%;--a:.45"></i></div>
-          <div class="mrow"><span>Inès</span><i style="--w:46%;--a:.62"></i></div>
-          <div class="mrow"><span>Louis</span><i style="--w:76%;--a:.8"></i></div>
-          <div class="mrow"><span>Sofia</span><i style="--w:98%;--a:1"></i></div>
-          <div class="mtot"><span>Σ promo</span><em>niveaux connus.</em></div>
-        </div>
+        <a class="minishot" href="#apercu" data-umami-event="Orga : étape 3 vers aperçu">
+          <img src="img/tdb-niveaux-domaines.webp" width="610" height="320" loading="lazy" decoding="async" alt="Extrait du tableau de bord formateur : répartition d'une promo de 24 stagiaires par niveau et réussite par domaine."/>
+          <span>Voir le tableau de bord en détail ↓</span>
+        </a>
       </li>
     </ol>
   </div>
@@ -291,6 +293,33 @@ footer a{text-decoration:underline;text-underline-offset:3px}
         <img src="img/simulation-question-formule.webp" width="1198" height="700" loading="lazy" decoding="async" alt="Capture du fichier de simulation : question « Somme avec un critère », avec un petit tableau de ventes et une case orange pour écrire la formule."/></div>
         <figcaption><b>Des formules à écrire.</b> La réponse est lue dans la cellule : la difficulté suivante s'ajuste au résultat.</figcaption>
       </figure>
+    </div>
+
+    <div class="dash rv" id="tdb">
+      <h3>Côté formateur : ce que vous lisez <em>une fois les codes collés.</em></h3>
+      <p class="sub">Chaque stagiaire envoie son code résultat. Vous le collez : le tableau de bord calcule tout, sans macro. Exemple ci-dessous avec une promo de 24 stagiaires.</p>
+      <div class="tabs" role="tablist" aria-label="Écrans du tableau de bord formateur">
+        <button type="button" role="tab" id="tb1" aria-controls="tp1" aria-selected="true" data-umami-event="Orga : onglet ma promo">Ma promo</button>
+        <button type="button" role="tab" id="tb2" aria-controls="tp2" aria-selected="false" tabindex="-1" data-umami-event="Orga : onglet stagiaires">Les stagiaires</button>
+        <button type="button" role="tab" id="tb3" aria-controls="tp3" aria-selected="false" tabindex="-1" data-umami-event="Orga : onglet questions">Les questions</button>
+      </div>
+      <div class="tpanel" role="tabpanel" id="tp1" aria-labelledby="tb1">
+        <div class="shot"><div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Tableau de bord formateur.xlsx</span></div>
+          <img src="img/tableau-de-bord-ma-promo.webp" width="1198" height="880" loading="lazy" decoding="async" alt="Écran « Ma promo » du tableau de bord : 24 stagiaires, score moyen 604, niveau le plus fréquent Opérationnel, répartition par niveau, réussite par domaine, notions à travailler en priorité et profil de la promo."/></div>
+        <p class="cap"><b>La promo en un coup d'œil :</b> score moyen, niveau le plus fréquent, répartition de Initial à Expert, réussite par domaine, et les notions à retravailler en priorité.</p></div>
+      </div>
+      <div class="tpanel" role="tabpanel" id="tp2" aria-labelledby="tb2" hidden>
+        <div class="shot"><div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Tableau de bord formateur.xlsx</span></div>
+          <img src="img/tableau-de-bord-stagiaires.webp" width="1198" height="830" loading="lazy" decoding="async" alt="Écran « Stagiaires » : les 24 stagiaires classés par score, avec leur niveau et leur réussite par domaine (environnement, calculs, mise en forme, données)."/></div>
+        <p class="cap"><b>Une ligne par stagiaire :</b> classement par score, niveau, et réussite dans chacun des quatre domaines. On voit tout de suite qui accompagner et sur quoi.</p></div>
+      </div>
+      <div class="tpanel" role="tabpanel" id="tp3" aria-labelledby="tb3" hidden>
+        <div class="shot"><div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Tableau de bord formateur.xlsx</span></div>
+          <img src="img/tableau-de-bord-questions.webp" width="1198" height="760" loading="lazy" decoding="async" alt="Écran « Questions » : pour chaque question, son niveau, son taux de réussite, le nombre de fois où elle a été posée et le niveau suggéré, avec les questions à revoir signalées."/></div>
+        <p class="cap"><b>Question par question :</b> taux de réussite, nombre de réponses et niveau suggéré, avec les questions à revoir signalées.</p></div>
+      </div>
+      <p class="swipe" aria-hidden="true">← Faites défiler l'image pour la voir en entier →</p>
+      <p class="shotnote">Exemple de démonstration : prénoms et résultats fictifs, générés pour illustrer le tableau de bord.</p>
     </div>
   </div>
 </section>
@@ -609,6 +638,25 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   renderQ();
   window.__licence={plan:function(a){return plan(Object.assign({},a));}};
 })();
+
+  (function(){
+    var tabs=[].slice.call(document.querySelectorAll('.tabs [role=tab]'));
+    function show(t,focus){
+      tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});
+      if(focus)t.focus();
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){show(t,false);});
+      t.addEventListener('keydown',function(e){
+        var k=e.key,n=null;
+        if(k==='ArrowRight')n=tabs[(i+1)%tabs.length];
+        else if(k==='ArrowLeft')n=tabs[(i+tabs.length-1)%tabs.length];
+        else if(k==='Home')n=tabs[0];
+        else if(k==='End')n=tabs[tabs.length-1];
+        if(n){e.preventDefault();show(n,true);}
+      });
+    });
+  })();
 </script>
 </body>
 </html>
