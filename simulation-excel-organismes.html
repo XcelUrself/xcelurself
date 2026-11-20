@@ -318,13 +318,14 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
 @media(max-width:700px){.mbar .btn{padding:.85rem .6rem;font-size:.74rem;white-space:nowrap}.mbar .btn-ghost{flex:.9}}
 
 /* ===== Retours de testeurs ===== */
-.quotes{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
 .quote{margin:0;background:var(--white);border:1px solid var(--bd);border-left:4px solid var(--pink);border-radius:14px;padding:1.5rem 1.6rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.2rem}
-.quote blockquote{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-style:italic;font-weight:600;line-height:1.25;color:var(--ink)}
+.quote blockquote{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;font-weight:600;line-height:1.25;color:var(--ink)}
 .quote figcaption b{display:block;font-size:.92rem;font-weight:800}
 .quote figcaption span{display:block;font-size:.8rem;color:var(--ink2);line-height:1.4}
 .quote-src{margin-top:1.2rem;font-size:.86rem}
-@media(max-width:700px){.quotes{grid-template-columns:1fr}.quote blockquote{font-size:1.4rem}}
+@media(max-width:900px){.quotes{grid-template-columns:1fr}}
+@media(max-width:700px){.quote blockquote{font-size:1.4rem}}
 </style>
 </head>
 <body>
@@ -460,8 +461,12 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
 <section id="retours">
   <div class="wrap">
     <h2 class="t rv">Ils l'ont <em>testé.</em></h2>
-    <p class="sub rv">Deux retours de personnes qui ont essayé la simulation, laissés en commentaire de mon annonce sur LinkedIn.</p>
+    <p class="sub rv">Trois retours de personnes qui ont essayé l'outil, laissés en commentaire de mon annonce sur LinkedIn.</p>
     <div class="quotes">
+      <figure class="quote rv">
+        <blockquote><p>« Outil testé et approuvé, à la fois hyper agréable à utiliser et très bien fait ! »</p></blockquote>
+        <figcaption><b>Tommy Rigault</b><span>a testé l'outil · commentaire LinkedIn</span></figcaption>
+      </figure>
       <figure class="quote rv">
         <blockquote><p>« Pour l'avoir testé, je peux confirmer que l'outil est vraiment top ! »</p></blockquote>
         <figcaption><b>Jean-Baptiste Caverne</b><span>a testé l'outil · commentaire LinkedIn</span></figcaption>
