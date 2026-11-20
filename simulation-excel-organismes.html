@@ -282,6 +282,11 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
 .lb-wrap .lb-body{flex:1;height:auto;min-height:0}
 .tstage .hl::after{content:attr(data-label);position:absolute;left:calc(6px / var(--s,1));top:calc(6px / var(--s,1));background:var(--pink);color:#1a1714;font-weight:800;font-size:calc(13px / var(--s,1));line-height:1.2;padding:calc(4px / var(--s,1)) calc(10px / var(--s,1));border-radius:100px;white-space:nowrap;box-shadow:0 calc(3px / var(--s,1)) calc(10px / var(--s,1)) rgba(0,0,0,.3)}
 @media(max-width:700px){.hz-leg{font-size:.76rem;padding:.5rem .7rem;left:.4rem;right:.4rem;bottom:.4rem}.hz-open{top:.4rem;right:.4rem}.tabs button{padding:.45rem .85rem}}
+.fict{position:absolute;left:.6rem;top:.6rem;z-index:2;background:var(--ink);color:#fff;font-size:.7rem;font-weight:700;line-height:1.2;padding:.35rem .75rem;border-radius:100px;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.tview .fict{opacity:0;transition:opacity .4s ease}
+.tview.fx .fict{opacity:1}
+.lb-head .fict{position:static;box-shadow:none;white-space:nowrap}
+@media(max-width:700px){.fict{font-size:.66rem;padding:.3rem .6rem}}
 @media (prefers-reduced-motion:reduce){.hz-leg,.hz-z{transition:none}}
 </style>
 </head>
@@ -346,7 +351,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
         <button type="button" role="tab" id="vt6" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite promo">7 · La promo</button>
       </div>
       <div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Simulation Excel.xlsx</span></div>
-        <div class="tview" id="vview" role="tabpanel" aria-labelledby="vt0">
+        <div class="tview" id="vview" role="tabpanel" aria-labelledby="vt0"><span class="fict">Exemple fictif : noms et résultats inventés</span>
           <div class="tstage" data-w="1198" data-h="672" data-max="2.3"><img src="img/tour-accueil.webp" width="1198" height="672" decoding="async" alt="Écran d'accueil du fichier de simulation : bannière, présentation du parcours, menu de navigation avec progression, réglages du prénom, du mode et de la série."/><i class="hl"></i></div>
           <div class="tstage" data-w="1198" data-h="935" data-max="2.3"><img src="img/simulation-question-tcd.webp" width="1198" height="935" loading="lazy" decoding="async" alt="Écran d'une question : créer un tableau croisé dynamique, avec le menu de gauche et la progression du parcours."/><i class="hl"></i></div>
           <div class="tstage" data-w="1270" data-h="972" data-max="1.6"><img src="img/tour-bilan.webp" width="1270" height="972" loading="lazy" decoding="async" alt="Écran du bilan : score sur 1000, niveau, réussite par domaine, radar de profil, plan de révision et code résultat à envoyer au formateur."/><i class="hl"></i></div>
@@ -396,7 +401,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
           <div class="hz" data-hz="rapport"><img src="img/tableau-de-bord-rapport.webp" width="1226" height="932" loading="lazy" decoding="async" alt="Écran « Rapport » : rapport de promotion d'une page avec chiffres clés, répartition par niveau, réussite par domaine et notions à travailler en priorité."/></div></div>
         <p class="cap"><b>Un rapport d'une page :</b> à imprimer ou à envoyer en PDF, avec les chiffres clés, la répartition par niveau et les points à travailler.</p></div>
       </div>
-      <p class="shotnote">Exemple de démonstration : noms et résultats fictifs, générés pour illustrer le tableau de bord.</p>
+      <p class="shotnote">Exemple de démonstration : tous les noms, prénoms et résultats affichés sont fictifs. Ils ont été inventés pour illustrer le tableau de bord ; aucune personne réelle n'est concernée.</p>
     </div>
   </div>
 </section>
@@ -801,6 +806,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
       var st=stages[si];
       if(sceneChanged)place(st,null,false);
       place(st,cur().r,animate,cur().l);
+      view.classList.toggle('fx',si>=2);
       cap.textContent=cur().t;
       tabs.forEach(function(t,i){t.setAttribute('aria-selected',i===si);t.tabIndex=i===si?0:-1;});
       view.setAttribute('aria-labelledby',tabs[si].id);
@@ -895,6 +901,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
       else if(own){host.classList.add('touch');}
       if(!own)show(null);
       if(withOpen){
+        var fb=document.createElement('span');fb.className='fict';fb.textContent='Données fictives';host.appendChild(fb);
         var o=document.createElement('button');o.type='button';o.className='hz-open';o.textContent='Agrandir ⤢';o.setAttribute('aria-label','Agrandir : '+d.title);
         o.addEventListener('click',function(e){e.stopPropagation();openLb(key);});host.appendChild(o);
       }
@@ -913,7 +920,8 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
       var head=document.createElement('div');head.className='lb-head';
       var h=document.createElement('h2');h.textContent=d.title;
       var c=document.createElement('button');c.type='button';c.className='lb-close';c.textContent='Fermer ✕';c.addEventListener('click',function(){dlg.close();});
-      head.appendChild(h);head.appendChild(c);
+      var fk=document.createElement('span');fk.className='fict';fk.textContent='Données fictives';
+      head.appendChild(h);head.appendChild(fk);head.appendChild(c);
       var body=document.createElement('div');body.className='lb-body';
       var host=document.createElement('div');host.className='hz touch';
       var im=document.createElement('img');im.src=d.src;im.width=d.w;im.height=d.h;im.alt=d.alt;host.appendChild(im);
