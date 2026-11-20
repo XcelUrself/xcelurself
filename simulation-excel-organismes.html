@@ -223,8 +223,6 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .minishot img{display:block;width:100%;height:auto}
 .minishot span{display:block;font-size:.74rem;font-weight:700;color:var(--ink);padding:.5rem .8rem;border-top:1px solid var(--bd);text-decoration:underline;text-decoration-color:var(--pink);text-decoration-thickness:2px;text-underline-offset:4px}
 @media (hover:hover) and (pointer:fine){.minishot{transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out)}.minishot:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(43,39,36,.12)}}
-@media(max-width:600px){.dash .win{overflow-x:auto;-webkit-overflow-scrolling:touch}.dash .win img{min-width:700px}.dash .win .bar{min-width:700px}.dash .swipe{display:block}}
-.dash .swipe{display:none;font-size:.74rem;color:var(--ink2);margin-top:.5rem}
 @media (prefers-reduced-motion:reduce){.tpanel:not([hidden]){animation:none}}
 /* ===== Visite guidée : zoom simulé sur le fichier ===== */
 .tour{margin-top:.5rem}
@@ -250,8 +248,41 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .tdots{display:flex;gap:.35rem;align-items:center;padding:0 .4rem}
 .tdots i{width:.5rem;height:.5rem;border-radius:50%;background:var(--ink);opacity:.2;transition:opacity .3s ease,background-color .3s ease,transform .3s var(--ease-out)}
 .tdots i.on{background:var(--pink);opacity:1;transform:scale(1.35)}
-@media(max-width:700px){.tcap{grid-template-columns:1fr}.tctl{flex-wrap:wrap}.tview{aspect-ratio:1198/900}}
+@media(max-width:700px){.tcap{grid-template-columns:1fr}.tctl{flex-wrap:wrap}.tview{aspect-ratio:5/6}}
 @media (prefers-reduced-motion:reduce){.tstage,.tstage.zoom,.tstage .hl{transition:none!important}}
+/* ===== Images explorables : légende au survol, agrandissement ===== */
+.hz{position:relative;line-height:0}
+.hz img{display:block;width:100%;height:auto}
+.hz-z{position:absolute;margin:0;padding:0;background:transparent;border:1.5px dashed transparent;border-radius:4px;cursor:help;font:inherit;transition:border-color .2s ease,background-color .2s ease}
+.hz:hover .hz-z,.hz.touch .hz-z{border-color:rgba(254,58,126,.55)}
+.hz-z:hover,.hz-z.on,.hz-z:focus-visible{border:2px solid var(--pink);background:rgba(254,58,126,.12);outline:none}
+.hz-leg{position:absolute;left:.7rem;right:.7rem;bottom:.7rem;background:var(--ink);color:#fff;border-radius:10px;padding:.65rem .9rem;font-size:.82rem;line-height:1.45;opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .2s ease,transform .25s var(--ease-out)}
+.hz-leg.on{opacity:1;transform:none}
+.hz-leg b{display:block;font-size:.84rem;margin-bottom:.1rem;color:#fff}
+.hz-leg b::before{content:"";display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:var(--pink);margin-right:.45rem}
+.hz-open{position:absolute;top:.6rem;right:.6rem;line-height:1.2;font:inherit;font-size:.74rem;font-weight:800;color:#1a1714;background:var(--pink);border:0;border-radius:100px;min-height:44px;padding:.45rem 1rem;cursor:pointer;box-shadow:0 4px 14px rgba(43,39,36,.25);transition:transform .15s var(--ease-out)}
+.hz-open:active{transform:scale(.96)}
+.hz-open:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.hz-hint{font-size:.76rem;color:var(--ink2);line-height:1.5;margin-top:.6rem}
+.minishot{width:100%;text-align:left;cursor:pointer;font:inherit;padding:0}
+.minishot img{width:100%;height:auto;display:block}
+.minishot b{font-size:1rem;margin-left:.2rem}
+dialog.lb{border:0;padding:0;background:var(--bg);color:var(--ink);width:min(1500px,100vw);max-width:100vw;height:100dvh;max-height:100dvh;margin:auto;inset:0}
+dialog.lb::backdrop{background:rgba(26,23,20,.82)}
+.lb-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 1rem;border-bottom:1px solid var(--bd);position:sticky;top:0;background:var(--bg);z-index:3}
+.lb-head h2{font-size:.9rem;font-weight:800;line-height:1.3;min-width:0}
+.lb-close{white-space:nowrap;flex:none;font:inherit;font-size:.82rem;font-weight:800;color:#fff;background:var(--ink);border:0;border-radius:100px;min-height:44px;padding:0 1.2rem;cursor:pointer}
+.lb-close:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+.lb-body{overflow:auto;height:calc(100dvh - 4.2rem - 3.6rem);-webkit-overflow-scrolling:touch}
+.lb-body .hz{width:max(100%,1300px)}
+.lb-leg{position:sticky;bottom:0;min-height:3.6rem;padding:.7rem 1rem;background:var(--ink);color:#fff;font-size:.86rem;line-height:1.45}
+.lb-leg b{margin-right:.4rem}
+.lb-leg.idle{color:rgba(255,255,255,.78)}
+.lb-wrap{display:flex;flex-direction:column;height:100dvh}
+.lb-wrap .lb-body{flex:1;height:auto;min-height:0}
+.tstage .hl::after{content:attr(data-label);position:absolute;left:calc(6px / var(--s,1));top:calc(6px / var(--s,1));background:var(--pink);color:#1a1714;font-weight:800;font-size:calc(13px / var(--s,1));line-height:1.2;padding:calc(4px / var(--s,1)) calc(10px / var(--s,1));border-radius:100px;white-space:nowrap;box-shadow:0 calc(3px / var(--s,1)) calc(10px / var(--s,1)) rgba(0,0,0,.3)}
+@media(max-width:700px){.hz-leg{font-size:.76rem;padding:.5rem .7rem;left:.4rem;right:.4rem;bottom:.4rem}.hz-open{top:.4rem;right:.4rem}.tabs button{padding:.45rem .85rem}}
+@media (prefers-reduced-motion:reduce){.hz-leg,.hz-z{transition:none}}
 </style>
 </head>
 <body>
@@ -291,10 +322,10 @@ footer a{text-decoration:underline;text-underline-offset:3px}
       <li class="step rv"><span class="n" aria-hidden="true">1</span><h3>Positionnez à l'entrée</h3><p>Vos stagiaires passent le test de positionnement, environ 40 minutes. Le bilan donne le niveau estimé et oriente vers la formation qui correspond.</p></li>
       <li class="step rv"><span class="n" aria-hidden="true">2</span><h3>Entraînez pendant la formation</h3><p>La simulation propose 35 questions qui s'adaptent à chaque réponse, avec le mode Entraînement (verdict et correction immédiats) ou le mode Examen.</p></li>
       <li class="step rv"><span class="n" aria-hidden="true">3</span><h3>Suivez la promo d'un coup d'œil</h3><p>Chaque stagiaire vous transmet son code résultat. Vous le collez dans le tableau de bord : une ligne par stagiaire, les niveaux de la promo, la réussite par domaine et par question.</p>
-        <a class="minishot" href="#apercu" data-umami-event="Orga : étape 3 vers aperçu">
-          <img src="img/tdb-niveaux-domaines.webp" width="610" height="320" loading="lazy" decoding="async" alt="Extrait du tableau de bord formateur : répartition d'une promo de 24 stagiaires par niveau et réussite par domaine."/>
-          <span>Voir le tableau de bord en détail ↓</span>
-        </a>
+        <button type="button" class="minishot" data-open="promo" data-umami-event="Orga : étape 3 agrandir tableau de bord">
+          <img src="img/tdb-kpi-niveaux.webp" width="972" height="350" loading="lazy" decoding="async" alt="Extrait du tableau de bord formateur : 22 stagiaires, score moyen 711, niveau le plus fréquent Opérationnel, répartition de la promo par niveau."/>
+          <span>Explorer le tableau de bord <b aria-hidden="true">⤢</b></span>
+        </button>
       </li>
     </ol>
   </div>
@@ -309,14 +340,20 @@ footer a{text-decoration:underline;text-underline-offset:3px}
         <button type="button" role="tab" id="vt0" aria-controls="vview" aria-selected="true" data-umami-event="Orga : visite accueil">1 · Accueil</button>
         <button type="button" role="tab" id="vt1" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite question">2 · Une question</button>
         <button type="button" role="tab" id="vt2" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite bilan">3 · Le bilan</button>
-        <button type="button" role="tab" id="vt3" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite promo">4 · La promo</button>
+        <button type="button" role="tab" id="vt3" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite certificat">4 · Le certificat</button>
+        <button type="button" role="tab" id="vt4" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite reperes">5 · Les repères</button>
+        <button type="button" role="tab" id="vt5" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite codes">6 · Les codes</button>
+        <button type="button" role="tab" id="vt6" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite promo">7 · La promo</button>
       </div>
       <div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Simulation Excel.xlsx</span></div>
         <div class="tview" id="vview" role="tabpanel" aria-labelledby="vt0">
-          <div class="tstage" data-w="1198" data-h="672"><img src="img/tour-accueil.webp" width="1198" height="672" decoding="async" alt="Écran d'accueil du fichier de simulation : bannière, présentation du parcours, menu de navigation avec progression, réglages du prénom, du mode et de la série."/><i class="hl"></i></div>
-          <div class="tstage" data-w="1198" data-h="935"><img src="img/simulation-question-tcd.webp" width="1198" height="935" decoding="async" alt="Écran d'une question : créer un tableau croisé dynamique, avec le menu de gauche et la progression du parcours."/><i class="hl"></i></div>
-          <div class="tstage" data-w="1270" data-h="972"><img src="img/tour-bilan.webp" width="1270" height="972" decoding="async" alt="Écran du bilan : score sur 1000, niveau, réussite par domaine, radar de profil, plan de révision et code résultat à envoyer au formateur."/><i class="hl"></i></div>
-          <div class="tstage" data-w="1198" data-h="880"><img src="img/tableau-de-bord-ma-promo.webp" width="1198" height="880" decoding="async" alt="Écran « Ma promo » du tableau de bord formateur avec une promo de 24 stagiaires."/><i class="hl"></i></div>
+          <div class="tstage" data-w="1198" data-h="672" data-max="2.3"><img src="img/tour-accueil.webp" width="1198" height="672" decoding="async" alt="Écran d'accueil du fichier de simulation : bannière, présentation du parcours, menu de navigation avec progression, réglages du prénom, du mode et de la série."/><i class="hl"></i></div>
+          <div class="tstage" data-w="1198" data-h="935" data-max="2.3"><img src="img/simulation-question-tcd.webp" width="1198" height="935" loading="lazy" decoding="async" alt="Écran d'une question : créer un tableau croisé dynamique, avec le menu de gauche et la progression du parcours."/><i class="hl"></i></div>
+          <div class="tstage" data-w="1270" data-h="972" data-max="1.6"><img src="img/tour-bilan.webp" width="1270" height="972" loading="lazy" decoding="async" alt="Écran du bilan : score sur 1000, niveau, réussite par domaine, radar de profil, plan de révision et code résultat à envoyer au formateur."/><i class="hl"></i></div>
+          <div class="tstage" data-w="1304" data-h="953" data-max="1.6"><img src="img/tour-certificat.webp" width="1304" height="953" loading="lazy" decoding="async" alt="Écran du certificat d'entraînement : nom du stagiaire, score sur 1000, niveau estimé, nombre de questions et réussite par domaine."/><i class="hl"></i></div>
+          <div class="tstage" data-w="1249" data-h="1004" data-max="1.6"><img src="img/tour-niveaux.webp" width="1249" height="1004" loading="lazy" decoding="async" alt="Écran « Les certifications Excel en bref » : fonctionnement d'un test adaptatif, les cinq niveaux de la simulation et conseils pour le jour J."/><i class="hl"></i></div>
+          <div class="tstage" data-w="1285" data-h="878" data-max="1.6"><img src="img/tableau-de-bord-codes.webp" width="1285" height="878" loading="lazy" decoding="async" alt="Écran « Coller les codes » : 22 codes résultat collés et contrôlés."/><i class="hl"></i></div>
+          <div class="tstage" data-w="1240" data-h="934" data-max="1.6"><img src="img/tableau-de-bord-ma-promo.webp" width="1240" height="934" loading="lazy" decoding="async" alt="Écran « Ma promo » du tableau de bord formateur avec une promo de 22 stagiaires."/><i class="hl"></i></div>
         </div>
       </div>
       <div class="tcap">
@@ -332,29 +369,34 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 
     <div class="dash rv" id="tdb">
       <h3>Côté formateur : ce que vous lisez <em>une fois les codes collés.</em></h3>
-      <p class="sub">Chaque stagiaire envoie son code résultat. Vous le collez : le tableau de bord calcule tout, sans macro. Exemple ci-dessous avec une promo de 24 stagiaires.</p>
+      <p class="sub">Chaque stagiaire envoie son code résultat. Vous le collez : le tableau de bord calcule tout, sans macro. Exemple ci-dessous avec une promo de 22 stagiaires.</p>
       <div class="tabs" role="tablist" aria-label="Écrans du tableau de bord formateur">
         <button type="button" role="tab" id="tb1" aria-controls="tp1" aria-selected="true" data-umami-event="Orga : onglet ma promo">Ma promo</button>
         <button type="button" role="tab" id="tb2" aria-controls="tp2" aria-selected="false" tabindex="-1" data-umami-event="Orga : onglet stagiaires">Les stagiaires</button>
-        <button type="button" role="tab" id="tb3" aria-controls="tp3" aria-selected="false" tabindex="-1" data-umami-event="Orga : onglet questions">Les questions</button>
+        <button type="button" role="tab" id="tb3" aria-controls="tp3" aria-selected="false" tabindex="-1" data-umami-event="Orga : onglet codes">Coller les codes</button>
+        <button type="button" role="tab" id="tb4" aria-controls="tp4" aria-selected="false" tabindex="-1" data-umami-event="Orga : onglet rapport">Le rapport</button>
       </div>
       <div class="tpanel" role="tabpanel" id="tp1" aria-labelledby="tb1">
         <div class="shot"><div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Tableau de bord formateur.xlsx</span></div>
-          <img src="img/tableau-de-bord-ma-promo.webp" width="1198" height="880" loading="lazy" decoding="async" alt="Écran « Ma promo » du tableau de bord : 24 stagiaires, score moyen 604, niveau le plus fréquent Opérationnel, répartition par niveau, réussite par domaine, notions à travailler en priorité et profil de la promo."/></div>
+          <div class="hz" data-hz="promo"><img src="img/tableau-de-bord-ma-promo.webp" width="1240" height="934" loading="lazy" decoding="async" alt="Écran « Ma promo » du tableau de bord formateur : 22 stagiaires, score moyen 711, niveau le plus fréquent Opérationnel, répartition par niveau, réussite par domaine et profil de la promo."/></div></div>
         <p class="cap"><b>La promo en un coup d'œil :</b> score moyen, niveau le plus fréquent, répartition de Initial à Expert, réussite par domaine, et les notions à retravailler en priorité.</p></div>
       </div>
       <div class="tpanel" role="tabpanel" id="tp2" aria-labelledby="tb2" hidden>
         <div class="shot"><div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Tableau de bord formateur.xlsx</span></div>
-          <img src="img/tableau-de-bord-stagiaires.webp" width="1198" height="830" loading="lazy" decoding="async" alt="Écran « Stagiaires » : les 24 stagiaires classés par score, avec leur niveau et leur réussite par domaine (environnement, calculs, mise en forme, données)."/></div>
+          <div class="hz" data-hz="stagiaires"><img src="img/tableau-de-bord-stagiaires.webp" width="1239" height="788" loading="lazy" decoding="async" alt="Écran « Stagiaires » : les 22 stagiaires classés par score, avec leur niveau et leur réussite par domaine."/></div></div>
         <p class="cap"><b>Une ligne par stagiaire :</b> classement par score, niveau, et réussite dans chacun des quatre domaines. On voit tout de suite qui accompagner et sur quoi.</p></div>
       </div>
       <div class="tpanel" role="tabpanel" id="tp3" aria-labelledby="tb3" hidden>
         <div class="shot"><div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Tableau de bord formateur.xlsx</span></div>
-          <img src="img/tableau-de-bord-questions.webp" width="1198" height="760" loading="lazy" decoding="async" alt="Écran « Questions » : pour chaque question, son niveau, son taux de réussite, le nombre de fois où elle a été posée et le niveau suggéré, avec les questions à revoir signalées."/></div>
-        <p class="cap"><b>Question par question :</b> taux de réussite, nombre de réponses et niveau suggéré, avec les questions à revoir signalées.</p></div>
+          <div class="hz" data-hz="codes"><img src="img/tableau-de-bord-codes.webp" width="1285" height="878" loading="lazy" decoding="async" alt="Écran « Coller les codes » : 22 codes résultat collés, tous contrôlés valides, avec le stagiaire, le score et le type de test décodés."/></div></div>
+        <p class="cap"><b>Il suffit de coller :</b> un code par ligne. Le fichier vérifie chaque code, signale doublons et codes mal copiés, puis décode le stagiaire et son score.</p></div>
       </div>
-      <p class="swipe" aria-hidden="true">← Faites défiler l'image pour la voir en entier →</p>
-      <p class="shotnote">Exemple de démonstration : prénoms et résultats fictifs, générés pour illustrer le tableau de bord.</p>
+      <div class="tpanel" role="tabpanel" id="tp4" aria-labelledby="tb4" hidden>
+        <div class="shot"><div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Tableau de bord formateur.xlsx</span></div>
+          <div class="hz" data-hz="rapport"><img src="img/tableau-de-bord-rapport.webp" width="1226" height="932" loading="lazy" decoding="async" alt="Écran « Rapport » : rapport de promotion d'une page avec chiffres clés, répartition par niveau, réussite par domaine et notions à travailler en priorité."/></div></div>
+        <p class="cap"><b>Un rapport d'une page :</b> à imprimer ou à envoyer en PDF, avec les chiffres clés, la répartition par niveau et les points à travailler.</p></div>
+      </div>
+      <p class="shotnote">Exemple de démonstration : noms et résultats fictifs, générés pour illustrer le tableau de bord.</p>
     </div>
   </div>
 </section>
@@ -697,58 +739,76 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     var SC=[
       {shots:[
         {r:null,t:"Dès l'ouverture : un écran d'accueil, pas une feuille de calcul. Menu, progression et réglages sont toujours à portée."},
-        {r:[236,118,610,208],t:"Une vraie page d'accueil : le stagiaire sait ce qu'il va faire avant de commencer."},
-        {r:[0,60,196,520],t:"Un menu de navigation (Accueil, Question en cours, Bilan, Correction…) et une checklist de préparation qui se coche au fil des réglages."},
-        {r:[885,118,312,520],t:"Prénom, mode (Examen ou Entraînement) et série se règlent ici. Aucune macro : tout est dans les cellules."}]},
+        {r:[226,108,630,228],l:"Page d'accueil",t:"Une vraie page d'accueil : le stagiaire sait ce qu'il va faire avant de commencer."},
+        {r:[0,60,200,525],l:"Menu et progression",t:"Un menu de navigation (Accueil, Question en cours, Bilan, Correction…) et une checklist de préparation qui se coche au fil des réglages."},
+        {r:[876,108,330,540],l:"Réglages",t:"Prénom, mode (Examen ou Entraînement) et série se règlent ici. Aucune macro : tout est dans les cellules."}]},
       {shots:[
         {r:null,t:"Une question à la fois, dans de vraies cellules : le stagiaire manipule vraiment Excel."},
-        {r:[236,118,640,600],t:"Il crée son tableau croisé dynamique sur la feuille, puis reporte le résultat dans la case orange."},
-        {r:[0,500,196,270],t:"Navigation linéaire : une seule question à l'écran, sans retour en arrière. La difficulté monte quand on réussit, redescend quand on se trompe."},
-        {r:[885,118,312,470],t:"Le parcours s'adapte à chaque réponse, avec un repère de temps : environ 60 minutes."}]},
+        {r:[226,108,660,620],l:"Vraies cellules",t:"Il crée son tableau croisé dynamique sur la feuille, puis reporte le résultat dans la case orange."},
+        {r:[0,500,200,270],l:"Navigation linéaire",t:"Navigation linéaire : une seule question à l'écran, sans retour en arrière. La difficulté monte quand on réussit, redescend quand on se trompe."},
+        {r:[876,108,330,490],l:"Difficulté adaptative",t:"Le parcours s'adapte à chaque réponse, avec un repère de temps : environ 60 minutes."}]},
       {shots:[
         {r:null,t:"À la dernière question, le bilan s'affiche tout de suite."},
-        {r:[250,195,620,150],t:"Le score sur 1000 et le niveau, avec un message personnalisé."},
-        {r:[900,95,315,360],t:"Un radar de profil par domaine, face au seuil de maîtrise de 80 %."},
-        {r:[250,375,630,240],t:"Les quatre domaines : maîtrisé, à consolider, à revoir, avec accès aux erreurs."},
-        {r:[250,612,630,250],t:"Un plan de révision sur mesure : chaque point faible renvoie vers la formation ou la fiche qui correspond."},
-        {r:[900,485,315,340],t:"Un code résultat anonyme à envoyer au formateur : prénom choisi, score et réussites, rien d'autre."}]},
+        {r:[240,190,640,170],l:"Score et niveau",t:"Le score sur 1000 et le niveau, avec un message personnalisé."},
+        {r:[888,82,338,386],l:"Radar de profil",t:"Un radar de profil par domaine, face au seuil de maîtrise de 80 %."},
+        {r:[240,365,650,262],l:"4 domaines",t:"Les quatre domaines : maîtrisé, à consolider, à revoir, avec accès aux erreurs."},
+        {r:[240,610,650,260],l:"Plan de révision",t:"Un plan de révision sur mesure : chaque point faible renvoie vers la formation ou la fiche qui correspond."},
+        {r:[900,472,328,368],l:"Code résultat",t:"Un code résultat anonyme à envoyer au formateur : prénom choisi, score et réussites, rien d'autre."}]},
       {shots:[
-        {r:null,t:"Le formateur colle les codes reçus : le tableau de bord calcule la promo, sans macro."},
-        {r:[236,92,942,130],t:"Effectif, score moyen, niveau le plus fréquent et réussite globale, d'un coup d'œil."},
-        {r:[236,270,610,320],t:"La répartition de la promo par niveau et la réussite par domaine."},
-        {r:[885,248,312,300],t:"Le profil de la promo face au seuil de maîtrise."},
-        {r:[236,612,610,230],t:"Les notions à retravailler en priorité. (Exemple de démonstration : stagiaires fictifs.)"}]}
+        {r:null,t:"Chaque stagiaire repart avec un certificat d'entraînement personnalisé."},
+        {r:[236,106,968,76],l:"Certificat d'entraînement",t:"Un certificat d'entraînement au nom du stagiaire, aux couleurs du fichier."},
+        {r:[240,318,964,102],l:"Score, niveau, questions",t:"Le score sur 1000, le niveau estimé et le nombre de questions traitées."},
+        {r:[470,422,500,70],l:"Domaines et distinctions",t:"La réussite par domaine et des distinctions, comme « Question Expert réussie »."},
+        {r:[300,500,860,92],l:"Mention claire",t:"Mention explicite : score indicatif, non affilié à un organisme certificateur, document qui n'est pas une certification."}]},
+      {shots:[
+        {r:null,t:"Un écran pédagogique explique le principe du test adaptatif et les niveaux."},
+        {r:[236,270,968,142],l:"Test adaptatif",t:"Le principe du test adaptatif expliqué simplement : questions plus difficiles si l'on réussit, plus simples sinon."},
+        {r:[236,440,968,314],l:"Les 5 niveaux",t:"Les 5 niveaux de la simulation, de Initial à Expert, avec la plage de score et ce que le stagiaire sait faire."},
+        {r:[236,886,968,112],l:"Conseils du jour J",t:"Des conseils pour le jour J : lire la consigne, gérer son temps, vérifier ses références."}]},
+      {shots:[
+        {r:null,t:"Le formateur colle les codes reçus : le fichier contrôle chacun d'eux."},
+        {r:[240,100,980,68],l:"Un code par ligne",t:"Un code par ligne, copié depuis Forms ou un e-mail. Le contrôle signale les doublons et les codes mal copiés."},
+        {r:[240,160,470,170],l:"Codes collés",t:"Les codes collés dans la colonne orange, jusqu'à 300 par tableau de bord."},
+        {r:[690,186,515,330],l:"Contrôle et décodage",t:"Chaque code est vérifié (OK), puis décodé : stagiaire, score et type de test. Sans macro."}]},
+      {shots:[
+        {r:null,t:"Et la promo se lit d'un coup d'œil, sans aucun calcul à faire."},
+        {r:[238,82,992,150],l:"Chiffres clés",t:"Effectif, score moyen, niveau le plus fréquent et réussite globale, d'un coup d'œil."},
+        {r:[238,262,630,340],l:"Niveaux et domaines",t:"La répartition de la promo par niveau et la réussite par domaine."},
+        {r:[892,238,328,350],l:"Profil de la promo",t:"Le profil de la promo face au seuil de maîtrise."},
+        {r:[238,604,630,240],l:"À retravailler",t:"Le point faible de la promo et les notions à retravailler en priorité. (Exemple de démonstration : stagiaires fictifs.)"}]}
     ];
     var root=document.getElementById('visite'); if(!root)return;
     var view=document.getElementById('vview'),stages=[].slice.call(view.querySelectorAll('.tstage')),
         tabs=[].slice.call(root.querySelectorAll('[role=tab]')),cap=document.getElementById('vcap'),
         dots=document.getElementById('vdots'),play=document.getElementById('vplay');
     var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var si=0,hi=0,auto=false,timer=null,inView=false,hover=false,ro=0;
-    function place(stage,r,animate){
-      var iw=+stage.dataset.w,ih=+stage.dataset.h,vw=view.clientWidth,vh=view.clientHeight,hl=stage.querySelector('.hl'),s,cx,cy;
+    var si=0,hi=0,auto=false,timer=null,inView=false,hover=false,ro=0,autoTouched=false;
+    function place(stage,r,animate,label){
+      var iw=+stage.dataset.w,ih=+stage.dataset.h,mx=+stage.dataset.max||2,vw=view.clientWidth,vh=view.clientHeight,hl=stage.querySelector('.hl'),s,cx,cy;
+      if(!vw||!vh)return;
       if(!r){s=Math.min(vw/iw,vh/ih)*.98;cx=iw/2;cy=ih/2;stage.classList.remove('focus');}
-      else{s=Math.min(vw*.9/r[2],vh*.9/r[3]);s=Math.min(s,Math.max(vw/iw*3,1.2));cx=r[0]+r[2]/2;cy=r[1]+r[3]/2;
-        hl.style.left=r[0]+'px';hl.style.top=r[1]+'px';hl.style.width=r[2]+'px';hl.style.height=r[3]+'px';stage.classList.add('focus');}
+      else{s=Math.min(vw*.92/r[2],vh*.92/r[3],mx);cx=r[0]+r[2]/2;cy=r[1]+r[3]/2;
+        hl.style.left=r[0]+'px';hl.style.top=r[1]+'px';hl.style.width=r[2]+'px';hl.style.height=r[3]+'px';hl.setAttribute('data-label',label||'');stage.classList.add('focus');}
       stage.style.setProperty('--s',s);
       stage.classList.toggle('zoom',!!animate&&!reduce);
       stage.style.width=iw+'px';stage.style.height=ih+'px';
       stage.style.transform='translate('+(vw/2-s*cx)+'px,'+(vh/2-s*cy)+'px) scale('+s+')';
     }
     function dotsFor(){dots.innerHTML='';SC[si].shots.forEach(function(_,i){var d=document.createElement('i');if(i===hi)d.className='on';dots.appendChild(d);});}
+    function cur(){return SC[si].shots[hi];}
     function render(animate,sceneChanged){
       stages.forEach(function(st,i){st.classList.toggle('on',i===si);});
       var st=stages[si];
-      if(sceneChanged){place(st,null,false);if(hi>0){void st.offsetWidth;}}
-      place(st,SC[si].shots[hi].r,animate);
-      cap.textContent=SC[si].shots[hi].t;
+      if(sceneChanged)place(st,null,false);
+      place(st,cur().r,animate,cur().l);
+      cap.textContent=cur().t;
       tabs.forEach(function(t,i){t.setAttribute('aria-selected',i===si);t.tabIndex=i===si?0:-1;});
       view.setAttribute('aria-labelledby',tabs[si].id);
       dotsFor();
     }
     function go(s,h,animate){
       var changed=s!==si; si=s;hi=h; render(animate!==false&&!changed,changed);
-      if(changed&&h>0){requestAnimationFrame(function(){requestAnimationFrame(function(){place(stages[si],SC[si].shots[hi].r,true);});});}
+      if(changed&&h>0){requestAnimationFrame(function(){requestAnimationFrame(function(){place(stages[si],cur().r,true,cur().l);});});}
     }
     function next(){var n=SC[si].shots.length;if(hi+1<n)go(si,hi+1);else go((si+1)%SC.length,0);}
     function prev(){if(hi>0)go(si,hi-1);else{var p=(si+SC.length-1)%SC.length;go(p,SC[p].shots.length-1);}}
@@ -766,13 +826,111 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     view.addEventListener('mouseenter',function(){hover=true;clearTimeout(timer);});
     view.addEventListener('mouseleave',function(){hover=false;sched();});
     document.addEventListener('visibilitychange',sched);
-    window.addEventListener('resize',function(){clearTimeout(ro);ro=setTimeout(function(){place(stages[si],SC[si].shots[hi].r,false);},120);});
+    function relayout(){clearTimeout(ro);ro=setTimeout(function(){place(stages[si],cur().r,false,cur().l);},80);}
+    window.addEventListener('resize',relayout);
+    if('ResizeObserver' in window)new ResizeObserver(relayout).observe(view);
     if('IntersectionObserver' in window){new IntersectionObserver(function(es){var was=inView;inView=es[0].isIntersecting;if(inView&&!was&&!reduce&&!autoTouched){autoTouched=true;setAuto(true);}else sched();},{threshold:.5}).observe(view);}
-    var autoTouched=false;
-    var imgs=stages.map(function(s){return s.querySelector('img');});
     function init(){render(false,true);}
     init();
-    imgs.forEach(function(i){if(!i.complete)i.addEventListener('load',init);});
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(relayout);
+    window.addEventListener('load',relayout);
+  })();
+
+  /* ===== images explorables : légende au survol / au toucher + agrandissement ===== */
+  (function(){
+    var HZ={
+      promo:{w:1240,h:934,src:'img/tableau-de-bord-ma-promo.webp',title:'Tableau de bord formateur · Ma promo',alt:'Écran « Ma promo » du tableau de bord formateur avec une promo de 22 stagiaires.',z:[
+        [[10,65,200,320],'Menu','Navigation : Ma promo, Stagiaires, Questions, Coller les codes, Rapport.'],
+        [[248,90,972,130],'Chiffres clés','Effectif, score moyen, niveau le plus fréquent et réussite globale de la promo.'],
+        [[248,275,610,160],'Répartition par niveau','Combien de stagiaires à chaque niveau, de Initial à Expert.'],
+        [[248,458,610,135],'Réussite par domaine','Environnement, calculs, mise en forme, données : réussite et nombre de bonnes réponses.'],
+        [[248,612,610,24],'Point faible','Le domaine le plus fragile de la promo, repéré automatiquement.'],
+        [[248,637,610,26],'Question défi','La question la plus difficile : combien de stagiaires l\'ont reçue et réussie.'],
+        [[248,668,610,170],'Notions à travailler','Les notions les plus ratées par la promo, à retravailler en priorité.'],
+        [[905,270,300,420],'Profil de la promo','Réussite par domaine face au seuil de maîtrise de 80 %.'],
+        [[918,712,274,140],'Accès rapides','Un clic vers la liste des stagiaires ou vers le rapport imprimable.']]},
+      stagiaires:{w:1239,h:788,src:'img/tableau-de-bord-stagiaires.webp',title:'Tableau de bord formateur · Stagiaires',alt:'Écran « Stagiaires » : les 22 stagiaires classés par score, avec leur niveau et leur réussite par domaine.',z:[
+        [[250,166,232,604],'Classement','Une ligne par stagiaire, classée du meilleur au plus faible score.'],
+        [[483,166,98,604],'Score','Le score sur 1000 de chaque stagiaire.'],
+        [[581,166,120,604],'Niveau','Le niveau estimé, de Initial à Expert.'],
+        [[701,166,220,604],'Questions posées','Le nombre de questions reçues par chaque stagiaire.'],
+        [[921,166,272,604],'Réussite par domaine','Environnement, calculs, mise en forme, données : rouge à renforcer, vert maîtrisé.']]},
+      codes:{w:1285,h:878,src:'img/tableau-de-bord-codes.webp',title:'Tableau de bord formateur · Coller les codes',alt:'Écran « Coller les codes » : 22 codes résultat collés, tous contrôlés valides, avec le stagiaire, le score et le type de test.',z:[
+        [[250,112,960,48],'Consigne','Un code par ligne, copié depuis Forms ou un e-mail. Collage en valeurs seules.'],
+        [[250,170,300,24],'Compteur','Combien de codes sont valides et combien restent à vérifier.'],
+        [[249,194,452,600],'Codes résultat','La colonne où l\'on colle les codes reçus des stagiaires, jusqu\'à 300.'],
+        [[700,194,160,600],'Contrôle','OK si le code est valide ; sinon Doublon, Code altéré ou Code invalide.'],
+        [[858,194,336,600],'Décodage','Le fichier lit le code : stagiaire, score et type de test, sans macro.']]},
+      rapport:{w:1226,h:932,src:'img/tableau-de-bord-rapport.webp',title:'Tableau de bord formateur · Rapport',alt:'Écran « Rapport » : rapport de promotion d\'une page avec chiffres clés, répartition par niveau, réussite par domaine et notions à travailler.',z:[
+        [[249,115,942,56],'Titre du rapport','Le nom de la promo ou de l\'organisme et la date, repris automatiquement.'],
+        [[249,222,942,78],'Chiffres clés','Stagiaires, score moyen, niveau le plus fréquent, réussite globale.'],
+        [[249,326,430,158],'Répartition par niveau','Le nombre de stagiaires à chaque niveau.'],
+        [[702,326,490,158],'Réussite par domaine','La réussite de la promo dans chaque domaine, et son point faible.'],
+        [[249,508,500,108],'À travailler en priorité','Les notions les plus ratées, pour orienter la suite de la formation.'],
+        [[330,638,780,24],'Méthode','Rappel de la méthode : test adaptatif, score indicatif sur 1000.'],
+        [[420,688,600,54],'Signature','Votre nom et vos mentions, prêtes à imprimer ou à exporter en PDF.']]}
+    };
+    function pc(v,t){return (v/t*100).toFixed(3)+'%';}
+    function enhance(host,key,legEl,withOpen){
+      var d=HZ[key],on=null,leg=legEl,own=!legEl;
+      if(own){leg=document.createElement('div');leg.className='hz-leg';leg.setAttribute('role','status');host.appendChild(leg);}
+      function show(i){
+        var zs=host.querySelectorAll('.hz-z');[].forEach.call(zs,function(z,j){z.classList.toggle('on',j===i);});
+        on=i;
+        if(own){if(i===null){leg.classList.remove('on');}else{leg.innerHTML='<b></b><span></span>';leg.firstChild.textContent=d.z[i][1];leg.lastChild.textContent=d.z[i][2];leg.classList.add('on');}}
+        else{if(i===null){leg.className='lb-leg idle';leg.textContent='Survolez ou touchez une zone de l\'image pour sa légende.';}else{leg.className='lb-leg';leg.innerHTML='<b></b><span></span>';leg.firstChild.textContent=d.z[i][1]+' ·';leg.lastChild.textContent=d.z[i][2];}}
+      }
+      d.z.forEach(function(z,i){
+        var b=document.createElement('button');b.type='button';b.className='hz-z';b.setAttribute('aria-label',z[1]+' : '+z[2]);
+        var r=z[0];b.style.left=pc(r[0],d.w);b.style.top=pc(r[1],d.h);b.style.width=pc(r[2],d.w);b.style.height=pc(r[3],d.h);
+        b.addEventListener('mouseenter',function(){show(i);});
+        b.addEventListener('focus',function(){show(i);});
+        b.addEventListener('mouseleave',function(){if(on===i)show(null);});
+        b.addEventListener('blur',function(){if(on===i)show(null);});
+        b.addEventListener('click',function(e){e.stopPropagation();show(on===i?null:i);});
+        host.appendChild(b);
+      });
+      host.addEventListener('click',function(){show(null);});
+      if(own&&!('ontouchstart' in window)&&!(navigator.maxTouchPoints>0)){}
+      else if(own){host.classList.add('touch');}
+      if(!own)show(null);
+      if(withOpen){
+        var o=document.createElement('button');o.type='button';o.className='hz-open';o.textContent='Agrandir ⤢';o.setAttribute('aria-label','Agrandir : '+d.title);
+        o.addEventListener('click',function(e){e.stopPropagation();openLb(key);});host.appendChild(o);
+      }
+    }
+    var dlg=null,lastFocus=null;
+    function openLb(key){
+      var d=HZ[key];lastFocus=document.activeElement;
+      if(!dlg){
+        dlg=document.createElement('dialog');dlg.className='lb';dlg.setAttribute('aria-label','Image agrandie');
+        dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+        dlg.addEventListener('close',function(){document.documentElement.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus();});
+        document.body.appendChild(dlg);
+      }
+      dlg.innerHTML='';
+      var wrap=document.createElement('div');wrap.className='lb-wrap';
+      var head=document.createElement('div');head.className='lb-head';
+      var h=document.createElement('h2');h.textContent=d.title;
+      var c=document.createElement('button');c.type='button';c.className='lb-close';c.textContent='Fermer ✕';c.addEventListener('click',function(){dlg.close();});
+      head.appendChild(h);head.appendChild(c);
+      var body=document.createElement('div');body.className='lb-body';
+      var host=document.createElement('div');host.className='hz touch';
+      var im=document.createElement('img');im.src=d.src;im.width=d.w;im.height=d.h;im.alt=d.alt;host.appendChild(im);
+      body.appendChild(host);
+      var leg=document.createElement('div');leg.className='lb-leg idle';leg.setAttribute('role','status');
+      wrap.appendChild(head);wrap.appendChild(body);wrap.appendChild(leg);dlg.appendChild(wrap);
+      enhance(host,key,leg,false);
+      document.documentElement.style.overflow='hidden';
+      if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
+      c.focus();
+    }
+    [].forEach.call(document.querySelectorAll('.hz[data-hz]'),function(h){
+      var k=h.getAttribute('data-hz');if(HZ[k]){enhance(h,k,null,true);
+        var hint=document.createElement('p');hint.className='hz-hint';hint.textContent='Survolez (ou touchez) une zone pour sa légende. « Agrandir » ouvre l\'image en grand.';
+        h.parentNode.insertAdjacentElement('afterend',hint);}
+    });
+    [].forEach.call(document.querySelectorAll('[data-open]'),function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-open');if(HZ[k])openLb(k);});});
   })();
 </script>
 </body>
