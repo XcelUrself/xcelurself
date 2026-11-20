@@ -324,6 +324,8 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
 .quote figcaption b{display:block;font-size:.92rem;font-weight:800}
 .quote figcaption span{display:block;font-size:.8rem;color:var(--ink2);line-height:1.4}
 .quote figcaption .net{font-weight:600;color:var(--ink);margin-top:.2rem}
+.quote .who{display:flex;align-items:center;gap:.85rem}
+.quote .av{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 2px var(--white),0 0 0 3px var(--bd)}
 .quote-src{margin-top:1.2rem;font-size:.86rem}
 @media(max-width:900px){.quotes{grid-template-columns:1fr}}
 @media(max-width:700px){.quote blockquote{font-size:1.4rem}}
@@ -466,15 +468,15 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
     <div class="quotes">
       <figure class="quote rv">
         <blockquote><p>« Outil testé et approuvé, à la fois hyper agréable à utiliser et très bien fait ! »</p></blockquote>
-        <figcaption><b>Tommy Rigault</b><span>EMLYON Business School</span></figcaption>
+        <figcaption class="who"><img class="av" src="img/temoin-tommy.webp" width="56" height="56" loading="lazy" decoding="async" alt="Photo de Tommy Rigault"/><div><b>Tommy Rigault</b><span>excel-addict</span></div></figcaption>
       </figure>
       <figure class="quote rv">
         <blockquote><p>« Pour l'avoir testé, je peux confirmer que l'outil est vraiment top ! »</p></blockquote>
-        <figcaption><b>Jean-Baptiste Caverne</b><span>TutoSurExcel</span></figcaption>
+        <figcaption class="who"><img class="av" src="img/temoin-jb.webp" width="56" height="56" loading="lazy" decoding="async" alt="Photo de Jean-Baptiste Caverne"/><div><b>Jean-Baptiste Caverne</b><span>TutoSurExcel</span></div></figcaption>
       </figure>
       <figure class="quote rv">
         <blockquote><p>« Je confirme que ce test de positionnement est au top ! »</p></blockquote>
-        <figcaption><b>Liana Delapierre</b><span>uptimis</span></figcaption>
+        <figcaption class="who"><img class="av" src="img/temoin-liana.webp" width="56" height="56" loading="lazy" decoding="async" alt="Photo de Liana Delapierre"/><div><b>Liana Delapierre</b><span>uptimis</span></div></figcaption>
       </figure>
     </div>
     <p class="quote-src rv"><a class="textlink" href="https://www.linkedin.com/posts/joffreygros_excel-excel-formationprofessionnelle-ugcPost-7527285334058024960-mdqk" target="_blank" rel="noopener" data-umami-event="Orga : voir le post LinkedIn">Lire les commentaires sur LinkedIn</a></p>
