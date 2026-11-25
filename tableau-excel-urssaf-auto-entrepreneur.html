@@ -124,6 +124,7 @@ tfoot td,tfoot .n{color:#1a1714}
 @media(max-width:700px){nav a,footer a,.back{min-height:44px;display:inline-flex;align-items:center}}
 .hero{display:grid;gap:1.6rem;margin:1.6rem 0 .5rem}
 .hero img{width:100%;height:auto;border-radius:18px;border:1px solid var(--bd)}
+.promo{background:rgba(254,58,126,.08);border:1px solid var(--bda);border-radius:14px;padding:.8rem 1rem;font-size:.85rem;margin:.2rem 0 0;color:var(--ink)}
 .price{font-size:.8rem;color:var(--muted);font-weight:600;margin:.8rem 0 0}.price b{font-size:1.4rem;color:var(--ink)}
 ul.ok{display:grid;gap:.7rem;margin:1rem 0 1.2rem}
 ul.ok li{padding:1rem 1.2rem;background:#fff;border:1px solid var(--bd);border-radius:14px;color:var(--ink2);line-height:1.7}
@@ -166,8 +167,9 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 <div class="hero">
   <div>
     <p class="lead">Tu recopies tes opérations bancaires. Le classeur repère tes encaissements et te dit combien mettre de côté pour l'Urssaf avant la prochaine échéance. Sans macro.</p>
+    <p id="promo" class="promo"><strong>Black Week : -30 %</strong> jusqu'au 30/11, soit <b>7 €</b> au lieu de 10 €. Code <b>BLACKWEEK30</b>, déjà appliqué par le bouton ci-dessous.</p>
     <p class="price"><b>10 €</b> · téléchargement immédiat · Excel pour Windows</p>
-    <p style="margin-top:1rem"><a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf" target="_blank" rel="noopener" data-umami-event="Produit Urssaf acheter haut">Télécharger le modèle →</a></p>
+    <p style="margin-top:1rem"><a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf&coupon=BLACKWEEK30" target="_blank" rel="noopener" data-umami-event="Produit Urssaf acheter haut">Télécharger le modèle →</a></p>
   </div>
   <img src="modele-echeancier.webp" width="960" height="720" alt="Échéancier Excel Urssaf : combien mettre de côté chaque mois"/>
 </div>
@@ -214,13 +216,14 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
   <p class="eyebrow">Modèle Excel</p>
   <h3>Sache toujours combien mettre de côté</h3>
   <p>10 €, sans macro, téléchargement immédiat.</p>
-  <a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf" target="_blank" rel="noopener" data-umami-event="Produit Urssaf acheter bas">Télécharger le modèle →</a>
+  <a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf&coupon=BLACKWEEK30" target="_blank" rel="noopener" data-umami-event="Produit Urssaf acheter bas">Télécharger le modèle →</a>
 </div>
 
 <p class="note">À lire aussi : <a href="plafond-micro-entreprise.html">Plafond de chiffre d'affaires</a> · <a href="franchise-tva-micro-entreprise.html">Franchise de TVA</a> · <a href="declaration-urssaf-mensuelle-trimestrielle.html">Déclaration mensuelle ou trimestrielle</a></p>
 <p class="legal">Informations générales, non constitutives d'un conseil comptable ou juridique : vérifie toujours les taux en vigueur auprès de l'Urssaf.</p>
 </div>
 </main>
+<script>(function(){var p=document.getElementById("promo");if(p&&new Date()>=new Date("2026-12-01T00:00:00+01:00"))p.remove()})();</script>
 
 <footer>
   <div class="footer-inner">
