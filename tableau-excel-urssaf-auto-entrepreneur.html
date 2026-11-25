@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tableau Excel Urssaf auto-entrepreneur : l'échéancier</title>
+<meta name="description" content="Tableau Excel Urssaf pour auto-entrepreneur : saisis tes opérations bancaires, vois ce que tu dois mettre de côté. Excel Windows, sans macro, 10 €."/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<link rel="canonical" href="https://xcelurself.github.io/xcelurself/tableau-excel-urssaf-auto-entrepreneur.html"/>
+<meta property="og:type" content="product"/>
+<meta property="og:title" content="Tableau Excel Urssaf auto-entrepreneur : l'échéancier"/>
+<meta property="og:description" content="Tableau Excel Urssaf pour auto-entrepreneur : saisis tes opérations bancaires, vois ce que tu dois mettre de côté. Excel Windows, sans macro, 10 €."/>
+<meta property="og:url" content="https://xcelurself.github.io/xcelurself/tableau-excel-urssaf-auto-entrepreneur.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="XcelUrself"/>
+<meta property="og:image" content="https://xcelurself.github.io/xcelurself/og-xcelurself.png"/>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "Product", "name": "Échéancier Excel Urssaf pour micro-entrepreneur", "description": "Tableau Excel Urssaf pour auto-entrepreneur : saisis tes opérations bancaires, vois ce que tu dois mettre de côté. Excel Windows, sans macro, 10 €.", "image": "https://xcelurself.github.io/xcelurself/modele-echeancier.webp", "brand": {"@type": "Brand", "name": "XcelUrself"}, "offers": {"@type": "Offer", "price": "10.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Faut-il activer des macros ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Le classeur est sans macro. Les taux sont lus à la source par Power Query."}}, {"@type": "Question", "name": "Ça marche sur Mac ou sur Google Sheets ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Il est conçu pour Excel pour Windows (Microsoft 365 ou Excel 2016 et plus). Sur Mac, Excel en ligne, Google Sheets ou mobile, l'actualisation des données ne fonctionne pas pleinement."}}, {"@type": "Question", "name": "Les taux Urssaf sont-ils à jour ?", "acceptedAnswer": {"@type": "Answer", "text": "Les taux sont relevés via l'API publique mon-entreprise (Urssaf) à la date indiquée dans le fichier, avec des taux de secours. Vérifie-les toujours auprès de l'Urssaf avant toute décision."}}, {"@type": "Question", "name": "Est-ce un livre des recettes ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. C'est un outil de pilotage de ta provision Urssaf à partir de tes opérations bancaires. Il ne remplace pas le registre des recettes que tu dois tenir."}}, {"@type": "Question", "name": "Comment je reçois le fichier ?", "acceptedAnswer": {"@type": "Answer", "text": "Par téléchargement immédiat après l'achat."}}, {"@type": "Question", "name": "Est-ce un conseil comptable ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. C'est une aide au suivi et à l'estimation. Elle ne remplace ni ta déclaration sur autoentrepreneur.urssaf.fr, ni l'avis d'un comptable."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#FAF6F1;--bg2:#F3EDE5;--bg3:#ECE4DA;
+  --ink:#2b2724;--ink2:#404040;--muted:#655d55;
+  --or1:#FE3A7E;--or2:#FE3A7E;--or3:#D92A66;
+  --grad:#FE3A7E;
+  --gradr:#B01C53;
+  --bd:rgba(28,24,21,.1);--bda:rgba(254,58,126,.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;font-weight:400}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:none}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+nav,main,footer{position:relative;z-index:1}
+
+/* NAV (identique à la page d'accueil) */
+nav{position:sticky;top:0;z-index:650;background:rgba(250,248,245,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:1160px;margin:0 auto;padding:.8rem clamp(1.25rem,5vw,4rem)}
+.nav-logo{font-size:1.4rem;font-weight:800;letter-spacing:.02em;color:var(--ink);flex-shrink:0}
+.nav-logo span,.footer-logo span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:1.8rem}
+.nav-links a{font-size:.75rem;font-weight:600;letter-spacing:.04em;color:var(--ink2);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--grad);color:#fff;font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.3rem;border-radius:100px;transition:all .2s;flex-shrink:0;box-shadow:0 3px 12px rgba(254,58,126,.2)}
+.nav-cta:hover{box-shadow:0 6px 20px rgba(254,58,126,.3);transform:translateY(-1px)}
+
+/* ARTICLE */
+.wrap{max-width:760px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) clamp(1.25rem,5vw,2rem) 4.5rem}
+.back{font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--ink)}
+.back:hover{text-decoration:underline;text-underline-offset:3px}
+.eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:.7rem;margin:2rem 0 1rem}
+.eyebrow::before{content:'';width:1.8rem;height:1.5px;background:var(--grad);flex-shrink:0}
+h1{font-family:'Montserrat',sans-serif;font-size:clamp(2.1rem,6.4vw,3.6rem);font-weight:900;line-height:.98;letter-spacing:-.03em;margin-bottom:1.6rem}
+h1 .l1{display:block;color:var(--ink)}
+h1 .l2{display:block;font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding-right:.1em}
+h1 .l3{display:block;color:var(--or1)}
+.lead{font-size:1rem;line-height:1.85;color:var(--ink2);max-width:640px}
+.meta{margin-top:1.2rem;font-size:.7rem;font-weight:600;letter-spacing:.04em;color:var(--muted)}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:700;line-height:1.08;margin:3rem 0 .9rem;color:var(--ink)}
+h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding-right:.08em}
+p{color:var(--ink2);margin-bottom:1rem;line-height:1.85}
+p strong,li strong{color:var(--ink);font-weight:700}
+a.in{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.formule{margin:1.6rem 0;padding:1.3rem 1.5rem;background:rgba(254,58,126,.08);border:1px solid var(--bda);border-left:4px solid var(--or2);border-radius:0 14px 14px 0;font-weight:700;font-size:1.02rem;color:var(--ink);line-height:1.6}
+.tablewrap{overflow-x:auto;margin:1.4rem 0 .8rem;border:1px solid var(--bd);border-radius:14px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--bd);color:var(--ink2)}
+th{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--bg2)}
+td.n,th.n{text-align:right;white-space:nowrap}
+td.n{font-weight:700;color:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+tfoot td{font-weight:800;color:var(--ink);background:var(--bg2);border-bottom:0;border-top:1px solid var(--bd)}
+tfoot td.n{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;border-top:0}
+.note{font-size:.78rem;color:var(--muted);line-height:1.75;margin-top:.6rem}
+.note a{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+ul.err{margin:1rem 0 1.2rem;display:grid;gap:.7rem}
+ul.err li{position:relative;padding:1rem 1.2rem 1rem 3.1rem;background:#fff;border:1px solid var(--bd);border-radius:14px;color:var(--ink2);line-height:1.7;counter-increment:e}
+ul.err{counter-reset:e}
+ul.err li::before{content:counter(e);position:absolute;left:1.1rem;top:.95rem;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--grad);color:#fff;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.box{margin:2.4rem 0 1.5rem;padding:clamp(1.6rem,4vw,2.4rem);background:var(--ink);border-radius:22px;position:relative;overflow:hidden}
+.box::before{content:'';position:absolute;top:-40%;right:-10%;width:60%;height:140%;background:none;pointer-events:none}
+.box>*{position:relative}
+.box .eyebrow{margin-top:0;color:#f6a07a}
+.box h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3.6vw,2.3rem);font-weight:700;line-height:1.05;color:var(--bg);margin-bottom:.8rem}
+.box p{color:rgba(250,248,245,.72);font-size:.9rem;max-width:520px}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;padding:.9rem 1.8rem;transition:all .22s;cursor:pointer;background:var(--grad);color:#fff;box-shadow:0 4px 18px rgba(254,58,126,.3)}
+.btn:hover{background:var(--gradr);box-shadow:0 8px 26px rgba(254,58,126,.4);transform:translateY(-2px)}
+.legal{font-size:.74rem;line-height:1.8;color:var(--muted);margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--bd)}
+
+/* FOOTER (identique à la page d'accueil) */
+footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem}
+.footer-logo{font-size:1.3rem;font-weight:800;color:var(--bg)}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:.68rem;font-weight:600;color:rgba(250,248,245,.32);transition:color .2s}
+.footer-links a:hover{color:rgba(250,248,245,.8)}
+.footer-copy{width:100%;text-align:center;font-size:.62rem;color:rgba(250,248,245,.18);margin-top:.9rem}
+
+@media(max-width:800px){.nav-links{display:none}.footer-inner{flex-direction:column;align-items:center;text-align:center}.footer-links{justify-content:center}}
+@media(max-width:480px){h1 .l3{-webkit-text-stroke:0}.nav-cta{padding:.5rem 1rem}th,td{padding:.7rem .7rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* ===== Palette signature + accessibilité (alignée sur l'accueil) ===== */
+.btn-primary,.nav-cta,.drawer .d-cta,.mbar-main,.tag.fill,.cstep i{color:#1a1714!important}
+.btn-primary:hover,.nav-cta:hover{background:#1a1714!important;color:#fff!important}
+.xu-msg.user{color:#1a1714!important}
+.nav-logo span,.footer-logo span{background:none!important;-webkit-text-fill-color:currentColor!important;color:#FE3A7E!important}
+:focus-visible{outline:3px solid #1a1714;outline-offset:3px;border-radius:4px}
+footer :focus-visible,.cta-final :focus-visible{outline-color:#fff}
+
+.carnets-new,.nav-links a.nav-hl,.nav-links a.nav-hl:hover{color:#1a1714!important}
+.btn,.btn:hover{color:#1a1714!important}
+.btn:hover{background:#1a1714!important;color:#fff!important}
+tfoot td,tfoot .n{color:#1a1714}
+/* ===== Un seul rose (aligné sur l'accueil) ===== */
+.fiq .plus,.cbox.paid li::before{color:var(--or1)}
+.btn-outline:hover,.card-btn:hover{color:#1a1714}
+
+
+@media(max-width:480px){.nav-cta .hide-s{display:none}.nav-cta{display:inline-flex;align-items:center;min-height:44px;padding:0 1.1rem}}
+@media(max-width:700px){nav a,footer a,.back{min-height:44px;display:inline-flex;align-items:center}}
+.hero{display:grid;gap:1.6rem;margin:1.6rem 0 .5rem}
+.hero img{width:100%;height:auto;border-radius:18px;border:1px solid var(--bd)}
+.promo{margin:.2rem 0 1.2rem}
+.promo-tag{font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--or3);margin:0 0 .6rem}
+a.btn-bw{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;max-width:440px;padding:.5rem .5rem .5rem 1.6rem;border-radius:100px;font-size:.95rem;letter-spacing:.02em;text-transform:none;background:#FE3A7E;color:#1a1714!important;box-shadow:0 10px 28px rgba(254,58,126,.42)}
+a.btn-bw .bw-l{font-weight:800}
+a.btn-bw .bw-price{display:inline-flex;align-items:baseline;gap:.5rem;background:#fff;border-radius:100px;padding:.65rem 1.2rem;color:#1a1714}
+a.btn-bw .bw-price s{font-size:.8rem;font-weight:600;color:var(--muted)}
+a.btn-bw .bw-price b{font-size:1.35rem;font-weight:900;color:#1a1714}
+a.btn-bw::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:bwshine 3.2s ease-in-out infinite}
+a.btn-bw:hover{background:#D92A66!important;color:#fff!important;transform:translateY(-2px) scale(1.02)}
+a.btn-bw:hover .bw-price{color:#1a1714}
+.bw-assure{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;margin-top:.8rem;font-size:.74rem;font-weight:600;color:var(--ink2)}
+.bw-assure li::before{content:'✓ ';color:var(--or3);font-weight:800}
+.bw-assure li.bw-win{font-weight:600;color:var(--ink2)}
+.promo~.price{display:none}
+.bw-assure li:last-child{font-weight:800;color:var(--ink)}
+@keyframes bwshine{0%,55%{left:-60%}100%{left:130%}}
+@media(max-width:480px){a.btn-bw{font-size:.88rem;padding-left:1.2rem}a.btn-bw .bw-price{padding:.6rem .9rem}}
+@media(prefers-reduced-motion:reduce){a.btn-bw::after{animation:none;display:none}}
+.price{font-size:.8rem;color:var(--muted);font-weight:600;margin:.8rem 0 0}.price b{font-size:1.4rem;color:var(--ink)}
+ul.ok{display:grid;gap:.7rem;margin:1rem 0 1.2rem}
+ul.ok li{padding:1rem 1.2rem;background:#fff;border:1px solid var(--bd);border-radius:14px;color:var(--ink2);line-height:1.7}
+details{background:#fff;border:1px solid var(--bd);border-radius:14px;margin-bottom:.6rem}
+summary{cursor:pointer;padding:1rem 1.2rem;font-weight:700;color:var(--ink);min-height:44px}
+details p{padding:0 1.2rem;margin-bottom:1rem}
+@media(min-width:800px){.hero{grid-template-columns:1fr 1fr;align-items:center}}
+</style>
+<!-- Mesure d'audience Umami : sans cookie, aucune bannière requise (même site que la page d'accueil). -->
+<script>
+(function(){var id='60f60fb4-a75b-4e22-bbfb-832064c7c8a5';
+var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umami.is/script.js';sc.setAttribute('data-website-id',id);document.head.appendChild(sc);})();
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Xcel<span>Urself</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#competences">Expertise</a></li>
+      <li><a href="index.html#formations">Formations</a></li>
+      <li><a href="index.html#boutique">Mes créations</a></li>
+      <li><a href="index.html#profil">Mon profil</a></li>
+      <li><a href="index.html#avis">Témoignages</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a data-umami-event="Clic Tuto.com" class="nav-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener"><span class="hide-s">Accéder aux </span>formations</a>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+<a class="back" href="index.html">← Retour à XcelUrself</a>
+<p class="eyebrow">Micro-entrepreneur · Urssaf</p>
+<h1>
+  <span class="l1">Tableau Excel Urssaf</span>
+  <span class="l2">pour auto-entrepreneur</span>
+</h1>
+<div class="hero">
+  <div>
+    <p class="lead">Tu recopies tes opérations bancaires. Le classeur repère tes encaissements et te dit combien mettre de côté pour l'Urssaf avant la prochaine échéance. Sans macro.</p>
+    <div id="promo" class="promo">
+      <p class="promo-tag">Black Week · -30 % sur le modèle</p>
+      <a class="btn btn-bw" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf&coupon=BLACKWEEK30" target="_blank" rel="noopener" data-umami-event="Produit Urssaf BlackWeek haut"><span class="bw-l">Je profite du -30 %</span><span class="bw-price"><s>10 €</s><b>7 €</b></span></a>
+      <ul class="bw-assure"><li>Téléchargement immédiat</li><li>Code appliqué automatiquement</li><li class="bw-win">Pour Excel Windows</li><li id="bw-days">Jusqu'au 30/11</li></ul>
+    </div>
+    <p class="price"><b>10 €</b> · téléchargement immédiat · Excel pour Windows</p>
+    <p id="cta-normal" hidden style="margin-top:1rem"><a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf&coupon=BLACKWEEK30" target="_blank" rel="noopener" data-umami-event="Produit Urssaf acheter haut">Télécharger le modèle →</a></p>
+  </div>
+  <img src="modele-echeancier.webp" width="960" height="720" alt="Échéancier Excel Urssaf : combien mettre de côté chaque mois"/>
+</div>
+<p class="meta">Par Joffrey Gros, formateur Excel et micro-entrepreneur depuis 2018</p>
+
+<h2>Ce que le tableau <em>calcule</em></h2>
+<ul class="ok">
+  <li><strong>Combien mettre de côté, en clair.</strong> Le tableau de bord affiche ce qu'il te reste à provisionner et la date limite de la prochaine échéance.</li>
+  <li><strong>Mensuel ou trimestriel.</strong> Tu choisis le rythme de ta déclaration, et le classeur découpe tes périodes en conséquence.</li>
+  <li><strong>Ton activité, ton taux.</strong> Vente, services commerciaux, artisanat, profession libérale ou Cipav. Le versement libératoire et la réduction ACRE se règlent en option.</li>
+  <li><strong>Les taux officiels, récupérés pour toi.</strong> Power Query les lit à la source. Des taux de secours sont prévus si la connexion échoue.</li>
+  <li><strong>Plafond et TVA suivis.</strong> Ton chiffre d'affaires de l'année est comparé au plafond micro-entreprise et au seuil de franchise de TVA.</li>
+  <li><strong>Tes données restent chez toi.</strong> Tes relevés ne quittent pas ton ordinateur.</li>
+</ul>
+
+<h2>Comment ça <em>marche</em></h2>
+<ul class="err">
+  <li><strong>Paramètres :</strong> tu choisis ton activité et ta périodicité, une fois.</li>
+  <li><strong>Opérations :</strong> tu recopies tes opérations bancaires (date, libellé, montant).</li>
+  <li><strong>Règles :</strong> quatorze règles de départ classent tes libellés. Tu les modifies ou tu en ajoutes.</li>
+  <li><strong>Tableau de bord :</strong> tu cliques sur « Actualiser tout » et tu lis ta provision.</li>
+</ul>
+<p>Pour comprendre la formule avant d'acheter : <a class="in" href="provision-urssaf.html">combien mettre de côté pour l'Urssaf</a>, avec un exemple chiffré.</p>
+
+<h2>Avant d'acheter : ce qu'il <em>faut savoir</em></h2>
+<ul class="ok">
+  <li><strong>Excel pour Windows uniquement</strong> (Microsoft 365 ou Excel 2016 et plus, version de bureau). Il ne fonctionne pas pleinement sur Mac, Excel en ligne, Google Sheets ou mobile, car l'actualisation Power Query n'y marche pas.</li>
+  <li><strong>La saisie est manuelle.</strong> Tu recopies tes opérations, il n'y a pas d'import bancaire.</li>
+  <li><strong>C'est une aide à l'estimation,</strong> pas un livre des recettes ni un outil de déclaration.</li>
+</ul>
+
+<h2>Fait par quelqu'un qui <em>l'utilise</em></h2>
+<p>Je suis micro-entrepreneur depuis 2018, en profession libérale, avec une déclaration chaque mois. J'ai conçu ce classeur pour suivre mes propres cotisations.</p>
+
+<h2>Questions <em>fréquentes</em></h2>
+<details><summary>Faut-il activer des macros ?</summary><p>Non. Le classeur est sans macro. Les taux sont lus à la source par Power Query.</p></details>
+<details><summary>Ça marche sur Mac ou sur Google Sheets ?</summary><p>Non. Il est conçu pour Excel pour Windows (Microsoft 365 ou Excel 2016 et plus). Sur Mac, Excel en ligne, Google Sheets ou mobile, l'actualisation des données ne fonctionne pas pleinement.</p></details>
+<details><summary>Les taux Urssaf sont-ils à jour ?</summary><p>Les taux sont relevés via l'API publique mon-entreprise (Urssaf) à la date indiquée dans le fichier, avec des taux de secours. Vérifie-les toujours auprès de l'Urssaf avant toute décision.</p></details>
+<details><summary>Est-ce un livre des recettes ?</summary><p>Non. C'est un outil de pilotage de ta provision Urssaf à partir de tes opérations bancaires. Il ne remplace pas le registre des recettes que tu dois tenir.</p></details>
+<details><summary>Comment je reçois le fichier ?</summary><p>Par téléchargement immédiat après l'achat.</p></details>
+<details><summary>Est-ce un conseil comptable ?</summary><p>Non. C'est une aide au suivi et à l'estimation. Elle ne remplace ni ta déclaration sur autoentrepreneur.urssaf.fr, ni l'avis d'un comptable.</p></details>
+
+<div class="box">
+  <p class="eyebrow">Modèle Excel</p>
+  <h3>Sache toujours combien mettre de côté</h3>
+  <p>10 €, sans macro, téléchargement immédiat.</p>
+  <a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf&coupon=BLACKWEEK30" target="_blank" rel="noopener" id="cta-bas" data-umami-event="Produit Urssaf acheter bas">Télécharger le modèle →</a>
+</div>
+
+<p class="note">À lire aussi : <a href="plafond-micro-entreprise.html">Plafond de chiffre d'affaires</a> · <a href="franchise-tva-micro-entreprise.html">Franchise de TVA</a> · <a href="declaration-urssaf-mensuelle-trimestrielle.html">Déclaration mensuelle ou trimestrielle</a></p>
+<p class="legal">Informations générales, non constitutives d'un conseil comptable ou juridique : vérifie toujours les taux en vigueur auprès de l'Urssaf.</p>
+</div>
+</main>
+<script>(function(){var end=new Date("2026-11-30T23:59:59+01:00"),now=new Date(),on=now<=end,p=document.getElementById("promo"),n=document.getElementById("cta-normal"),b=document.getElementById("cta-bas"),d=document.getElementById("bw-days");
+if(on){if(b)b.textContent="Black Week -30 % : 7 € →";var j=Math.ceil((end-now)/864e5);if(d)d.textContent=j<=1?"Dernier jour, jusqu'au 30/11":"Plus que "+j+" jours, jusqu'au 30/11"}else{if(p)p.remove();if(n)n.hidden=false}})();</script>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Xcel<span>Urself</span></div>
+    <div class="footer-links">
+      <a data-umami-event="Clic Tuto.com" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Mes Tutos</a>
+      <a href="https://youtube.com/@xcelurself" target="_blank" rel="noopener">YouTube</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#mentions-legales">Mentions légales</a>
+      <a href="index.html#cgv">CGV</a>
+      <a href="index.html#confidentialite">Confidentialité</a>
+    </div>
+    <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur sur les outils Microsoft · Non affilié à Microsoft · Tous droits réservés</p>
+  </div>
+</footer>
+
+
+<button id="totop" type="button" aria-label="Remonter en haut de la page" data-umami-event="Remonter en haut"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+<style>
+#totop{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:var(--fab-b,18px);z-index:850;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#2b2724;color:#fff;border:2px solid #fff;cursor:pointer;box-shadow:0 8px 22px rgba(28,24,21,.28);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s ease,transform .3s cubic-bezier(.23,1,.32,1),bottom .3s cubic-bezier(.23,1,.32,1),visibility 0s linear .3s}
+#totop.show{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+#totop:active{transform:scale(.94)}
+#totop:focus-visible{outline:3px solid #FE3A7E;outline-offset:3px}
+@media (hover:hover) and (pointer:fine){#totop:hover{background:#FE3A7E;color:#1a1714}}
+@media (min-width:801px){#totop{right:24px;bottom:calc(var(--fab-b,18px) + 64px)}}
+@media (prefers-reduced-motion:reduce){#totop{transition:none}}
+</style>
+<script>
+(function(){
+  var b=document.getElementById('totop');if(!b)return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,last=window.scrollY,up=false,idle=null,tick=false;
+  function bar(){
+    var m=document.getElementById('mbar')||document.querySelector('.mbar'),h=0;
+    if(m){var cs=getComputedStyle(m),r=m.getBoundingClientRect();if(cs.display!=='none'&&cs.visibility!=='hidden'&&r.top<innerHeight-2)h=innerHeight-r.top;}
+    document.documentElement.style.setProperty('--fab-b',(Math.round(h)+16)+'px');
+  }
+  function upd(){
+    tick=false;
+    var y=window.scrollY,vh=window.innerHeight,doc=document.documentElement.scrollHeight;
+    if(y>last+6)up=false;else if(y<last-6)up=true;
+    last=y;
+    var far=y>vh*1.2,nearEnd=y+vh>doc-vh*1.4,wide=window.innerWidth>800;
+    b.classList.toggle('show',far&&(wide||up||nearEnd));
+    clearTimeout(idle);
+    if(far&&!wide&&!nearEnd)idle=setTimeout(function(){b.classList.remove('show')},3200);
+    bar();
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});
+  window.addEventListener('resize',upd);
+  b.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    var t=document.querySelector('a,button');if(t&&t!==b)setTimeout(function(){try{t.focus({preventScroll:true});}catch(e){}},reduce?0:600);
+  });
+  upd();
+})();
+</script>
+</body>
+</html>
