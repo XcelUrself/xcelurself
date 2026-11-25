@@ -124,7 +124,16 @@ tfoot td,tfoot .n{color:#1a1714}
 @media(max-width:700px){nav a,footer a,.back{min-height:44px;display:inline-flex;align-items:center}}
 .hero{display:grid;gap:1.6rem;margin:1.6rem 0 .5rem}
 .hero img{width:100%;height:auto;border-radius:18px;border:1px solid var(--bd)}
-.promo{background:rgba(254,58,126,.08);border:1px solid var(--bda);border-radius:14px;padding:.8rem 1rem;font-size:.85rem;margin:.2rem 0 0;color:var(--ink)}
+.promo{margin:.2rem 0 1rem}
+.promo-tag{display:inline-block;background:#1a1714;color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:.35rem .8rem;border-radius:100px;margin-bottom:.7rem}
+a.btn-bw{border-radius:24px;display:flex;flex-direction:column;align-items:flex-start;gap:.15rem;text-transform:none;letter-spacing:0;padding:1rem 1.6rem;background:#1a1714;border:2px solid #FE3A7E;animation:bwpulse 2.2s ease-in-out infinite}
+a.btn-bw,a.btn-bw:hover .bw-main{color:#fff!important}
+a.btn-bw .bw-main{font-size:1.05rem;font-weight:800;letter-spacing:.02em;color:#fff!important}
+a.btn-bw .bw-sub{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.75)!important}
+a.btn-bw:hover{background:#FE3A7E!important;animation:none}
+a.btn-bw:hover .bw-main,a.btn-bw:hover .bw-sub{color:#1a1714!important}
+@keyframes bwpulse{0%,100%{box-shadow:0 4px 18px rgba(254,58,126,.35)}50%{box-shadow:0 4px 30px rgba(254,58,126,.8)}}
+@media(prefers-reduced-motion:reduce){a.btn-bw{animation:none}}
 .price{font-size:.8rem;color:var(--muted);font-weight:600;margin:.8rem 0 0}.price b{font-size:1.4rem;color:var(--ink)}
 ul.ok{display:grid;gap:.7rem;margin:1rem 0 1.2rem}
 ul.ok li{padding:1rem 1.2rem;background:#fff;border:1px solid var(--bd);border-radius:14px;color:var(--ink2);line-height:1.7}
@@ -167,9 +176,12 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 <div class="hero">
   <div>
     <p class="lead">Tu recopies tes opérations bancaires. Le classeur repère tes encaissements et te dit combien mettre de côté pour l'Urssaf avant la prochaine échéance. Sans macro.</p>
-    <p id="promo" class="promo"><strong>Black Week : -30 %</strong> jusqu'au 30/11, soit <b>7 €</b> au lieu de 10 €. Code <b>BLACKWEEK30</b>, déjà appliqué par le bouton ci-dessous.</p>
+    <div id="promo" class="promo">
+      <span class="promo-tag">Black Week · jusqu'au 30/11</span>
+      <a class="btn btn-bw" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf&coupon=BLACKWEEK30" target="_blank" rel="noopener" data-umami-event="Produit Urssaf BlackWeek haut"><span class="bw-main">-30 % · Je le prends à 7 €</span><span class="bw-sub">au lieu de 10 € · code BLACKWEEK30 déjà appliqué</span></a>
+    </div>
     <p class="price"><b>10 €</b> · téléchargement immédiat · Excel pour Windows</p>
-    <p style="margin-top:1rem"><a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf&coupon=BLACKWEEK30" target="_blank" rel="noopener" data-umami-event="Produit Urssaf acheter haut">Télécharger le modèle →</a></p>
+    <p id="cta-normal" hidden style="margin-top:1rem"><a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf&coupon=BLACKWEEK30" target="_blank" rel="noopener" data-umami-event="Produit Urssaf acheter haut">Télécharger le modèle →</a></p>
   </div>
   <img src="modele-echeancier.webp" width="960" height="720" alt="Échéancier Excel Urssaf : combien mettre de côté chaque mois"/>
 </div>
@@ -216,14 +228,15 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
   <p class="eyebrow">Modèle Excel</p>
   <h3>Sache toujours combien mettre de côté</h3>
   <p>10 €, sans macro, téléchargement immédiat.</p>
-  <a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf&coupon=BLACKWEEK30" target="_blank" rel="noopener" data-umami-event="Produit Urssaf acheter bas">Télécharger le modèle →</a>
+  <a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf&coupon=BLACKWEEK30" target="_blank" rel="noopener" id="cta-bas" data-umami-event="Produit Urssaf acheter bas">Télécharger le modèle →</a>
 </div>
 
 <p class="note">À lire aussi : <a href="plafond-micro-entreprise.html">Plafond de chiffre d'affaires</a> · <a href="franchise-tva-micro-entreprise.html">Franchise de TVA</a> · <a href="declaration-urssaf-mensuelle-trimestrielle.html">Déclaration mensuelle ou trimestrielle</a></p>
 <p class="legal">Informations générales, non constitutives d'un conseil comptable ou juridique : vérifie toujours les taux en vigueur auprès de l'Urssaf.</p>
 </div>
 </main>
-<script>(function(){var p=document.getElementById("promo");if(p&&new Date()>=new Date("2026-12-01T00:00:00+01:00"))p.remove()})();</script>
+<script>(function(){var on=new Date()<new Date("2026-12-01T00:00:00+01:00"),p=document.getElementById("promo"),n=document.getElementById("cta-normal"),b=document.getElementById("cta-bas");
+if(on){if(b)b.textContent="Black Week -30 % : 7 € →"}else{if(p)p.remove();if(n)n.hidden=false}})();</script>
 
 <footer>
   <div class="footer-inner">
