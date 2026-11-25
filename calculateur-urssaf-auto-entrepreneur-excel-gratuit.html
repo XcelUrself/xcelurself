@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Calculateur Urssaf auto-entrepreneur Excel gratuit</title>
+<meta name="description" content="Calculateur Urssaf gratuit pour auto-entrepreneur : choisis ton activité, saisis ton CA, vois ce qu'il faut mettre de côté. Excel, sans macro."/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<link rel="canonical" href="https://xcelurself.github.io/xcelurself/calculateur-urssaf-auto-entrepreneur-excel-gratuit.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Calculateur Urssaf auto-entrepreneur Excel gratuit"/>
+<meta property="og:description" content="Calculateur Urssaf gratuit pour auto-entrepreneur : choisis ton activité, saisis ton CA, vois ce qu'il faut mettre de côté. Excel, sans macro."/>
+<meta property="og:url" content="https://xcelurself.github.io/xcelurself/calculateur-urssaf-auto-entrepreneur-excel-gratuit.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="XcelUrself"/>
+<meta property="og:image" content="https://xcelurself.github.io/xcelurself/og-xcelurself.png"/>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "C'est vraiment gratuit ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Tu télécharges le fichier directement, sans inscription ni carte bancaire."}}, {"@type": "Question", "name": "Les taux sont-ils à jour ?", "acceptedAnswer": {"@type": "Answer", "text": "Les taux 2026 sont ceux relevés le 09/10/2026, visibles dans la feuille « Taux ». Tu peux les modifier si l'Urssaf les change, le calculateur suit. Vérifie-les toujours sur autoentrepreneur.urssaf.fr."}}, {"@type": "Question", "name": "Ça remplace ma déclaration ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. C'est une estimation pour savoir combien mettre de côté. Ta déclaration se fait toujours sur autoentrepreneur.urssaf.fr."}}, {"@type": "Question", "name": "Quelle différence avec le modèle complet ?", "acceptedAnswer": {"@type": "Answer", "text": "Le calculateur part du chiffre d'affaires que tu lui donnes. Le modèle complet part de tes relevés bancaires : il repère tes encaissements, suit tes échéances et te dit ce qu'il te reste à provisionner."}}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#FAF6F1;--bg2:#F3EDE5;--bg3:#ECE4DA;
+  --ink:#2b2724;--ink2:#404040;--muted:#655d55;
+  --or1:#FE3A7E;--or2:#FE3A7E;--or3:#D92A66;
+  --grad:#FE3A7E;
+  --gradr:#B01C53;
+  --bd:rgba(28,24,21,.1);--bda:rgba(254,58,126,.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;font-weight:400}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:none}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+nav,main,footer{position:relative;z-index:1}
+
+/* NAV (identique à la page d'accueil) */
+nav{position:sticky;top:0;z-index:650;background:rgba(250,248,245,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:1160px;margin:0 auto;padding:.8rem clamp(1.25rem,5vw,4rem)}
+.nav-logo{font-size:1.4rem;font-weight:800;letter-spacing:.02em;color:var(--ink);flex-shrink:0}
+.nav-logo span,.footer-logo span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:1.8rem}
+.nav-links a{font-size:.75rem;font-weight:600;letter-spacing:.04em;color:var(--ink2);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--grad);color:#fff;font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.3rem;border-radius:100px;transition:all .2s;flex-shrink:0;box-shadow:0 3px 12px rgba(254,58,126,.2)}
+.nav-cta:hover{box-shadow:0 6px 20px rgba(254,58,126,.3);transform:translateY(-1px)}
+
+/* ARTICLE */
+.wrap{max-width:760px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) clamp(1.25rem,5vw,2rem) 4.5rem}
+.back{font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--ink)}
+.back:hover{text-decoration:underline;text-underline-offset:3px}
+.eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:.7rem;margin:2rem 0 1rem}
+.eyebrow::before{content:'';width:1.8rem;height:1.5px;background:var(--grad);flex-shrink:0}
+h1{font-family:'Montserrat',sans-serif;font-size:clamp(2.1rem,6.4vw,3.6rem);font-weight:900;line-height:.98;letter-spacing:-.03em;margin-bottom:1.6rem}
+h1 .l1{display:block;color:var(--ink)}
+h1 .l2{display:block;font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding-right:.1em}
+h1 .l3{display:block;color:var(--or1)}
+.lead{font-size:1rem;line-height:1.85;color:var(--ink2);max-width:640px}
+.meta{margin-top:1.2rem;font-size:.7rem;font-weight:600;letter-spacing:.04em;color:var(--muted)}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:700;line-height:1.08;margin:3rem 0 .9rem;color:var(--ink)}
+h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding-right:.08em}
+p{color:var(--ink2);margin-bottom:1rem;line-height:1.85}
+p strong,li strong{color:var(--ink);font-weight:700}
+a.in{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.formule{margin:1.6rem 0;padding:1.3rem 1.5rem;background:rgba(254,58,126,.08);border:1px solid var(--bda);border-left:4px solid var(--or2);border-radius:0 14px 14px 0;font-weight:700;font-size:1.02rem;color:var(--ink);line-height:1.6}
+.tablewrap{overflow-x:auto;margin:1.4rem 0 .8rem;border:1px solid var(--bd);border-radius:14px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--bd);color:var(--ink2)}
+th{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--bg2)}
+td.n,th.n{text-align:right;white-space:nowrap}
+td.n{font-weight:700;color:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+tfoot td{font-weight:800;color:var(--ink);background:var(--bg2);border-bottom:0;border-top:1px solid var(--bd)}
+tfoot td.n{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;border-top:0}
+.note{font-size:.78rem;color:var(--muted);line-height:1.75;margin-top:.6rem}
+.note a{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+ul.err{margin:1rem 0 1.2rem;display:grid;gap:.7rem}
+ul.err li{position:relative;padding:1rem 1.2rem 1rem 3.1rem;background:#fff;border:1px solid var(--bd);border-radius:14px;color:var(--ink2);line-height:1.7;counter-increment:e}
+ul.err{counter-reset:e}
+ul.err li::before{content:counter(e);position:absolute;left:1.1rem;top:.95rem;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--grad);color:#fff;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.box{margin:2.4rem 0 1.5rem;padding:clamp(1.6rem,4vw,2.4rem);background:var(--ink);border-radius:22px;position:relative;overflow:hidden}
+.box::before{content:'';position:absolute;top:-40%;right:-10%;width:60%;height:140%;background:none;pointer-events:none}
+.box>*{position:relative}
+.box .eyebrow{margin-top:0;color:#f6a07a}
+.box h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3.6vw,2.3rem);font-weight:700;line-height:1.05;color:var(--bg);margin-bottom:.8rem}
+.box p{color:rgba(250,248,245,.72);font-size:.9rem;max-width:520px}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;padding:.9rem 1.8rem;transition:all .22s;cursor:pointer;background:var(--grad);color:#fff;box-shadow:0 4px 18px rgba(254,58,126,.3)}
+.btn:hover{background:var(--gradr);box-shadow:0 8px 26px rgba(254,58,126,.4);transform:translateY(-2px)}
+.legal{font-size:.74rem;line-height:1.8;color:var(--muted);margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--bd)}
+
+/* FOOTER (identique à la page d'accueil) */
+footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem}
+.footer-logo{font-size:1.3rem;font-weight:800;color:var(--bg)}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:.68rem;font-weight:600;color:rgba(250,248,245,.32);transition:color .2s}
+.footer-links a:hover{color:rgba(250,248,245,.8)}
+.footer-copy{width:100%;text-align:center;font-size:.62rem;color:rgba(250,248,245,.18);margin-top:.9rem}
+
+@media(max-width:800px){.nav-links{display:none}.footer-inner{flex-direction:column;align-items:center;text-align:center}.footer-links{justify-content:center}}
+@media(max-width:480px){h1 .l3{-webkit-text-stroke:0}.nav-cta{padding:.5rem 1rem}th,td{padding:.7rem .7rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* ===== Palette signature + accessibilité (alignée sur l'accueil) ===== */
+.btn-primary,.nav-cta,.drawer .d-cta,.mbar-main,.tag.fill,.cstep i{color:#1a1714!important}
+.btn-primary:hover,.nav-cta:hover{background:#1a1714!important;color:#fff!important}
+.xu-msg.user{color:#1a1714!important}
+.nav-logo span,.footer-logo span{background:none!important;-webkit-text-fill-color:currentColor!important;color:#FE3A7E!important}
+:focus-visible{outline:3px solid #1a1714;outline-offset:3px;border-radius:4px}
+footer :focus-visible,.cta-final :focus-visible{outline-color:#fff}
+
+.carnets-new,.nav-links a.nav-hl,.nav-links a.nav-hl:hover{color:#1a1714!important}
+.btn,.btn:hover{color:#1a1714!important}
+.btn:hover{background:#1a1714!important;color:#fff!important}
+tfoot td,tfoot .n{color:#1a1714}
+/* ===== Un seul rose (aligné sur l'accueil) ===== */
+.fiq .plus,.cbox.paid li::before{color:var(--or1)}
+.btn-outline:hover,.card-btn:hover{color:#1a1714}
+
+
+@media(max-width:480px){.nav-cta .hide-s{display:none}.nav-cta{display:inline-flex;align-items:center;min-height:44px;padding:0 1.1rem}}
+@media(max-width:700px){nav a,footer a,.back{min-height:44px;display:inline-flex;align-items:center}}
+.hero{display:grid;gap:1.6rem;margin:1.6rem 0 .5rem}
+.hero img{width:100%;height:auto;border-radius:18px;border:1px solid var(--bd)}
+.promo{margin:.2rem 0 1.2rem}
+.promo-tag{font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--or3);margin:0 0 .6rem}
+a.btn-bw{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;max-width:440px;padding:.5rem .5rem .5rem 1.6rem;border-radius:100px;font-size:.95rem;letter-spacing:.02em;text-transform:none;background:#FE3A7E;color:#1a1714!important;box-shadow:0 10px 28px rgba(254,58,126,.42)}
+a.btn-bw .bw-l{font-weight:800}
+a.btn-bw .bw-price{display:inline-flex;align-items:baseline;gap:.5rem;background:#fff;border-radius:100px;padding:.65rem 1.2rem;color:#1a1714}
+a.btn-bw .bw-price s{font-size:.8rem;font-weight:600;color:var(--muted)}
+a.btn-bw .bw-price b{font-size:1.35rem;font-weight:900;color:#1a1714}
+a.btn-bw::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:bwshine 3.2s ease-in-out infinite}
+a.btn-bw:hover{background:#D92A66!important;color:#fff!important;transform:translateY(-2px) scale(1.02)}
+a.btn-bw:hover .bw-price{color:#1a1714}
+.bw-assure{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;margin-top:.8rem;font-size:.74rem;font-weight:600;color:var(--ink2)}
+.bw-assure li::before{content:'✓ ';color:var(--or3);font-weight:800}
+.bw-assure li.bw-win{font-weight:600;color:var(--ink2)}
+.promo~.price{display:none}
+.bw-assure li:last-child{font-weight:800;color:var(--ink)}
+@keyframes bwshine{0%,55%{left:-60%}100%{left:130%}}
+@media(max-width:480px){a.btn-bw{font-size:.88rem;padding-left:1.2rem}a.btn-bw .bw-price{padding:.6rem .9rem}}
+@media(prefers-reduced-motion:reduce){a.btn-bw::after{animation:none;display:none}}
+.price{font-size:.8rem;color:var(--muted);font-weight:600;margin:.8rem 0 0}.price b{font-size:1.4rem;color:var(--ink)}
+ul.ok{display:grid;gap:.7rem;margin:1rem 0 1.2rem}
+ul.ok li{padding:1rem 1.2rem;background:#fff;border:1px solid var(--bd);border-radius:14px;color:var(--ink2);line-height:1.7}
+details{background:#fff;border:1px solid var(--bd);border-radius:14px;margin-bottom:.6rem}
+summary{cursor:pointer;padding:1rem 1.2rem;font-weight:700;color:var(--ink);min-height:44px}
+details p{padding:0 1.2rem;margin-bottom:1rem}
+@media(min-width:800px){.hero{grid-template-columns:1fr 1fr;align-items:center}}
+.hook{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3.6vw,2rem);font-weight:700;font-style:italic;color:var(--ink);line-height:1.2;margin-bottom:.8rem}
+.btn-dl{font-size:.8rem;padding:1rem 2rem}
+.vs{display:grid;gap:1rem;margin:1.2rem 0}
+.vs-c{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:1.2rem 1.4rem}
+.vs-c p{margin-bottom:.4rem}
+.vs-pro{border:2px solid #FE3A7E}
+.vs-k{font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--or3)}
+@media(min-width:700px){.vs{grid-template-columns:1fr 1fr}}
+</style>
+<!-- Mesure d'audience Umami : sans cookie, aucune bannière requise (même site que la page d'accueil). -->
+<script>
+(function(){var id='60f60fb4-a75b-4e22-bbfb-832064c7c8a5';
+var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umami.is/script.js';sc.setAttribute('data-website-id',id);document.head.appendChild(sc);})();
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Xcel<span>Urself</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#competences">Expertise</a></li>
+      <li><a href="index.html#formations">Formations</a></li>
+      <li><a href="index.html#boutique">Mes créations</a></li>
+      <li><a href="index.html#profil">Mon profil</a></li>
+      <li><a href="index.html#avis">Témoignages</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a data-umami-event="Clic Tuto.com" class="nav-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener"><span class="hide-s">Accéder aux </span>formations</a>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+<a class="back" href="index.html">← Retour à XcelUrself</a>
+<p class="eyebrow">Excel gratuit · Micro-entrepreneur</p>
+<h1>
+  <span class="l1">Calculateur Urssaf</span>
+  <span class="l2">pour auto-entrepreneur</span>
+</h1>
+<p class="lead hook">Tu as encaissé 6 000 € ce trimestre. Combien est vraiment à toi ?</p>
+<p class="lead">Choisis ton activité, saisis ton chiffre d'affaires : le calculateur te dit en 10 secondes ce qui part à l'Urssaf, avant que tu le dépenses.</p>
+<p style="margin-top:1.4rem"><a class="btn btn-dl" href="calculateur-provision-urssaf-gratuit.xlsx" download data-umami-event="Calculateur gratuit telecharger haut">Télécharger le calculateur gratuit ↓</a></p>
+<ul class="bw-assure"><li>Gratuit, sans inscription</li><li>Aucune macro, aucune extension</li><li>Taux 2026 inclus</li></ul>
+
+<h2>Ce que tu <em>verras</em></h2>
+<p>Un exemple : une profession libérale non réglementée (BNC) qui encaisse 6 000 € sur le trimestre.</p>
+<div class="tablewrap">
+<table>
+  <tbody>
+    <tr><td>Chiffre d'affaires encaissé</td><td class="n">6 000 €</td></tr>
+    <tr><td>Taux appliqué</td><td class="n">25,8 %</td></tr>
+    <tr><td><strong>À mettre de côté pour l'Urssaf</strong></td><td class="n">1 548 €</td></tr>
+  </tbody>
+  <tfoot><tr><td>Il te reste, avant impôt et frais</td><td class="n">4 452 €</td></tr></tfoot>
+</table>
+</div>
+<p class="note">Taux de cotisations et d'autres contributions de l'activité, relevés le 09/10/2026.</p>
+
+<h2>Le piège de <em>l'argent qui rentre</em></h2>
+<p>Le virement arrive, tu le dépenses, et l'Urssaf te le réclame quelques mois plus tard. Ce calculateur te montre la part qui n'est pas à toi <strong>le jour où tu encaisses</strong>, pas le jour où tu dois payer.</p>
+<p>Les cinq activités sont prévues : vente, services commerciaux, artisanat, profession libérale et Cipav.</p>
+<p style="margin-top:1.2rem"><a class="btn btn-dl" href="calculateur-provision-urssaf-gratuit.xlsx" download data-umami-event="Calculateur gratuit telecharger milieu">Télécharger le calculateur gratuit ↓</a></p>
+
+<h2>Et si tu n'avais même plus à <em>saisir ton CA</em> ?</h2>
+<div class="vs">
+  <div class="vs-c"><p class="vs-k">Version simple · gratuite</p><p>Tu sais combien mettre de côté.</p></div>
+  <div class="vs-c vs-pro"><p class="vs-k">Modèle complet</p><p>Il le calcule à partir de tes relevés bancaires, pour toi.</p><p><a class="in" href="tableau-excel-urssaf-auto-entrepreneur.html" data-umami-event="Gratuit vers produit">Voir le modèle complet →</a></p></div>
+</div>
+
+<h2>Fait par quelqu'un qui <em>l'utilise</em></h2>
+<p>Je suis micro-entrepreneur depuis 2018, en profession libérale, avec une déclaration chaque mois. Je suis aussi formateur Excel : j'ai construit cet outil pour moi, je te le partage.</p>
+
+<h2>Questions <em>fréquentes</em></h2>
+<details><summary>C'est vraiment gratuit ?</summary><p>Oui. Tu télécharges le fichier directement, sans inscription ni carte bancaire.</p></details>
+<details><summary>Les taux sont-ils à jour ?</summary><p>Les taux 2026 sont ceux relevés le 09/10/2026, visibles dans la feuille « Taux ». Tu peux les modifier si l'Urssaf les change, le calculateur suit. Vérifie-les toujours sur autoentrepreneur.urssaf.fr.</p></details>
+<details><summary>Ça remplace ma déclaration ?</summary><p>Non. C'est une estimation pour savoir combien mettre de côté. Ta déclaration se fait toujours sur autoentrepreneur.urssaf.fr.</p></details>
+<details><summary>Quelle différence avec le modèle complet ?</summary><p>Le calculateur part du chiffre d'affaires que tu lui donnes. Le modèle complet part de tes relevés bancaires : il repère tes encaissements, suit tes échéances et te dit ce qu'il te reste à provisionner.</p></details>
+
+<div class="box">
+  <p class="eyebrow">Excel gratuit</p>
+  <h3>Sache ce qui part à l'Urssaf avant de le dépenser</h3>
+  <p>Gratuit, sans inscription, en 10 secondes.</p>
+  <a class="btn btn-dl" href="calculateur-provision-urssaf-gratuit.xlsx" download data-umami-event="Calculateur gratuit telecharger bas">Télécharger le calculateur gratuit ↓</a>
+</div>
+
+<p class="note">À lire aussi : <a href="provision-urssaf.html">Combien mettre de côté pour l'Urssaf</a> · <a href="plafond-micro-entreprise.html">Plafond de chiffre d'affaires</a> · <a href="declaration-urssaf-mensuelle-trimestrielle.html">Déclaration mensuelle ou trimestrielle</a></p>
+<p class="legal">Estimation indicative, non constitutive d'un conseil comptable ou juridique : vérifie toujours les taux en vigueur auprès de l'Urssaf.</p>
+</div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Xcel<span>Urself</span></div>
+    <div class="footer-links">
+      <a data-umami-event="Clic Tuto.com" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Mes Tutos</a>
+      <a href="https://youtube.com/@xcelurself" target="_blank" rel="noopener">YouTube</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#mentions-legales">Mentions légales</a>
+      <a href="index.html#cgv">CGV</a>
+      <a href="index.html#confidentialite">Confidentialité</a>
+    </div>
+    <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur sur les outils Microsoft · Non affilié à Microsoft · Tous droits réservés</p>
+  </div>
+</footer>
+
+
+<button id="totop" type="button" aria-label="Remonter en haut de la page" data-umami-event="Remonter en haut"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+<style>
+#totop{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:var(--fab-b,18px);z-index:850;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#2b2724;color:#fff;border:2px solid #fff;cursor:pointer;box-shadow:0 8px 22px rgba(28,24,21,.28);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s ease,transform .3s cubic-bezier(.23,1,.32,1),bottom .3s cubic-bezier(.23,1,.32,1),visibility 0s linear .3s}
+#totop.show{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+#totop:active{transform:scale(.94)}
+#totop:focus-visible{outline:3px solid #FE3A7E;outline-offset:3px}
+@media (hover:hover) and (pointer:fine){#totop:hover{background:#FE3A7E;color:#1a1714}}
+@media (min-width:801px){#totop{right:24px;bottom:calc(var(--fab-b,18px) + 64px)}}
+@media (prefers-reduced-motion:reduce){#totop{transition:none}}
+</style>
+<script>
+(function(){
+  var b=document.getElementById('totop');if(!b)return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,last=window.scrollY,up=false,idle=null,tick=false;
+  function bar(){
+    var m=document.getElementById('mbar')||document.querySelector('.mbar'),h=0;
+    if(m){var cs=getComputedStyle(m),r=m.getBoundingClientRect();if(cs.display!=='none'&&cs.visibility!=='hidden'&&r.top<innerHeight-2)h=innerHeight-r.top;}
+    document.documentElement.style.setProperty('--fab-b',(Math.round(h)+16)+'px');
+  }
+  function upd(){
+    tick=false;
+    var y=window.scrollY,vh=window.innerHeight,doc=document.documentElement.scrollHeight;
+    if(y>last+6)up=false;else if(y<last-6)up=true;
+    last=y;
+    var far=y>vh*1.2,nearEnd=y+vh>doc-vh*1.4,wide=window.innerWidth>800;
+    b.classList.toggle('show',far&&(wide||up||nearEnd));
+    clearTimeout(idle);
+    if(far&&!wide&&!nearEnd)idle=setTimeout(function(){b.classList.remove('show')},3200);
+    bar();
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});
+  window.addEventListener('resize',upd);
+  b.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    var t=document.querySelector('a,button');if(t&&t!==b)setTimeout(function(){try{t.focus({preventScroll:true});}catch(e){}},reduce?0:600);
+  });
+  upd();
+})();
+</script>
+</body>
+</html>
