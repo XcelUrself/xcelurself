@@ -124,6 +124,15 @@ tfoot td,tfoot .n{color:#1a1714}
 @media(max-width:700px){nav a,footer a,.back{min-height:44px;display:inline-flex;align-items:center}}
 .hero{display:grid;gap:1.6rem;margin:1.6rem 0 .5rem}
 .hero img{width:100%;height:auto;border-radius:18px;border:1px solid var(--bd)}
+.xl{margin:0;border-radius:12px;overflow:hidden;border:1px solid #c9c4bd;background:#fff;box-shadow:0 22px 50px rgba(28,24,21,.18),0 4px 10px rgba(28,24,21,.08)}
+.xl-bar{display:flex;justify-content:space-between;align-items:center;background:#1f6e43;color:#fff;font-size:.7rem;font-weight:600;padding:.45rem .8rem}
+.xl-win{display:flex;gap:.5rem}.xl-win i{width:.55rem;height:.55rem;border:1.5px solid rgba(255,255,255,.8);border-radius:1px}
+.xl-tabs,.xl-sheets{display:flex;gap:1rem;font-size:.66rem;color:#444;background:#f3f2f1;padding:.4rem .8rem;overflow:hidden;white-space:nowrap}
+.xl-tabs .on{color:#1f6e43;font-weight:700;border-bottom:2px solid #1f6e43}
+.xl-sheets{border-top:1px solid #d6d3cf;gap:.3rem;padding:.35rem .6rem}
+.xl-sheets span{padding:.2rem .7rem;border-radius:4px 4px 0 0}
+.xl-sheets .on{background:#fff;color:#1f6e43;font-weight:700;box-shadow:inset 0 -2px #1f6e43}
+.xl img{display:block;border:0;border-radius:0}
 .price{font-size:.8rem;color:var(--muted);font-weight:600;margin:.8rem 0 0}.price b{font-size:1.4rem;color:var(--ink)}
 ul.ok{display:grid;gap:.7rem;margin:1rem 0 1.2rem}
 ul.ok li{padding:1rem 1.2rem;background:#fff;border:1px solid var(--bd);border-radius:14px;color:var(--ink2);line-height:1.7}
@@ -169,7 +178,12 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     <p class="price"><s id="px-old">12 €</s> <b id="px">9,60 €</b> <span id="px-note">· -20 % jusqu'au 13/12</span> · téléchargement immédiat · Excel pour Windows</p>
     <p style="margin-top:1rem"><a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf" target="_blank" rel="noopener" data-umami-event="Produit Urssaf acheter haut">Télécharger le modèle →</a></p>
   </div>
-  <img src="modele-echeancier.webp" width="960" height="720" alt="Échéancier Excel Urssaf : combien mettre de côté avant la prochaine échéance"/>
+  <figure class="xl">
+    <div class="xl-bar" aria-hidden="true"><span class="xl-file">Echeancier-Urssaf.xlsx · Excel</span><span class="xl-win"><i></i><i></i><i></i></span></div>
+    <div class="xl-tabs" aria-hidden="true"><span>Fichier</span><span class="on">Accueil</span><span>Insertion</span><span>Formules</span><span>Données</span><span>Affichage</span></div>
+    <img src="modele-echeancier.webp" width="960" height="720" alt="Échéancier Excel Urssaf : combien mettre de côté avant la prochaine échéance"/>
+    <div class="xl-sheets" aria-hidden="true"><span class="on">Tableau de bord</span><span>Paramètres</span><span>Opérations</span><span>Règles</span></div>
+  </figure>
 </div>
 <p class="meta">Par Joffrey Gros, formateur Excel et micro-entrepreneur depuis 2018</p>
 
