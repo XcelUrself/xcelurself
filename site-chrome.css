@@ -69,7 +69,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .footer-links a{font-size:.78rem;font-weight:600;color:rgba(250,248,245,.72);transition:color .2s}
 .footer-links a:hover{color:#fff}
 .footer-copy{width:100%;text-align:center;font-size:.74rem;line-height:1.5;color:rgba(250,248,245,.62);margin-top:.9rem}
-@media(min-width:801px){footer{padding-right:clamp(5rem,8vw,6rem)}}
+@media(min-width:801px) and (max-width:1400px){footer{padding-right:clamp(5rem,8vw,6rem)}}
 @media(max-width:800px){footer{padding-bottom:5.5rem}}
 @media(max-width:1024px){.nav-links{gap:1.2rem}
 .nav-links a{font-size:.7rem}}
