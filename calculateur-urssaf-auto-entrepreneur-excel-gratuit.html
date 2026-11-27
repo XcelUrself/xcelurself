@@ -159,6 +159,8 @@ details p{padding:0 1.2rem;margin-bottom:1rem}
 .cmp .no{color:var(--muted)}
 .cmp td{font-size:.82rem}
 @media(max-width:480px){.cmp td{font-size:.76rem}.cmp th{letter-spacing:.08em}}
+.ex{margin:1.2rem 0}.ex img{width:100%;aspect-ratio:960/650;object-fit:cover;object-position:top;border-radius:14px;border:1px solid var(--bd)}.ex figcaption{font-size:.8rem;color:var(--ink2);margin-top:.5rem}
+.fort .vs-c{background:#fff}
 .vs{display:grid;gap:1rem;margin:1.2rem 0}
 .vs-c{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:1.2rem 1.4rem}
 .vs-c p{margin-bottom:.4rem}
@@ -240,6 +242,16 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 </table>
 </div>
 <p class="note">Le modèle complet fonctionne sur Excel pour Windows (version de bureau). Sans macro, tes données restent dans ton fichier.</p>
+<h2>Ce qui fait la force du <em>modèle complet</em></h2>
+<figure class="ex"><img src="modele-echeancier-exemple.webp" width="960" height="720" loading="lazy" alt="Tableau de bord du modèle complet, exemple fictif : 1 548 € à mettre de côté avant le 31/12/2026"/><figcaption><strong>Exemple fictif.</strong> Valeurs inventées : voilà ce que le tableau de bord affiche une fois tes opérations saisies.</figcaption></figure>
+<div class="vs fort">
+  <div class="vs-c"><p class="vs-k">Il te donne une date</p><p>La prochaine échéance, sa date limite et ce qu'il te reste à provisionner, pas seulement un pourcentage.</p></div>
+  <div class="vs-c"><p class="vs-k">Il part de tes opérations</p><p>Tu recopies tes opérations bancaires : 14 règles de départ classent tes libellés, tu les modifies ou tu en ajoutes.</p></div>
+  <div class="vs-c"><p class="vs-k">Les taux se lisent seuls</p><p>Lus à l'ouverture par Power Query, avec des taux de secours datés si la connexion échoue.</p></div>
+  <div class="vs-c"><p class="vs-k">Il suit ton rythme</p><p>Mensuel ou trimestriel, versement libératoire et réduction ACRE en option.</p></div>
+  <div class="vs-c"><p class="vs-k">Il surveille tes seuils</p><p>Ton CA de l'année est comparé au plafond micro-entreprise et au seuil de franchise de TVA.</p></div>
+  <div class="vs-c"><p class="vs-k">Sans macro, chez toi</p><p>Aucune macro, et tes données restent dans ton fichier. Fait par un micro-entrepreneur depuis 2018, pour ses propres cotisations.</p></div>
+</div>
 <p style="margin-top:1.2rem"><a class="btn btn-dl" href="tableau-excel-urssaf-auto-entrepreneur.html" data-umami-event="Gratuit vers produit">Voir le modèle complet →</a></p>
 
 <h2>Fait par quelqu'un qui <em>l'utilise</em></h2>

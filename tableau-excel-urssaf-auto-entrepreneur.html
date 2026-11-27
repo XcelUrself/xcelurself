@@ -133,7 +133,13 @@ tfoot td,tfoot .n{color:#1a1714}
 .xl-sheets span{padding:.2rem .7rem;border-radius:4px 4px 0 0}
 .xl-sheets .on{background:#fff;color:#1f6e43;font-weight:700;box-shadow:inset 0 -2px #1f6e43}
 .xl img{display:block;border:0;border-radius:0}
-.xl{margin:1.6rem 0 .8rem}
+.laptop{margin:1.6rem 0 .8rem}
+.lp-screen{position:relative;background:#26231f;border-radius:18px 18px 6px 6px;padding:1.2rem .8rem .8rem;box-shadow:0 22px 50px rgba(28,24,21,.22)}
+.lp-cam{position:absolute;top:.5rem;left:50%;width:.4rem;height:.4rem;margin-left:-.2rem;border-radius:50%;background:#4a4540}
+.lp-screen .xl{margin:0;border-radius:4px;border:0;box-shadow:none}
+.lp-base{height:.9rem;margin:0 -2.2%;background:linear-gradient(#d9d5ce,#bfbab2);border-radius:0 0 14px 14px;position:relative;box-shadow:0 10px 18px rgba(28,24,21,.18)}
+.lp-base::before{content:'';position:absolute;top:0;left:50%;width:18%;height:.3rem;margin-left:-9%;background:#a9a39a;border-radius:0 0 8px 8px}
+@media(max-width:560px){.lp-screen{padding:.9rem .4rem .4rem;border-radius:12px 12px 4px 4px}.lp-base{height:.6rem}}
 .xl-dash{background:#f8f3e6;padding:.9rem 1rem 1rem;color:#1f3d33;font-size:.74rem}
 .xd-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem}
 .xd-msg{font-weight:800;color:#1f5c46;font-size:.86rem;line-height:1.35;display:flex;gap:.5rem;align-items:flex-start}
@@ -208,6 +214,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     <p style="margin-top:1rem"><a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf" target="_blank" rel="noopener" data-umami-event="Produit Urssaf acheter haut">Télécharger le modèle →</a></p>
   </div>
 </div>
+<div class="laptop"><div class="lp-screen"><i class="lp-cam" aria-hidden="true"></i>
 <figure class="xl" id="apercu">
   <div class="xl-bar" aria-hidden="true"><span class="xl-file">Echeancier-Urssaf.xlsx · Excel</span><span class="xl-win"><i></i><i></i><i></i></span></div>
   <div class="xl-tabs" aria-hidden="true"><span>Fichier</span><span class="on">Accueil</span><span>Insertion</span><span>Formules</span><span>Données</span><span>Affichage</span></div>
@@ -246,6 +253,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
   </div>
   <div class="xl-sheets" aria-hidden="true"><span class="on">Tableau de bord</span><span>Paramètres</span><span>Opérations</span><span>Règles</span></div>
 </figure>
+</div><div class="lp-base" aria-hidden="true"></div></div>
 <p class="xd-cap"><strong>Exemple fictif.</strong> Ces valeurs sont inventées : 6 000 € encaissés en novembre 2026, profession libérale non réglementée, déclaration mensuelle, taux 25,80 % → 6 000 € × 25,80 % = 1 548 €. Survole ou touche un numéro pour voir à quoi correspond chaque zone.</p>
 <ol class="xd-leg">
   <li><b>1</b> La réponse en une phrase : ce qu'il te reste à mettre de côté et avant quelle date.</li>
