@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="XcelUrself"/>
 <meta property="og:image" content="https://xcelurself.github.io/xcelurself/og-xcelurself.png"/>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@graph": [{"@type": "Product", "name": "Échéancier Excel Urssaf pour micro-entrepreneur", "description": "Tableau Excel Urssaf pour auto-entrepreneur : saisis tes opérations bancaires, vois ce que tu dois mettre de côté. Excel Windows, sans macro.", "image": "https://xcelurself.github.io/xcelurself/modele-echeancier.webp", "brand": {"@type": "Brand", "name": "XcelUrself"}, "offers": {"@type": "Offer", "price": "9.60", "priceValidUntil": "2026-12-13", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Faut-il activer des macros ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Le classeur est sans macro. Les taux sont lus à la source par Power Query."}}, {"@type": "Question", "name": "Ça marche sur Mac ou sur Google Sheets ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Il est conçu pour Excel pour Windows (version de bureau, Microsoft 365 ou Excel 2016 et plus). Il n'est pas compatible avec Excel pour Mac, Excel en ligne, Excel mobile, Google Sheets ni LibreOffice."}}, {"@type": "Question", "name": "Les taux Urssaf sont-ils à jour ?", "acceptedAnswer": {"@type": "Answer", "text": "Les taux sont relevés via l'API publique mon-entreprise (Urssaf) à la date indiquée dans le fichier, avec des taux de secours. Vérifie-les toujours auprès de l'Urssaf avant toute décision."}}, {"@type": "Question", "name": "Est-ce un livre des recettes ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. C'est un outil de pilotage de ta provision Urssaf à partir de tes opérations bancaires. Il ne remplace pas le registre des recettes que tu dois tenir."}}, {"@type": "Question", "name": "Comment je reçois le fichier ?", "acceptedAnswer": {"@type": "Answer", "text": "Par téléchargement immédiat après l'achat."}}, {"@type": "Question", "name": "Est-ce un conseil comptable ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. C'est une aide au suivi et à l'estimation. Elle ne remplace ni ta déclaration sur autoentrepreneur.urssaf.fr, ni l'avis d'un comptable."}}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Product", "name": "Échéancier Excel Urssaf pour micro-entrepreneur", "description": "Tableau Excel Urssaf pour auto-entrepreneur : saisis tes opérations bancaires, vois ce que tu dois mettre de côté. Excel Windows, sans macro.", "image": "https://xcelurself.github.io/xcelurself/modele-echeancier-exemple.webp", "brand": {"@type": "Brand", "name": "XcelUrself"}, "offers": {"@type": "Offer", "price": "9.60", "priceValidUntil": "2026-12-13", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Faut-il activer des macros ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Le classeur est sans macro. Les taux sont lus à la source par Power Query."}}, {"@type": "Question", "name": "Ça marche sur Mac ou sur Google Sheets ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Il est conçu pour Excel pour Windows (version de bureau, Microsoft 365 ou Excel 2016 et plus). Il n'est pas compatible avec Excel pour Mac, Excel en ligne, Excel mobile, Google Sheets ni LibreOffice."}}, {"@type": "Question", "name": "Les taux Urssaf sont-ils à jour ?", "acceptedAnswer": {"@type": "Answer", "text": "Les taux sont relevés via l'API publique mon-entreprise (Urssaf) à la date indiquée dans le fichier, avec des taux de secours. Vérifie-les toujours auprès de l'Urssaf avant toute décision."}}, {"@type": "Question", "name": "Est-ce un livre des recettes ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. C'est un outil de pilotage de ta provision Urssaf à partir de tes opérations bancaires. Il ne remplace pas le registre des recettes que tu dois tenir."}}, {"@type": "Question", "name": "Comment je reçois le fichier ?", "acceptedAnswer": {"@type": "Answer", "text": "Par téléchargement immédiat après l'achat."}}, {"@type": "Question", "name": "Est-ce un conseil comptable ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. C'est une aide au suivi et à l'estimation. Elle ne remplace ni ta déclaration sur autoentrepreneur.urssaf.fr, ni l'avis d'un comptable."}}]}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
@@ -133,13 +133,42 @@ tfoot td,tfoot .n{color:#1a1714}
 .xl-sheets span{padding:.2rem .7rem;border-radius:4px 4px 0 0}
 .xl-sheets .on{background:#fff;color:#1f6e43;font-weight:700;box-shadow:inset 0 -2px #1f6e43}
 .xl img{display:block;border:0;border-radius:0}
+.xl{margin:1.6rem 0 .8rem}
+.xl-dash{background:#f8f3e6;padding:.9rem 1rem 1rem;color:#1f3d33;font-size:.74rem}
+.xd-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem}
+.xd-msg{font-weight:800;color:#1f5c46;font-size:.86rem;line-height:1.35;display:flex;gap:.5rem;align-items:flex-start}
+.xd-fake{flex-shrink:0;background:#e6a823;color:#1a1714;font-weight:800;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .6rem;border-radius:4px}
+.xd-h{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.5rem;line-height:1.1;margin:.7rem 0 .2rem;color:#1a2e27}
+.xd-s{font-size:.66rem;color:#4b5a53;margin-bottom:.6rem}
+.xd-k{font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#1f5c46;margin:.8rem 0 .3rem}
+.xd-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.35rem}
+.xd-c{position:relative;padding:.45rem .6rem;border-radius:2px;background:#fff;min-width:0}
+.xd-c span{display:block;font-size:.64rem;color:#4b5a53}
+.xd-c b{display:block;font-size:1.05rem;margin-top:.35rem;color:#1a2e27;overflow-wrap:anywhere}
+.xd-c b.sm{font-size:.74rem;font-weight:600;line-height:1.3}
+.xd-c.red{background:#b5503c}.xd-c.grn{background:#1f5c46}
+.xd-c.red span,.xd-c.grn span,.xd-c.red b,.xd-c.grn b{color:#fff}
+.xd-c.red b,.xd-c.grn b{font-size:1.3rem}
+.xd-row.lt .xd-c{background:#d9e8dd}.xd-row.bg .xd-c{background:#ece4d2}
+.mk{position:absolute;top:-.35rem;right:-.25rem;z-index:2;width:1.45rem;height:1.45rem;border-radius:50%;border:2px solid #fff;background:#FE3A7E;color:#1a1714;font:800 .7rem/1 'Montserrat',sans-serif;display:grid;place-items:center;cursor:help;padding:0}
+.xd-msg .mk{position:static;flex-shrink:0}
+.mk:focus-visible{outline:3px solid #1a1714;outline-offset:2px}
+.tip{position:absolute;top:130%;right:0;z-index:5;width:15rem;max-width:70vw;background:#1a1714;color:#fff;font:600 .72rem/1.4 'Montserrat',sans-serif;text-align:left;padding:.6rem .75rem;border-radius:8px;box-shadow:0 8px 22px rgba(0,0,0,.3);opacity:0;visibility:hidden;transition:opacity .15s}
+.xd-msg .tip{left:0;right:auto}
+.mk:hover .tip,.mk:focus .tip{opacity:1;visibility:visible}
+.xd-c:nth-child(4n) .tip{right:0}.xd-c:nth-child(4n+1) .tip{right:auto;left:0}
+.xd-cap{font-size:.8rem;color:var(--ink2);margin:.6rem 0 .8rem}
+.xd-leg{list-style:none;display:grid;gap:.45rem;margin:0 0 1.4rem;padding:0;font-size:.84rem;color:var(--ink2)}
+.xd-leg li{display:flex;gap:.6rem;align-items:flex-start}
+.xd-leg b{flex-shrink:0;width:1.45rem;height:1.45rem;border-radius:50%;background:#FE3A7E;color:#1a1714;font-size:.7rem;display:grid;place-items:center}
+@media(max-width:560px){.xd-row{grid-template-columns:1fr 1fr}.xd-h{font-size:1.2rem}.xd-top{flex-direction:column}.xd-c b{font-size:.95rem}.xd-c.red b,.xd-c.grn b{font-size:1.15rem}}
+@media(prefers-reduced-motion:reduce){.tip{transition:none}}
 .price{font-size:.8rem;color:var(--muted);font-weight:600;margin:.8rem 0 0}.price b{font-size:1.4rem;color:var(--ink)}
 ul.ok{display:grid;gap:.7rem;margin:1rem 0 1.2rem}
 ul.ok li{padding:1rem 1.2rem;background:#fff;border:1px solid var(--bd);border-radius:14px;color:var(--ink2);line-height:1.7}
 details{background:#fff;border:1px solid var(--bd);border-radius:14px;margin-bottom:.6rem}
 summary{cursor:pointer;padding:1rem 1.2rem;font-weight:700;color:var(--ink);min-height:44px}
 details p{padding:0 1.2rem;margin-bottom:1rem}
-@media(min-width:800px){.hero{grid-template-columns:1fr 1fr;align-items:center}}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise (même site que la page d'accueil). -->
 <script>
@@ -178,13 +207,55 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     <p class="price"><s id="px-old">12 €</s> <b id="px">9,60 €</b> <span id="px-note">· -20 % jusqu'au 13/12</span> · téléchargement immédiat · Excel pour Windows</p>
     <p style="margin-top:1rem"><a class="btn" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=produit-urssaf" target="_blank" rel="noopener" data-umami-event="Produit Urssaf acheter haut">Télécharger le modèle →</a></p>
   </div>
-  <figure class="xl">
-    <div class="xl-bar" aria-hidden="true"><span class="xl-file">Echeancier-Urssaf.xlsx · Excel</span><span class="xl-win"><i></i><i></i><i></i></span></div>
-    <div class="xl-tabs" aria-hidden="true"><span>Fichier</span><span class="on">Accueil</span><span>Insertion</span><span>Formules</span><span>Données</span><span>Affichage</span></div>
-    <img src="modele-echeancier.webp" width="960" height="720" alt="Échéancier Excel Urssaf : combien mettre de côté avant la prochaine échéance"/>
-    <div class="xl-sheets" aria-hidden="true"><span class="on">Tableau de bord</span><span>Paramètres</span><span>Opérations</span><span>Règles</span></div>
-  </figure>
 </div>
+<figure class="xl" id="apercu">
+  <div class="xl-bar" aria-hidden="true"><span class="xl-file">Echeancier-Urssaf.xlsx · Excel</span><span class="xl-win"><i></i><i></i><i></i></span></div>
+  <div class="xl-tabs" aria-hidden="true"><span>Fichier</span><span class="on">Accueil</span><span>Insertion</span><span>Formules</span><span>Données</span><span>Affichage</span></div>
+  <div class="xl-dash">
+    <div class="xd-top"><p class="xd-msg"><button type="button" class="mk" aria-describedby="t1">1<span id="t1" role="tooltip" class="tip">La réponse en une phrase : ce qu'il te reste à mettre de côté et avant quelle date.</span></button>Il vous reste 1 548,00 € à mettre de côté avant le 31/12/2026.</p><span class="xd-fake">Exemple fictif</span></div>
+    <h3 class="xd-h">Combien mettre de côté ?</h3>
+    <p class="xd-s">Chiffres calculés par Power Query à partir de vos onglets 1, 2 et 3 · Données &gt; Actualiser tout pour les mettre à jour</p>
+    <p class="xd-k">Prochaine échéance</p>
+    <div class="xd-row">
+      <div class="xd-c red"><span>Reste à provisionner</span><button type="button" class="mk" aria-describedby="t2">2<span id="t2" role="tooltip" class="tip">Ce qu'il te reste à provisionner pour la prochaine échéance.</span></button><b>1 548,00 €</b></div>
+      <div class="xd-c grn"><span>Montant à prévoir</span><button type="button" class="mk" aria-describedby="t3">3<span id="t3" role="tooltip" class="tip">Le montant à prévoir pour l'échéance, et ce qui est déjà couvert.</span></button><b>1 548,00 €</b></div>
+      <div class="xd-c wht"><span>Déjà couvert</span><b>0,00 €</b></div>
+      <div class="xd-c wht"><span>Date limite</span><button type="button" class="mk" aria-describedby="t4">4<span id="t4" role="tooltip" class="tip">La date limite de paiement de la prochaine échéance.</span></button><b>31/12/2026</b></div>
+    </div>
+    <p class="xd-k">Période en cours</p>
+    <div class="xd-row lt">
+      <div class="xd-c"><span>Période</span><button type="button" class="mk" aria-describedby="t5">5<span id="t5" role="tooltip" class="tip">Ce que tu as encaissé sur la période, la provision correspondante et ce qu'il en reste.</span></button><b>Novembre 2026</b></div>
+      <div class="xd-c"><span>CA encaissé</span><b>6 000,00 €</b></div>
+      <div class="xd-c"><span>Provision à constituer</span><b>1 548,00 €</b></div>
+      <div class="xd-c"><span>Reste à provisionner</span><b>1 548,00 €</b></div>
+    </div>
+    <p class="xd-k">Contrôles · de quoi vérifier que tout est à jour</p>
+    <div class="xd-row bg">
+      <div class="xd-c"><span>Taux appliqué</span><button type="button" class="mk" aria-describedby="t6">6<span id="t6" role="tooltip" class="tip">Le taux appliqué, d'où il vient, la dernière opération prise en compte et les opérations non classées.</span></button><b>25,80 %</b></div>
+      <div class="xd-c"><span>Source des taux</span><b class="sm">API mon-entreprise (Urssaf)</b></div>
+      <div class="xd-c"><span>Dernière opération</span><b>15/11/2026</b></div>
+      <div class="xd-c"><span>Opérations non reconnues</span><b>0</b></div>
+    </div>
+    <p class="xd-k">Plafonds · où vous en êtes cette année</p>
+    <div class="xd-row bg">
+      <div class="xd-c"><span>CA encaissé (année civile)</span><button type="button" class="mk" aria-describedby="t7">7<span id="t7" role="tooltip" class="tip">Où tu en es sur l'année : plafond micro-entreprise, seuil de franchise de TVA et marge restante.</span></button><b>31 400,00 €</b></div>
+      <div class="xd-c"><span>Plafond micro-entreprise</span><b>83 600,00 €</b></div>
+      <div class="xd-c"><span>Franchise de TVA (seuil)</span><b>37 500,00 €</b></div>
+      <div class="xd-c"><span>Marge avant la TVA</span><b>6 100,00 €</b></div>
+    </div>
+  </div>
+  <div class="xl-sheets" aria-hidden="true"><span class="on">Tableau de bord</span><span>Paramètres</span><span>Opérations</span><span>Règles</span></div>
+</figure>
+<p class="xd-cap"><strong>Exemple fictif.</strong> Ces valeurs sont inventées : 6 000 € encaissés en novembre 2026, profession libérale non réglementée, déclaration mensuelle, taux 25,80 % → 6 000 € × 25,80 % = 1 548 €. Survole ou touche un numéro pour voir à quoi correspond chaque zone.</p>
+<ol class="xd-leg">
+  <li><b>1</b> La réponse en une phrase : ce qu'il te reste à mettre de côté et avant quelle date.</li>
+  <li><b>2</b> Ce qu'il te reste à provisionner pour la prochaine échéance.</li>
+  <li><b>3</b> Le montant à prévoir pour l'échéance, et ce qui est déjà couvert.</li>
+  <li><b>4</b> La date limite de paiement de la prochaine échéance.</li>
+  <li><b>5</b> Ce que tu as encaissé sur la période, la provision correspondante et ce qu'il en reste.</li>
+  <li><b>6</b> Le taux appliqué, d'où il vient, la dernière opération prise en compte et les opérations non classées.</li>
+  <li><b>7</b> Où tu en es sur l'année : plafond micro-entreprise, seuil de franchise de TVA et marge restante.</li>
+</ol>
 <p class="meta">Par Joffrey Gros, formateur Excel et micro-entrepreneur depuis 2018</p>
 
 <h2>Ce que le tableau <em>calcule</em></h2>
