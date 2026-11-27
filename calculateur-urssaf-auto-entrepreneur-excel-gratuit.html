@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="XcelUrself"/>
 <meta property="og:image" content="https://xcelurself.github.io/xcelurself/og-xcelurself.png"/>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "C'est vraiment gratuit ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Tu indiques ton e-mail et le téléchargement s'affiche juste après, sans carte bancaire."}}, {"@type": "Question", "name": "Les taux sont-ils à jour ?", "acceptedAnswer": {"@type": "Answer", "text": "Les taux 2026 sont ceux relevés le 09/10/2026, visibles dans la feuille « Taux ». Tu peux les modifier si l'Urssaf les change, le calculateur suit. Vérifie-les toujours sur autoentrepreneur.urssaf.fr."}}, {"@type": "Question", "name": "Ça remplace ma déclaration ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. C'est une estimation pour savoir combien mettre de côté. Ta déclaration se fait toujours sur autoentrepreneur.urssaf.fr."}}, {"@type": "Question", "name": "Quelle différence avec le modèle complet ?", "acceptedAnswer": {"@type": "Answer", "text": "Le calculateur part du chiffre d'affaires que tu lui donnes. Le modèle complet part de tes relevés bancaires : il repère tes encaissements, suit tes échéances et te dit ce qu'il te reste à provisionner."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "C'est vraiment gratuit ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Tu indiques ton e-mail et le téléchargement s'affiche juste après, sans carte bancaire."}}, {"@type": "Question", "name": "Les taux sont-ils à jour ?", "acceptedAnswer": {"@type": "Answer", "text": "Les taux 2026 sont ceux relevés le 09/10/2026, visibles dans la feuille « Taux ». Tu peux les modifier si l'Urssaf les change, le calculateur suit. Vérifie-les toujours sur autoentrepreneur.urssaf.fr."}}, {"@type": "Question", "name": "Ça remplace ma déclaration ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. C'est une estimation pour savoir combien mettre de côté. Ta déclaration se fait toujours sur autoentrepreneur.urssaf.fr."}}, {"@type": "Question", "name": "Quelle différence avec le modèle complet ?", "acceptedAnswer": {"@type": "Answer", "text": "Le calculateur part du chiffre d'affaires que tu lui donnes. Le modèle complet part de tes opérations bancaires, que tu recopies : il repère tes encaissements, suit tes échéances et te dit ce qu'il te reste à provisionner."}}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
@@ -151,6 +151,14 @@ details p{padding:0 1.2rem;margin-bottom:1rem}
 @media(min-width:800px){.hero{grid-template-columns:1fr 1fr;align-items:center}}
 .hook{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3.6vw,2rem);font-weight:700;font-style:italic;color:var(--ink);line-height:1.2;margin-bottom:.8rem}
 .btn-dl{font-size:.8rem;padding:1rem 2rem}
+.cmp th,.cmp td{vertical-align:top}
+.cmp th:not(:first-child),.cmp td:not(:first-child){text-align:center;width:28%}
+.cmp .pro{background:rgba(254,58,126,.07)}
+.cmp th.pro{color:var(--or3)}
+.cmp .y{color:var(--or3);font-weight:800}
+.cmp .no{color:var(--muted)}
+.cmp td{font-size:.82rem}
+@media(max-width:480px){.cmp td{font-size:.76rem}.cmp th{letter-spacing:.08em}}
 .vs{display:grid;gap:1rem;margin:1.2rem 0}
 .vs-c{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:1.2rem 1.4rem}
 .vs-c p{margin-bottom:.4rem}
@@ -213,11 +221,26 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 <p>Les cinq activités sont prévues : vente, services commerciaux, artisanat, profession libérale et Cipav.</p>
 <p style="margin-top:1.2rem"><a class="btn btn-dl" href="https://tally.so/r/7XNyE9" target="_blank" rel="noopener" data-umami-event="Calculateur gratuit telecharger milieu">Recevoir le calculateur gratuit →</a></p>
 
-<h2>Et si tu n'avais même plus à <em>saisir ton CA</em> ?</h2>
-<div class="vs">
-  <div class="vs-c"><p class="vs-k">Version simple · gratuite</p><p>Tu sais combien mettre de côté.</p></div>
-  <div class="vs-c vs-pro"><p class="vs-k">Modèle complet</p><p>Il le calcule à partir de tes relevés bancaires, pour toi.</p><p><a class="in" href="tableau-excel-urssaf-auto-entrepreneur.html" data-umami-event="Gratuit vers produit">Voir le modèle complet →</a></p></div>
+<h2>Gratuit ou modèle complet : <em>ce qui change</em></h2>
+<p>Le calculateur répond à une question : combien mettre de côté sur un chiffre d'affaires donné. Le modèle complet suit ton activité période après période.</p>
+<div class="tablewrap">
+<table class="cmp">
+  <thead><tr><th>Ce que tu obtiens</th><th>Calculateur<br/>gratuit</th><th class="pro">Modèle<br/>complet</th></tr></thead>
+  <tbody>
+    <tr><td>Combien mettre de côté sur un CA</td><td class="y">✓</td><td class="y pro">✓</td></tr>
+    <tr><td>Les 5 activités</td><td class="y">✓</td><td class="y pro">✓</td></tr>
+    <tr><td>Ce que tu saisis</td><td>Un chiffre d'affaires</td><td class="pro">Tes opérations bancaires, classées par 14 règles que tu peux modifier</td></tr>
+    <tr><td>Taux Urssaf</td><td>Relevés le 09/10/2026, à modifier toi-même</td><td class="pro">Lus à l'ouverture (internet requis), taux de secours datés sinon</td></tr>
+    <tr><td>Mensuel ou trimestriel</td><td class="no">—</td><td class="y pro">✓ périodes découpées pour toi</td></tr>
+    <tr><td>Prochaine échéance et date limite</td><td class="no">—</td><td class="y pro">✓</td></tr>
+    <tr><td>Déjà couvert et reste à provisionner</td><td class="no">—</td><td class="y pro">✓</td></tr>
+    <tr><td>Versement libératoire et ACRE</td><td class="no">—</td><td class="y pro">✓ en option</td></tr>
+    <tr><td>Plafond micro-entreprise et franchise de TVA</td><td class="no">—</td><td class="y pro">✓ suivis sur l'année</td></tr>
+  </tbody>
+</table>
 </div>
+<p class="note">Le modèle complet fonctionne sur Excel pour Windows (version de bureau). Sans macro, tes données restent dans ton fichier.</p>
+<p style="margin-top:1.2rem"><a class="btn btn-dl" href="tableau-excel-urssaf-auto-entrepreneur.html" data-umami-event="Gratuit vers produit">Voir le modèle complet →</a></p>
 
 <h2>Fait par quelqu'un qui <em>l'utilise</em></h2>
 <p>Je suis micro-entrepreneur depuis 2018, en profession libérale, avec une déclaration chaque mois. Je suis aussi formateur Excel : j'ai construit cet outil pour moi, je te le partage.</p>
@@ -226,7 +249,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 <details><summary>C'est vraiment gratuit ?</summary><p>Oui. Tu indiques ton e-mail et le téléchargement s'affiche juste après, sans carte bancaire.</p></details>
 <details><summary>Les taux sont-ils à jour ?</summary><p>Les taux 2026 sont ceux relevés le 09/10/2026, visibles dans la feuille « Taux ». Tu peux les modifier si l'Urssaf les change, le calculateur suit. Vérifie-les toujours sur autoentrepreneur.urssaf.fr.</p></details>
 <details><summary>Ça remplace ma déclaration ?</summary><p>Non. C'est une estimation pour savoir combien mettre de côté. Ta déclaration se fait toujours sur autoentrepreneur.urssaf.fr.</p></details>
-<details><summary>Quelle différence avec le modèle complet ?</summary><p>Le calculateur part du chiffre d'affaires que tu lui donnes. Le modèle complet part de tes relevés bancaires : il repère tes encaissements, suit tes échéances et te dit ce qu'il te reste à provisionner.</p></details>
+<details><summary>Quelle différence avec le modèle complet ?</summary><p>Le calculateur part du chiffre d'affaires que tu lui donnes. Le modèle complet part de tes opérations bancaires, que tu recopies : il repère tes encaissements, suit tes échéances et te dit ce qu'il te reste à provisionner.</p></details>
 
 <div class="box">
   <p class="eyebrow">Excel gratuit</p>
