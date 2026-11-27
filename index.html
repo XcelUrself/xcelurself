@@ -2048,7 +2048,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     <a class="door r d1" href="#boutique">
       <span class="door-k">Classeurs Excel</span>
       <h3>Un outil prêt à l'emploi pour ton activité</h3>
-      <p>Photographes de mariage, micro-entrepreneurs (Urssaf), carnets d'exercices qui se corrigent seuls. À partir de 10 €.</p>
+      <p>Photographes de mariage, micro-entrepreneurs (Urssaf), carnets d'exercices qui se corrigent seuls. À partir de 9,60 €.</p>
       <span class="door-go">Voir les classeurs →</span>
     </a>
     <a class="door r d2" href="#entreprises">
@@ -2536,8 +2536,8 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
           <p>Tu saisis tes encaissements, Excel te dit ce qu'il reste à provisionner avant la prochaine échéance.</p>
           <ul class="mc-at"><li>Taux Urssaf lus à la source par Power Query</li><li>Mensuel ou trimestriel, 5 activités</li><li>Sans macro, tes données restent dans ton fichier</li></ul>
           <div class="mc-actions">
-            <a class="btn btn-primary" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=accueil" target="_blank" rel="noopener" data-umami-event="Creations echeancier">Voir le modèle · 10 €</a>
-            <span class="mc-sub">Téléchargement immédiat</span>
+            <a class="btn btn-primary" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=accueil" target="_blank" rel="noopener" data-umami-event="Creations echeancier">Voir le modèle · <span id="mc-px">9,60 €</span></a>
+            <span class="mc-sub"><s id="mc-px-old" class="mc-old">12 €</s> <span id="mc-px-note">-20 % jusqu'au 13/12 · </span>Téléchargement immédiat</span>
           </div>
           <a class="mc-free" href="calculateur-urssaf-auto-entrepreneur-excel-gratuit.html" data-umami-event="Lien calculateur gratuit">
             <span class="mc-free-tag">Gratuit</span>
@@ -3140,6 +3140,7 @@ document.querySelectorAll('.tc-text').forEach(function(p){
 
 /* Compte à rebours réel de l'offre −20 % : disparaît seul à l'échéance */
 (function(){
+  if(Date.now()>Date.parse('2026-12-13T23:59:59+01:00')){var x=document.getElementById('mc-px-old'),y=document.getElementById('mc-px-note'),z=document.getElementById('mc-px');if(x)x.remove();if(y)y.remove();if(z)z.textContent='12 €';}
   var c=document.querySelector('.mc-count[data-deadline]'); if(!c) return;
   var end=Date.parse(c.getAttribute('data-deadline'));
   function done(){
