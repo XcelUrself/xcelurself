@@ -3,19 +3,22 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Calculateur Urssaf auto-entrepreneur Excel gratuit</title>
-<meta name="description" content="Calculateur Urssaf gratuit pour auto-entrepreneur : choisis ton activité, saisis ton CA, vois ce qu'il faut mettre de côté. Excel, sans macro."/>
+<title>Calculateur Urssaf auto-entrepreneur gratuit : combien mettre de côté ?</title>
+<meta name="description" content="Calculateur Urssaf gratuit pour auto-entrepreneur : choisis ton activité, saisis ton chiffre d'affaires et vois tout de suite ce qu'il faut mettre de côté. Version Excel offerte, sans macro."/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <link rel="canonical" href="https://xcelurself.github.io/xcelurself/calculateur-urssaf-auto-entrepreneur-excel-gratuit.html"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Calculateur Urssaf auto-entrepreneur Excel gratuit"/>
-<meta property="og:description" content="Calculateur Urssaf gratuit pour auto-entrepreneur : choisis ton activité, saisis ton CA, vois ce qu'il faut mettre de côté. Excel, sans macro."/>
+<meta property="og:title" content="Calculateur Urssaf auto-entrepreneur gratuit : combien mettre de côté ?"/>
+<meta property="og:description" content="Calculateur Urssaf gratuit pour auto-entrepreneur : choisis ton activité, saisis ton chiffre d'affaires et vois tout de suite ce qu'il faut mettre de côté. Version Excel offerte, sans macro."/>
 <meta property="og:url" content="https://xcelurself.github.io/xcelurself/calculateur-urssaf-auto-entrepreneur-excel-gratuit.html"/>
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:site_name" content="XcelUrself"/>
 <meta property="og:image" content="https://xcelurself.github.io/xcelurself/og-xcelurself.png"/>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "C'est vraiment gratuit ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Tu indiques ton e-mail et le téléchargement s'affiche juste après, sans carte bancaire."}}, {"@type": "Question", "name": "Les taux sont-ils à jour ?", "acceptedAnswer": {"@type": "Answer", "text": "Les taux 2026 sont ceux relevés le 09/10/2026, visibles dans la feuille « Taux ». Tu peux les modifier si l'Urssaf les change, le calculateur suit. Vérifie-les toujours sur autoentrepreneur.urssaf.fr."}}, {"@type": "Question", "name": "Ça remplace ma déclaration ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. C'est une estimation pour savoir combien mettre de côté. Ta déclaration se fait toujours sur autoentrepreneur.urssaf.fr."}}, {"@type": "Question", "name": "Quelle différence avec le modèle complet ?", "acceptedAnswer": {"@type": "Answer", "text": "Le calculateur part du chiffre d'affaires que tu lui donnes. Le modèle complet part de tes opérations bancaires, que tu recopies : il repère tes encaissements, suit tes échéances et te dit ce qu'il te reste à provisionner."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculateur Urssaf auto-entrepreneur", "url": "https://xcelurself.github.io/xcelurself/calculateur-urssaf-auto-entrepreneur-excel-gratuit.html", "applicationCategory": "BusinessApplication", "operatingSystem": "Tous (navigateur web)", "description": "Estimation de la somme à mettre de côté pour l'Urssaf selon l'activité et le chiffre d'affaires encaissé. Aide à l'estimation, non affiliée à l'Urssaf.", "inLanguage": "fr", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Joffrey Gros"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
@@ -216,6 +219,18 @@ details p{padding:0 1.2rem;margin-bottom:1rem}
 .vs-pro{border:2px solid #FE3A7E}
 .vs-k{font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--or3)}
 @media(min-width:700px){.vs{grid-template-columns:1fr 1fr}}
+.calc{background:#fff;border:1px solid var(--bd);border-radius:18px;padding:1.3rem 1.4rem;margin:1.6rem 0 1rem}
+.calc h2{margin-top:0}
+.calc-f{display:grid;gap:.4rem}
+.calc-f label{font-size:.78rem;font-weight:700;color:var(--ink)}
+.calc-f select,.calc-f input{width:100%;min-height:48px;font:inherit;font-size:1rem;padding:.6rem .8rem;border:1.5px solid rgba(28,24,21,.25);border-radius:12px;background:#fff;color:var(--ink);margin-bottom:.7rem}
+.calc-f select:focus-visible,.calc-f input:focus-visible{outline:3px solid #FE3A7E;outline-offset:2px}
+.calc-err{color:#B01C53;font-weight:700;font-size:.85rem;margin:0 0 .6rem}
+.calc-out{display:grid;gap:.4rem;margin:.4rem 0}
+.calc-out p{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin:0;padding:.55rem .8rem;background:var(--bg2);border-radius:10px;font-size:.9rem}
+.calc-out b{font-size:1.05rem;white-space:nowrap}
+.calc-out .main{background:#1f5c46;color:#fff}.calc-out .main b{font-size:1.4rem}
+.calc-n{font-size:.76rem;color:var(--ink2);margin:.8rem 0 0}
 </style>
 <!-- Mesure d'audience Umami : sans cookie, aucune bannière requise (même site que la page d'accueil). -->
 <script>
@@ -266,7 +281,24 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 </h1>
 <p class="lead hook">Tu as encaissé 6 000 € ce trimestre. Combien est vraiment à toi ?</p>
 <p class="lead">Choisis ton activité, saisis ton chiffre d'affaires : le calculateur te dit en 10 secondes ce qui part à l'Urssaf, avant que tu le dépenses.</p>
-<p style="margin-top:1.4rem"><a class="btn btn-dl" href="https://tally.so/r/7XNyE9" target="_blank" rel="noopener" data-umami-event="Calculateur gratuit telecharger haut">Recevoir le calculateur gratuit →</a></p>
+<section class="calc" id="calculateur" aria-labelledby="calc-h">
+  <h2 id="calc-h">Calcule ta provision <em>en 10 secondes</em></h2>
+  <form class="calc-f" novalidate onsubmit="return false">
+    <label for="c-act">Mon activité</label>
+    <select id="c-act"><option value="vente">Vente de marchandises, restauration, hébergement</option><option value="services">Prestations de services commerciales ou BIC</option><option value="artisanat">Prestations de services artisanales</option><option value="liberal" selected>Profession libérale non réglementée (BNC)</option><option value="cipav">Profession libérale réglementée (Cipav)</option></select>
+    <label for="c-ca">Chiffre d'affaires encaissé sur la période (€)</label>
+    <input id="c-ca" type="number" inputmode="decimal" min="0" step="0.01" value="6000"/>
+  </form>
+  <p id="c-err" class="calc-err" role="alert" hidden>Saisis un montant positif.</p>
+  <div class="calc-out" aria-live="polite">
+    <p><span>Taux appliqué</span><b id="c-taux">25,8 %</b></p>
+    <p class="main"><span>À mettre de côté pour l'Urssaf</span><b id="c-due">1 548,00 €</b></p>
+    <p><span>Il te reste, avant impôt et frais</span><b id="c-reste">4 452,00 €</b></p>
+  </div>
+  <p class="calc-n">La période, c'est ton mois ou ton trimestre, selon ta déclaration. Taux 2026 (cotisations sociales et autres contributions) relevés le 09/10/2026 : vérifie-les sur autoentrepreneur.urssaf.fr. Ne tient compte ni de l'ACRE, ni du versement libératoire, ni de l'Outre-mer. Aide à l'estimation, non affiliée à l'Urssaf.</p>
+</section>
+<p style="margin-top:1.4rem">Tu préfères le fichier Excel, sans macro ? Il est offert en bonus.</p>
+<p style="margin-top:.6rem"><a class="btn btn-dl" href="https://tally.so/r/7XNyE9" target="_blank" rel="noopener" data-umami-event="Calculateur gratuit telecharger haut">Recevoir le calculateur gratuit →</a></p>
 <ul class="bw-assure"><li>Gratuit, reçu en 10 secondes</li><li>Aucune macro, aucune extension</li><li>Taux 2026 inclus</li></ul>
 
 <h2>Ce que tu <em>verras</em></h2>
@@ -445,6 +477,22 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     var t=document.querySelector('a,button');if(t&&t!==b)setTimeout(function(){try{t.focus({preventScroll:true});}catch(e){}},reduce?0:600);
   });
   upd();
+})();
+</script>
+<script src="calculateur-urssaf.js"></script>
+<script>
+(function(){
+  var act=document.getElementById('c-act'),ca=document.getElementById('c-ca'),err=document.getElementById('c-err');
+  var eur=new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR'}),pct=new Intl.NumberFormat('fr-FR',{maximumFractionDigits:3});
+  function maj(){
+    var v=parseFloat(String(ca.value).replace(',','.')),r=ca.value===''?null:CalcUrssaf.calculer(act.value,v);
+    err.hidden=r!==null||ca.value==='';
+    if(!r){['c-taux','c-due','c-reste'].forEach(function(i){document.getElementById(i).textContent='—';});return;}
+    document.getElementById('c-taux').textContent=pct.format(r.tauxPct)+' %';
+    document.getElementById('c-due').textContent=eur.format(r.aMettreDeCote);
+    document.getElementById('c-reste').textContent=eur.format(r.reste);
+  }
+  act.addEventListener('change',maj);ca.addEventListener('input',maj);
 })();
 </script>
 <script src="site-chrome.js" defer></script>
