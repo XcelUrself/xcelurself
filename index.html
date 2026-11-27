@@ -806,22 +806,32 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .mc-head h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.05}
 .mc-head h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .mc-head p{color:var(--ink2);max-width:22rem;font-size:.9rem}
-.mc-grid{display:grid;grid-template-columns:1.15fr 1fr;grid-template-rows:1fr 1fr;gap:1.2rem}
+.mc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 .mc-card{position:relative;display:flex;background:var(--white);border:1px solid var(--bd);border-radius:24px;overflow:hidden;color:var(--ink);transition:transform .3s,box-shadow .3s}
 .mc-card:hover{transform:translateY(-4px);box-shadow:0 22px 48px rgba(28,24,21,.13)}
 .mc-card img{object-fit:cover;width:100%;height:100%}
-.mc-big{grid-row:1/3;flex-direction:column}
-.mc-big .mc-img{flex:1;min-height:260px;background:var(--bg2)}
-.mc-small .mc-img{flex:0 0 42%;background:var(--bg2)}
+.mc-small{flex-direction:column}
+.mc-small .mc-img{aspect-ratio:16/10;background:var(--bg2);position:relative;overflow:hidden}
+.mc-small .mc-img img{position:absolute;inset:0}
+.mc-small .mc-body{flex:1}
+.mc-small .mc-foot{margin-top:auto;padding-top:.5rem}
+.mc-feat{grid-column:1/-1;border:2px solid var(--ink);box-shadow:0 18px 44px rgba(28,24,21,.10)}
+.mc-feat .mc-img{flex:0 0 46%;background:var(--bg2);display:block;position:relative;overflow:hidden}
+.mc-feat .mc-img img{position:absolute;inset:0;object-fit:contain}
+.mc-feat .mc-body{padding:2.2rem 2.4rem;gap:.7rem}
+.mc-feat .mc-body h3{font-size:2.5rem}
+.mc-feat .mc-body>p:not(.mc-try){font-size:.98rem}
+.mc-feat .mc-at{font-size:.88rem;margin:.2rem 0}
+.mc-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.4rem}
+.mc-try{font-size:.78rem;color:var(--muted)}
 .mc-body{padding:1.5rem 1.7rem 1.6rem;display:flex;flex-direction:column;gap:.45rem;justify-content:center}
 .mc-kicker{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
 .mc-body h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.75rem;line-height:1.1}
-.mc-big .mc-body h3{font-size:2.2rem}
 .mc-body p{font-size:.86rem;color:var(--ink2);line-height:1.5}
 .mc-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:.5rem}
 .mc-price{font-size:.8rem;color:var(--muted)}
 .mc-price b{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--ink);margin-right:.15rem}
-.mc-go{width:2.6rem;height:2.6rem;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;transition:transform .3s}
+.mc-go{width:2.6rem;height:2.6rem;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;line-height:0;flex-shrink:0;transition:transform .3s}
 .mc-card:hover .mc-go{transform:translateX(4px)}
 .mc-promo{position:absolute;top:1rem;left:1rem;z-index:2;font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--grad);border-radius:100px;padding:.3rem .8rem}
 .mc-more{margin-top:1.6rem;text-align:center}
@@ -833,7 +843,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .mc-list a:last-child{border:0}
 .mc-list a:hover{background:var(--bg2)}
 .mc-list span{color:var(--muted);white-space:nowrap}
-@media(max-width:860px){.mc-grid{grid-template-columns:1fr;grid-template-rows:none}.mc-big{grid-row:auto}.mc-small{flex-direction:column}.mc-small .mc-img{flex:none;aspect-ratio:16/10}.mc-big .mc-img{aspect-ratio:4/3;flex:none}.mc-head{align-items:flex-start}}
+@media(max-width:860px){.mc-grid{grid-template-columns:1fr}.mc-feat{flex-direction:column}.mc-feat .mc-img{flex:none;aspect-ratio:4/3}.mc-feat .mc-body{padding:1.5rem 1.4rem 1.6rem}.mc-feat .mc-body h3{font-size:2rem}.mc-actions .btn{width:100%;justify-content:center}.mc-head{align-items:flex-start}}
 .mc-at{display:grid;gap:.15rem;margin:.35rem 0 .2rem;font-size:.78rem;color:var(--ink2)}
 .mc-at li::before{content:'✓';color:var(--ink);font-weight:800;margin-right:.5rem}
 .mc-why{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.2rem;padding:1.6rem 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
@@ -2028,7 +2038,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     <a class="door r d1" href="#boutique">
       <span class="door-k">Classeurs Excel</span>
       <h3>Un outil prêt à l'emploi pour ton activité</h3>
-      <p>Photographes de mariage, micro-entrepreneurs (Urssaf), carnets d'exercices qui se corrigent seuls. À partir de 10 €.</p>
+      <p>Photographes de mariage, micro-entrepreneurs (Urssaf), carnets d'exercices qui se corrigent tout seuls. À partir de 10 €.</p>
       <span class="door-go">Voir les classeurs →</span>
     </a>
     <a class="door r d2" href="#entreprises">
@@ -2508,29 +2518,36 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
       <p>Un exemple rempli pour comprendre, une version vierge pour démarrer. Prix TTC, TVA non applicable (art. 293 B du CGI).</p>
     </div>
     <div class="mc-grid">
-      <a class="mc-card mc-big r" href="https://www.etsy.com/fr/listing/4609638583/pack-excel-photographe-de-mariage-crm?utm_source=xcelurself&utm_medium=site&utm_campaign=accueil" target="_blank" rel="noopener" data-umami-event="Creations pack photographe">
+      <div class="mc-card mc-feat r">
+        <a class="mc-img" href="tableau-excel-urssaf-auto-entrepreneur.html" tabindex="-1" aria-hidden="true" data-umami-event="Creations echeancier image"><img src="modele-echeancier.webp" width="960" height="720" loading="lazy" alt="Échéancier Urssaf : combien mettre de côté ?"/></a>
+        <div class="mc-body">
+          <span class="mc-kicker">Micro-entrepreneurs</span>
+          <h3>Combien mettre de côté pour l'Urssaf ?</h3>
+          <p>Tu saisis tes encaissements, Excel te dit ce qu'il reste à provisionner avant la prochaine échéance.</p>
+          <ul class="mc-at"><li>Calculé par Power Query</li><li>Taux Urssaf lus à la source</li><li>Le reste à provisionner, en clair</li></ul>
+          <div class="mc-actions">
+            <a class="btn btn-primary" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=accueil" target="_blank" rel="noopener" data-umami-event="Creations echeancier">Voir le modèle · 10 €</a>
+            <a class="btn btn-outline" href="calculateur-urssaf-auto-entrepreneur-excel-gratuit.html" data-umami-event="Lien calculateur gratuit">Essayer le calculateur gratuit</a>
+          </div>
+          <p class="mc-try">Pas sûr ? Teste d'abord la version gratuite, rien à acheter.</p>
+        </div>
+      </div>
+      <a class="mc-card mc-small r d1" href="https://www.etsy.com/fr/listing/4609638583/pack-excel-photographe-de-mariage-crm?utm_source=xcelurself&utm_medium=site&utm_campaign=accueil" target="_blank" rel="noopener" data-umami-event="Creations pack photographe">
         <span class="mc-promo">−20 % jusqu'au 2 déc.</span>
         <div class="mc-img"><img src="modele-pack.webp" width="1200" height="900" loading="lazy" alt="Pack de 5 classeurs Excel pour photographe de mariage"/></div>
-        <div class="mc-body"><span class="mc-kicker">Photographes de mariage</span><h3>Gère toute ton activité, de la demande au bilan</h3><p>5 classeurs complémentaires pour tout piloter.</p><ul class="mc-at"><li>Exemples remplis + version vierge</li><li>Un guide PDF par classeur</li><li>Seuils et règles 2026 intégrés</li></ul>
+        <div class="mc-body"><span class="mc-kicker">Photographes de mariage</span><h3>Gère toute ton activité, de la demande au bilan</h3><ul class="mc-at"><li>5 classeurs complémentaires</li><li>Exemples remplis + version vierge</li><li>Un guide PDF par classeur</li></ul>
           <p class="mc-count" data-deadline="2026-12-02T23:59:59+01:00" hidden></p>
-          <div class="mc-foot"><span class="mc-price"><b>39,20 €</b> <s class="mc-old">49 €</s></span><span class="mc-go" aria-hidden="true">→</span></div></div>
-      </a>
-      <a class="mc-card mc-small r d1" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=accueil" target="_blank" rel="noopener" data-umami-event="Creations echeancier">
-        <div class="mc-img"><img src="modele-echeancier.webp" width="960" height="720" loading="lazy" alt="Échéancier Urssaf : combien mettre de côté ?"/></div>
-        <div class="mc-body"><span class="mc-kicker">Micro-entrepreneurs</span><h3>Combien mettre de côté pour l'Urssaf ?</h3><ul class="mc-at"><li>Calculé par Power Query</li><li>Taux Urssaf lus à la source</li><li>Le reste à provisionner, en clair</li></ul>
-          <div class="mc-foot"><span class="mc-price"><b>10 €</b></span><span class="mc-go" aria-hidden="true">→</span></div></div>
+          <div class="mc-foot"><span class="mc-price"><b>39,20 €</b> <s class="mc-old">49 €</s></span><span class="mc-go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div></div>
       </a>
       <a class="mc-card mc-small r d2" href="carnets.html" data-umami-event="Creations carnets">
         <div class="mc-img"><img src="carnet-decouverte.webp" width="596" height="686" loading="lazy" alt="Carnet d'exercices Excel qui se corrige tout seul"/></div>
         <div class="mc-body"><span class="mc-kicker">Apprendre Excel</span><h3>Des exercices qui se corrigent tout seuls</h3><ul class="mc-at"><li>28 contrôles automatiques</li><li>Indices à la demande</li><li>Aucune macro</li></ul>
-          <div class="mc-foot"><span class="mc-price">Essai <b>gratuit</b></span><span class="mc-go" aria-hidden="true">→</span></div></div>
+          <div class="mc-foot"><span class="mc-price"><b>Essai gratuit</b></span><span class="mc-go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div></div>
       </a>
     </div>
     <div class="guides r">
-      <div class="guides-head"><h3>Guides et outils pour micro-entrepreneurs</h3><p>Quatre guides de 4 minutes, un calculateur gratuit et le modèle complet. Mis à jour en novembre 2026.</p></div>
+      <div class="guides-head"><h3>Guides et outils pour micro-entrepreneurs</h3><p>Quatre guides de 4 minutes pour comprendre l'Urssaf, les plafonds et la TVA. Mis à jour en novembre 2026.</p></div>
       <div class="guides-list">
-        <a class="guide" href="calculateur-urssaf-auto-entrepreneur-excel-gratuit.html" data-umami-event="Lien calculateur gratuit"><span class="g-k">Excel gratuit</span><span class="g-t">Calculateur Urssaf pour auto-entrepreneur</span><span class="g-d">Ton activité, ton CA : tu vois en 10 secondes ce qui part à l'Urssaf.</span><span class="g-go">Recevoir le calculateur</span></a>
-        <a class="guide" href="tableau-excel-urssaf-auto-entrepreneur.html" data-umami-event="Lien page produit Urssaf"><span class="g-k">Modèle Excel</span><span class="g-t">Tableau Excel Urssaf : l'échéancier</span><span class="g-d">Il lit tes relevés bancaires et te dit combien mettre de côté avant la prochaine échéance.</span><span class="g-go">Voir le modèle</span></a>
         <a class="guide" href="provision-urssaf.html" data-umami-event="Lien article provision Urssaf"><span class="g-k">Urssaf</span><span class="g-t">Combien mettre de côté pour l'Urssaf ?</span><span class="g-d">La formule, un exemple chiffré, les erreurs à éviter et un tableau Excel.</span><span class="g-go">Lire le guide</span></a>
         <a class="guide" href="plafond-micro-entreprise.html" data-umami-event="Lien article plafond"><span class="g-k">Plafonds</span><span class="g-t">Plafond de chiffre d'affaires 2026 : les seuils</span><span class="g-d">Vente, services, activité mixte, et ce qui se passe en cas de dépassement.</span><span class="g-go">Lire le guide</span></a>
         <a class="guide" href="franchise-tva-micro-entreprise.html" data-umami-event="Lien article franchise TVA"><span class="g-k">TVA</span><span class="g-t">Franchise de TVA : à partir de quand facturer ?</span><span class="g-d">Seuils de base et majorés, dépassement, exemple d'une profession libérale.</span><span class="g-go">Lire le guide</span></a>
