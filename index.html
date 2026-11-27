@@ -822,8 +822,18 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .mc-feat .mc-body h3{font-size:2.5rem}
 .mc-feat .mc-body>p:not(.mc-try){font-size:.98rem}
 .mc-feat .mc-at{font-size:.88rem;margin:.2rem 0}
-.mc-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.4rem}
-.mc-try{font-size:.78rem;color:var(--muted)}
+.mc-feat{scroll-margin-top:90px}
+.mc-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;margin-top:.5rem}
+.mc-actions .btn{min-height:48px}
+.mc-sub{font-size:.8rem;color:var(--muted)}
+.mc-free{display:flex;align-items:center;gap:.9rem;margin-top:1.1rem;padding:.9rem 1.1rem;border:1.5px dashed var(--bda);border-radius:16px;background:var(--bg);color:var(--ink);transition:background-color .2s ease,border-color .2s ease}
+.mc-free:hover{background:var(--white);border-color:var(--ink)}
+.mc-free:hover .mc-go{transform:translateX(4px)}
+.mc-free-tag{flex-shrink:0;font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--grad);color:#1a1714;border-radius:100px;padding:.3rem .75rem}
+.mc-free-t{flex:1;display:grid;gap:.1rem}
+.mc-free-t b{font-size:.9rem;line-height:1.3}
+.mc-free-t small{font-size:.78rem;color:var(--ink2);line-height:1.4}
+.mc-free .mc-go{width:2.2rem;height:2.2rem}
 .mc-body{padding:1.5rem 1.7rem 1.6rem;display:flex;flex-direction:column;gap:.45rem;justify-content:center}
 .mc-kicker{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
 .mc-body h3{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.75rem;line-height:1.1}
@@ -843,7 +853,7 @@ footer{background:var(--ink);padding:2.5rem clamp(1.25rem,5vw,4rem)}
 .mc-list a:last-child{border:0}
 .mc-list a:hover{background:var(--bg2)}
 .mc-list span{color:var(--muted);white-space:nowrap}
-@media(max-width:860px){.mc-grid{grid-template-columns:1fr}.mc-feat{flex-direction:column}.mc-feat .mc-img{flex:none;aspect-ratio:4/3}.mc-feat .mc-body{padding:1.5rem 1.4rem 1.6rem}.mc-feat .mc-body h3{font-size:2rem}.mc-actions .btn{width:100%;justify-content:center}.mc-head{align-items:flex-start}}
+@media(max-width:860px){.mc-grid{grid-template-columns:1fr}.mc-feat{flex-direction:column}.mc-feat .mc-img{flex:none;aspect-ratio:4/3;order:2}.mc-feat .mc-body{padding:1.5rem 1.4rem 1.6rem}.mc-feat .mc-body h3{font-size:2rem}.mc-actions .btn{width:100%;justify-content:center}.mc-sub{width:100%;text-align:center}.mc-free-tag{display:none}.mc-head{align-items:flex-start}}
 .mc-at{display:grid;gap:.15rem;margin:.35rem 0 .2rem;font-size:.78rem;color:var(--ink2)}
 .mc-at li::before{content:'✓';color:var(--ink);font-weight:800;margin-right:.5rem}
 .mc-why{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.2rem;padding:1.6rem 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
@@ -2038,7 +2048,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     <a class="door r d1" href="#boutique">
       <span class="door-k">Classeurs Excel</span>
       <h3>Un outil prêt à l'emploi pour ton activité</h3>
-      <p>Photographes de mariage, micro-entrepreneurs (Urssaf), carnets d'exercices qui se corrigent tout seuls. À partir de 10 €.</p>
+      <p>Photographes de mariage, micro-entrepreneurs (Urssaf), carnets d'exercices qui se corrigent seuls. À partir de 10 €.</p>
       <span class="door-go">Voir les classeurs →</span>
     </a>
     <a class="door r d2" href="#entreprises">
@@ -2518,18 +2528,22 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
       <p>Un exemple rempli pour comprendre, une version vierge pour démarrer. Prix TTC, TVA non applicable (art. 293 B du CGI).</p>
     </div>
     <div class="mc-grid">
-      <div class="mc-card mc-feat r">
+      <div class="mc-card mc-feat r" id="echeancier-urssaf">
         <a class="mc-img" href="tableau-excel-urssaf-auto-entrepreneur.html" tabindex="-1" aria-hidden="true" data-umami-event="Creations echeancier image"><img src="modele-echeancier.webp" width="960" height="720" loading="lazy" alt="Échéancier Urssaf : combien mettre de côté ?"/></a>
         <div class="mc-body">
-          <span class="mc-kicker">Micro-entrepreneurs</span>
+          <span class="mc-kicker">Micro-entrepreneurs · Excel pour Windows</span>
           <h3>Combien mettre de côté pour l'Urssaf ?</h3>
           <p>Tu saisis tes encaissements, Excel te dit ce qu'il reste à provisionner avant la prochaine échéance.</p>
-          <ul class="mc-at"><li>Calculé par Power Query</li><li>Taux Urssaf lus à la source</li><li>Le reste à provisionner, en clair</li></ul>
+          <ul class="mc-at"><li>Taux Urssaf lus à la source par Power Query</li><li>Mensuel ou trimestriel, 5 activités</li><li>Sans macro, tes données restent dans ton fichier</li></ul>
           <div class="mc-actions">
             <a class="btn btn-primary" href="https://www.etsy.com/fr/listing/4591923259/echeancier-o-excel-urssaf-micro?utm_source=xcelurself&utm_medium=site&utm_campaign=accueil" target="_blank" rel="noopener" data-umami-event="Creations echeancier">Voir le modèle · 10 €</a>
-            <a class="btn btn-outline" href="calculateur-urssaf-auto-entrepreneur-excel-gratuit.html" data-umami-event="Lien calculateur gratuit">Essayer le calculateur gratuit</a>
+            <span class="mc-sub">Téléchargement immédiat</span>
           </div>
-          <p class="mc-try">Pas sûr ? Teste d'abord la version gratuite, rien à acheter.</p>
+          <a class="mc-free" href="calculateur-urssaf-auto-entrepreneur-excel-gratuit.html" data-umami-event="Lien calculateur gratuit">
+            <span class="mc-free-tag">Gratuit</span>
+            <span class="mc-free-t"><b>Pas sûr ? Essaie d'abord le calculateur gratuit</b><small>Ton activité, ton CA : ce qui part à l'Urssaf en 10 secondes.</small></span>
+            <span class="mc-go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </a>
         </div>
       </div>
       <a class="mc-card mc-small r d1" href="https://www.etsy.com/fr/listing/4609638583/pack-excel-photographe-de-mariage-crm?utm_source=xcelurself&utm_medium=site&utm_campaign=accueil" target="_blank" rel="noopener" data-umami-event="Creations pack photographe">
