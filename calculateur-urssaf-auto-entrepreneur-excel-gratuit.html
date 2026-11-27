@@ -198,6 +198,17 @@ details p{padding:0 1.2rem;margin-bottom:1rem}
 @media(max-width:560px){.xd-row{grid-template-columns:1fr 1fr}.xd-h{font-size:1.2rem}.xd-top{flex-direction:column}.xd-c b{font-size:.95rem}.xd-c.red b,.xd-c.grn b{font-size:1.15rem}}
 @media(prefers-reduced-motion:reduce){.tip{transition:none}}
 .fort .vs-c{background:#fff}
+#apercu-calc{margin:1rem 0 .6rem;max-width:620px}
+#apercu-calc .xl-tabs,#apercu-calc .xd-s{display:none}
+#apercu-calc .xl-dash{padding:.7rem .8rem .8rem}
+#apercu-calc .xd-h{font-size:1.15rem;margin:.5rem 0 .1rem}
+#apercu-calc .xd-k{margin:.55rem 0 .25rem}
+#apercu-calc .xd-c{padding:.35rem .5rem}
+#apercu-calc .xd-c b{font-size:.92rem;margin-top:.2rem}
+#apercu-calc .xd-c b.sm{font-size:.7rem}
+#apercu-calc .xd-c.red b,#apercu-calc .xd-c.grn b{font-size:1.05rem}
+.xd-det{margin:.4rem 0 1.2rem}.xd-det summary{cursor:pointer;font-weight:700;font-size:.85rem;color:var(--ink)}
+.xd-det .xd-leg{margin-top:.8rem}
 .vs{display:grid;gap:1rem;margin:1.2rem 0}
 .vs-c{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:1.2rem 1.4rem}
 .vs-c p{margin-bottom:.4rem}
@@ -319,6 +330,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
   <div class="xl-sheets" aria-hidden="true"><span class="on">Tableau de bord</span><span>Paramètres</span><span>Opérations</span><span>Règles</span></div>
 </figure>
 <p class="xd-cap"><strong>Exemple fictif.</strong> Ces valeurs sont inventées : 6 000 € encaissés en novembre 2026, profession libérale non réglementée, déclaration mensuelle, taux 25,80 % → 6 000 € × 25,80 % = 1 548 €. Survole ou touche un numéro pour voir à quoi correspond chaque zone.</p>
+<details class="xd-det"><summary>Comprendre chaque zone (légende)</summary>
 <ol class="xd-leg">
   <li><b>1</b> La réponse en une phrase : ce qu'il te reste à mettre de côté et avant quelle date.</li>
   <li><b>2</b> Ce qu'il te reste à provisionner pour la prochaine échéance.</li>
@@ -328,6 +340,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
   <li><b>6</b> Le taux appliqué, d'où il vient, la dernière opération prise en compte et les opérations non classées.</li>
   <li><b>7</b> Où tu en es sur l'année : plafond micro-entreprise, seuil de franchise de TVA et marge restante.</li>
 </ol>
+</details>
 
 <div class="vs fort">
   <div class="vs-c"><p class="vs-k">Il te donne une date</p><p>La prochaine échéance, sa date limite et ce qu'il te reste à provisionner, pas seulement un pourcentage.</p></div>
