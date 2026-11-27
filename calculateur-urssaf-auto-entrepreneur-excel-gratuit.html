@@ -159,7 +159,44 @@ details p{padding:0 1.2rem;margin-bottom:1rem}
 .cmp .no{color:var(--muted)}
 .cmp td{font-size:.82rem}
 @media(max-width:480px){.cmp td{font-size:.76rem}.cmp th{letter-spacing:.08em}}
-.ex{margin:1.2rem 0}.ex img{width:100%;aspect-ratio:960/650;object-fit:cover;object-position:top;border-radius:14px;border:1px solid var(--bd)}.ex figcaption{font-size:.8rem;color:var(--ink2);margin-top:.5rem}
+.xl{margin:1.6rem 0 .8rem;border-radius:12px;overflow:hidden;border:1px solid #c9c4bd;background:#fff;box-shadow:0 22px 50px rgba(28,24,21,.18),0 4px 10px rgba(28,24,21,.08)}
+.xl-bar{display:flex;justify-content:space-between;align-items:center;background:#1f6e43;color:#fff;font-size:.7rem;font-weight:600;padding:.45rem .8rem}
+.xl-win{display:flex;gap:.5rem}.xl-win i{width:.55rem;height:.55rem;border:1.5px solid rgba(255,255,255,.8);border-radius:1px}
+.xl-tabs,.xl-sheets{display:flex;gap:1rem;font-size:.66rem;color:#444;background:#f3f2f1;padding:.4rem .8rem;overflow:hidden;white-space:nowrap}
+.xl-tabs .on{color:#1f6e43;font-weight:700;border-bottom:2px solid #1f6e43}
+.xl-sheets{border-top:1px solid #d6d3cf;gap:.3rem;padding:.35rem .6rem}
+.xl-sheets span{padding:.2rem .7rem;border-radius:4px 4px 0 0}
+.xl-sheets .on{background:#fff;color:#1f6e43;font-weight:700;box-shadow:inset 0 -2px #1f6e43}
+.xl img{display:block;border:0;border-radius:0}
+.xl-dash{background:#f8f3e6;padding:.9rem 1rem 1rem;color:#1f3d33;font-size:.74rem}
+.xd-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem}
+.xd-msg{font-weight:800;color:#1f5c46;font-size:.86rem;line-height:1.35;display:flex;gap:.5rem;align-items:flex-start}
+.xd-fake{flex-shrink:0;background:#e6a823;color:#1a1714;font-weight:800;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .6rem;border-radius:4px}
+.xd-h{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.5rem;line-height:1.1;margin:.7rem 0 .2rem;color:#1a2e27}
+.xd-s{font-size:.66rem;color:#4b5a53;margin-bottom:.6rem}
+.xd-k{font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#1f5c46;margin:.8rem 0 .3rem}
+.xd-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.35rem}
+.xd-c{position:relative;padding:.45rem .6rem;border-radius:2px;background:#fff;min-width:0}
+.xd-c>span{display:block;font-size:.64rem;color:#4b5a53}
+.xd-c b{display:block;font-size:1.05rem;margin-top:.35rem;color:#1a2e27;overflow-wrap:anywhere}
+.xd-c b.sm{font-size:.74rem;font-weight:600;line-height:1.3}
+.xd-c.red{background:#b5503c}.xd-c.grn{background:#1f5c46}
+.xd-c.red>span,.xd-c.grn>span,.xd-c.red b,.xd-c.grn b{color:#fff}
+.xd-c.red b,.xd-c.grn b{font-size:1.3rem}
+.xd-row.lt .xd-c{background:#d9e8dd}.xd-row.bg .xd-c{background:#ece4d2}
+.mk{position:absolute;top:-.35rem;right:-.25rem;z-index:2;width:1.45rem;height:1.45rem;border-radius:50%;border:2px solid #fff;background:#FE3A7E;color:#1a1714;font:800 .7rem/1 'Montserrat',sans-serif;display:grid;place-items:center;cursor:help;padding:0}
+.xd-msg .mk{position:static;flex-shrink:0}
+.mk:focus-visible{outline:3px solid #1a1714;outline-offset:2px}
+.mk .tip{position:absolute;top:130%;right:0;z-index:5;width:15rem;max-width:70vw;background:#1a1714;color:#fff;font:600 .74rem/1.45 'Montserrat',sans-serif;letter-spacing:0;text-transform:none;text-align:left;white-space:normal;padding:.6rem .75rem;border-radius:8px;box-shadow:0 8px 22px rgba(0,0,0,.3);opacity:0;visibility:hidden;transition:opacity .15s}
+.xd-msg .mk .tip{left:0;right:auto}
+.mk:hover .tip,.mk:focus .tip{opacity:1;visibility:visible}
+.xd-c:nth-child(4n) .mk .tip{right:0}.xd-c:nth-child(4n+1) .mk .tip{right:auto;left:0}
+.xd-cap{font-size:.8rem;color:var(--ink2);margin:.6rem 0 .8rem}
+.xd-leg{list-style:none;display:grid;gap:.45rem;margin:0 0 1.4rem;padding:0;font-size:.84rem;color:var(--ink2)}
+.xd-leg li{display:flex;gap:.6rem;align-items:flex-start}
+.xd-leg b{flex-shrink:0;width:1.45rem;height:1.45rem;border-radius:50%;background:#FE3A7E;color:#1a1714;font-size:.7rem;display:grid;place-items:center}
+@media(max-width:560px){.xd-row{grid-template-columns:1fr 1fr}.xd-h{font-size:1.2rem}.xd-top{flex-direction:column}.xd-c b{font-size:.95rem}.xd-c.red b,.xd-c.grn b{font-size:1.15rem}}
+@media(prefers-reduced-motion:reduce){.tip{transition:none}}
 .fort .vs-c{background:#fff}
 .vs{display:grid;gap:1rem;margin:1.2rem 0}
 .vs-c{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:1.2rem 1.4rem}
@@ -243,7 +280,55 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 </div>
 <p class="note">Le modèle complet fonctionne sur Excel pour Windows (version de bureau). Sans macro, tes données restent dans ton fichier.</p>
 <h2>Ce qui fait la force du <em>modèle complet</em></h2>
-<figure class="ex"><img src="modele-echeancier-exemple.webp" width="960" height="720" loading="lazy" alt="Tableau de bord du modèle complet, exemple fictif : 1 548 € à mettre de côté avant le 31/12/2026"/><figcaption><strong>Exemple fictif.</strong> Valeurs inventées : voilà ce que le tableau de bord affiche une fois tes opérations saisies.</figcaption></figure>
+<figure class="xl" id="apercu-calc">
+  <div class="xl-bar" aria-hidden="true"><span class="xl-file">Echeancier-Urssaf.xlsx · Excel</span><span class="xl-win"><i></i><i></i><i></i></span></div>
+  <div class="xl-tabs" aria-hidden="true"><span>Fichier</span><span class="on">Accueil</span><span>Insertion</span><span>Formules</span><span>Données</span><span>Affichage</span></div>
+  <div class="xl-dash">
+    <div class="xd-top"><p class="xd-msg"><button type="button" class="mk" aria-describedby="c1">1<span id="c1" role="tooltip" class="tip">La réponse en une phrase : ce qu'il te reste à mettre de côté et avant quelle date.</span></button>Il vous reste 1 548,00 € à mettre de côté avant le 31/12/2026.</p><span class="xd-fake">Exemple fictif</span></div>
+    <h3 class="xd-h">Combien mettre de côté ?</h3>
+    <p class="xd-s">Chiffres calculés par Power Query à partir de vos onglets 1, 2 et 3 · Données &gt; Actualiser tout pour les mettre à jour</p>
+    <p class="xd-k">Prochaine échéance</p>
+    <div class="xd-row">
+      <div class="xd-c red"><span>Reste à provisionner</span><button type="button" class="mk" aria-describedby="c2">2<span id="c2" role="tooltip" class="tip">Ce qu'il te reste à provisionner pour la prochaine échéance.</span></button><b>1 548,00 €</b></div>
+      <div class="xd-c grn"><span>Montant à prévoir</span><button type="button" class="mk" aria-describedby="c3">3<span id="c3" role="tooltip" class="tip">Le montant à prévoir pour l'échéance, et ce qui est déjà couvert.</span></button><b>1 548,00 €</b></div>
+      <div class="xd-c wht"><span>Déjà couvert</span><b>0,00 €</b></div>
+      <div class="xd-c wht"><span>Date limite</span><button type="button" class="mk" aria-describedby="c4">4<span id="c4" role="tooltip" class="tip">La date limite de paiement de la prochaine échéance.</span></button><b>31/12/2026</b></div>
+    </div>
+    <p class="xd-k">Période en cours</p>
+    <div class="xd-row lt">
+      <div class="xd-c"><span>Période</span><button type="button" class="mk" aria-describedby="c5">5<span id="c5" role="tooltip" class="tip">Ce que tu as encaissé sur la période, la provision correspondante et ce qu'il en reste.</span></button><b>Novembre 2026</b></div>
+      <div class="xd-c"><span>CA encaissé</span><b>6 000,00 €</b></div>
+      <div class="xd-c"><span>Provision à constituer</span><b>1 548,00 €</b></div>
+      <div class="xd-c"><span>Reste à provisionner</span><b>1 548,00 €</b></div>
+    </div>
+    <p class="xd-k">Contrôles · de quoi vérifier que tout est à jour</p>
+    <div class="xd-row bg">
+      <div class="xd-c"><span>Taux appliqué</span><button type="button" class="mk" aria-describedby="c6">6<span id="c6" role="tooltip" class="tip">Le taux appliqué, d'où il vient, la dernière opération prise en compte et les opérations non classées.</span></button><b>25,80 %</b></div>
+      <div class="xd-c"><span>Source des taux</span><b class="sm">API mon-entreprise (Urssaf)</b></div>
+      <div class="xd-c"><span>Dernière opération</span><b>15/11/2026</b></div>
+      <div class="xd-c"><span>Opérations non reconnues</span><b>0</b></div>
+    </div>
+    <p class="xd-k">Plafonds · où vous en êtes cette année</p>
+    <div class="xd-row bg">
+      <div class="xd-c"><span>CA encaissé (année civile)</span><button type="button" class="mk" aria-describedby="c7">7<span id="c7" role="tooltip" class="tip">Où tu en es sur l'année : plafond micro-entreprise, seuil de franchise de TVA et marge restante.</span></button><b>31 400,00 €</b></div>
+      <div class="xd-c"><span>Plafond micro-entreprise</span><b>83 600,00 €</b></div>
+      <div class="xd-c"><span>Franchise de TVA (seuil)</span><b>37 500,00 €</b></div>
+      <div class="xd-c"><span>Marge avant la TVA</span><b>6 100,00 €</b></div>
+    </div>
+  </div>
+  <div class="xl-sheets" aria-hidden="true"><span class="on">Tableau de bord</span><span>Paramètres</span><span>Opérations</span><span>Règles</span></div>
+</figure>
+<p class="xd-cap"><strong>Exemple fictif.</strong> Ces valeurs sont inventées : 6 000 € encaissés en novembre 2026, profession libérale non réglementée, déclaration mensuelle, taux 25,80 % → 6 000 € × 25,80 % = 1 548 €. Survole ou touche un numéro pour voir à quoi correspond chaque zone.</p>
+<ol class="xd-leg">
+  <li><b>1</b> La réponse en une phrase : ce qu'il te reste à mettre de côté et avant quelle date.</li>
+  <li><b>2</b> Ce qu'il te reste à provisionner pour la prochaine échéance.</li>
+  <li><b>3</b> Le montant à prévoir pour l'échéance, et ce qui est déjà couvert.</li>
+  <li><b>4</b> La date limite de paiement de la prochaine échéance.</li>
+  <li><b>5</b> Ce que tu as encaissé sur la période, la provision correspondante et ce qu'il en reste.</li>
+  <li><b>6</b> Le taux appliqué, d'où il vient, la dernière opération prise en compte et les opérations non classées.</li>
+  <li><b>7</b> Où tu en es sur l'année : plafond micro-entreprise, seuil de franchise de TVA et marge restante.</li>
+</ol>
+
 <div class="vs fort">
   <div class="vs-c"><p class="vs-k">Il te donne une date</p><p>La prochaine échéance, sa date limite et ce qu'il te reste à provisionner, pas seulement un pourcentage.</p></div>
   <div class="vs-c"><p class="vs-k">Il part de tes opérations</p><p>Tu recopies tes opérations bancaires : 14 règles de départ classent tes libellés, tu les modifies ou tu en ajoutes.</p></div>
