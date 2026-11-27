@@ -25,8 +25,38 @@ small{color:var(--ink2)}
 footer :focus-visible,.cta-final :focus-visible{outline-color:#fff}
 
 </style>
+<link rel="stylesheet" href="site-chrome.css"/>
 </head>
 <body>
+<div class="drawer" id="drawer" aria-modal="true" role="dialog" aria-label="Navigation">
+  <a href="index.html#competences" onclick="closeD()">Expertise</a>
+  <a href="index.html#formations" onclick="closeD()">Formations</a>
+  <a class="nav-hl-d" href="index.html#boutique" onclick="closeD()">Mes créations · Nouveau</a>
+  <a href="index.html#pedagogie" onclick="closeD()">Pédagogie</a>
+  <a href="index.html#profil" onclick="closeD()">Mon profil</a>
+  <a href="index.html#avis" onclick="closeD()">Témoignages</a>
+  <a href="index.html#entreprises" onclick="closeD()">Entreprises</a>
+  <a href="index.html#faq" onclick="closeD()">FAQ</a>
+  <a data-umami-event="Clic Tuto.com" class="d-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener" onclick="closeD()">Voir les formations</a>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Xcel<span>Urself</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#competences">Expertise</a></li>
+      <li><a href="index.html#formations">Formations</a></li>
+      <li><a class="nav-hl" href="index.html#boutique" data-umami-event="Nav boutique">Mes créations <small>Nouveau</small></a></li>
+      <li><a href="index.html#profil">Mon profil</a></li>
+      <li><a href="index.html#avis">Témoignages</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a data-umami-event="Clic Tuto.com" class="nav-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Accéder aux formations</a>
+    <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 <main>
 <a class="top" href="carnets.html">← Retour aux carnets</a>
 <h1>Conditions de vente des carnets Excel</h1>
@@ -63,6 +93,20 @@ footer :focus-visible,.cta-final :focus-visible{outline-color:#fff}
 <h2>10. Litiges et médiation</h2>
 <p>Les présentes conditions sont soumises au droit français. En cas de litige non résolu directement avec le vendeur, vous pouvez recourir gratuitement au médiateur de la consommation : <strong>[NOM, ADRESSE ET SITE DU MÉDIATEUR À COMPLÉTER]</strong>. Plateforme européenne de règlement en ligne : <a href="https://ec.europa.eu/consumers/odr">ec.europa.eu/consumers/odr</a>.</p>
 </main>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Xcel<span>Urself</span></div>
+    <div class="footer-links">
+      <a data-umami-event="Clic Tuto.com" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Mes Tutos</a>
+      <a href="https://youtube.com/@xcelurself" target="_blank" rel="noopener">YouTube</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#mentions-legales">Mentions légales</a>
+      <a href="index.html#cgv">CGV</a>
+      <a href="index.html#confidentialite">Confidentialité</a>
+    </div>
+    <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur sur les outils Microsoft · Non affilié à Microsoft ni à l'Urssaf · Tous droits réservés</p>
+  </div>
+</footer>
 
 <button id="totop" type="button" aria-label="Remonter en haut de la page" data-umami-event="Remonter en haut"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
 <style>
@@ -103,5 +147,6 @@ footer :focus-visible,.cta-final :focus-visible{outline-color:#fff}
   upd();
 })();
 </script>
+<script src="site-chrome.js" defer></script>
 </body>
 </html>

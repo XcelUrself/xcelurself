@@ -330,15 +330,39 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
 @media(max-width:900px){.quotes{grid-template-columns:1fr}}
 @media(max-width:700px){.quote blockquote{font-size:1.4rem}}
 </style>
+<link rel="stylesheet" href="site-chrome.css"/>
 </head>
 <body>
 <div class="progress" aria-hidden="true"><i></i></div>
-<div class="wrap">
-  <div class="top">
-    <a class="logo" href="index.html">Xcel<span>Urself</span></a>
-    <a class="back" href="index.html#entreprises">Retour au site</a>
-  </div>
+<div class="drawer" id="drawer" aria-modal="true" role="dialog" aria-label="Navigation">
+  <a href="index.html#competences" onclick="closeD()">Expertise</a>
+  <a href="index.html#formations" onclick="closeD()">Formations</a>
+  <a class="nav-hl-d" href="index.html#boutique" onclick="closeD()">Mes créations · Nouveau</a>
+  <a href="index.html#pedagogie" onclick="closeD()">Pédagogie</a>
+  <a href="index.html#profil" onclick="closeD()">Mon profil</a>
+  <a href="index.html#avis" onclick="closeD()">Témoignages</a>
+  <a href="index.html#entreprises" onclick="closeD()">Entreprises</a>
+  <a href="index.html#faq" onclick="closeD()">FAQ</a>
+  <a data-umami-event="Clic Tuto.com" class="d-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener" onclick="closeD()">Voir les formations</a>
 </div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Xcel<span>Urself</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#competences">Expertise</a></li>
+      <li><a href="index.html#formations">Formations</a></li>
+      <li><a class="nav-hl" href="index.html#boutique" data-umami-event="Nav boutique">Mes créations <small>Nouveau</small></a></li>
+      <li><a href="index.html#profil">Mon profil</a></li>
+      <li><a href="index.html#avis">Témoignages</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a data-umami-event="Clic Tuto.com" class="nav-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Accéder aux formations</a>
+    <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
 <header class="wrap hero">
   <div>
@@ -588,9 +612,17 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
 </section>
 
 <footer>
-  <div class="wrap">
-    <p>© 2026 XcelUrself · Joffrey Gros · <a href="index.html">Retour à l'accueil</a> · <a href="index.html#mentions-legales">Mentions légales</a></p>
-    <p>Joffrey Gros, entrepreneur individuel, formateur sur les outils Microsoft. Non affilié à Microsoft.</p>
+  <div class="footer-inner">
+    <div class="footer-logo">Xcel<span>Urself</span></div>
+    <div class="footer-links">
+      <a data-umami-event="Clic Tuto.com" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Mes Tutos</a>
+      <a href="https://youtube.com/@xcelurself" target="_blank" rel="noopener">YouTube</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#mentions-legales">Mentions légales</a>
+      <a href="index.html#cgv">CGV</a>
+      <a href="index.html#confidentialite">Confidentialité</a>
+    </div>
+    <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur sur les outils Microsoft · Non affilié à Microsoft ni à l'Urssaf · Tous droits réservés</p>
   </div>
 </footer>
 
@@ -1055,5 +1087,6 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
   upd();
 })();
 </script>
+<script src="site-chrome.js" defer></script>
 </body>
 </html>

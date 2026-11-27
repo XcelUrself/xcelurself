@@ -129,8 +129,21 @@ tfoot td,tfoot .n{color:#1a1714}
 (function(){var id='60f60fb4-a75b-4e22-bbfb-832064c7c8a5';
 var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umami.is/script.js';sc.setAttribute('data-website-id',id);document.head.appendChild(sc);})();
 </script>
+<link rel="stylesheet" href="site-chrome.css"/>
 </head>
 <body>
+
+<div class="drawer" id="drawer" aria-modal="true" role="dialog" aria-label="Navigation">
+  <a href="index.html#competences" onclick="closeD()">Expertise</a>
+  <a href="index.html#formations" onclick="closeD()">Formations</a>
+  <a class="nav-hl-d" href="index.html#boutique" onclick="closeD()">Mes créations · Nouveau</a>
+  <a href="index.html#pedagogie" onclick="closeD()">Pédagogie</a>
+  <a href="index.html#profil" onclick="closeD()">Mon profil</a>
+  <a href="index.html#avis" onclick="closeD()">Témoignages</a>
+  <a href="index.html#entreprises" onclick="closeD()">Entreprises</a>
+  <a href="index.html#faq" onclick="closeD()">FAQ</a>
+  <a data-umami-event="Clic Tuto.com" class="d-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener" onclick="closeD()">Voir les formations</a>
+</div>
 
 <nav>
   <div class="nav-inner">
@@ -138,12 +151,15 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     <ul class="nav-links">
       <li><a href="index.html#competences">Expertise</a></li>
       <li><a href="index.html#formations">Formations</a></li>
-      <li><a href="index.html#boutique">Mes créations</a></li>
+      <li><a class="nav-hl" href="index.html#boutique" data-umami-event="Nav boutique">Mes créations <small>Nouveau</small></a></li>
       <li><a href="index.html#profil">Mon profil</a></li>
       <li><a href="index.html#avis">Témoignages</a></li>
       <li><a href="index.html#faq">FAQ</a></li>
     </ul>
-    <a data-umami-event="Clic Tuto.com" class="nav-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener"><span class="hide-s">Accéder aux </span>formations</a>
+    <a data-umami-event="Clic Tuto.com" class="nav-cta" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Accéder aux formations</a>
+    <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -272,5 +288,6 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
   upd();
 })();
 </script>
+<script src="site-chrome.js" defer></script>
 </body>
 </html>
