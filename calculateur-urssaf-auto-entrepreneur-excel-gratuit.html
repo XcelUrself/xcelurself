@@ -242,12 +242,13 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 <body>
 
 <div class="drawer" id="drawer" aria-modal="true" role="dialog" aria-label="Navigation">
+  <a href="index.html" onclick="closeD()">Accueil</a>
   <a href="entreprises.html" onclick="closeD()">Entreprises</a>
-  <a href="formations.html" onclick="closeD()">Se former</a>
-  <a href="classeurs.html" onclick="closeD()">Classeurs Excel</a>
+  <a href="formations.html" onclick="closeD()">Formations vidéo</a>
+  <a href="modeles-excel.html" onclick="closeD()">Modèles Excel</a>
   <a href="avis.html" onclick="closeD()">Avis</a>
   <a href="a-propos.html" onclick="closeD()">À propos</a>
-  <a data-umami-event="Nav : pilote (menu)" class="d-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" onclick="closeD()">Demander un pilote gratuit</a>
+  <a data-umami-event="Nav : test gratuit (menu)" class="d-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" onclick="closeD()">Tester mon équipe gratuitement</a>
 </div>
 
 <nav>
@@ -255,12 +256,12 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     <a class="nav-logo" href="index.html">Xcel<span>Urself</span></a>
     <ul class="nav-links">
       <li><a href="entreprises.html" data-umami-event="Nav Entreprises">Entreprises</a></li>
-      <li><a href="formations.html" data-umami-event="Nav Se former">Se former</a></li>
-      <li><a href="classeurs.html" class="is-active" aria-current="page" data-umami-event="Nav Classeurs Excel">Classeurs Excel</a></li>
+      <li><a href="formations.html" data-umami-event="Nav Formations vidéo">Formations vidéo</a></li>
+      <li><a href="modeles-excel.html" class="is-active" aria-current="page" data-umami-event="Nav Modèles Excel">Modèles Excel</a></li>
       <li><a href="avis.html" data-umami-event="Nav Avis">Avis</a></li>
       <li><a href="a-propos.html" data-umami-event="Nav À propos">À propos</a></li>
     </ul>
-    <a data-umami-event="Nav : pilote" class="nav-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener">Demander un pilote gratuit</a>
+    <a data-umami-event="Nav : test gratuit" class="nav-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener">Tester mon équipe gratuitement</a>
     <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -427,12 +428,18 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
       <a href="https://youtube.com/@xcelurself" target="_blank" rel="noopener">YouTube</a>
       <a data-umami-event="Clic fiche Google" href="https://www.google.com/maps?cid=15611318212969512058" target="_blank" rel="noopener">Avis Google</a>
       <a href="index.html#faq">FAQ</a>
-      <a href="index.html#mentions-legales">Mentions légales</a>
-      <a href="index.html#cgv">CGV</a>
-      <a href="index.html#confidentialite">Confidentialité</a>
     </div>
-    <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur sur les outils Microsoft · Non affilié à Microsoft ni à l'Urssaf · Tous droits réservés</p>
   </div>
+  <div class="ft-legal">
+    <button class="ft-toggle" type="button" aria-expanded="false" aria-controls="legal">Mentions légales, CGV et confidentialité <span aria-hidden="true">+</span></button>
+    <div id="legal" hidden><section id="legal-mentions" class="lg"><h3>Mentions légales</h3>
+    <p><strong>Éditeur du site :</strong> Joffrey GROS, Micro Entreprise, immatriculée sous le n° SIRET 83914848300010, dont le siège social est situé à Soultz Haut-Rhin. Responsable de la publication : Joffrey GROS. Contact : mr.grosj@gmail.com · 06 19 65 69 86.</p>
+     <p><strong>Propriété intellectuelle :</strong> L'ensemble des contenus de ce site (textes, vidéos, visuels, marque "XcelUrself") est protégé par le droit d'auteur. Toute reproduction sans autorisation est interdite.</p></section><section id="legal-cgv" class="lg"><h3>Conditions Générales de Vente (résumé)</h3>
+    <p>Les formations vendues sur ce site sont proposées via la plateforme tierce Tuto.com, qui assure la transaction, la facturation et l'accès au contenu. Les CGV applicables à l'achat sont celles de Tuto.com, consultables sur leur site. <strong>Droit de rétractation :</strong> conformément à l'article L221-28 13° du Code de la consommation, le droit de rétractation ne peut être exercé pour les contenus numériques fournis sur support immatériel dont l'exécution a commencé après accord préalable exprès du consommateur et renoncement express à son droit de rétractation. <strong>Accès :</strong> l'accès aux formations est consenti à vie, sous réserve du maintien en activité du formateur et de la plateforme hôte.</p></section><section id="legal-confid" class="lg"><h3>Politique de confidentialité &amp; cookies (RGPD)</h3>
+    <p><strong>Données collectées :</strong> ce site ne dépose aucun cookie. La mesure d'audience est assurée par Umami, un outil sans cookie qui ne collecte aucune donnée personnelle (statistiques agrégées et anonymes). Si vous demandez la fiche mémo, votre adresse e-mail est recueillie via le formulaire Tally et utilisée uniquement pour vous envoyer la fiche ; vous pouvez demander sa suppression à tout moment. Les achats sont gérés par Tuto.com, selon sa propre politique de confidentialité. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'opposition et d'effacement de vos données, exerçable auprès de mr.grosj@gmail.com.</p>
+    <p><strong>Médiation de la consommation :</strong> conformément à l'article L. 616-1 du Code de la consommation, en cas de litige non résolu directement, le consommateur peut recourir gratuitement à un médiateur de la consommation. Coordonnées du médiateur compétent disponibles sur demande.</p></section></div>
+  </div>
+  <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur sur les outils Microsoft · Non affilié à Microsoft ni à l'Urssaf · Tous droits réservés</p>
 </footer>
 
 
@@ -492,5 +499,6 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 })();
 </script>
 <script src="site-chrome.js" defer></script>
+<script src="site-legal.js" defer></script>
 </body>
 </html>

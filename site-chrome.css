@@ -136,8 +136,7 @@ nav{view-transition-name:site-nav}
 /* clic satisfaisant : relief au survol, enfoncement net à l'appui */
 .btn,.nav-cta,.d-cta{transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .18s ease,background-color .2s ease,color .2s ease}
 .btn:hover,.nav-cta:hover{transform:translateY(-2px)}
-.btn-primary:hover{box-shadow:0 14px 28px rgba(254,58,126,.4)}
-.btn:active,.nav-cta:active{transform:translateY(0) scale(.97);box-shadow:0 4px 10px rgba(254,58,126,.25);transition-duration:.06s}
+.btn:active,.nav-cta:active{transform:translateY(0) scale(.97);transition-duration:.06s}
 .btn svg{transition:transform .2s cubic-bezier(.2,.8,.2,1)}
 .btn:hover svg,.path:hover .go svg{transform:translateX(4px)}
 .path .go svg{transition:transform .2s cubic-bezier(.2,.8,.2,1)}
@@ -165,3 +164,46 @@ nav{view-transition-name:site-nav}
   .js .hl,.js .co,.fq[open] div{animation:none!important}
   .js .co,.js .rv{opacity:1!important;transform:none!important;transition:none!important}
 }
+
+/* ---------- Retouches : pas d'ombres, pied de page repliable, carrousel, mouvement plus posé ---------- */
+*,*::before,*::after{box-shadow:none!important;text-shadow:none!important}
+/* pied de page : l'essentiel d'abord, le détail légal sur demande */
+.ft-legal{max-width:900px;margin:1.6rem auto 0;padding:0 1.25rem}
+.ft-toggle{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;min-height:48px;padding:0 1rem;background:transparent;border:1.5px solid rgba(250,248,245,.35);border-radius:10px;color:rgba(250,248,245,.9);font:inherit;font-size:.82rem;font-weight:700;cursor:pointer;transition:border-color .2s,background-color .2s}
+.ft-toggle:hover{border-color:rgba(250,248,245,.7);background:rgba(250,248,245,.06)}
+.ft-toggle span{font-size:1.3rem;font-weight:400}
+.ft-toggle:focus-visible{outline:3px solid #FE3A7E;outline-offset:3px}
+#legal{padding-top:1.2rem}
+#legal .lg{margin-top:1.4rem;font-size:.74rem;line-height:1.8;color:rgba(250,248,245,.6)}
+#legal .lg:first-child{margin-top:0}
+#legal .lg h3{color:rgba(250,248,245,.85);font-size:.88rem;margin-bottom:.5rem;font-family:'Montserrat',sans-serif;font-weight:700}
+#legal .lg p+p{margin-top:.6rem}#legal .lg strong{color:rgba(250,248,245,.85)}
+#legal[hidden]{display:none}
+/* carrousel d'avis : un avis à la fois, fondu entre deux */
+.car-track{display:grid;transition:height .35s ease;align-items:start}
+.car-s{grid-area:1/1;margin:0;display:flex;flex-direction:column;gap:1rem}
+.car.js-car .car-s{opacity:0;visibility:hidden;transition:opacity .5s ease,visibility .5s}
+.car.js-car .car-s.on{opacity:1;visibility:visible}
+.car:not(.js-car) .car-s{grid-area:auto;margin-bottom:1.6rem}
+.car-s blockquote{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.3rem,2.3vw,1.85rem);line-height:1.32;font-weight:600;max-width:52ch}
+.car-s figcaption{display:flex;align-items:center;gap:.9rem;font-size:.86rem}
+.car-s figcaption b{display:block}
+.car-s figcaption span span{color:var(--muted,#655d55)}
+.car-nav{display:flex;align-items:center;gap:.7rem;margin-top:1.4rem}
+.car-b{width:44px;height:44px;border:1.5px solid var(--ink,#2b2724);border-radius:50%;background:transparent;color:var(--ink,#2b2724);cursor:pointer;font-size:1.05rem;transition:background-color .2s,color .2s,transform .15s}
+.car-b:hover{background:var(--ink,#2b2724);color:#fff}.car-b:active{transform:scale(.93)}
+.car-b:focus-visible,.car-d:focus-visible{outline:3px solid #1a1714;outline-offset:3px}
+.car-n{font-size:.8rem;color:var(--muted,#655d55);font-variant-numeric:tabular-nums;min-width:3.4em;text-align:center}
+.car-dots{display:flex;gap:2px;margin-left:.4rem}
+.car-d{position:relative;width:20px;height:44px;border:0;padding:0;background:none;cursor:pointer}
+.car-d::before{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:rgba(43,39,36,.25);transition:background-color .2s,transform .2s}
+.car-d.on::before{background:var(--or1,#FE3A7E);transform:scale(1.35)}
+.dark-car .car-b{border-color:#fff;color:#fff}.dark-car .car-b:hover{background:#fff;color:#1a1714}.dark-car .car-s figcaption span span,.dark-car .car-n{color:#d8d0c7}
+/* ouverture de page : une seule mise en scène, dans l'ordre de lecture */
+.js .hero .c>div>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.js .hero .c>div>*:nth-child(1){animation-delay:.05s}.js .hero .c>div>*:nth-child(2){animation-delay:.12s}.js .hero .c>div>*:nth-child(3){animation-delay:.22s}
+.js .hero .c>div>*:nth-child(4){animation-delay:.3s}.js .hero .c>div>*:nth-child(5){animation-delay:.38s}.js .hero .c>div>*:nth-child(6){animation-delay:.46s}.js .hero .c>div>*:nth-child(7){animation-delay:.54s}
+.js .hero .shot{animation:slidein .9s cubic-bezier(.2,.7,.2,1) .25s both}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes slidein{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.js .hero .c>div>*,.js .hero .shot{animation:none!important}.car.js-car .car-s{transition:none}}

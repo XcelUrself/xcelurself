@@ -4,18 +4,16 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Formation Excel, Power Query et Power BI en entreprise · XcelUrself</title>
-<meta name="description" content="Formations Excel, Power Query, Power BI et PowerPoint pour vos équipes, en présentiel ou à distance, par Joffrey Gros (certifié MOS, TOSA Excel). 25 formations vidéo et classeurs Excel prêts à l'emploi."/>
+<meta name="description" content="Formations Excel, Power Query, Power BI et PowerPoint pour vos équipes, en présentiel ou à distance, par Joffrey Gros (certifié MOS, TOSA Excel). 25 formations vidéo et modèles Excel prêts à l&#x27;emploi."/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
-<link rel="canonical" href="https://xcelurself.github.io/xcelurself/"/>
+<link rel="canonical" href="https://xcelurself.github.io/xcelurself/index.html"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="XcelUrself · Débutant le lundi, efficace le vendredi"/>
-<meta property="og:description" content="Formations Excel, Power Query, Power BI et PowerPoint pour vos équipes. Pilote gratuit jusqu'à 15 stagiaires."/>
-<meta property="og:url" content="https://xcelurself.github.io/xcelurself/"/>
+<meta property="og:description" content="Formations Excel, Power Query, Power BI et PowerPoint pour vos équipes, en présentiel ou à distance, par Joffrey Gros (certifié MOS, TOSA Excel). 25 formations vidéo et modèles Excel prêts à l&#x27;emploi."/>
+<meta property="og:url" content="https://xcelurself.github.io/xcelurself/index.html"/>
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:site_name" content="XcelUrself"/>
 <meta property="og:image" content="https://xcelurself.github.io/xcelurself/og-xcelurself.png"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -131,7 +129,7 @@ h3{font-size:1.3rem;font-weight:700}
 .logos img:hover{filter:none;opacity:1}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.4rem}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.4rem}
-.card{background:#fffdf9;border:1px solid var(--bd);border-radius:16px;padding:1.2rem 1.3rem;display:grid;gap:.35rem;align-content:start}
+.card{background:#fffdf9;border:1px solid var(--bd);border-radius:12px;padding:1.2rem 1.3rem;display:grid;gap:.35rem;align-content:start}
 .card p{font-size:.88rem;color:var(--ink2)}
 .card.sit{font-weight:700;font-size:.98rem}
 .sm{font-size:.84rem;color:var(--muted);margin-top:1rem;max-width:80ch}
@@ -146,11 +144,11 @@ h3{font-size:1.3rem;font-weight:700}
 .blegend i{flex:none;width:24px;height:24px;border-radius:50%;background:var(--or1);color:#1a1714;font:800 .74rem/24px 'Montserrat',sans-serif;text-align:center;font-style:normal}
 .blegend b{display:block;font-size:.86rem}.blegend span{font-size:.8rem;color:var(--ink2);line-height:1.5}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.4rem;counter-reset:s}
-.steps li{background:#fffdf9;border:1px solid var(--bd);border-radius:16px;padding:1.2rem 1.3rem;display:grid;gap:.3rem}
+.steps li{background:#fffdf9;border:1px solid var(--bd);border-radius:12px;padding:1.2rem 1.3rem;display:grid;gap:.3rem}
 .steps li::before{counter-increment:s;content:counter(s);width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.82rem}
 .steps b{font-size:1rem}.steps span{font-size:.86rem;color:var(--ink2)}
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.4rem}
-.quotes blockquote{background:#fffdf9;border:1px solid var(--bd);border-radius:16px;padding:1.2rem 1.3rem;font-size:.92rem;line-height:1.55;display:flex;flex-direction:column;gap:.7rem}
+.quotes blockquote{background:#fffdf9;border:1px solid var(--bd);border-radius:12px;padding:1.2rem 1.3rem;font-size:.92rem;line-height:1.55;display:flex;flex-direction:column;gap:.7rem}
 .quotes cite{font-style:normal;font-size:.78rem;font-weight:700;color:var(--muted);margin-top:auto}
 .cta-band{background:#2b2724;color:#fff;text-align:center;padding:clamp(2.4rem,6vw,4rem) 0}
 .cta-band h2{color:#fff}.cta-band p{color:#d8d0c7}.cta-band .cta-row{justify-content:center}
@@ -172,44 +170,133 @@ body:has(.drawer.open) .mbar{display:none!important}
 @media(max-width:560px){.grid4{grid-template-columns:1fr}.proof{gap:1.4rem}.co{display:none}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
-/* accueil */
-.hero h1{font-size:clamp(2.4rem,5.4vw,4.2rem);line-height:1;margin-bottom:1rem}
+.hero h1{font-size:clamp(2.3rem,5vw,3.9rem);line-height:1.02;margin-bottom:1rem}
 .hero h1 .hl{background:linear-gradient(transparent 62%,rgba(254,58,126,.34) 62%)}
-.sub{font-size:1.1rem;color:var(--ink2);max-width:46ch}
-.paths{padding:clamp(2.4rem,5vw,4rem) 0}
-.paths h2{margin-bottom:1.4rem}
-.path{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.5fr) auto;gap:1rem 2rem;align-items:center;padding:1.5rem 0;border-top:1px solid var(--bd)}
-.path:last-child{border-bottom:1px solid var(--bd)}
-.path h3{font-size:clamp(1.6rem,2.8vw,2.2rem)}
-.path p{color:var(--ink2);font-size:.95rem}
-.path .go{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;font-size:.82rem;white-space:nowrap;border-bottom:2px solid var(--or1);padding-bottom:.15rem}
-.path.pri{background:#2b2724;color:#fff;border:0;border-radius:18px;padding:1.8rem 1.6rem;margin-bottom:.4rem}
-.path.pri p{color:#d8d0c7}.path.pri .go{border-color:var(--or1)}
-.path:hover .go{border-color:var(--ink)}.path.pri:hover .go{border-color:#fff}
-.say{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:1.4rem}
-.say blockquote{border-top:2px solid var(--ink);padding-top:1rem;display:flex;flex-direction:column;gap:.8rem}
-.say q{quotes:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.35rem;line-height:1.25;font-weight:600}
-.say cite{font-style:normal;font-size:.8rem;font-weight:700;color:var(--muted)}
+.hero .c>div{min-width:0}
+.sub{font-size:1.08rem;color:var(--ink2);max-width:46ch}
+.hero .cta-row .btn{min-height:50px;padding:.8rem 1.4rem;font-size:.82rem}
+.doors3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.4rem}
+.door{position:relative;display:flex;flex-direction:column;gap:.45rem;padding:1.4rem 1.4rem 3.4rem;background:#fffdf9;border:1px solid var(--bd);border-radius:12px;transition:background-color .25s,border-color .25s}
+.door small{font-weight:800;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--or3)}
+.door h3{font-size:clamp(1.5rem,2.4vw,1.9rem)}
+.door p{font-size:.92rem;color:var(--ink2)}
+.door .go{position:absolute;left:1.4rem;bottom:1.2rem;display:inline-flex;align-items:center;gap:.5rem;font-weight:800;font-size:.82rem}
+.door .go svg{transition:transform .22s cubic-bezier(.2,.8,.2,1)}
+.door:hover{background:rgba(254,58,126,.07);border-color:rgba(254,58,126,.4)}
+.door:hover .go svg{transform:translateX(5px)}
+.link{font-weight:800;font-size:.85rem;display:inline-block;margin-top:.9rem}
 .about{display:grid;grid-template-columns:auto 1fr;gap:1.6rem 2.4rem;align-items:start;max-width:880px}
 .about img{width:128px;height:128px;border-radius:50%;object-fit:cover}
 .about .ex{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.15;margin:.9rem 0 .4rem;font-weight:700}
-.link{font-weight:800;font-size:.85rem;border-bottom:2px solid var(--or1);display:inline-block;margin-top:.6rem}
 .fq{border-top:1px solid var(--bd);padding:.2rem 0}.fq:last-of-type{border-bottom:1px solid var(--bd)}
 .fq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center;min-height:52px;font-weight:700;padding:.4rem 0}
 .fq summary::-webkit-details-marker{display:none}.fq summary::after{content:"+";font-size:1.4rem;font-weight:400;color:var(--or3)}.fq[open] summary::after{content:"–"}
 .fq div{padding:0 0 1rem;color:var(--ink2);max-width:70ch;font-size:.95rem}.fq a{text-decoration:underline;text-underline-offset:3px}
-@media(max-width:900px){.path{grid-template-columns:1fr;gap:.4rem}.say{grid-template-columns:1fr}.about{grid-template-columns:1fr}}
+.uses{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 2.4rem;margin-top:2rem}
+.uses li{border-top:1px solid var(--ink);padding-top:.7rem}.uses b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;line-height:1.1}.uses span{font-size:.9rem;color:var(--ink2)}
+.tbl{overflow-x:auto;margin-top:1.4rem;border:1px solid var(--bd);border-radius:12px;background:#fffdf9}
+.vs{width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px}
+.vs th,.vs td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--bd);vertical-align:top}
+.vs thead th{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--bg2)}
+.vs thead th.lic{background:#2b2724;color:#fff}
+.vs td.y{font-weight:800;color:var(--green)}.vs td.n{color:var(--muted)}
+.vs td:nth-child(2),.vs td:nth-child(3),.vs th:nth-child(2),.vs th:nth-child(3){width:24%}
+.vs tbody tr:last-child td{border-bottom:0}
+.vs td:nth-child(3){background:rgba(31,92,70,.05)}
+.vs-note{font-size:.84rem;color:var(--muted);margin-top:.9rem;max-width:80ch}
+.tests{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem;margin-top:1.4rem}
+.tests figure{display:flex;flex-direction:column;gap:.9rem;border-top:2px solid var(--ink);padding-top:1rem}
+.tests img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.tests q{quotes:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;line-height:1.3;font-weight:600}
+.tests figcaption{font-size:.82rem;color:var(--muted)}.tests figcaption b{display:block;color:var(--ink);font-size:.9rem}
+.tools4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:1.4rem}
+.tools4 li{border-top:2px solid var(--ink);padding-top:.8rem}.tools4 b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;line-height:1.1}.tools4 span{font-size:.88rem;color:var(--ink2)}
+.tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.4rem 0 1.8rem}
+.tab{font:inherit;font-weight:700;font-size:.85rem;min-height:44px;padding:.5rem 1.1rem;border-radius:100px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background-color .2s,color .2s}
+.tab:hover{background:rgba(254,58,126,.1)}.tab[aria-selected="true"]{background:var(--ink);color:#fff}
+.rate{display:flex;gap:1.6rem;flex-wrap:wrap;margin-bottom:1.6rem;align-items:baseline}.rate b{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.6rem;line-height:1}.rate span{font-size:.88rem;color:var(--muted)}
+.ap{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:2rem 3.5rem;align-items:center}
+.ap img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;background:#f0675a}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem 2rem;margin-top:1.6rem}
+.facts li{border-top:2px solid var(--ink);padding-top:.6rem}.facts b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:2rem;line-height:1}.facts span{font-size:.84rem;color:var(--muted)}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:1.4rem}
+.cols3 li{border-top:2px solid var(--ink);padding-top:.8rem}.cols3 b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.45rem;line-height:1.1;margin-bottom:.3rem}.cols3 span{font-size:.92rem;color:var(--ink2)}
+.created a{display:block;border-top:1px solid var(--bd);padding:1rem 0;transition:background-color .2s,padding .2s}.created a:last-child{border-bottom:1px solid var(--bd)}
+.created a:hover{background:rgba(254,58,126,.06);padding-left:.8rem}
+.created b{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem}.created span{display:block;font-size:.9rem;color:var(--ink2)}
+.quote{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:700;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.1;max-width:22ch}
+@media(max-width:900px){.doors3,.tools4,.cols3,.uses,.ap{grid-template-columns:1fr}.about{grid-template-columns:1fr}.ap img{max-width:280px}.tools4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.tools4,.facts{grid-template-columns:1fr}}
+
+.hero h1{font-size:clamp(2.3rem,5vw,3.9rem);line-height:1.02;margin-bottom:1rem}
+.hero h1 .hl{background:linear-gradient(transparent 62%,rgba(254,58,126,.34) 62%)}
+.hero .c>div{min-width:0}
+.sub{font-size:1.08rem;color:var(--ink2);max-width:46ch}
+.hero .cta-row .btn{min-height:50px;padding:.8rem 1.4rem;font-size:.82rem}
+.doors3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.4rem}
+.door{position:relative;display:flex;flex-direction:column;gap:.45rem;padding:1.4rem 1.4rem 3.4rem;background:#fffdf9;border:1px solid var(--bd);border-radius:12px;transition:background-color .25s,border-color .25s}
+.door small{font-weight:800;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--or3)}
+.door h3{font-size:clamp(1.5rem,2.4vw,1.9rem)}
+.door p{font-size:.92rem;color:var(--ink2)}
+.door .go{position:absolute;left:1.4rem;bottom:1.2rem;display:inline-flex;align-items:center;gap:.5rem;font-weight:800;font-size:.82rem}
+.door .go svg{transition:transform .22s cubic-bezier(.2,.8,.2,1)}
+.door:hover{background:rgba(254,58,126,.07);border-color:rgba(254,58,126,.4)}
+.door:hover .go svg{transform:translateX(5px)}
+.link{font-weight:800;font-size:.85rem;display:inline-block;margin-top:.9rem}
+.about{display:grid;grid-template-columns:auto 1fr;gap:1.6rem 2.4rem;align-items:start;max-width:880px}
+.about img{width:128px;height:128px;border-radius:50%;object-fit:cover}
+.about .ex{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.15;margin:.9rem 0 .4rem;font-weight:700}
+.fq{border-top:1px solid var(--bd);padding:.2rem 0}.fq:last-of-type{border-bottom:1px solid var(--bd)}
+.fq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center;min-height:52px;font-weight:700;padding:.4rem 0}
+.fq summary::-webkit-details-marker{display:none}.fq summary::after{content:"+";font-size:1.4rem;font-weight:400;color:var(--or3)}.fq[open] summary::after{content:"–"}
+.fq div{padding:0 0 1rem;color:var(--ink2);max-width:70ch;font-size:.95rem}.fq a{text-decoration:underline;text-underline-offset:3px}
+.uses{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 2.4rem;margin-top:2rem}
+.uses li{border-top:1px solid var(--ink);padding-top:.7rem}.uses b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;line-height:1.1}.uses span{font-size:.9rem;color:var(--ink2)}
+.tbl{overflow-x:auto;margin-top:1.4rem;border:1px solid var(--bd);border-radius:12px;background:#fffdf9}
+.vs{width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px}
+.vs th,.vs td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--bd);vertical-align:top}
+.vs thead th{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--bg2)}
+.vs thead th.lic{background:#2b2724;color:#fff}
+.vs td.y{font-weight:800;color:var(--green)}.vs td.n{color:var(--muted)}
+.vs td:nth-child(2),.vs td:nth-child(3),.vs th:nth-child(2),.vs th:nth-child(3){width:24%}
+.vs tbody tr:last-child td{border-bottom:0}
+.vs td:nth-child(3){background:rgba(31,92,70,.05)}
+.vs-note{font-size:.84rem;color:var(--muted);margin-top:.9rem;max-width:80ch}
+.tests{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem;margin-top:1.4rem}
+.tests figure{display:flex;flex-direction:column;gap:.9rem;border-top:2px solid var(--ink);padding-top:1rem}
+.tests img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.tests q{quotes:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;line-height:1.3;font-weight:600}
+.tests figcaption{font-size:.82rem;color:var(--muted)}.tests figcaption b{display:block;color:var(--ink);font-size:.9rem}
+.tools4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:1.4rem}
+.tools4 li{border-top:2px solid var(--ink);padding-top:.8rem}.tools4 b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;line-height:1.1}.tools4 span{font-size:.88rem;color:var(--ink2)}
+.tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.4rem 0 1.8rem}
+.tab{font:inherit;font-weight:700;font-size:.85rem;min-height:44px;padding:.5rem 1.1rem;border-radius:100px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background-color .2s,color .2s}
+.tab:hover{background:rgba(254,58,126,.1)}.tab[aria-selected="true"]{background:var(--ink);color:#fff}
+.rate{display:flex;gap:1.6rem;flex-wrap:wrap;margin-bottom:1.6rem;align-items:baseline}.rate b{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.6rem;line-height:1}.rate span{font-size:.88rem;color:var(--muted)}
+.ap{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:2rem 3.5rem;align-items:center}
+.ap img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;background:#f0675a}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem 2rem;margin-top:1.6rem}
+.facts li{border-top:2px solid var(--ink);padding-top:.6rem}.facts b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:2rem;line-height:1}.facts span{font-size:.84rem;color:var(--muted)}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:1.4rem}
+.cols3 li{border-top:2px solid var(--ink);padding-top:.8rem}.cols3 b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.45rem;line-height:1.1;margin-bottom:.3rem}.cols3 span{font-size:.92rem;color:var(--ink2)}
+.created a{display:block;border-top:1px solid var(--bd);padding:1rem 0;transition:background-color .2s,padding .2s}.created a:last-child{border-bottom:1px solid var(--bd)}
+.created a:hover{background:rgba(254,58,126,.06);padding-left:.8rem}
+.created b{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem}.created span{display:block;font-size:.9rem;color:var(--ink2)}
+.quote{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:700;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.1;max-width:22ch}
+@media(max-width:900px){.doors3,.tools4,.cols3,.uses,.ap{grid-template-columns:1fr}.about{grid-template-columns:1fr}.ap img{max-width:280px}.tools4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.tools4,.facts{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="site-chrome.css"/>
 </head>
 <body>
 <div class="drawer" id="drawer" aria-modal="true" role="dialog" aria-label="Navigation">
+  <a href="index.html" onclick="closeD()">Accueil</a>
   <a href="entreprises.html" onclick="closeD()">Entreprises</a>
-  <a href="formations.html" onclick="closeD()">Se former</a>
-  <a href="classeurs.html" onclick="closeD()">Classeurs Excel</a>
+  <a href="formations.html" onclick="closeD()">Formations vidéo</a>
+  <a href="modeles-excel.html" onclick="closeD()">Modèles Excel</a>
   <a href="avis.html" onclick="closeD()">Avis</a>
   <a href="a-propos.html" onclick="closeD()">À propos</a>
-  <a data-umami-event="Nav : pilote (menu)" class="d-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" onclick="closeD()">Demander un pilote gratuit</a>
+  <a data-umami-event="Nav : test gratuit (menu)" class="d-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" onclick="closeD()">Tester mon équipe gratuitement</a>
 </div>
 
 <nav>
@@ -217,12 +304,12 @@ body:has(.drawer.open) .mbar{display:none!important}
     <a class="nav-logo" href="index.html">Xcel<span>Urself</span></a>
     <ul class="nav-links">
       <li><a href="entreprises.html" data-umami-event="Nav Entreprises">Entreprises</a></li>
-      <li><a href="formations.html" data-umami-event="Nav Se former">Se former</a></li>
-      <li><a href="classeurs.html" data-umami-event="Nav Classeurs Excel">Classeurs Excel</a></li>
+      <li><a href="formations.html" data-umami-event="Nav Formations vidéo">Formations vidéo</a></li>
+      <li><a href="modeles-excel.html" data-umami-event="Nav Modèles Excel">Modèles Excel</a></li>
       <li><a href="avis.html" data-umami-event="Nav Avis">Avis</a></li>
       <li><a href="a-propos.html" data-umami-event="Nav À propos">À propos</a></li>
     </ul>
-    <a data-umami-event="Nav : pilote" class="nav-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener">Demander un pilote gratuit</a>
+    <a data-umami-event="Nav : test gratuit" class="nav-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener">Tester mon équipe gratuitement</a>
     <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -235,13 +322,11 @@ body:has(.drawer.open) .mbar{display:none!important}
     <div>
       <p class="eyebrow">Formation en entreprise</p>
       <h1>Débutant le lundi, <span class="hl">efficace le vendredi.</span></h1>
+      
       <p class="sub">Formations Excel, Power Query, Power BI et PowerPoint pour vos équipes, en présentiel ou à distance. Du débutant à l'avancé, sur vos propres fichiers.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" data-umami-event="Accueil : hero pilote">Demander un pilote gratuit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        <a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : hero rdv">Réserver un échange de 20 min</a>
-      </div>
-      <p class="micro">Pilote gratuit jusqu'à 15 stagiaires · sans engagement · réponse sous 48 h ouvrées</p>
-      <div class="proof"><div><b data-count="2000" data-prefix="+" aria-label="plus de 2 000">+2&nbsp;000</b><span>professionnels formés en direct</span></div><div><b>4,9&nbsp;/&nbsp;5</b><span>formations en direct</span></div><div><b>915&nbsp;/&nbsp;1000</b><span>TOSA Excel</span></div></div>
+      <div class="cta-row"><a class="btn btn-primary" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" data-umami-event="Accueil : hero test">Tester mon équipe gratuitement <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : hero rdv">Réserver un échange de 20 min</a></div>
+      <p class="micro">Test de positionnement Excel · gratuit jusqu'à 15 stagiaires · sans engagement · réponse sous 48 h ouvrées</p>
+      <div class="proof"><div><b data-count="2000" data-prefix="+" aria-label="plus de 2 000">+2&nbsp;000</b><span>professionnels formés en direct</span></div><div><b data-count="4.9" data-dec="1" data-suffix="&nbsp;/&nbsp;5" aria-label="4,9 sur 5">4,9&nbsp;/&nbsp;5</b><span>formations en direct</span></div><div><b data-count="915" data-suffix="&nbsp;/&nbsp;1000" aria-label="915 sur 1000">915&nbsp;/&nbsp;1000</b><span>TOSA Excel</span></div></div>
     </div>
     <figure class="shot">
       <div class="shot-img"><img src="img/tableau-de-bord-excel.webp" width="1160" height="1008" alt="Capture d'écran d'Excel : tableau de bord formateur « Ma promo en un coup d'œil », avec répartition par niveau, domaines de compétences et notions à travailler"/>
@@ -252,16 +337,14 @@ body:has(.drawer.open) .mbar{display:none!important}
 </section>
 <div class="logos-wrap"><div class="c"><p class="logos-lab">Ils m'ont fait confiance</p><ul class="logos"><li><img src="logos/leyton.svg" alt="Leyton" width="150" height="44" loading="lazy"/></li><li><img src="logos/luxembourg-stock-exchange.png" alt="Luxembourg Stock Exchange" width="150" height="44" loading="lazy"/></li><li><img src="logos/groupe-studi.svg" alt="Groupe STUDI" width="150" height="44" loading="lazy"/></li><li><img src="logos/alpro-danone.webp" alt="Alpro-Danone" width="150" height="44" loading="lazy"/></li><li><img src="logos/deutsche-bank.svg" alt="Deutsche Bank" width="150" height="44" loading="lazy"/></li><li><img src="logos/croix-rouge.svg" alt="La Croix-Rouge" width="150" height="44" loading="lazy"/></li></ul></div></div>
 
-<section class="paths"><div class="c">
+<section class="band"><div class="c">
   <h2>Par où commencer ?</h2>
-  <a class="path pri" href="entreprises.html" data-umami-event="Accueil : porte entreprises"><h3>Je forme une équipe</h3><p>Formation en entreprise, test de positionnement et pilote gratuit jusqu'à 15 stagiaires.</p><span class="go">Découvrir l'offre <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
-  <a class="path" href="formations.html" data-umami-event="Accueil : porte formations"><h3>Je veux apprendre</h3><p>25 formations vidéo, du gratuit à 109,99 €, avec fichiers d'exercices et sans date limite.</p><span class="go">Voir les formations <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
-  <a class="path" href="classeurs.html" data-umami-event="Accueil : porte classeurs"><h3>Je cherche un classeur</h3><p>Échéancier Urssaf, pack photographe de mariage, carnets d'exercices qui se corrigent seuls.</p><span class="go">Voir les classeurs <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+  <div class="doors3"><a class="door" href="entreprises.html" data-umami-event="Accueil : porte entreprises"><small>Entreprises</small><h3>Je forme une équipe</h3><p>Mesurez le niveau de vos stagiaires avec un test gratuit, puis formation sur mesure.</p><span class="go">Découvrir <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a class="door" href="formations.html" data-umami-event="Accueil : porte formations"><small>Formations vidéo</small><h3>Je veux apprendre</h3><p>25 formations vidéo, du gratuit à 109,99 €, avec fichiers d'exercices et sans date limite.</p><span class="go">Voir les formations <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a class="door" href="modeles-excel.html" data-umami-event="Accueil : porte modèles"><small>Modèles Excel</small><h3>Je cherche un modèle Excel</h3><p>Échéancier Urssaf, pack photographe de mariage, carnets d'exercices qui se corrigent seuls.</p><span class="go">Voir les modèles <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a></div>
 </div></section>
 
 <section class="band alt"><div class="c">
-  <h2>Ce qu'en disent ceux qui ont travaillé avec moi</h2>
-  <div class="say"><blockquote><q>« Formation sur mesure, quoi de mieux pour progresser à son rythme ? La méthode de Joffrey est parfaite. »</q><cite>Nathalie Rance · Contrôleuse de gestion, La Poste Groupe</cite></blockquote><blockquote><q>« Pour l'avoir testé, je peux confirmer que l'outil est vraiment top ! »</q><cite>Jean-Baptiste Caverne · TutoSurExcel, à propos du test de positionnement</cite></blockquote><blockquote><q>« Formidable, instructif, pédagogique, simple à comprendre et pratiquer, clair. Je conseille fortement ce tutoriel complet sans hésiter. »</q><cite>Allal Elmourabit · Apprenant, formation vidéo en ligne</cite></blockquote></div>
+  <h2>En entreprise : ce qu'en disent les participants</h2>
+  <div class="car" data-car aria-roledescription="carrousel" aria-label="Avis de participants à des formations en entreprise"><div class="car-track"><figure class="car-s on" role="group" aria-roledescription="avis" aria-label="1 sur 9"><blockquote>« Explications très claires, très pédagogue, s'adapte très bien au niveau du formé. Extrêmement disponible et flexible. Je le recommande vivement ! »</blockquote><figcaption><span><b>Cécile Naudot</b><span>Responsable RH · Valobat</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="2 sur 9"><blockquote>« Formation sur mesure, quoi de mieux pour progresser à son rythme ? La méthode de Joffrey est parfaite. Je ne choisirai que Solpedinn pour mes prochaines formations. »</blockquote><figcaption><span><b>Nathalie Rance</b><span>Contrôleuse de gestion · La Poste Groupe</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="3 sur 9"><blockquote>« Très à l'écoute, formation adaptée et personnalisée à mes besoins et mon secteur d'activité. Ce que j'ai appris me sert déjà au quotidien. Au plaisir de retravailler ensemble. »</blockquote><figcaption><span><b>Yolène Legris</b><span>Responsable Administrative &amp; Financière · Voco Paris</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="4 sur 9"><blockquote>« Je suis très satisfaite de la formation Excel. Le format permet de monter rapidement en compétences et de mettre en pratique au quotidien. Joffrey est un excellent formateur, très pédagogue. Je recommande à 100%. »</blockquote><figcaption><span><b>Delphine Salaun</b><span>Contrôleuse de gestion · Atout Groupe</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="5 sur 9"><blockquote>« Super parcours de formation, technique et flexible, piloté de main de maître. J'ai apprécié la possibilité d'aborder les cas concrets de mon travail et de trouver les solutions en direct. »</blockquote><figcaption><span><b>Rémy Houttemane</b><span>Responsable Contrôle de Gestion · Damartex Healthcare</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="6 sur 9"><blockquote>« Joffrey est un formateur expert Excel, Power Query et Power BI. Au-delà de sa pédagogie, il s'appuie sur une solide technicité pour résoudre les problèmes complexes rencontrés par ses apprenants. Il adapte parfaitement ses formations à son public en proposant des notions utiles, directement applicables au quotidien. Au fil des années, il continue de se renouveler pour faire évoluer ses contenus face aux nouvelles attentes. C'est un véritable plaisir de travailler avec Joffrey ! »</blockquote><figcaption><span><b>Nicolas Parent</b><span>Microsoft MVP · Formateur Excel certifié Expert · Morpheus Formation</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="7 sur 9"><blockquote>« J'ai effectué une formation Power Query avec Joffrey. C'était vraiment une montée en compétences très fluide pour moi. Joffrey s'est adapté à mon besoin au fil des séances, ce qui m'a permis d'appliquer la formation à des situations réelles. Il a su également s'adapter à mon planning professionnel qui n'est pas toujours évident. Je recommande fortement Joffrey pour son implication, sa patience et ses conseils. Merci ! Niveau Power Query débloqué ;) »</blockquote><figcaption><span><b>Johanna Larboni</b><span>Bras droit des dirigeants · Formation Power Query</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="8 sur 9"><blockquote>« Ça faisait un moment que je voulais m'initier à Power Query. Mais dans les bonnes conditions. J'ai choisi Joffrey, et grâce à Solpedinn, dont les formations sont éligibles CPF, j'ai pu financer une première session avec mon Jedi préféré. Patience, précision, maîtrise du sujet et des applications professionnelles, explications connectées à la réalité pratique du terrain, écoute : le top pour une immersion efficiente. Je ronronnais sur mes acquis Excel depuis quelques temps, ça a boosté ma confiance en moi et ma motivation à aller encore plus loin. »</blockquote><figcaption><span><b>Cathy Lagneau</b><span>La fée de la logique qui optimise ton back office</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="9 sur 9"><blockquote>« Ça fait déjà 2 fois que je travaille avec Joffrey. Sa compétence, ses exercices adaptés à mes demandes, sa bonne humeur et surtout sa patience et sa pédagogie parfaite. Je reprendrai des cours. »</blockquote><figcaption><span><b>Nathalie Rance</b><span>La Poste Groupe</span></span></figcaption></figure></div></div>
   <a class="link" href="avis.html" data-umami-event="Accueil : tous les avis">Lire tous les avis</a>
 </div></section>
 
@@ -283,16 +366,13 @@ body:has(.drawer.open) .mbar{display:none!important}
 </div></section>
 
 <section class="cta-band"><div class="c">
-  <h2>Parlons de votre équipe</h2>
-  <p>Réponse sous 48 h ouvrées · Devis gratuit</p>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" data-umami-event="Accueil : fin de page pilote">Demander un pilote gratuit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    <a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : fin de page rdv">Réserver un échange de 20 min</a>
-  </div>
+  <h2>Quel est le niveau de votre équipe ?</h2>
+  <p>Mesurez-le gratuitement avant de choisir la formation : un test par stagiaire, un tableau de bord pour vous. Jusqu'à 15 stagiaires, sans engagement.</p>
+  <div class="cta-row"><a class="btn btn-primary" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" data-umami-event="Accueil : fin de page test">Tester mon équipe gratuitement <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : fin de page rdv">Réserver un échange de 20 min</a></div>
+  <p class="micro">Réponse sous 48 h ouvrées · Devis gratuit · <a href="mailto:mr.grosj@gmail.com?subject=Formation%20pour%20mon%20%C3%A9quipe&body=Bonjour%20Joffrey%2C%0A%0AEntreprise%20%3A%20%0ANombre%20de%20personnes%20%3A%20%0ALogiciel(s)%20%3A%20%0ANiveau%20actuel%20%3A%20%0AObjectif%20%3A%20%0APr%C3%A9sentiel%20ou%20distanciel%20%3A%20%0AP%C3%A9riode%20souhait%C3%A9e%20%3A%20%0A%0AMerci%20!" data-umami-event="Accueil : demande de programme" style="text-decoration:underline;text-underline-offset:3px">Demander un programme de formation</a></p>
 </div></section>
+<div class="mbar"><a class="btn btn-primary" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" data-umami-event="Accueil : barre mobile test">Tester mon équipe</a><a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : barre mobile rdv">Échange 20 min</a></div>
 </main>
-
-<div class="mbar"><a class="btn btn-primary" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" data-umami-event="Accueil : barre mobile pilote">Demander un pilote</a><a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : barre mobile rdv">Échange 20 min</a></div>
 
 <footer>
   <div class="footer-inner">
@@ -302,30 +382,18 @@ body:has(.drawer.open) .mbar{display:none!important}
       <a href="https://www.linkedin.com/in/joffreygros/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://youtube.com/@xcelurself" target="_blank" rel="noopener">YouTube</a>
       <a data-umami-event="Clic fiche Google" href="https://www.google.com/maps?cid=15611318212969512058" target="_blank" rel="noopener">Avis Google</a>
-      <a href="#faq">FAQ</a>
-      <a href="#mentions-legales">Mentions légales</a>
-      <a href="#cgv">CGV</a>
-      <a href="#confidentialite">Confidentialité</a>
+      <a href="index.html#faq">FAQ</a>
     </div>
   </div>
-
-  <div id="mentions-legales" style="max-width:900px;margin:2.5rem auto 0;padding:0 1.25rem;font-size:.7rem;line-height:1.8;color:rgba(250,248,245,.45)">
-    <h3 style="color:rgba(250,248,245,.7);font-size:.85rem;margin-bottom:.6rem">Mentions légales</h3>
+  <div class="ft-legal">
+    <button class="ft-toggle" type="button" aria-expanded="false" aria-controls="legal">Mentions légales, CGV et confidentialité <span aria-hidden="true">+</span></button>
+    <div id="legal" hidden><section id="legal-mentions" class="lg"><h3>Mentions légales</h3>
     <p><strong>Éditeur du site :</strong> Joffrey GROS, Micro Entreprise, immatriculée sous le n° SIRET 83914848300010, dont le siège social est situé à Soultz Haut-Rhin. Responsable de la publication : Joffrey GROS. Contact : mr.grosj@gmail.com · 06 19 65 69 86.</p>
-     <p><strong>Propriété intellectuelle :</strong> L'ensemble des contenus de ce site (textes, vidéos, visuels, marque "XcelUrself") est protégé par le droit d'auteur. Toute reproduction sans autorisation est interdite.</p>
-  </div>
-
-  <div id="cgv" style="max-width:900px;margin:1.5rem auto 0;padding:0 1.25rem;font-size:.7rem;line-height:1.8;color:rgba(250,248,245,.45)">
-    <h3 style="color:rgba(250,248,245,.7);font-size:.85rem;margin-bottom:.6rem">Conditions Générales de Vente (résumé)</h3>
-    <p>Les formations vendues sur ce site sont proposées via la plateforme tierce Tuto.com, qui assure la transaction, la facturation et l'accès au contenu. Les CGV applicables à l'achat sont celles de Tuto.com, consultables sur leur site. <strong>Droit de rétractation :</strong> conformément à l'article L221-28 13° du Code de la consommation, le droit de rétractation ne peut être exercé pour les contenus numériques fournis sur support immatériel dont l'exécution a commencé après accord préalable exprès du consommateur et renoncement express à son droit de rétractation. <strong>Accès :</strong> l'accès aux formations est consenti à vie, sous réserve du maintien en activité du formateur et de la plateforme hôte.</p>
-  </div>
-
-  <div id="confidentialite" style="max-width:900px;margin:1.5rem auto 0;padding:0 1.25rem;font-size:.7rem;line-height:1.8;color:rgba(250,248,245,.45)">
-    <h3 style="color:rgba(250,248,245,.7);font-size:.85rem;margin-bottom:.6rem">Politique de confidentialité &amp; cookies (RGPD)</h3>
+     <p><strong>Propriété intellectuelle :</strong> L'ensemble des contenus de ce site (textes, vidéos, visuels, marque "XcelUrself") est protégé par le droit d'auteur. Toute reproduction sans autorisation est interdite.</p></section><section id="legal-cgv" class="lg"><h3>Conditions Générales de Vente (résumé)</h3>
+    <p>Les formations vendues sur ce site sont proposées via la plateforme tierce Tuto.com, qui assure la transaction, la facturation et l'accès au contenu. Les CGV applicables à l'achat sont celles de Tuto.com, consultables sur leur site. <strong>Droit de rétractation :</strong> conformément à l'article L221-28 13° du Code de la consommation, le droit de rétractation ne peut être exercé pour les contenus numériques fournis sur support immatériel dont l'exécution a commencé après accord préalable exprès du consommateur et renoncement express à son droit de rétractation. <strong>Accès :</strong> l'accès aux formations est consenti à vie, sous réserve du maintien en activité du formateur et de la plateforme hôte.</p></section><section id="legal-confid" class="lg"><h3>Politique de confidentialité &amp; cookies (RGPD)</h3>
     <p><strong>Données collectées :</strong> ce site ne dépose aucun cookie. La mesure d'audience est assurée par Umami, un outil sans cookie qui ne collecte aucune donnée personnelle (statistiques agrégées et anonymes). Si vous demandez la fiche mémo, votre adresse e-mail est recueillie via le formulaire Tally et utilisée uniquement pour vous envoyer la fiche ; vous pouvez demander sa suppression à tout moment. Les achats sont gérés par Tuto.com, selon sa propre politique de confidentialité. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'opposition et d'effacement de vos données, exerçable auprès de mr.grosj@gmail.com.</p>
-    <p><strong>Médiation de la consommation :</strong> conformément à l'article L. 616-1 du Code de la consommation, en cas de litige non résolu directement, le consommateur peut recourir gratuitement à un médiateur de la consommation. Coordonnées du médiateur compétent disponibles sur demande.</p>
+    <p><strong>Médiation de la consommation :</strong> conformément à l'article L. 616-1 du Code de la consommation, en cas de litige non résolu directement, le consommateur peut recourir gratuitement à un médiateur de la consommation. Coordonnées du médiateur compétent disponibles sur demande.</p></section></div>
   </div>
-
   <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur sur les outils Microsoft · Non affilié à Microsoft ni à l'Urssaf · Tous droits réservés</p>
 </footer>
 <script src="site-chrome.js" defer></script>

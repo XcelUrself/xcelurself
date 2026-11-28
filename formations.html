@@ -1014,17 +1014,22 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 </script>
 <link rel="stylesheet" href="site-chrome.css"/>
 <style>
-.ph{padding:clamp(2.4rem,5vw,4rem) clamp(1.25rem,5vw,4rem) 0}.ph-in{max-width:1160px;margin:0 auto}.ph .eyebrow{margin-bottom:.8rem}.ph h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.04;font-weight:700;text-wrap:balance;max-width:20ch}.ph p.ph-s{max-width:56ch;color:var(--ink2);margin-top:1rem;font-size:1.05rem}
+.ph{padding:clamp(2.4rem,5vw,4rem) clamp(1.25rem,5vw,4rem) 0}.ph-in{max-width:1160px;margin:0 auto}.ph .eyebrow{margin-bottom:.8rem}
+.ph h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.04;font-weight:700;text-wrap:balance;max-width:20ch}
+.ph p.ph-s{max-width:56ch;color:var(--ink2);margin-top:1rem;font-size:1.05rem}
+.vid{padding:clamp(2.4rem,5vw,4rem) clamp(1.25rem,5vw,4rem)}.vid-in{max-width:1160px;margin:0 auto}
+.vid h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:700;line-height:1.05;margin-bottom:1.4rem}
 </style>
 </head>
 <body>
 <div class="drawer" id="drawer" aria-modal="true" role="dialog" aria-label="Navigation">
+  <a href="index.html" onclick="closeD()">Accueil</a>
   <a href="entreprises.html" onclick="closeD()">Entreprises</a>
-  <a href="formations.html" onclick="closeD()">Se former</a>
-  <a href="classeurs.html" onclick="closeD()">Classeurs Excel</a>
+  <a href="formations.html" onclick="closeD()">Formations vidéo</a>
+  <a href="modeles-excel.html" onclick="closeD()">Modèles Excel</a>
   <a href="avis.html" onclick="closeD()">Avis</a>
   <a href="a-propos.html" onclick="closeD()">À propos</a>
-  <a data-umami-event="Nav : pilote (menu)" class="d-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" onclick="closeD()">Demander un pilote gratuit</a>
+  <a data-umami-event="Nav : test gratuit (menu)" class="d-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" onclick="closeD()">Tester mon équipe gratuitement</a>
 </div>
 
 <nav>
@@ -1032,12 +1037,12 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     <a class="nav-logo" href="index.html">Xcel<span>Urself</span></a>
     <ul class="nav-links">
       <li><a href="entreprises.html" data-umami-event="Nav Entreprises">Entreprises</a></li>
-      <li><a href="formations.html" class="is-active" aria-current="page" data-umami-event="Nav Se former">Se former</a></li>
-      <li><a href="classeurs.html" data-umami-event="Nav Classeurs Excel">Classeurs Excel</a></li>
+      <li><a href="formations.html" class="is-active" aria-current="page" data-umami-event="Nav Formations vidéo">Formations vidéo</a></li>
+      <li><a href="modeles-excel.html" data-umami-event="Nav Modèles Excel">Modèles Excel</a></li>
       <li><a href="avis.html" data-umami-event="Nav Avis">Avis</a></li>
       <li><a href="a-propos.html" data-umami-event="Nav À propos">À propos</a></li>
     </ul>
-    <a data-umami-event="Nav : pilote" class="nav-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener">Demander un pilote gratuit</a>
+    <a data-umami-event="Nav : test gratuit" class="nav-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener">Tester mon équipe gratuitement</a>
     <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -1045,14 +1050,10 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
 </nav>
 
 <main>
-<section class="ph"><div class="ph-in"><p class="eyebrow">Se former</p><h1>25 formations vidéo, chacune avec son fichier d'exercices</h1><p class="ph-s">Du gratuit à 109,99 €, à ton rythme et sans date limite. Des parcours dans l'ordre conseillé, du débutant à l'avancé.</p></div></section>
-<!-- ESSAI GRATUIT -->
+<section class="ph"><div class="ph-in"><p class="eyebrow">Formations vidéo</p><h1>25 formations vidéo, chacune avec son fichier d'exercices</h1><p class="ph-s">Du gratuit à 109,99 €, à ton rythme et sans date limite. Des parcours dans l'ordre conseillé, du débutant à l'avancé.</p></div></section>
 <section class="proof" id="essai">
   <div class="proof-inner">
-    <div class="proof-quotes">
-      <figure class="pq"><blockquote>« Ce que j'ai appris me sert déjà au quotidien. »</blockquote><figcaption>Yolène Legris, responsable administrative et financière · Voco Paris <span>(formation en direct)</span></figcaption></figure>
-      <figure class="pq"><blockquote>« Le format permet de monter rapidement en compétences et de mettre en pratique au quotidien. »</blockquote><figcaption>Delphine Salaun, contrôleuse de gestion · Atout Groupe <span>(formation en direct)</span></figcaption></figure>
-    </div>
+    <div class="proof-quotes"><figure class="pq"><blockquote>« Tuto clair, net et précis. Super bien fait. »</blockquote><figcaption>Nathalie Le Grand, apprenante · Formation vidéo en ligne</figcaption></figure><figure class="pq"><blockquote>« Beaucoup de réponses à mes questions. Va falloir que je m'habitue. Merci encore. Excellent tutoriel. »</blockquote><figcaption>Patrick Daniel, apprenant · Formation vidéo en ligne</figcaption></figure></div>
     <div class="proof-free">
       <div>
         <p class="free-k">Gratuit · 6 min</p>
@@ -1064,7 +1065,6 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     </div>
   </div>
 </section>
-<!-- PÉDAGOGIE -->
 <section id="pedagogie" class="peda">
   <div class="peda-inner wrap">
     <div class="peda-quote r">
@@ -1084,7 +1084,6 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     </div>
   </div>
 </section>
-<!-- FORMATIONS -->
 <section id="formations" class="formations">
   <div class="formations-inner">
     <div class="formations-head r">
@@ -1109,6 +1108,372 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
         <p class="picker-fallback">Choisis un des trois parcours ci-dessous : ils sont classés du plus accessible au plus avancé.</p>
       </div>
     </section>
+
+    <div class="paths r">
+      <p class="paths-title">Par où commencer ? Suis un parcours</p>
+      <div class="paths-grid">
+        <div class="path">
+          <p class="path-tag">Parcours 1 · Débutant</p>
+          <h3>Débuter sur Excel</h3>
+          <p class="path-desc">Des fondamentaux aux fonctions qui font gagner des heures chaque semaine.</p>
+          <ol>
+            <li><a href="https://fr.tuto.com/excel/cours-maitriser-fondamentaux-excel,175391.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Maîtriser les fondamentaux">Maîtriser les fondamentaux</a><span>4 h 46</span></li>
+            <li><a href="https://fr.tuto.com/excel/formules-de-base-cours,176871.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Les formules de base">Les formules de base</a><span>1 h 04</span></li>
+            <li><a href="https://fr.tuto.com/excel/fonctions-conditionnelles-cours,176951.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Les fonctions conditionnelles">Les fonctions conditionnelles</a><span>2 h 19</span></li>
+            <li><a href="https://fr.tuto.com/excel/fonction-recherche-cours,177041.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Les fonctions de recherche">Les fonctions de recherche</a><span>1 h 31</span></li>
+          </ol>
+          <p class="path-out"><b>À la fin, tu sauras :</b> poser un tableau propre, écrire tes premières formules, et utiliser les fonctions conditionnelles et de recherche.</p>
+          <p class="path-total">4 cours · environ 9 h 40 · 95,96 € au prix catalogue</p>
+          <a class="btn btn-primary path-btn" href="https://fr.tuto.com/excel/cours-maitriser-fondamentaux-excel,175391.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours démarrer" data-umami-event-cours="Parcours Excel">Commencer sur Tuto.com</a>
+        </div>
+        <div class="path">
+          <p class="path-tag">Parcours 2 · Intermédiaire</p>
+          <h3>Automatiser avec Power Query</h3>
+          <p class="path-desc">Fini les copier-coller : tes fichiers se nettoient et se combinent en un clic.</p>
+          <ol>
+            <li><a href="https://fr.tuto.com/excel/power-query-plusieurs-feuilles-1-table,216401.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Plusieurs feuilles, une seule table">Plusieurs feuilles, une seule table</a><span>20 min</span></li>
+            <li><a href="https://fr.tuto.com/excel/combiner-plusieurs-fichiers-excel-power-query,216421.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Combiner plusieurs fichiers">Combiner plusieurs fichiers</a><span>20 min</span></li>
+            <li><a href="https://fr.tuto.com/excel/combiner-fichier-entetes-differentes,216561.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Combiner des en-têtes différents">Combiner des en-têtes différents</a><span>27 min</span></li>
+            <li><a href="https://fr.tuto.com/excel/power-query-releve-bancaire-nettoyage-ligne-total,221421.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Relevé bancaire et ligne Total">Relevé bancaire et ligne Total</a><span>52 min</span></li>
+            <li><a href="https://fr.tuto.com/excel/consolider-releves-bancaires-plusieurs-onglets-power-query,221481.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Relevés sur plusieurs onglets">Relevés sur plusieurs onglets</a><span>1 h 05</span></li>
+            <li><a href="https://fr.tuto.com/excel/power-query-chemin-acces-dynamique,221601.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Chemin d'accès dynamique">Chemin d'accès dynamique</a><span>1 h 16</span></li>
+          </ol>
+          <p class="path-out"><b>À la fin, tu sauras :</b> combiner plusieurs feuilles ou fichiers en une seule table, nettoyer un relevé bancaire et le mettre à jour d'un clic.</p>
+          <p class="path-total">6 cours · environ 4 h 20 · 142,80 € au prix catalogue</p>
+          <a class="btn btn-primary path-btn" href="https://fr.tuto.com/excel/power-query-plusieurs-feuilles-1-table,216401.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours démarrer" data-umami-event-cours="Parcours Power Query">Commencer sur Tuto.com</a>
+        </div>
+        <div class="path">
+          <p class="path-tag">Parcours 3 · Intermédiaire</p>
+          <h3>Analyser et piloter avec Power BI</h3>
+          <p class="path-desc">De l'analyse dans Excel à ton premier tableau de bord interactif.</p>
+          <ol>
+            <li><a href="https://fr.tuto.com/excel/cours-analyser-donnees,175271.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Analyser des données">Analyser des données</a><span>41 min</span></li>
+            <li><a href="https://fr.tuto.com/excel/tuto-tableaux-croises-dynmaiques-tcd,177111.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Les tableaux croisés dynamiques">Les tableaux croisés dynamiques</a><span>1 h 24</span></li>
+            <li><a href="https://fr.tuto.com/power-bi/realiser-premier-tableau,216471.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours" data-umami-event-cours="Premier tableau de bord Power BI">Premier tableau de bord Power BI</a><span>1 h 07</span></li>
+          </ol>
+          <p class="path-out"><b>À la fin, tu sauras :</b> analyser tes données avec des tableaux croisés dynamiques et publier ton premier tableau de bord Power BI.</p>
+          <p class="path-total">3 cours · environ 3 h 10 · 68,98 € au prix catalogue</p>
+          <a class="btn btn-primary path-btn" href="https://fr.tuto.com/excel/cours-analyser-donnees,175271.html?cc=eugRnv" target="_blank" rel="noopener" data-umami-event="Clic parcours démarrer" data-umami-event-cours="Parcours Power BI">Commencer sur Tuto.com</a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="mini-testi r">
+      <blockquote>« Formidable, instructif, pédagogique, simple à comprendre et à pratiquer. Le mot de la fin : qualité. Bravo. »</blockquote>
+      <figcaption>Allal Elmourabit · apprenant sur Tuto.com · ★★★★★</figcaption>
+    </figure>
+
+    <details class="fall"><summary>Voir les 25 formations</summary><div class="fall-in">
+    <div class="ffilters r" role="group" aria-label="Filtrer les formations par logiciel">
+      <button type="button" class="ffilter active" data-f="all" aria-pressed="true">Toutes (25)</button>
+      <button type="button" class="ffilter" data-f="excel" aria-pressed="false">Excel (14)</button>
+      <button type="button" class="ffilter" data-f="pq" aria-pressed="false">Power Query (6)</button>
+      <button type="button" class="ffilter" data-f="ppt" aria-pressed="false">PowerPoint (3)</button>
+      <button type="button" class="ffilter" data-f="pbi" aria-pressed="false">Power BI (1)</button>
+      <button type="button" class="ffilter" data-f="word" aria-pressed="false">Word (1)</button>
+    </div>
+
+    <div class="fgrid">
+
+      <!-- EXCEL -->
+      <div class="fcat r" data-cat="excel"><h4>Excel</h4><span class="fcat-line"></span><span class="fcat-count">14 formations</span></div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Excel : Créer des graphiques modernes et design</h3>
+        <p class="fcard-meta"><span>1 h 16</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Transforme un tableau de données mensuelles en un graphique double courbe à l'esthétique professionnelle, avec mise en lumière des valeurs clés.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>25 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Excel : Créer des graphiques modernes et design" href="https://fr.tuto.com/excel/tuto-graphiques-modernes-design,217081.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft avc">Avancé</span></div>
+        <h3>Excel : Maîtriser les fonctions date/heure</h3>
+        <p class="fcard-meta"><span>1 h 03</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Approfondis le calcul et la manipulation des dates et heures dans Excel pour fiabiliser tes formules.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>10,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Excel : Maîtriser les fonctions date/heure" href="https://fr.tuto.com/excel/maitriser-fonction-date-heure-cours,177181.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft avc">Avancé</span></div>
+        <h3>Excel : Les tableaux croisés dynamiques (T.C.D.)</h3>
+        <p class="fcard-meta"><span>1 h 24</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Une approche simple et progressive pour gagner en productivité avec l'un des outils les plus puissants d'Excel.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>14,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Excel : Les tableaux croisés dynamiques (T.C.D.)" href="https://fr.tuto.com/excel/tuto-tableaux-croises-dynmaiques-tcd,177111.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft avc">Avancé</span><span class="fcard-best">Best-seller</span></div>
+        <h3>Excel : Les fonctions de recherche dans Excel</h3>
+        <p class="fcard-meta"><span>1 h 31</span><span class="fcard-rate">★ 4,5/5</span></p>
+        <p class="fcard-desc">RechercheV, RechercheH, et découverte de RechercheX (Excel 365), avec QCM final pour valider tes acquis.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>15,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Excel : Les fonctions de recherche dans Excel" href="https://fr.tuto.com/excel/fonction-recherche-cours,177041.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span><span class="fcard-best">Best-seller</span></div>
+        <h3>Les fonctions conditionnelles dans Excel</h3>
+        <p class="fcard-meta"><span>2 h 19</span><span class="fcard-rate">★ 4/5</span></p>
+        <p class="fcard-desc">Maîtrise SI, SI imbriqués et les fonctions logiques pour automatiser tes prises de décision dans tes tableaux.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>24,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Les fonctions conditionnelles dans Excel" href="https://fr.tuto.com/excel/fonctions-conditionnelles-cours,176951.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Créer son premier graphique dans Excel : insérer, ajuster, combiner</h3>
+        <p class="fcard-meta"><span>32 min</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Insère, ajuste et combine tes premiers graphiques pour rendre tes données lisibles en un coup d'œil.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>2,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Créer son premier graphique dans Excel : insérer, ajuster, combiner" href="https://fr.tuto.com/excel/maitriser-les-graphiques-cours,176921.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Comment réaliser une facture à l'aide d'Excel ?</h3>
+        <p class="fcard-meta"><span>15 min</span><span class="fcard-rate">★ 4,5/5</span></p>
+        <p class="fcard-desc">Crée de A à Z un modèle de facture professionnel et fonctionnel, prêt à être réutilisé au quotidien.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>2,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Comment réaliser une facture à l'aide d'Excel ?" href="https://fr.tuto.com/excel/comment-realiser-facture-excel-cours,176911.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Comment trier et/ou filtrer des données dans un tableau Excel</h3>
+        <p class="fcard-meta"><span>28 min</span><span class="fcard-rate">★ 4/5</span></p>
+        <p class="fcard-desc">Réorganise tes données rapidement grâce au tri simple, au tri avancé et aux filtres, avec exercices et corrections.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>2,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Comment trier et/ou filtrer des données dans un tableau Excel" href="https://fr.tuto.com/excel/trier-filtrer-tableau-cours,176901.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Comprendre et appliquer la mise en forme conditionnelle dans Excel</h3>
+        <p class="fcard-meta"><span>35 min</span></p>
+        <p class="fcard-desc">Mets en évidence tes données automatiquement selon des critères précis : couleurs, icônes, barres de données.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>2,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Comprendre et appliquer la mise en forme conditionnelle dans Excel" href="https://fr.tuto.com/excel/mise-en-forme-conditionnelle-cours,176891.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span><span class="fcard-best">Best-seller</span></div>
+        <h3>Acquérir les formules de base d'Excel</h3>
+        <p class="fcard-meta"><span>1 h 04</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Les fondamentaux indispensables pour démarrer sereinement sur Excel : formules essentielles et bonnes pratiques.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>9,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Acquérir les formules de base d'Excel" href="https://fr.tuto.com/excel/formules-de-base-cours,176871.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft avc">Avancé</span></div>
+        <h3>Microsoft Excel : Gagner en productivité (niveau avancé)</h3>
+        <p class="fcard-meta"><span>12 h 10</span></p>
+        <p class="fcard-desc">La formation la plus complète du catalogue : raccourcis, astuces et méthodes pour exploiter Excel à son plein potentiel.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>109,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Microsoft Excel : Gagner en productivité (niveau avancé)" href="https://fr.tuto.com/excel/gagner-productivite-cours,175591.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Excel : Maîtriser les fondamentaux du logiciel de Microsoft</h3>
+        <p class="fcard-meta"><span>4 h 46</span></p>
+        <p class="fcard-desc">Valide les compétences fondamentales d'Excel au quotidien avec une méthode interactive et progressive, pas à pas.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>44,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Excel : Maîtriser les fondamentaux du logiciel de Microsoft" href="https://fr.tuto.com/excel/cours-maitriser-fondamentaux-excel,175391.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Analyser des données avec Microsoft Excel</h3>
+        <p class="fcard-meta"><span>41 min</span></p>
+        <p class="fcard-desc">Exploite tes données pour en tirer des analyses pertinentes et exploitables dans ton activité professionnelle.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>14,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Analyser des données avec Microsoft Excel" href="https://fr.tuto.com/excel/cours-analyser-donnees,175271.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="excel">
+        <div class="fcard-top"><span class="fcard-free">Gratuit</span></div>
+        <h3>Excel : Créer un lien hypertexte avec une fonction</h3>
+        <p class="fcard-meta"><span>6 min</span><span class="fcard-rate">★ 4,9/5</span></p>
+        <p class="fcard-desc">Navigue facilement dans tes fichiers Excel grâce à une fonction unique, avec en bonus la création d'un bouton cliquable.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>Gratuit</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Excel : Créer un lien hypertexte avec une fonction" href="https://fr.tuto.com/excel/tuto-gratuit-creer-lien-hypertexte-fonction,183391.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <!-- POWER QUERY -->
+      <div class="fcat r" data-cat="pq"><h4>Power Query</h4><span class="fcat-line"></span><span class="fcat-count">6 formations</span></div>
+
+      <div class="fcard fcard-new r" data-cat="pq">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span><span class="fcard-badge">Nouveau</span></div>
+        <h3>Chemin d'accès dynamique dans Power Query : changez de fichiers sans rouvrir l'éditeur</h3>
+        <p class="fcard-meta"><span>1 h 16</span></p>
+        <p class="fcard-desc">Ta requête casse dès qu'un fichier change de nom, de dossier ou de mois ? Règle le chemin dans une cellule Excel, actualise, c'est fait.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>29,90 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Chemin d'accès dynamique dans Power Query : changez de fichiers sans rouvrir l'éditeur" href="https://fr.tuto.com/excel/power-query-chemin-acces-dynamique,221601.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard fcard-new r" data-cat="pq">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span><span class="fcard-badge">Nouveau</span></div>
+        <h3>Relevés bancaires sur plusieurs onglets dans Excel : chaque nouveau mois consolidé, total compris</h3>
+        <p class="fcard-meta"><span>1 h 05</span></p>
+        <p class="fcard-desc">Un onglet par mois ? Power Query lit toutes les feuilles du classeur, même celles ajoutées plus tard, les nettoie et les empile en une seule table, avec une ligne Total : débits, crédits et dernier solde connu.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>29,90 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Relevés bancaires sur plusieurs onglets dans Excel : chaque nouveau mois consolidé, total compris" href="https://fr.tuto.com/excel/consolider-releves-bancaires-plusieurs-onglets-power-query,221481.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard fcard-new r" data-cat="pq">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span><span class="fcard-badge">Nouveau</span></div>
+        <h3>Relevé bancaire avec Power Query : nettoyage et ligne Total automatiques</h3>
+        <p class="fcard-meta"><span>52 min</span></p>
+        <p class="fcard-desc">Nettoie l'export de ta banque en un clic et ajoute une ligne Total qui se recalcule seule, quel que soit le nombre de lignes. Tes premières instructions en langage M, sans savoir coder.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>29 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Relevé bancaire avec Power Query : nettoyage et ligne Total automatiques" href="https://fr.tuto.com/excel/power-query-releve-bancaire-nettoyage-ligne-total,221421.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="pq">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Combiner des fichiers (en-têtes différents) avec Power Query</h3>
+        <p class="fcard-meta"><span>27 min</span><span class="fcard-rate">★ 4/5</span></p>
+        <p class="fcard-desc">Standardise et fusionne automatiquement plusieurs fichiers Excel aux en-têtes variés grâce à une table de correspondance.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>15 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Combiner des fichiers (en-têtes différents) avec Power Query" href="https://fr.tuto.com/excel/combiner-fichier-entetes-differentes,216561.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="pq">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Combiner plusieurs fichiers Excel avec Power Query : Méthode pro</h3>
+        <p class="fcard-meta"><span>20 min</span></p>
+        <p class="fcard-desc">La méthode robuste utilisée en entreprise pour agréger automatiquement des classeurs Excel indépendants, sans retoucher la requête chaque mois.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>29 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Combiner plusieurs fichiers Excel avec Power Query : Méthode pro" href="https://fr.tuto.com/excel/combiner-plusieurs-fichiers-excel-power-query,216421.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="pq">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>De plusieurs feuilles à une seule table : Power Query expliqué simplement</h3>
+        <p class="fcard-meta"><span>20 min</span></p>
+        <p class="fcard-desc">Combine automatiquement plusieurs feuilles Excel en une seule table structurée, même avec des colonnes différentes d'une feuille à l'autre.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>10 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="De plusieurs feuilles à une seule table : Power Query expliqué simplement" href="https://fr.tuto.com/excel/power-query-plusieurs-feuilles-1-table,216401.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <!-- POWERPOINT -->
+      <div class="fcat r" data-cat="ppt"><h4>PowerPoint</h4><span class="fcat-line"></span><span class="fcat-count">3 formations</span></div>
+
+      <div class="fcard r" data-cat="ppt">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>PowerPoint : Réaliser des présentations de qualité</h3>
+        <p class="fcard-meta"><span>8 h 45</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Crée et personnalise ton propre thème, maîtrise les animations et donne à tes présentations un rendu professionnel.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>89,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="PowerPoint : Réaliser des présentations de qualité" href="https://fr.tuto.com/powerpoint/realiser-presentation-qualite-cours,179251.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="ppt">
+        <div class="fcard-top"><span class="fcard-soft int">Intermédiaire</span></div>
+        <h3>Microsoft PowerPoint : Créer des templates de diapositives à l'aide du masque</h3>
+        <p class="fcard-meta"><span>37 min</span></p>
+        <p class="fcard-desc">Acquiers les fondamentaux pour réaliser des modèles de diapositives entièrement éditables et réutilisables.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>11,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Microsoft PowerPoint : Créer des templates de diapositives à l'aide du masque" href="https://fr.tuto.com/powerpoint/creer-template-masque-cours,177601.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <div class="fcard r" data-cat="ppt">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Microsoft PowerPoint : Réaliser des présentations professionnelles</h3>
+        <p class="fcard-meta"><span>2 h 05</span><span class="fcard-rate">★ 5/5</span></p>
+        <p class="fcard-desc">Les fondamentaux pour construire des présentations claires, structurées et au rendu professionnel, étape par étape.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>21,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Microsoft PowerPoint : Réaliser des présentations professionnelles" href="https://fr.tuto.com/powerpoint/realiser-presentations-professionnelles-cours,177361.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <!-- WORD -->
+      <div class="fcat r" data-cat="word"><h4>Word</h4><span class="fcat-line"></span><span class="fcat-count">1 formation</span></div>
+
+      <div class="fcard r" data-cat="word">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Maîtriser les fondamentaux du logiciel Microsoft Word</h3>
+        <p class="fcard-meta"><span>7 h 36</span></p>
+        <p class="fcard-desc">De l'environnement de travail à la mise en page complète, une formation complète pour devenir autonome sur Word.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>69,99 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Maîtriser les fondamentaux du logiciel Microsoft Word" href="https://fr.tuto.com/word/cours-fondamentaux-word,176341.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+      <!-- POWER BI -->
+      <div class="fcat r" data-cat="pbi"><h4>Power BI</h4><span class="fcat-line"></span><span class="fcat-count">1 formation</span></div>
+
+      <div class="fcard r" data-cat="pbi">
+        <div class="fcard-top"><span class="fcard-soft deb">Débutant</span></div>
+        <h3>Réalisez votre premier tableau de bord Power BI pas à pas</h3>
+        <p class="fcard-meta"><span>1 h 07</span></p>
+        <p class="fcard-desc">Construis un tableau de bord professionnel et interactif dans Power BI à partir de plusieurs fichiers Excel.</p>
+        <div class="fcard-bottom">
+          <div class="fcard-price"><strong>39 €</strong></div>
+          <a class="fcard-cta" data-umami-event="Clic cours" data-umami-event-cours="Réalisez votre premier tableau de bord Power BI pas à pas" href="https://fr.tuto.com/power-bi/realiser-premier-tableau,216471.html?cc=eugRnv" target="_blank" rel="noopener">Voir le cours</a>
+        </div>
+      </div>
+
+    </div>
+
+    </div></details>
+
+    <div class="formations-more r">
+      <a data-umami-event="Clic Tuto.com" class="btn btn-primary" href="https://fr.tuto.com/formateur/xcelurself.htm?cc=eugRnv" target="_blank" rel="noopener">Voir le catalogue complet sur Tuto.com <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
 <section id="fiche-memo" class="lead" data-tally="NpkDJW">
   <div class="lead-inner r">
     <div class="lead-visual" aria-hidden="true">
@@ -1129,6 +1494,7 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
     </div>
   </div>
 </section>
+<section class="vid"><div class="vid-in"><h2>Ce que disent les apprenants</h2><div class="car" data-car aria-roledescription="carrousel" aria-label="Avis d'apprenants des formations vidéo"><div class="car-track"><figure class="car-s on" role="group" aria-roledescription="avis" aria-label="1 sur 3"><blockquote>« Formidable, instructif, pédagogique, simple à comprendre et pratiquer, clair. Je pourrais décrire encore des qualités à cette formation et au formateur. Je conseille fortement ce tutoriel complet sans hésiter. Le mot de la fin : Qualité. Bravo. »</blockquote><figcaption><span><b>Allal Elmourabit</b><span>Apprenant · Formation vidéo en ligne</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="2 sur 3"><blockquote>« Beaucoup de réponses à mes questions. Va falloir que je m'habitue. Merci encore. Excellent tutoriel. »</blockquote><figcaption><span><b>Patrick Daniel</b><span>Apprenant · Formation vidéo en ligne</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="3 sur 3"><blockquote>« Tuto clair, net et précis. Super bien fait. »</blockquote><figcaption><span><b>Nathalie Le Grand</b><span>Apprenante · Formation vidéo en ligne</span></span></figcaption></figure></div></div><p style="margin-top:1rem;color:var(--muted)">4,7 / 5 sur Tuto.com · 466 cours vendus · 400 apprenants en ligne</p></div></section>
 <section class="cta-final">
   <div class="cta-inner">
     <p class="eyebrow r" style="justify-content:center;color:rgba(255,200,160,.85)">Pas sûr de ton point de départ ?</p>
@@ -1152,13 +1518,20 @@ var sc=document.createElement('script');sc.defer=true;sc.src='https://cloud.umam
       <a href="https://youtube.com/@xcelurself" target="_blank" rel="noopener">YouTube</a>
       <a data-umami-event="Clic fiche Google" href="https://www.google.com/maps?cid=15611318212969512058" target="_blank" rel="noopener">Avis Google</a>
       <a href="index.html#faq">FAQ</a>
-      <a href="index.html#mentions-legales">Mentions légales</a>
-      <a href="index.html#cgv">CGV</a>
-      <a href="index.html#confidentialite">Confidentialité</a>
     </div>
-    <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur sur les outils Microsoft · Non affilié à Microsoft ni à l'Urssaf · Tous droits réservés</p>
   </div>
+  <div class="ft-legal">
+    <button class="ft-toggle" type="button" aria-expanded="false" aria-controls="legal">Mentions légales, CGV et confidentialité <span aria-hidden="true">+</span></button>
+    <div id="legal" hidden><section id="legal-mentions" class="lg"><h3>Mentions légales</h3>
+    <p><strong>Éditeur du site :</strong> Joffrey GROS, Micro Entreprise, immatriculée sous le n° SIRET 83914848300010, dont le siège social est situé à Soultz Haut-Rhin. Responsable de la publication : Joffrey GROS. Contact : mr.grosj@gmail.com · 06 19 65 69 86.</p>
+     <p><strong>Propriété intellectuelle :</strong> L'ensemble des contenus de ce site (textes, vidéos, visuels, marque "XcelUrself") est protégé par le droit d'auteur. Toute reproduction sans autorisation est interdite.</p></section><section id="legal-cgv" class="lg"><h3>Conditions Générales de Vente (résumé)</h3>
+    <p>Les formations vendues sur ce site sont proposées via la plateforme tierce Tuto.com, qui assure la transaction, la facturation et l'accès au contenu. Les CGV applicables à l'achat sont celles de Tuto.com, consultables sur leur site. <strong>Droit de rétractation :</strong> conformément à l'article L221-28 13° du Code de la consommation, le droit de rétractation ne peut être exercé pour les contenus numériques fournis sur support immatériel dont l'exécution a commencé après accord préalable exprès du consommateur et renoncement express à son droit de rétractation. <strong>Accès :</strong> l'accès aux formations est consenti à vie, sous réserve du maintien en activité du formateur et de la plateforme hôte.</p></section><section id="legal-confid" class="lg"><h3>Politique de confidentialité &amp; cookies (RGPD)</h3>
+    <p><strong>Données collectées :</strong> ce site ne dépose aucun cookie. La mesure d'audience est assurée par Umami, un outil sans cookie qui ne collecte aucune donnée personnelle (statistiques agrégées et anonymes). Si vous demandez la fiche mémo, votre adresse e-mail est recueillie via le formulaire Tally et utilisée uniquement pour vous envoyer la fiche ; vous pouvez demander sa suppression à tout moment. Les achats sont gérés par Tuto.com, selon sa propre politique de confidentialité. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'opposition et d'effacement de vos données, exerçable auprès de mr.grosj@gmail.com.</p>
+    <p><strong>Médiation de la consommation :</strong> conformément à l'article L. 616-1 du Code de la consommation, en cas de litige non résolu directement, le consommateur peut recourir gratuitement à un médiateur de la consommation. Coordonnées du médiateur compétent disponibles sur demande.</p></section></div>
+  </div>
+  <p class="footer-copy">© 2026 XcelUrself · Joffrey Gros · Formateur sur les outils Microsoft · Non affilié à Microsoft ni à l'Urssaf · Tous droits réservés</p>
 </footer>
+<script src="site-legal.js" defer></script>
 <script>
 // Hamburger
 const ham=document.getElementById('ham'),drawer=document.getElementById('drawer');
