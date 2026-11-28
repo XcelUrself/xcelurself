@@ -207,3 +207,18 @@ nav{view-transition-name:site-nav}
 @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @keyframes slidein{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.js .hero .c>div>*,.js .hero .shot{animation:none!important}.car.js-car .car-s{transition:none}}
+
+/* infobulles des repères : jamais coupées (placement géré par site-chrome.js) */
+.shot,.xl{overflow:visible}
+.shot-img img{border-radius:12px 12px 0 0}.shot figcaption{border-radius:0 0 12px 12px}
+.xl-bar{border-radius:12px 12px 0 0}.xl-sheets{border-radius:0 0 12px 12px}
+.bp .bt.is-fixed,.mk .tip.is-fixed{position:fixed;transform:none;right:auto;bottom:auto;max-width:calc(100vw - 16px);z-index:900}
+
+/* ancres : la section visée n'est jamais cachée sous l'en-tête fixe */
+[id]{scroll-margin-top:84px}
+/* lien direct vers une section : un « # » apparaît au survol du titre */
+.anc{margin-left:.5rem;border:0;background:none;color:var(--or3,#D92A66);font:700 .6em/1 'Montserrat',sans-serif;cursor:pointer;opacity:0;transition:opacity .2s;vertical-align:middle;padding:.3em .4em;border-radius:6px}
+h2:hover .anc,h2:focus-within .anc,.anc:focus-visible{opacity:1}
+.anc:focus-visible{outline:3px solid #1a1714;outline-offset:2px}
+.anc-ok{position:fixed;left:50%;bottom:1.4rem;transform:translateX(-50%);background:#1a1714;color:#fff;padding:.6rem 1rem;border-radius:8px;font:600 .82rem 'Montserrat',sans-serif;z-index:950;animation:fqin .25s ease both}
+@media (hover:none){.anc{display:none}}

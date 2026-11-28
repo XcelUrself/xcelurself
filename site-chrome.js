@@ -48,3 +48,41 @@ var n=document.querySelector('nav');if(n)addEventListener('scroll',function(){n.
     addEventListener('resize',function(){fit();});go(0);
   });
 })();
+
+/* Infobulles des repères numérotés : placées par rapport à l'écran, retournées au-dessus si besoin */
+(function(){
+  var M=8;
+  document.querySelectorAll('.bp,.mk').forEach(function(b){
+    var t=b.querySelector('.bt,.tip');if(!t)return;
+    function place(){
+      t.classList.add('is-fixed');t.style.left='0px';t.style.top='0px';
+      var br=b.getBoundingClientRect(),w=t.offsetWidth,h=t.offsetHeight,vw=document.documentElement.clientWidth,vh=window.innerHeight;
+      var x=br.left+br.width/2-w/2;x=Math.max(M,Math.min(x,vw-M-w));
+      var y=br.bottom+10;if(y+h>vh-M&&br.top-10-h>=M)y=br.top-10-h;
+      y=Math.max(M,Math.min(y,vh-M-h));
+      t.style.left=x+'px';t.style.top=y+'px';
+    }
+    function clear(){t.classList.remove('is-fixed');t.style.left=t.style.top='';}
+    b.addEventListener('mouseenter',place);b.addEventListener('focus',place);
+    b.addEventListener('mouseleave',clear);b.addEventListener('blur',clear);
+    addEventListener('scroll',function(){if(t.classList.contains('is-fixed'))place();},{passive:true});
+    addEventListener('resize',function(){if(t.classList.contains('is-fixed'))place();});
+  });
+})();
+
+/* Lien direct vers une section : bouton « # » sur les titres des sections qui ont une ancre */
+(function(){
+  document.querySelectorAll('main section[id] > .c > h2, main section[id] > .c > h1, main section[id] h2').forEach(function(h,i,all){
+    var sec=h.closest('section[id]');if(!sec||h.querySelector('.anc')||all.indexOf&&false)return;
+    if(sec.querySelector('h2')!==h&&sec.querySelector('h1')!==h)return;
+    var b=document.createElement('button');b.type='button';b.className='anc';b.textContent='#';
+    b.setAttribute('aria-label','Copier le lien direct vers cette section');
+    b.addEventListener('click',function(){
+      var u=location.origin+location.pathname+'#'+sec.id;
+      function ok(){var m=document.createElement('div');m.className='anc-ok';m.setAttribute('role','status');m.textContent='Lien copié : '+u.replace(/^https?:\/\//,'');document.body.appendChild(m);setTimeout(function(){m.remove();},2200);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(ok,function(){prompt('Copiez ce lien :',u);});}
+      else{prompt('Copiez ce lien :',u);}
+    });
+    h.appendChild(b);
+  });
+})();
