@@ -230,6 +230,18 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .tour .bar{display:flex;align-items:center;gap:.4rem;padding:.55rem .8rem;background:var(--bg3);border-bottom:1px solid var(--bd);font-size:.7rem;font-weight:600;color:var(--ink2)}
 .tour .bar i{width:.6rem;height:.6rem;border-radius:50%;background:var(--ink);opacity:.25}
 .tour .bar span{margin-left:.4rem}
+.xlwin{background:#f3f3f3}
+.xtop{display:flex;align-items:center;gap:.8rem;padding:.45rem .8rem;background:#107c41;color:#fff;font-size:.72rem;font-weight:600}
+.xtop #xname{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}.xdots{display:flex;gap:.35rem}.xdots i{width:.6rem;height:.6rem;border-radius:50%;background:#fff;opacity:.45}
+.xsearch{margin-left:auto;font-style:normal;font-weight:500;background:rgba(255,255,255,.22);border-radius:6px;padding:.15rem 3rem .15rem .6rem;opacity:.95}
+.xrib{display:flex;gap:1.1rem;padding:.4rem .9rem;background:#f3f3f3;border-bottom:1px solid #e0e0e0;font-size:.72rem;color:#444;overflow:hidden;white-space:nowrap}
+.xrib .on{color:#107c41;font-weight:700;box-shadow:inset 0 -2px 0 #107c41}
+.xfx{display:flex;align-items:center;gap:.7rem;padding:.3rem .8rem;background:#fff;border-bottom:1px solid #e0e0e0;font-size:.72rem;color:#555}
+.xfx .nb{min-width:3.4rem;border:1px solid #ddd;padding:.1rem .4rem;background:#fff}.xfx i{font-style:italic;font-weight:700;color:#107c41}
+.xsheets{display:flex;gap:.1rem;padding:.3rem .8rem 0;background:#e6e6e6;border-top:1px solid #d6d6d6;font-size:.7rem;color:#444;overflow:hidden;white-space:nowrap;position:relative}
+.xsheets span{padding:.3rem .8rem;border-radius:0 0 6px 6px}
+.xsheets .on{background:#fff;color:#107c41;font-weight:700;box-shadow:inset 0 -2px 0 #107c41}
+@media(max-width:700px){.xrib span:nth-child(n+5),.xsearch{display:none}.xtop span{font-size:.66rem}}
 .tview{position:relative;aspect-ratio:1198/760;overflow:hidden;background:var(--bg2)}
 .tstage{position:absolute;left:0;top:0;transform-origin:0 0;opacity:0;pointer-events:none;transition:opacity .5s ease}
 .tstage.on{opacity:1}
@@ -294,17 +306,17 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
 /* ===== Mobile : grille tarifaire en cartes, cibles tactiles ===== */
 @media(max-width:700px){
   .tablewrap{overflow:visible;background:none;border:0;border-radius:0}
-  table{display:block;min-width:0;font-size:.9rem}
-  thead{display:none}
-  tbody{display:grid;gap:.7rem}
-  tbody tr{display:grid;grid-template-columns:1fr auto;gap:.2rem .8rem;background:var(--white);border:1px solid var(--bd);border-radius:14px;padding:.95rem 1.05rem}
-  tbody td{border:0;padding:0}
-  tbody td:nth-child(1){grid-column:1;font-weight:800}
-  tbody td:nth-child(4){grid-column:2;grid-row:1;text-align:right;font-size:1.15rem}
-  tbody td:nth-child(2){grid-column:1/-1;color:var(--ink2);font-size:.84rem;line-height:1.5}
-  tbody td:nth-child(3){grid-column:1/-1;font-size:.78rem;color:var(--muted)}
-  tbody td:nth-child(3)::before{content:"Durée : "}
-  tbody tr:hover td{background:none}
+  .tablewrap table{display:block;min-width:0;font-size:.9rem}
+  .tablewrap thead{display:none}
+  .tablewrap tbody{display:grid;gap:.7rem}
+  .tablewrap tbody tr{display:grid;grid-template-columns:1fr auto;gap:.2rem .8rem;background:var(--white);border:1px solid var(--bd);border-radius:14px;padding:.95rem 1.05rem}
+  .tablewrap tbody td{border:0;padding:0}
+  .tablewrap tbody td:nth-child(1){grid-column:1;font-weight:800}
+  .tablewrap tbody td:nth-child(4){grid-column:2;grid-row:1;text-align:right;font-size:1.15rem}
+  .tablewrap tbody td:nth-child(2){grid-column:1/-1;color:var(--ink2);font-size:.84rem;line-height:1.5}
+  .tablewrap tbody td:nth-child(3){grid-column:1/-1;font-size:.78rem;color:var(--muted)}
+  .tablewrap tbody td:nth-child(3)::before{content:"Durée : "}
+  .tablewrap tbody tr:hover td{background:none}
   .back,.logo{min-height:44px;display:inline-flex;align-items:center}
   .textlink{min-height:44px;display:inline-flex;align-items:center}
   footer a{display:inline-flex;align-items:center;min-height:44px}
@@ -340,9 +352,8 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
   <a href="entreprises.html" onclick="closeD()">Entreprises</a>
   <a href="formations.html" onclick="closeD()">Formations vidéo</a>
   <a href="modeles-excel.html" onclick="closeD()">Modèles Excel</a>
-  <a href="avis.html" onclick="closeD()">Avis</a>
   <a href="a-propos.html" onclick="closeD()">À propos</a>
-  <a data-umami-event="Nav : test gratuit (menu)" class="d-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" onclick="closeD()">Essai gratuit</a>
+  <a data-umami-event="Nav : test gratuit (menu)" class="d-cta" href="https://tally.so/r/8NxRJY" target="_blank" rel="noopener" onclick="closeD()">Essai gratuit</a>
 </div>
 
 <nav>
@@ -353,10 +364,9 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
       <li><a href="entreprises.html" data-umami-event="Nav Entreprises">Entreprises</a></li>
       <li><a href="formations.html" data-umami-event="Nav Formations vidéo">Formations vidéo</a></li>
       <li><a href="modeles-excel.html" data-umami-event="Nav Modèles Excel">Modèles Excel</a></li>
-      <li><a href="avis.html" data-umami-event="Nav Avis">Avis</a></li>
       <li><a href="a-propos.html" data-umami-event="Nav À propos">À propos</a></li>
     </ul>
-    <a data-umami-event="Nav : test gratuit" class="nav-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener">Essai gratuit</a>
+    <a data-umami-event="Nav : test gratuit" class="nav-cta" href="https://tally.so/r/8NxRJY" target="_blank" rel="noopener">Essai gratuit</a>
     <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -430,7 +440,9 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
         <button type="button" role="tab" id="vt5" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite codes">6 · Les codes</button>
         <button type="button" role="tab" id="vt6" aria-controls="vview" aria-selected="false" tabindex="-1" data-umami-event="Orga : visite promo">7 · La promo</button>
       </div>
-      <div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Simulation Excel.xlsx</span></div>
+      <div class="win xlwin"><div class="xtop" aria-hidden="true"><b class="xdots"><i></i><i></i><i></i></b><span id="xname">Simulation Excel.xlsx · Enregistré dans ce PC</span><em class="xsearch">Rechercher</em></div>
+        <div class="xrib" aria-hidden="true"><span>Fichier</span><span class="on">Accueil</span><span>Insertion</span><span>Mise en page</span><span>Formules</span><span>Données</span><span>Révision</span><span>Affichage</span><span>Aide</span></div>
+        <div class="xfx" aria-hidden="true"><span class="nb">A1</span><i>fx</i><span id="xfx"></span></div>
         <div class="tview" id="vview" role="tabpanel" aria-labelledby="vt0"><span class="fict">Exemple : identités inventées, pas de vraies personnes</span>
           <div class="tstage" data-w="1198" data-h="672" data-max="1.7"><img src="img/tour-accueil.webp?v=3" width="1198" height="672" decoding="async" alt="Écran d'accueil du fichier de simulation : bannière, présentation du parcours, menu de navigation avec progression, réglages du prénom, du mode et de la série."/><i class="hl"></i></div>
           <div class="tstage" data-w="1198" data-h="935" data-max="1.7"><img src="img/simulation-question-tcd.webp?v=3" width="1198" height="935" loading="lazy" decoding="async" alt="Écran d'une question : créer un tableau croisé dynamique, avec le menu de gauche et la progression du parcours."/><i class="hl"></i></div>
@@ -440,6 +452,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
           <div class="tstage" data-w="1285" data-h="878" data-max="1.6"><img src="img/tableau-de-bord-codes.webp?v=2" width="1285" height="878" loading="lazy" decoding="async" alt="Écran « Coller les codes » : 22 codes résultat collés et contrôlés."/><i class="hl"></i></div>
           <div class="tstage" data-w="1240" data-h="934" data-max="1.6"><img src="img/tableau-de-bord-ma-promo.webp?v=2" width="1240" height="934" loading="lazy" decoding="async" alt="Écran « Ma promo » du tableau de bord formateur avec une promo de 22 stagiaires."/><i class="hl"></i></div>
         </div>
+        <div class="xsheets" id="xsheets" aria-hidden="true"><span class="on">Accueil</span><span>Question</span><span>Bilan</span><span>Certificat</span><span>Repères</span><span>Codes</span><span>Promo</span></div>
       </div>
       <div class="tcap">
         <p class="tcap-t" id="vcap" aria-live="polite"></p>
@@ -524,14 +537,14 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
 <section id="comparatif">
   <div class="wrap">
     <h2 class="t rv">Essai gratuit <em>ou licence ?</em></h2>
-    <p class="sub rv">L'essai gratuit vous laisse essayer avec vos propres stagiaires. La licence est la version complète, avec la simulation d'entraînement.</p>
-    <div class="cmp-wrap rv"><table class="cmp"><thead><tr><th scope="col"></th><th scope="col">Essai gratuit</th><th scope="col" class="lic">Licence</th></tr></thead><tbody>
+    <p class="sub rv">L'essai gratuit répond à une question&nbsp;: où en sont vos stagiaires ? La licence va plus loin&nbsp;: elle les fait s'entraîner, vous donne le suivi de la promo et reste à votre nom.</p>
+    <div class="cmp-wrap rv"><table class="cmp"><thead><tr><th scope="col"></th><th scope="col">Essai gratuit<small>Pour décider sur pièces</small></th><th scope="col" class="lic">Licence<small>Pour entraîner et suivre</small></th></tr></thead><tbody>
       <tr><th scope="row">Test de positionnement (25 questions, environ 40 min)</th><td class="y">Inclus</td><td class="y">Inclus</td></tr>
       <tr><th scope="row">Tableau de bord formateur : une ligne par stagiaire, niveaux de la promo, rapport à imprimer</th><td class="y">Inclus</td><td class="y">Inclus</td></tr>
-      <tr><th scope="row">Simulation complète : 35 questions qui s'adaptent à chaque réponse, mode Entraînement ou Examen, plan de révision</th><td class="n">Non</td><td class="y">Incluse</td></tr>
-      <tr><th scope="row">128 questions, chacune en deux variantes : deux stagiaires côte à côte n'ont pas la même</th><td class="n">Non</td><td class="y">Incluses</td></tr>
-      <tr><th scope="row">Le nom de votre organisme sur chaque écran et sur le certificat d'entraînement</th><td class="n">Non</td><td class="y">Oui</td></tr>
-      <tr><th scope="row">Mises à jour et assistance par e-mail</th><td class="n">Non</td><td class="y">Pendant la licence</td></tr>
+      <tr><th scope="row">Simulation complète : 35 questions qui s'adaptent à chaque réponse, mode Entraînement ou Examen, plan de révision<small>Vos stagiaires s'entraînent pendant la formation et repartent avec ce qu'ils doivent retravailler.</small></th><td class="n">—</td><td class="y">Incluse</td></tr>
+      <tr><th scope="row">128 questions, chacune en deux variantes : deux stagiaires côte à côte n'ont pas la même<small>Impossible de se copier : chacun répond à sa propre version.</small></th><td class="n">—</td><td class="y">Incluses</td></tr>
+      <tr><th scope="row">Le nom de votre organisme sur chaque écran et sur le certificat d'entraînement<small>Vos stagiaires ouvrent un outil à votre nom, pas un fichier anonyme.</small></th><td class="n">—</td><td class="y">Oui</td></tr>
+      <tr><th scope="row">Mises à jour et assistance par e-mail<small>Une question, une réponse de moi, pendant toute la licence.</small></th><td class="n">—</td><td class="y">Pendant la licence</td></tr>
       <tr><th scope="row">Nombre de stagiaires</th><td>15 au plus, une session</td><td>5, 10, 25 ou illimité, selon la formule</td></tr>
       <tr><th scope="row">Prix</th><td><b>Gratuit</b>, en échange d'un retour d'usage court et des codes résultat de vos stagiaires</td><td>À partir de 125 € HT</td></tr>
     </tbody></table></div>
@@ -539,7 +552,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
     <div class="cta rv" style="margin-top:1.4rem"><a class="btn btn-primary" data-forms href="#" data-umami-event="Orga : comparatif essai">Essayer le test gratuitement</a><a class="btn btn-ghost" href="#licence" data-umami-event="Orga : comparatif licence">Quelle licence pour mon volume ?</a></div>
   </div>
 </section>
-<style>.cmp-wrap{overflow-x:auto;border:1px solid var(--bd);border-radius:12px;background:var(--white)}.cmp{width:100%;border-collapse:collapse;font-size:.88rem;min-width:560px}.cmp th,.cmp td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--bd);vertical-align:top}.cmp thead th{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--bg2)}.cmp thead th.lic{background:var(--ink);color:#fff}.cmp tbody th{font-weight:600}.cmp td.y{font-weight:800;color:var(--sage)}.cmp td.n{color:var(--muted)}.cmp td:nth-child(2),.cmp td:nth-child(3),.cmp thead th:nth-child(2),.cmp thead th:nth-child(3){width:24%}.cmp tbody tr:last-child>*{border-bottom:0}.cmp td:nth-child(3){background:rgba(31,122,100,.05)}</style>
+<style>.cmp-wrap{overflow-x:auto;border:1px solid var(--bd);border-radius:12px;background:var(--white)}.cmp{width:100%;border-collapse:collapse;font-size:.88rem;min-width:560px}.cmp th,.cmp td{padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--bd);vertical-align:top}.cmp thead th{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--bg2)}.cmp thead th.lic{background:var(--ink);color:#fff}.cmp tbody th{font-weight:600}.cmp th small{display:block;margin-top:.25rem;font-weight:400;font-size:.8rem;line-height:1.4;color:var(--muted);text-transform:none;letter-spacing:0}.cmp thead th small{font-size:.72rem;font-weight:500;text-transform:none;letter-spacing:0}.cmp thead th.lic small{color:#e8dfd4}.cmp td.y{font-weight:800;color:var(--sage)}.cmp td.n{color:var(--muted)}.cmp td:nth-child(2),.cmp td:nth-child(3),.cmp thead th:nth-child(2),.cmp thead th:nth-child(3){width:24%}.cmp tbody tr:last-child>*{border-bottom:0}.cmp td:nth-child(3){background:rgba(31,122,100,.05)}@media(max-width:700px){.cmp-wrap{overflow:visible;border:0;background:none}.cmp{display:block;min-width:0}.cmp thead{display:none}.cmp tbody{display:grid;gap:.7rem}.cmp tbody tr{display:block;background:var(--white);border:1px solid var(--bd);border-radius:14px;padding:.95rem 1.05rem}.cmp tbody th,.cmp tbody td{display:block;border:0;padding:0;width:auto!important;background:none!important}.cmp tbody th{margin-bottom:.5rem}.cmp tbody td{display:flex;gap:.5rem;padding:.3rem 0;border-top:1px solid var(--bd)}.cmp tbody td::before{flex:none;width:6.2rem;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-top:.15rem}.cmp tbody td:nth-child(2)::before{content:"Essai gratuit"}.cmp tbody td:nth-child(3)::before{content:"Licence"}}</style>
 
 <section class="alt" id="licence">
   <div class="wrap">
@@ -653,6 +666,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
       <a href="https://www.linkedin.com/in/joffreygros/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://youtube.com/@xcelurself" target="_blank" rel="noopener">YouTube</a>
       <a data-umami-event="Clic fiche Google" href="https://www.google.com/maps?cid=15611318212969512058" target="_blank" rel="noopener">Avis Google</a>
+      <a href="avis.html">Avis clients</a>
       <a href="index.html#faq">FAQ</a>
     </div>
   </div>
@@ -679,6 +693,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
      FORM_URL : lien du formulaire Tally de DEMANDE (pilote, devis, licence). Laisser vide = e-mail pré-rédigé.
      Attention : ne pas y mettre le formulaire des codes résultat des stagiaires. */
   var FORM_URL='https://tally.so/r/LDPZVG';
+  var TRIAL_URL='https://tally.so/r/8NxRJY'; /* formulaire court : essai gratuit */
   var CONTACT='mr.grosj@gmail.com';
   function mail(subject,body){return 'mailto:'+CONTACT+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);}
   function dest(subject,body,params){
@@ -688,7 +703,7 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
   }
   function openNew(a){if(FORM_URL){a.target='_blank'; a.rel='noopener';}}
   var PILOT_BODY="Bonjour Joffrey,\n\nJe souhaite essayer gratuitement le test de positionnement (Simulation Excel).\n\nOrganisme : \nNom et fonction : \nTéléphone : \nNombre de stagiaires de la promotion (15 au plus) : \nDate de début de la formation : \nVersion d'Excel des stagiaires : \n\nMerci !";
-  document.querySelectorAll('[data-forms]').forEach(function(a){a.href=dest('Essai gratuit du test : Simulation Excel',PILOT_BODY,{origine:'pilote'}); openNew(a);});
+  document.querySelectorAll('[data-forms]').forEach(function(a){a.href=TRIAL_URL||dest('Essai gratuit du test : Simulation Excel',PILOT_BODY,{origine:'pilote'}); openNew(a);});
 
   /* ---- Grille de prix HT (feuille « Grille » du simulateur de licence) ---- */
   var P={p5:125,p10:220,p25:450,session:290,sessionMax:15,annuelle:990,devisAuDela:100};
@@ -951,6 +966,9 @@ dialog.lb::backdrop{background:rgba(26,23,20,.82)}
       if(sceneChanged)place(st,null,false);
       place(st,cur().r,animate,cur().l);
       view.classList.toggle('fx',si>=2);
+      var sh=document.querySelectorAll('#xsheets span');for(var q=0;q<sh.length;q++)sh[q].classList.toggle('on',q===si);if(sh[si]&&sh[si].parentNode.scrollWidth>sh[si].parentNode.clientWidth)sh[si].parentNode.scrollLeft=sh[si].offsetLeft-12;
+      var xn=document.getElementById('xname');if(xn)xn.textContent=si>=5?'Tableau de bord formateur.xlsx · Enregistré dans ce PC':'Simulation Excel.xlsx · Enregistré dans ce PC';
+      var xf=document.getElementById('xfx');if(xf)xf.textContent=tabs[si].textContent.replace(/^\d+ · /,'');
       cap.textContent=cur().t;
       tabs.forEach(function(t,i){t.setAttribute('aria-selected',i===si);t.tabIndex=i===si?0:-1;});
       view.setAttribute('aria-labelledby',tabs[si].id);
