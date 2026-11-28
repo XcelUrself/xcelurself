@@ -1,0 +1,50 @@
+/* Simulateur de licence : repris de la page de simulation */
+.licence-wrap{--white:#FDFBF8;--bg3:#ECE4DA;--pink:#FE3A7E;--ease-out:cubic-bezier(.23,1,.32,1)}
+.picker{display:grid;grid-template-columns:minmax(220px,.8fr) 2fr;gap:2rem 3rem;align-items:start;background:var(--white);border:1px solid var(--bd);border-radius:12px;padding:2rem}
+.picker h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;line-height:1.05;margin-bottom:.5rem;text-wrap:balance}
+.picker .side p{font-size:.84rem;color:var(--ink2);line-height:1.6}
+.prog{display:flex;gap:6px;margin-top:1.2rem}
+.prog i{display:block;width:30px;height:4px;border-radius:2px;background:var(--bg3);transition:background-color .3s var(--ease-out)}
+.prog i.on{background:var(--pink)}
+.linkbtn{background:none;border:0;font:inherit;font-size:.8rem;font-weight:700;color:var(--ink2);cursor:pointer;text-decoration:underline;text-underline-offset:4px;padding:.4rem 0;margin-top:1rem}
+.linkbtn[hidden]{display:none}
+.live{margin-top:1.3rem;padding-top:1rem;border-top:1px solid var(--bd)}
+.live[hidden]{display:none}
+.live-k{font-size:.74rem;font-weight:700;color:var(--ink2);margin-bottom:.4rem}
+.live ul{list-style:none;display:grid;gap:.15rem;margin-bottom:.7rem}
+.live li{font-size:.82rem;color:var(--ink);padding-left:1.1rem;position:relative}
+.live li::before{content:"✓";position:absolute;left:0;color:var(--pink);font-weight:800}
+.live .est{font-size:.84rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.live .est small{display:block;font-size:.74rem;font-weight:500;color:var(--ink2)}
+.pin{animation:pin .22s var(--ease-out)}
+.qstep{font-size:.76rem;font-weight:700;color:var(--ink2);margin-bottom:.3rem}
+.qt{font-size:1.15rem;font-weight:800;line-height:1.3;margin-bottom:1.1rem;outline:none}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.7rem}
+.opt{display:flex;flex-direction:column;gap:.15rem;text-align:left;min-height:56px;padding:.8rem 1rem;background:var(--bg);border:1.5px solid var(--bd);border-radius:12px;font:inherit;color:var(--ink);cursor:pointer;transition:border-color .2s ease,background-color .2s ease,transform .12s var(--ease-out)}
+.opt b{font-size:.9rem;font-weight:700}
+.opt small{font-size:.76rem;color:var(--ink2)}
+.opt[aria-pressed="true"]{border-color:var(--ink);background:var(--bg2)}
+.opt:active{transform:scale(.98)}
+@media (hover:hover) and (pointer:fine){.opt:hover{border-color:var(--pink)}}
+.numrow{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem}
+.num{width:7.5rem;font:inherit;font-size:1.3rem;font-weight:800;padding:.6rem .9rem;border:1.5px solid var(--ink);border-radius:12px;background:var(--bg);color:var(--ink);font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.9rem 0 1.2rem}
+.chip{font:inherit;font-size:.82rem;font-weight:700;padding:.45rem .9rem;border:1.5px solid var(--bd);border-radius:100px;background:var(--bg);cursor:pointer;color:var(--ink)}
+@media (hover:hover) and (pointer:fine){.chip:hover{border-color:var(--pink)}}
+.res{background:var(--ink);color:#fff;border-radius:14px;padding:1.7rem 1.8rem}
+.res .k{font-size:.78rem;font-weight:700;color:#ffb3cc;margin-bottom:.4rem}
+.res h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;line-height:1.1;margin-bottom:.4rem;outline:none}
+.price{font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums;margin-bottom:.7rem}
+.price small{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75);margin-left:.3rem}
+.res p{font-size:.88rem;line-height:1.65;color:rgba(255,255,255,.86);max-width:580px}
+.res ul{list-style:none;margin:.8rem 0 .2rem;display:grid;gap:.3rem}
+.res li{font-size:.84rem;color:rgba(255,255,255,.86);padding-left:1.3rem;position:relative}
+.res li::before{content:"✓";position:absolute;left:0;color:var(--pink);font-weight:800}
+.alt-line{margin-top:.9rem;font-size:.82rem;color:rgba(255,255,255,.75)}
+.warn{margin-top:1rem;padding:.8rem 1rem;border-radius:10px;background:rgba(255,255,255,.1);font-size:.82rem;color:#fff}
+.res .actions{display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.4rem;margin:1.2rem 0 .3rem}
+.res .linkbtn{color:#fff;margin:0}
+.res :focus-visible{outline-color:#fff}
+@media (prefers-reduced-motion:reduce){.pin,.faq details[open] p{animation:none}}
+@media(max-width:900px){.picker,.pilot{grid-template-columns:1fr;padding:1.5rem}}
+@keyframes pin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
