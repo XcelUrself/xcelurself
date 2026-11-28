@@ -209,7 +209,7 @@ nav{view-transition-name:site-nav}
 @media (prefers-reduced-motion:reduce){.js .hero .c>div>*,.js .hero .shot{animation:none!important}.car.js-car .car-s{transition:none}}
 
 /* infobulles des repères : jamais coupées (placement géré par site-chrome.js) */
-.shot,.xl{overflow:visible}
+.shot,.xl{overflow:hidden}
 .shot-img img{border-radius:12px 12px 0 0}.shot figcaption{border-radius:0 0 12px 12px}
 .xl-bar{border-radius:12px 12px 0 0}.xl-sheets{border-radius:0 0 12px 12px}
 .bp .bt.is-fixed,.mk .tip.is-fixed{position:fixed;transform:none;right:auto;bottom:auto;max-width:calc(100vw - 16px);z-index:900}
@@ -222,3 +222,12 @@ h2:hover .anc,h2:focus-within .anc,.anc:focus-visible{opacity:1}
 .anc:focus-visible{outline:3px solid #1a1714;outline-offset:2px}
 .anc-ok{position:fixed;left:50%;bottom:1.4rem;transform:translateX(-50%);background:#1a1714;color:#fff;padding:.6rem 1rem;border-radius:8px;font:600 .82rem 'Montserrat',sans-serif;z-index:950;animation:fqin .25s ease both}
 @media (hover:none){.anc{display:none}}
+
+/* menu secondaire des pages longues : on sait où l'on est et où aller */
+.subnav{position:sticky;top:var(--nav-h,59px);z-index:640;background:rgba(250,248,245,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(28,24,21,.12)}
+.subnav-in{max-width:1160px;margin:0 auto;display:flex;gap:.2rem;overflow-x:auto;padding:0 clamp(1.25rem,5vw,4rem);scrollbar-width:none}
+.subnav-in::-webkit-scrollbar{display:none}
+.subnav a{flex:none;display:flex;align-items:center;min-height:44px;padding:0 .8rem;font:600 .74rem 'Montserrat',sans-serif;color:#404040;white-space:nowrap;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.subnav a:hover{color:#2b2724}.subnav a.on{color:#2b2724;border-bottom-color:#FE3A7E}
+@media(max-width:1100px){:root{--nav-h:74px}}
+body:has(.subnav) [id]{scroll-margin-top:132px}

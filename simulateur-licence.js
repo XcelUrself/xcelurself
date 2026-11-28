@@ -132,7 +132,7 @@
       var act2=el('div','actions'); act2.appendChild(cta('Demander cette licence','Orga : demande licence','Demande de licence : Simulation Excel',m.name+' ('+fmt(m.price)+' € HT)')); w.appendChild(act2);
     }
     var c=compat(); if(c) w.appendChild(el('p','warn',c));
-    w.appendChild(el('p','alt-line','Pas encore décidé ? <a href="entreprises.html#test" style="color:#fff">Commencez par un pilote gratuit</a>.'));
+    w.appendChild(el('p','alt-line','Pas encore décidé ? <a href="simulation-excel-organismes.html#pilote" style="color:#fff">Essayez d\'abord le test gratuitement</a>.'));
     var rs=el('button','linkbtn','Recommencer'); rs.type='button'; rs.addEventListener('click',function(){A={}; step=0; renderQ(); focusOn('.qt');});
     var ra=el('div','actions'); ra.appendChild(rs); w.appendChild(ra);
     main.appendChild(w); setProg(); focusOn('h3');

@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Formation Excel, Power Query et Power BI en entreprise · XcelUrself</title>
-<meta name="description" content="Formations Excel, Power Query, Power BI et PowerPoint pour vos équipes, en présentiel ou à distance, par Joffrey Gros (certifié MOS, TOSA Excel). 25 formations vidéo et modèles Excel prêts à l&#x27;emploi."/>
+<title>Test de positionnement Excel et formations sur mesure · XcelUrself</title>
+<meta name="description" content="Test de positionnement Excel gratuit jusqu&#x27;à 15 stagiaires pour les organismes de formation, formateurs et entreprises. Formations Excel, Power Query, Power BI et PowerPoint sur mesure, par Joffrey Gros."/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <link rel="canonical" href="https://xcelurself.github.io/xcelurself/index.html"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="XcelUrself · Débutant le lundi, efficace le vendredi"/>
-<meta property="og:description" content="Formations Excel, Power Query, Power BI et PowerPoint pour vos équipes, en présentiel ou à distance, par Joffrey Gros (certifié MOS, TOSA Excel). 25 formations vidéo et modèles Excel prêts à l&#x27;emploi."/>
+<meta property="og:description" content="Test de positionnement Excel gratuit jusqu&#x27;à 15 stagiaires pour les organismes de formation, formateurs et entreprises. Formations Excel, Power Query, Power BI et PowerPoint sur mesure, par Joffrey Gros."/>
 <meta property="og:url" content="https://xcelurself.github.io/xcelurself/index.html"/>
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:site_name" content="XcelUrself"/>
@@ -285,31 +285,42 @@ body:has(.drawer.open) .mbar{display:none!important}
 .quote{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:700;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.1;max-width:22ch}
 @media(max-width:900px){.doors3,.tools4,.cols3,.uses,.ap{grid-template-columns:1fr}.about{grid-template-columns:1fr}.ap img{max-width:280px}.tools4{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.tools4,.facts{grid-template-columns:1fr}}
+.sim{display:flex;justify-content:space-between;align-items:center;gap:1rem 2rem;flex-wrap:wrap;margin-top:1.6rem;padding:1.1rem 1.3rem;background:#fffdf9;border:1px solid var(--bd);border-radius:12px}.sim b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;line-height:1.1}.sim span{font-size:.9rem;color:var(--ink2)}.alt-line{font-size:.85rem;margin-top:.6rem}.alt-line a{font-weight:800;text-decoration:underline;text-underline-offset:3px}
+
+.doors4{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.4rem}
+.aside{border:1px solid var(--bd);border-radius:12px;background:#fffdf9;padding:1.4rem;display:grid;gap:.6rem;align-content:start}
+.aside b{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;line-height:1.1}
+.aside p{font-size:.92rem;color:var(--ink2)}
+.aside .btn{justify-self:start;margin-top:.4rem}
+.tests q{font-size:1.15rem;line-height:1.4}.rate b{font-size:2rem}
+@media(max-width:700px){.doors4{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="site-chrome.css"/>
 </head>
 <body>
 <div class="drawer" id="drawer" aria-modal="true" role="dialog" aria-label="Navigation">
   <a href="index.html" onclick="closeD()">Accueil</a>
+  <a href="simulation-excel-organismes.html" onclick="closeD()">Organismes &amp; formateurs</a>
   <a href="entreprises.html" onclick="closeD()">Entreprises</a>
   <a href="formations.html" onclick="closeD()">Formations vidéo</a>
   <a href="modeles-excel.html" onclick="closeD()">Modèles Excel</a>
   <a href="avis.html" onclick="closeD()">Avis</a>
   <a href="a-propos.html" onclick="closeD()">À propos</a>
-  <a data-umami-event="Nav : test gratuit (menu)" class="d-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" onclick="closeD()">Tester mon équipe gratuitement</a>
+  <a data-umami-event="Nav : test gratuit (menu)" class="d-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" onclick="closeD()">Essai gratuit</a>
 </div>
 
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">Xcel<span>Urself</span></a>
     <ul class="nav-links">
+      <li><a href="simulation-excel-organismes.html" data-umami-event="Nav Organismes &amp; formateurs">Organismes &amp; formateurs</a></li>
       <li><a href="entreprises.html" data-umami-event="Nav Entreprises">Entreprises</a></li>
       <li><a href="formations.html" data-umami-event="Nav Formations vidéo">Formations vidéo</a></li>
       <li><a href="modeles-excel.html" data-umami-event="Nav Modèles Excel">Modèles Excel</a></li>
       <li><a href="avis.html" data-umami-event="Nav Avis">Avis</a></li>
       <li><a href="a-propos.html" data-umami-event="Nav À propos">À propos</a></li>
     </ul>
-    <a data-umami-event="Nav : test gratuit" class="nav-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener">Tester mon équipe gratuitement</a>
+    <a data-umami-event="Nav : test gratuit" class="nav-cta" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener">Essai gratuit</a>
     <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -320,11 +331,10 @@ body:has(.drawer.open) .mbar{display:none!important}
 <section class="hero">
   <div class="c">
     <div>
-      <p class="eyebrow">Formation en entreprise</p>
+      <p class="eyebrow">Organismes de formation, formateurs et entreprises</p>
       <h1>Débutant le lundi, <span class="hl">efficace le vendredi.</span></h1>
-      
-      <p class="sub">Formations Excel, Power Query, Power BI et PowerPoint pour vos équipes, en présentiel ou à distance. Du débutant à l'avancé, sur vos propres fichiers.</p>
-      <div class="cta-row"><a class="btn btn-primary" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" data-umami-event="Accueil : hero test">Tester mon équipe gratuitement <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : hero rdv">Réserver un échange de 20 min</a></div>
+      <p class="sub">Un test de positionnement Excel pour mesurer le niveau de vos stagiaires, et des formations sur mesure pour les faire progresser.</p>
+      <div class="cta-row"><a class="btn btn-primary" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" data-umami-event="Accueil : hero test">Essayer le test gratuitement <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : hero rdv">Réserver un échange de 20 min</a></div>
       <p class="micro">Test de positionnement Excel · gratuit jusqu'à 15 stagiaires · sans engagement · réponse sous 48 h ouvrées</p>
       <div class="proof"><div><b data-count="2000" data-prefix="+" aria-label="plus de 2 000">+2&nbsp;000</b><span>professionnels formés en direct</span></div><div><b data-count="4.9" data-dec="1" data-suffix="&nbsp;/&nbsp;5" aria-label="4,9 sur 5">4,9&nbsp;/&nbsp;5</b><span>formations en direct</span></div><div><b data-count="915" data-suffix="&nbsp;/&nbsp;1000" aria-label="915 sur 1000">915&nbsp;/&nbsp;1000</b><span>TOSA Excel</span></div></div>
     </div>
@@ -339,39 +349,33 @@ body:has(.drawer.open) .mbar{display:none!important}
 
 <section class="band"><div class="c">
   <h2>Par où commencer ?</h2>
-  <div class="doors3"><a class="door" href="entreprises.html" data-umami-event="Accueil : porte entreprises"><small>Entreprises</small><h3>Je forme une équipe</h3><p>Mesurez le niveau de vos stagiaires avec un test gratuit, puis formation sur mesure.</p><span class="go">Découvrir <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a class="door" href="formations.html" data-umami-event="Accueil : porte formations"><small>Formations vidéo</small><h3>Je veux apprendre</h3><p>25 formations vidéo, du gratuit à 109,99 €, avec fichiers d'exercices et sans date limite.</p><span class="go">Voir les formations <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a class="door" href="modeles-excel.html" data-umami-event="Accueil : porte modèles"><small>Modèles Excel</small><h3>Je cherche un modèle Excel</h3><p>Échéancier Urssaf, pack photographe de mariage, carnets d'exercices qui se corrigent seuls.</p><span class="go">Voir les modèles <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a></div>
+  <div class="doors4"><a class="door" href="simulation-excel-organismes.html" data-umami-event="Accueil : porte test"><small>Organismes et formateurs</small><h3>J'évalue mes stagiaires</h3><p>Un test de positionnement Excel et un tableau de bord pour votre promo. Essai gratuit jusqu'à 15 stagiaires.</p><span class="go">Découvrir le test <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a class="door" href="entreprises.html" data-umami-event="Accueil : porte entreprises"><small>Entreprises</small><h3>Je cherche une formation sur mesure</h3><p>Excel, Power Query, Power BI et PowerPoint, en présentiel ou à distance.</p><span class="go">Voir la formation <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a class="door" href="formations.html" data-umami-event="Accueil : porte formations"><small>Formations vidéo</small><h3>Je veux apprendre</h3><p>25 formations vidéo, du gratuit à 109,99 €, avec fichiers d'exercices et sans date limite.</p><span class="go">Voir les formations <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a class="door" href="modeles-excel.html" data-umami-event="Accueil : porte modèles"><small>Modèles Excel</small><h3>Je cherche un modèle Excel</h3><p>Échéancier Urssaf, pack photographe de mariage, carnets d'exercices qui se corrigent seuls.</p><span class="go">Voir les modèles <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a></div>
 </div></section>
 
 <section class="band alt"><div class="c">
-  <h2>En entreprise : ce qu'en disent les participants</h2>
-  <div class="car" data-car aria-roledescription="carrousel" aria-label="Avis de participants à des formations en entreprise"><div class="car-track"><figure class="car-s on" role="group" aria-roledescription="avis" aria-label="1 sur 9"><blockquote>« Explications très claires, très pédagogue, s'adapte très bien au niveau du formé. Extrêmement disponible et flexible. Je le recommande vivement ! »</blockquote><figcaption><span><b>Cécile Naudot</b><span>Responsable RH · Valobat</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="2 sur 9"><blockquote>« Formation sur mesure, quoi de mieux pour progresser à son rythme ? La méthode de Joffrey est parfaite. Je ne choisirai que Solpedinn pour mes prochaines formations. »</blockquote><figcaption><span><b>Nathalie Rance</b><span>Contrôleuse de gestion · La Poste Groupe</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="3 sur 9"><blockquote>« Très à l'écoute, formation adaptée et personnalisée à mes besoins et mon secteur d'activité. Ce que j'ai appris me sert déjà au quotidien. Au plaisir de retravailler ensemble. »</blockquote><figcaption><span><b>Yolène Legris</b><span>Responsable Administrative &amp; Financière · Voco Paris</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="4 sur 9"><blockquote>« Je suis très satisfaite de la formation Excel. Le format permet de monter rapidement en compétences et de mettre en pratique au quotidien. Joffrey est un excellent formateur, très pédagogue. Je recommande à 100%. »</blockquote><figcaption><span><b>Delphine Salaun</b><span>Contrôleuse de gestion · Atout Groupe</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="5 sur 9"><blockquote>« Super parcours de formation, technique et flexible, piloté de main de maître. J'ai apprécié la possibilité d'aborder les cas concrets de mon travail et de trouver les solutions en direct. »</blockquote><figcaption><span><b>Rémy Houttemane</b><span>Responsable Contrôle de Gestion · Damartex Healthcare</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="6 sur 9"><blockquote>« Joffrey est un formateur expert Excel, Power Query et Power BI. Au-delà de sa pédagogie, il s'appuie sur une solide technicité pour résoudre les problèmes complexes rencontrés par ses apprenants. Il adapte parfaitement ses formations à son public en proposant des notions utiles, directement applicables au quotidien. Au fil des années, il continue de se renouveler pour faire évoluer ses contenus face aux nouvelles attentes. C'est un véritable plaisir de travailler avec Joffrey ! »</blockquote><figcaption><span><b>Nicolas Parent</b><span>Microsoft MVP · Formateur Excel certifié Expert · Morpheus Formation</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="7 sur 9"><blockquote>« J'ai effectué une formation Power Query avec Joffrey. C'était vraiment une montée en compétences très fluide pour moi. Joffrey s'est adapté à mon besoin au fil des séances, ce qui m'a permis d'appliquer la formation à des situations réelles. Il a su également s'adapter à mon planning professionnel qui n'est pas toujours évident. Je recommande fortement Joffrey pour son implication, sa patience et ses conseils. Merci ! Niveau Power Query débloqué ;) »</blockquote><figcaption><span><b>Johanna Larboni</b><span>Bras droit des dirigeants · Formation Power Query</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="8 sur 9"><blockquote>« Ça faisait un moment que je voulais m'initier à Power Query. Mais dans les bonnes conditions. J'ai choisi Joffrey, et grâce à Solpedinn, dont les formations sont éligibles CPF, j'ai pu financer une première session avec mon Jedi préféré. Patience, précision, maîtrise du sujet et des applications professionnelles, explications connectées à la réalité pratique du terrain, écoute : le top pour une immersion efficiente. Je ronronnais sur mes acquis Excel depuis quelques temps, ça a boosté ma confiance en moi et ma motivation à aller encore plus loin. »</blockquote><figcaption><span><b>Cathy Lagneau</b><span>La fée de la logique qui optimise ton back office</span></span></figcaption></figure><figure class="car-s" role="group" aria-roledescription="avis" aria-label="9 sur 9"><blockquote>« Ça fait déjà 2 fois que je travaille avec Joffrey. Sa compétence, ses exercices adaptés à mes demandes, sa bonne humeur et surtout sa patience et sa pédagogie parfaite. Je reprendrai des cours. »</blockquote><figcaption><span><b>Nathalie Rance</b><span>La Poste Groupe</span></span></figcaption></figure></div></div>
-  <a class="link" href="avis.html" data-umami-event="Accueil : tous les avis">Lire tous les avis</a>
-</div></section>
-
-<section class="band"><div class="c">
   <div class="about">
     <img src="joffrey-gros.webp" width="128" height="128" alt="Joffrey Gros" loading="lazy"/>
     <div>
       <h2>Joffrey Gros, formateur sur les outils Microsoft</h2>
       <p class="lead">Je forme depuis 2022 des équipes, des particuliers et des organismes de formation, en présentiel, à distance et en vidéo. Certifié MOS PowerPoint et TOSA Excel (915/1000).</p>
       <p class="ex">La destination change, le niveau d'exigence jamais.</p>
-      <a class="link" href="a-propos.html" data-umami-event="Accueil : mon parcours">Mon parcours</a>
+      <a class="link" href="a-propos.html" data-umami-event="Accueil : mon parcours">Mon parcours</a> <span style="margin:0 .6rem;color:var(--muted)">·</span> <a class="link" href="avis.html" data-umami-event="Accueil : tous les avis">Lire les avis</a>
     </div>
   </div>
 </div></section>
 
-<section class="band alt" id="faq"><div class="c">
+<section class="band" id="faq"><div class="c">
   <h2>Avant de choisir</h2>
   <div style="margin-top:1.2rem;max-width:860px"><details class="fq"><summary>Faut-il des bases pour commencer ?</summary><div>Non. Chaque formation indique son niveau. Les parcours débutants partent de zéro, sans jargon. Chaque outil est abordé de façon progressive et accessible.</div></details><details class="fq"><summary>Comment accède-t-on aux formations ?</summary><div>Tout se passe sur Tuto.com. Après ton achat, tu reçois un accès par email et tu démarres immédiatement depuis n'importe quel appareil.</div></details><details class="fq"><summary>Les formations sont-elles accessibles à vie ?</summary><div>Oui, sans limite de durée : ni abonnement ni expiration. Une seule réserve, écrite dans mes CGV : l'accès est maintenu tant que Tuto.com et ma chaîne restent actifs. Reviens quand tu veux, même des années plus tard. Mises à jour incluses.</div></details><details class="fq"><summary>Et si la formation ne me convient pas ?</summary><div>Un cours vidéo déjà démarré ne se rembourse pas : le droit de rétractation ne s'applique pas aux contenus numériques dont l'exécution a commencé avec ton accord préalable exprès (voir CGV et conditions de Tuto.com). C'est pour cela que je propose un cours gratuit de 6 minutes : tu juges ma pédagogie avant d'acheter. Si un doute persiste, écris-moi sur LinkedIn.</div></details><details class="fq"><summary>Y a-t-il des fichiers exercices ?</summary><div>Oui. Chaque formation inclut les fichiers sources pour pratiquer en parallèle. Apprendre en faisant est au cœur de la méthode XcelUrself.</div></details><details class="fq"><summary>Est-il possible d'avoir une formation individuelle personnalisée ?</summary><div>Oui. Je propose des sessions individuelles sur mesure. Contacte-moi via <a href="https://www.linkedin.com/in/joffreygros/" target="_blank" rel="noopener" style="color:var(--ink);font-weight:700;text-decoration:underline">LinkedIn</a>.</div></details></div>
 </div></section>
 
 <section class="cta-band"><div class="c">
-  <h2>Quel est le niveau de votre équipe ?</h2>
-  <p>Mesurez-le gratuitement avant de choisir la formation : un test par stagiaire, un tableau de bord pour vous. Jusqu'à 15 stagiaires, sans engagement.</p>
-  <div class="cta-row"><a class="btn btn-primary" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" data-umami-event="Accueil : fin de page test">Tester mon équipe gratuitement <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : fin de page rdv">Réserver un échange de 20 min</a></div>
-  <p class="micro">Réponse sous 48 h ouvrées · Devis gratuit · <a href="mailto:mr.grosj@gmail.com?subject=Formation%20pour%20mon%20%C3%A9quipe&body=Bonjour%20Joffrey%2C%0A%0AEntreprise%20%3A%20%0ANombre%20de%20personnes%20%3A%20%0ALogiciel(s)%20%3A%20%0ANiveau%20actuel%20%3A%20%0AObjectif%20%3A%20%0APr%C3%A9sentiel%20ou%20distanciel%20%3A%20%0AP%C3%A9riode%20souhait%C3%A9e%20%3A%20%0A%0AMerci%20!" data-umami-event="Accueil : demande de programme" style="text-decoration:underline;text-underline-offset:3px">Demander un programme de formation</a></p>
+  <h2>Voyez où en sont vos stagiaires</h2>
+  <p>Essayez le test de positionnement Excel gratuitement : un test par stagiaire, un tableau de bord pour vous. Jusqu'à 15 stagiaires, sans engagement.</p>
+  <div class="cta-row"><a class="btn btn-primary" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" data-umami-event="Accueil : fin de page test">Essayer le test gratuitement <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : fin de page rdv">Réserver un échange de 20 min</a></div>
+  <p class="micro">Je réponds personnellement sous 48 h ouvrées · <a href="simulation-excel-organismes.html" data-umami-event="Accueil : voir le test" style="text-decoration:underline;text-underline-offset:3px">Voir ce que contient le test</a></p>
 </div></section>
-<div class="mbar"><a class="btn btn-primary" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" data-umami-event="Accueil : barre mobile test">Tester mon équipe</a><a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : barre mobile rdv">Échange 20 min</a></div>
+<div class="mbar"><a class="btn btn-primary" href="https://tally.so/r/LDPZVG?origine=entreprises" target="_blank" rel="noopener" data-umami-event="Accueil : barre mobile test">Essayer le test</a><a class="btn btn-ghost" href="https://calendly.com/xcelurself/formationsmicrosoft" target="_blank" rel="noopener" data-umami-event="Accueil : barre mobile rdv">Échange 20 min</a></div>
 </main>
 
 <footer>
