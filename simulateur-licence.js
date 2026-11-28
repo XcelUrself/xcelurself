@@ -103,7 +103,7 @@
   function compat(){
     var m={
       pc:null,
-      pc19:"Excel 2019 : l'édition dédiée est fournie. Elle ne contient pas les 3 questions qui demandent les fonctions FILTRE, UNIQUE et TRIER (118 questions au lieu de 128).",
+      pc19:"Excel 2019 : l'édition dédiée est fournie. Elle ne contient pas les questions qui demandent les fonctions FILTRE, UNIQUE et TRIER (138 questions au lieu de 145).",
       old:"Excel 2016 ou plus ancien n'est pas pris en charge : la simulation demande Excel 2021 ou Microsoft 365 (ou Excel 2019 avec l'édition dédiée).",
       mac:"Sur Mac, le fonctionnement reste à confirmer : demandez-moi avant de commander. La simulation est conçue pour Excel sous Windows.",
       web:"Excel en ligne n'est pas pris en charge : vos stagiaires doivent ouvrir les fichiers dans l'application Excel.",
