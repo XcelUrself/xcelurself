@@ -126,3 +126,42 @@ nav.scrolled{box-shadow:0 8px 24px rgba(43,39,36,.07)}
 @media(min-width:701px){#legal-toggle{display:none}}
 /* garde la dernière ligne libre du bouton « retour en haut » (après les règles qui réinitialisent footer) */
 @media(max-width:800px){footer{padding-bottom:5.5rem}}
+
+/* ---------- Micro-interactions : sobres, utiles, désactivées si l'utilisateur le demande ---------- */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* transitions douces entre pages (navigateurs compatibles), l'en-tête reste en place */
+@view-transition{navigation:auto}
+nav{view-transition-name:site-nav}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.22s}
+/* clic satisfaisant : relief au survol, enfoncement net à l'appui */
+.btn,.nav-cta,.d-cta{transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .18s ease,background-color .2s ease,color .2s ease}
+.btn:hover,.nav-cta:hover{transform:translateY(-2px)}
+.btn-primary:hover{box-shadow:0 14px 28px rgba(254,58,126,.4)}
+.btn:active,.nav-cta:active{transform:translateY(0) scale(.97);box-shadow:0 4px 10px rgba(254,58,126,.25);transition-duration:.06s}
+.btn svg{transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+.btn:hover svg,.path:hover .go svg{transform:translateX(4px)}
+.path .go svg{transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+.path{transition:background-color .2s ease}
+.path:not(.pri):hover{background:rgba(254,58,126,.06)}
+.link{background:linear-gradient(var(--or1),var(--or1)) 0 100%/100% 2px no-repeat;border:0!important;transition:background-size .25s ease}
+.link:hover{background-size:100% 100%;color:#1a1714}
+/* le mot-clé du titre se souligne en se dessinant */
+.js .hl{animation:hl .9s .45s cubic-bezier(.2,.7,.2,1) both;background-repeat:no-repeat;background-position:0 100%}
+@keyframes hl{from{background-size:0 100%}to{background-size:100% 100%}}
+/* les repères de la capture apparaissent l'un après l'autre */
+.js .co{opacity:0;animation:pop .5s cubic-bezier(.2,.8,.2,1) forwards}
+.js .co:nth-of-type(1){animation-delay:1.1s}.js .co:nth-of-type(2){animation-delay:1.35s}.js .co:nth-of-type(3){animation-delay:1.6s}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:none}}
+/* apparition douce au défilement, visible d'office sans JavaScript */
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+/* questions : réponse qui s'ouvre sans à-coup */
+.fq[open] div{animation:fqin .28s ease both}
+@keyframes fqin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
+  .btn,.nav-cta,.btn svg,.path,.path .go svg,.link{transition:none!important}
+  .btn:hover,.nav-cta:hover,.btn:active{transform:none}
+  .js .hl,.js .co,.fq[open] div{animation:none!important}
+  .js .co,.js .rv{opacity:1!important;transform:none!important;transition:none!important}
+}
